@@ -7,7 +7,7 @@
   * + pre:not([class]),
   * + address,
   * + fieldset {
-    margin-top: theme('space.4');
+    margin-top: theme('space.6');
   }
 
   > :first-child {
@@ -19,9 +19,9 @@
   }
 
   a:not([class]) {
-    font-weight: theme('fontWeight.bold');
+    color: theme('colors.slate.12');
 
-    @apply bg-gradient-to-r dark:bg-gradient-to-l from-primary-9 to-primary-11 bg-clip-text text-transparent;
+    @apply underline underline-offset-4 decoration-dotted transition-all hocus:underline-offset-5;
   }
 
   h2,
@@ -29,33 +29,17 @@
   h4,
   h5 {
     font-weight: theme('fontWeight.semibold');
-    font-family: theme('fontFamily.heading');
+    font-size: theme('fontSize.lg');
   }
 
   * + h2,
   * + h3 {
-    margin-top: theme('space.8');
+    margin-top: theme('space.10');
   }
 
   * + h4,
   * + h5 {
-    margin-top: theme('space.4');
-  }
-
-  h2 {
-    @apply text-4xl;
-  }
-
-  h3 {
-    @apply text-3xl;
-  }
-
-  h4 {
-    @apply text-2xl;
-  }
-
-  h5 {
-    @apply text-xl;
+    margin-top: theme('space.6');
   }
 
   ol {
@@ -73,8 +57,7 @@
     content: counter(list-counter) '.';
     position: absolute;
     left: theme('inset.1');
-    fontweight: theme('fontWeight.bold');
-    color: theme('colors.primary.9');
+    font-weight: theme('fontWeight.semibold');
   }
 
   li {
@@ -97,18 +80,16 @@
     top: theme('inset.2');
     width: theme('width.2');
     height: theme('height.2');
-    background: theme('colors.primary.9');
+    background: theme('colors.slate.9');
     border-radius: theme('borderRadius.full');
 
-    @apply ring-2 ring-primary-6 md:top-3;
+    @apply ring-2 ring-slate-6 md:top-3;
   }
 
   code {
-    background: theme('colors.slate.3');
+    background: theme('colors.slate.2');
     padding-inline: theme('spacing.1');
     padding-block: theme('spacing.[0.5]');
     border-radius: theme('borderRadius.lg');
-
-    @apply text-base md:text-lg;
   }
 }

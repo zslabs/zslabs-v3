@@ -7,7 +7,6 @@ import { bundleMDX } from 'mdx-bundler'
 import type { GetStaticProps, NextPage } from 'next'
 
 import MDXContent from '~components/MDXContent'
-import Section from '~components/Section'
 import SectionTitle from '~components/SectionTitle'
 import SEO from '~components/SEO'
 
@@ -19,10 +18,8 @@ const Terms: NextPage<TermsProps> = ({ content }) => {
   return (
     <>
       <SEO title="Terms" />
-      <Section>
-        <SectionTitle title="Terms" />
-        <MDXContent content={content} />
-      </Section>
+      <SectionTitle>Terms</SectionTitle>
+      <MDXContent content={content} />
     </>
   )
 }

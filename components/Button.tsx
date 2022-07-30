@@ -4,7 +4,7 @@ import ctl from '@netlify/classnames-template-literals'
 
 interface ButtonPropsPrimitive<T extends React.ElementType> {
   as?: T
-  variation?: 'hover-default' | 'primary' | 'secondary' | 'blank' | 'contrast'
+  variation?: 'default' | 'contrast'
   loading?: boolean
   iconOnly?: boolean
   type?: 'submit' | 'button' | 'reset'
@@ -14,7 +14,7 @@ interface ButtonPropsPrimitive<T extends React.ElementType> {
 function Button<T extends React.ElementType = 'button'>({
   as,
   children,
-  variation = 'blank',
+  variation = 'default',
   iconOnly,
   loading,
   ...rest
@@ -26,46 +26,18 @@ function Button<T extends React.ElementType = 'button'>({
     <Component
       type={Component === 'button' ? 'button' : undefined}
       className={ctl(`
-          relative inline-block h-12 overflow-hidden font-bold duration-150 focus:outline-none
+          relative inline-block h-9 overflow-hidden rounded-full text-sm font-semibold duration-150 focus:outline-none
 
-          ${variation === 'hover-default' && `hocus:bg-slate-3`}
-          ${
-            variation === 'primary' &&
-            `bg-gradient-to-br from-accent-9 to-primary-9 text-primary-1 dark:bg-gradient-to-tl dark:text-primary-12`
-          }
-
-          ${
-            variation === 'secondary' &&
-            `bg-gradient-to-br from-primary-9 to-secondary-9 text-secondary-1 dark:bg-gradient-to-tl dark:text-secondary-12`
-          }
-
+          ${variation === 'default' && `bg-slate-2 hocus:bg-slate-4`}
           ${variation === 'contrast' && 'bg-slate-12 text-slate-1'}
-
-          ${
-            iconOnly
-              ? 'w-12 rounded-full text-2xl ease-bounce hocus:scale-105'
-              : 'rounded-full px-6 text-sm uppercase tracking-widest'
-          }
-          ${
-            !['blank', 'hover-default'].includes(variation) &&
-            'shadow-lg hocus:shadow-xl hocus:brightness-105'
-          }
           ${loading && `pointer-events-none opacity-50`}
+          ${iconOnly ? 'w-9' : 'px-4'}
         `)}
       {...rest}
     >
-      {!['blank', 'hover-default'].includes(variation) && (
-        <span
-          className={ctl(
-            `absolute inset-0 dots-bg-invert ${
-              variation === 'contrast' && 'dark:dots-bg'
-            }`
-          )}
-        />
-      )}
       <span
         className={ctl(`
-            relative z-10 grid h-full grid-flow-col place-items-center gap-4 whitespace-nowrap
+            relative z-10 grid h-full grid-flow-col place-items-center gap-2 whitespace-nowrap
 
             ${iconOnly ? 'auto-cols-auto' : 'auto-cols-min'}
           `)}

@@ -4,7 +4,6 @@ import { motion } from 'framer-motion'
 import type { GetStaticProps, GetStaticPaths } from 'next'
 
 import MDXContent from '~components/MDXContent'
-import Section from '~components/Section'
 import SEO from '~components/SEO'
 import {
   fadeInAnimate,
@@ -18,7 +17,7 @@ interface PostSingleProps {
 
 export default function PostSingle({ post }: PostSingleProps) {
   return (
-    <Section>
+    <>
       <SEO title={post.title} />
 
       <article>
@@ -29,7 +28,7 @@ export default function PostSingle({ post }: PostSingleProps) {
           <MDXContent content={post.body} />
         </motion.div>
       </article>
-    </Section>
+    </>
   )
 }
 

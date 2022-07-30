@@ -3,6 +3,7 @@ import * as React from 'react'
 import { motion } from 'framer-motion'
 import type { NextPage } from 'next'
 
+import SectionTitle from '~components/SectionTitle'
 import SEO from '~components/SEO'
 import {
   fadeInAnimate,
@@ -16,7 +17,7 @@ const Experience: NextPage = () => {
       <SEO title="Experience" />
 
       <motion.header initial={fadeInDownInitial} animate={fadeInAnimate}>
-        experience
+        <SectionTitle>Experience</SectionTitle>
       </motion.header>
       <motion.main initial={fadeInUpInitial} animate={fadeInAnimate}>
         stuff

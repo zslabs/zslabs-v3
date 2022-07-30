@@ -1,6 +1,7 @@
 import * as React from 'react'
 
-import { ReactComponent as QuoteSvg } from '~icons/quote.svg'
+import Icon from './Icon'
+
 import type { ChildrenOnlyProps } from '~types/custom'
 
 export type BlockquoteProps = ChildrenOnlyProps &
@@ -14,7 +15,7 @@ const Blockquote: React.FC<BlockquoteProps> = ({ children, ...rest }) => {
     >
       {children}
       <div className="absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-slate-7 bg-slate-1 p-2 ring-4 ring-slate-1">
-        <QuoteSvg />
+        <Icon name="quote" />
       </div>
     </blockquote>
   )

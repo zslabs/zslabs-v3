@@ -2,13 +2,132 @@ import fs from 'fs'
 
 import * as React from 'react'
 
+import type { Post } from 'contentlayer/generated'
 import { allPosts } from 'contentlayer/generated'
-import type { GetStaticProps, NextPage } from 'next'
+import type { GetStaticProps } from 'next'
 
+import Button from '~components/Button'
+import Icon from '~components/Icon'
+import { List, ListItem } from '~components/List'
+import Prose from '~components/Prose'
+import SectionTitle from '~components/SectionTitle'
+import TextLink from '~components/TextLink'
 import useLayoutAnimationState from '~hooks/useLayoutAnimationState'
 import { getRssXml } from '~lib/rss'
 
-const Home: NextPage = () => {
+type ReducedPosts = Pick<Post, 'title' | 'date' | 'url'>[]
+
+function Intro() {
+  return (
+    <section id="about">
+      <SectionTitle>Zach Schnackel</SectionTitle>
+      <Prose>
+        <p>
+          I'm a UI developer based in Boone, NC. My background involves pushing
+          the limits of what we can build on the backend and how we can
+          experience it on the frontend.
+        </p>
+        <p>
+          Happy to be part of the design infrastructure team at{' '}
+          <TextLink href="https://slack.com">
+            <Icon inline name="slack" /> Slack
+          </TextLink>
+          ; building tools to help designers and engineers collaborate more
+          efficiently.
+        </p>
+        <p>
+          Outside of technology, I love spending time with my family and hiking
+          in the NC mountains{' '}
+          <span className="text-slate-12">
+            <Icon inline name="mountain-snow" />
+          </span>
+        </p>
+      </Prose>
+      <div className="mt-6 flex gap-4">
+        <TextLink href="/experience">
+          <Button as="div" variation="contrast">
+            Experience
+          </Button>
+        </TextLink>
+      </div>
+    </section>
+  )
+}
+
+function Projects() {
+  return (
+    <section id="projects">
+      <SectionTitle>Projects</SectionTitle>
+      <List>
+        <ListItem label="Design tokens" icon="tokens" meta="Internal">
+          Build tool that works alongside{' '}
+          <TextLink href="https://www.figma.com/community/plugin/843461159747178978/Figma-Tokens">
+            Figma Tokens
+          </TextLink>{' '}
+          and{' '}
+          <TextLink href="https://amzn.github.io/style-dictionary/">
+            Style Dictionary
+          </TextLink>{' '}
+          to create a{' '}
+          <TextLink href="https://tailwindcss.com/">Tailwind CSS</TextLink>{' '}
+          driven system that scales to desktop, iOS, and Android.
+        </ListItem>
+        <ListItem label="Icon automation library" icon="icons" meta="Internal">
+          Build tool that integrates with{' '}
+          <TextLink href="https://www.figma.com/developers/api">
+            Figma API
+          </TextLink>{' '}
+          to extract and create SVG icons for use across desktop, iOS, and
+          Android.
+        </ListItem>
+        <ListItem
+          label="List"
+          href="https://list.zslabs.com"
+          icon="list"
+          meta="Next.js :: Radix-UI"
+        >
+          The best experience for monitoring activity on multiple eBay search
+          terms.
+        </ListItem>
+        <ListItem
+          label="Sold"
+          href="https://sold.zslabs.com"
+          icon="sold"
+          meta="Next.js :: Radix-UI"
+        >
+          Toolkit for gauging market-prices and trends on eBay.
+        </ListItem>
+      </List>
+    </section>
+  )
+}
+
+function Articles({ posts }: { posts: ReducedPosts }) {
+  return (
+    <section id="articles">
+      <SectionTitle>Articles</SectionTitle>
+      <List>
+        {posts.map((post) => (
+          <ListItem
+            key={post.url}
+            label={post.title}
+            href={post.url}
+            meta={post.date}
+          >
+            Test stuff
+          </ListItem>
+        ))}
+      </List>
+      <div className="mt-6">
+        <TextLink title="More articles" href="/articles">
+          <Icon name="more" />
+        </TextLink>
+      </div>
+    </section>
+  )
+}
+
+function Index({ posts }: { posts: ReducedPosts }) {
   const done = useLayoutAnimationState((state) => state.done)
 
   const pageAnimation = React.useCallback(async () => {
@@ -22,17 +141,23 @@ const Home: NextPage = () => {
     }
   }, [done, pageAnimation])
 
-  return <>home</>
+  return (
+    <div className="space-y-12 md:space-y-16">
+      <Intro />
+      <Projects />
+      <Articles posts={posts} />
+    </div>
+  )
 }
 
-export default Home
+export default Index
 
 export const getStaticProps: GetStaticProps = async () => {
   const posts = allPosts.sort(
     (post1, post2) => +new Date(post2.date) - +new Date(post1.date)
   )
 
-  const reducedPosts = posts.map((post) => {
+  const reducedPosts: ReducedPosts = posts.map((post) => {
     return {
       title: post.title,
       date: post.date,
@@ -46,6 +171,6 @@ export const getStaticProps: GetStaticProps = async () => {
   fs.writeFileSync('./public/rss.xml', rss)
 
   return {
-    props: {},
+    props: { posts: reducedPosts },
   }
 }

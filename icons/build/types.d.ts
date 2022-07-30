@@ -1,0 +1,1 @@
+export type IconName = 'arrow-down' | 'clipboard' | 'clipboard-check' | 'github' | 'icons' | 'list' | 'logo' | 'minus' | 'more' | 'mountain' | 'mountain-snow' | 'peace' | 'plus' | 'quote' | 'slack' | 'sold' | 'tokens' | 'twitter'

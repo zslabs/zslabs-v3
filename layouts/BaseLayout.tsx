@@ -7,8 +7,11 @@ import type {
   Variants,
 } from 'framer-motion'
 import { motion, useAnimation } from 'framer-motion'
+import Image from 'next/image'
 import { useRouter } from 'next/router'
 
+import Icon from '~components/Icon'
+import TextLink from '~components/TextLink'
 import useLayoutAnimationState from '~hooks/useLayoutAnimationState'
 import type { ChildrenOnlyProps } from '~types/custom'
 
@@ -25,7 +28,7 @@ const HeaderItemWrapper: React.FC<
     () => ({
       hidden: {
         opacity: 0,
-        y: '-2rem',
+        y: '-0.5rem',
       },
       visible: {
         opacity: 1,
@@ -56,7 +59,7 @@ const HeaderItemWrapper: React.FC<
 const footerVariants: Variants = {
   hidden: {
     opacity: 0,
-    y: '2rem',
+    y: '0.5rem',
   },
   visible: {
     opacity: 1,
@@ -85,30 +88,78 @@ const BaseLayout: React.FC<ChildrenOnlyProps> = ({ children }) => {
 
   return (
     <>
-      <HeaderItemWrapper
-        runAnimation={runAnimation}
-        controls={controls}
-        custom={1}
-        className="justify-self-start"
-      >
-        logo
-      </HeaderItemWrapper>
-      <HeaderItemWrapper
-        runAnimation={runAnimation}
-        controls={controls}
-        custom={2}
-      >
-        thing
-      </HeaderItemWrapper>
+      <div className="pointer-events-none fixed inset-0 -z-1 mix-blend-color-dodge nnnoise" />
+      <div className="pointer-events-none fixed inset-0 -z-1 bg-center opacity-30 mix-blend-color-dodge ooorganize" />
 
-      {children}
-      <motion.footer
-        animate={controls}
-        variants={footerVariants}
-        initial={runAnimation ? 'hidden' : false}
-      >
-        footer stuff
-      </motion.footer>
+      <div className="mx-auto max-w-[calc(65ch+2rem)] px-4 py-8 md:py-12">
+        <header className="mb-12 flex items-center justify-between gap-6 md:mb-16">
+          <HeaderItemWrapper
+            runAnimation={runAnimation}
+            controls={controls}
+            custom={1}
+          >
+            <TextLink href="/" className="text-3xl">
+              <Icon name="logo" />
+            </TextLink>
+          </HeaderItemWrapper>
+
+          <div className="flex items-center justify-end gap-6">
+            <HeaderItemWrapper
+              runAnimation={runAnimation}
+              controls={controls}
+              custom={2}
+            >
+              <TextLink
+                href="https://github.com/zslabs"
+                className="text-xl text-slate-11 transition-colors hocus:text-slate-12"
+              >
+                <Icon name="github" />
+              </TextLink>
+            </HeaderItemWrapper>
+            <HeaderItemWrapper
+              runAnimation={runAnimation}
+              controls={controls}
+              custom={3}
+            >
+              <TextLink
+                href="https://twitter.com/zslabs"
+                className="text-xl text-slate-11 transition-colors hocus:text-slate-12"
+              >
+                <Icon name="twitter" />
+              </TextLink>
+            </HeaderItemWrapper>
+            <HeaderItemWrapper
+              runAnimation={runAnimation}
+              controls={controls}
+              custom={4}
+            >
+              <TextLink href="/#about">
+                <Image
+                  className="shrink-0 rounded-full"
+                  src="/media/me.png"
+                  width="32px"
+                  height="32px"
+                  alt="Zach Schnackel"
+                />
+              </TextLink>
+            </HeaderItemWrapper>
+          </div>
+        </header>
+
+        {children}
+
+        <motion.footer
+          animate={controls}
+          variants={footerVariants}
+          initial={runAnimation ? 'hidden' : false}
+          className="mt-12 text-center text-sm text-slate-11 md:mt-16"
+        >
+          Copyright &copy; {new Date().getFullYear()} Zach Schnackel{' '}
+          <span className="text-slate-12">
+            <Icon name="peace" inline />
+          </span>
+        </motion.footer>
+      </div>
     </>
   )
 }

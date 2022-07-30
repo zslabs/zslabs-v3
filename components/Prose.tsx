@@ -1,21 +1,14 @@
 import * as React from 'react'
 
-import ctl from '@netlify/classnames-template-literals'
 import { motion } from 'framer-motion'
 
 interface ProseProps {
   children: React.ReactNode
-  variation?: 'base' | 'large'
 }
 
-const Prose = ({ children, variation, ...rest }: ProseProps) => {
+const Prose = ({ children, ...rest }: ProseProps) => {
   return (
-    <motion.div
-      {...rest}
-      className={ctl(
-        `prose ${variation === 'base' ? 'text-base md:text-lg' : 'text-lg'}`
-      )}
-    >
+    <motion.div {...rest} className="prose text-slate-11">
       {children}
     </motion.div>
   )
