@@ -29,6 +29,15 @@ const patterns = plugin(({ addUtilities }) => {
   })
 })
 
+const clips = plugin(({ addUtilities }) => {
+  addUtilities({
+    '.code-clip': {
+      maskImage:
+        'radial-gradient(circle 1rem at 0.5rem 0.5rem, transparent 1rem, #000 0)',
+    },
+  })
+})
+
 const utilities = plugin(({ addVariant }) => {
   addVariant('hocus', ['&:hover', '&:focus'])
   addVariant('group-hocus', ['.group:hover &', '.group:focus &'])
@@ -170,5 +179,5 @@ module.exports = {
       },
     },
   },
-  plugins: [lineClamp, patterns, utilities],
+  plugins: [lineClamp, patterns, clips, utilities],
 }

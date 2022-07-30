@@ -12,6 +12,7 @@ import { List, ListItem } from '~components/List'
 import Prose from '~components/Prose'
 import SectionTitle from '~components/SectionTitle'
 import TextLink from '~components/TextLink'
+import Tooltip from '~components/Tooltip'
 import { fadeInUp } from '~helpers/styles'
 import useLayoutAnimationState from '~hooks/useLayoutAnimationState'
 import { getRssXml } from '~lib/rss'
@@ -119,9 +120,11 @@ function Articles({ posts }: { posts: ReducedPosts }) {
         ))}
       </List>
       <div className="mt-6">
-        <TextLink title="More articles" href="/articles">
-          <Icon name="more" />
-        </TextLink>
+        <Tooltip content="More articles">
+          <TextLink href="/articles">
+            <Icon name="more" />
+          </TextLink>
+        </Tooltip>
       </div>
     </section>
   )

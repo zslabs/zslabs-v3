@@ -1,3 +1,4 @@
+import * as Tooltip from '@radix-ui/react-tooltip'
 import { MotionConfig } from 'framer-motion'
 import { DefaultSeo } from 'next-seo'
 import type { AppProps } from 'next/app'
@@ -25,11 +26,13 @@ Router.events.on('routeChangeComplete', (url) => {
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <MotionConfig transition={spring}>
-      <DefaultSeo {...SEO} />
-      <BaseLayout>
-        <Component {...pageProps} />
-      </BaseLayout>
-    </MotionConfig>
+    <Tooltip.Provider>
+      <MotionConfig transition={spring}>
+        <DefaultSeo {...SEO} />
+        <BaseLayout>
+          <Component {...pageProps} />
+        </BaseLayout>
+      </MotionConfig>
+    </Tooltip.Provider>
   )
 }

@@ -27,6 +27,9 @@ export default function PostSingle({ post }: PostSingleProps) {
         </motion.header>
         <motion.div initial={fadeInUpInitial} animate={fadeInAnimate}>
           <MDXContent content={post.body} />
+          <div className="mt-12 font-mono text-sm uppercase text-slate-12">
+            Published {post.date}
+          </div>
         </motion.div>
       </article>
     </>
@@ -38,9 +41,26 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     (post) => post._raw.flattenedPath === params?.slug
   )
 
+  if (!currentPost) {
+    return {
+      props: {
+        post: {},
+      },
+    }
+  }
+
+  const postFormatted = {
+    ...currentPost,
+    date: new Date(currentPost.date).toLocaleDateString('en-us', {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric',
+    }),
+  }
+
   return {
     props: {
-      post: currentPost,
+      post: postFormatted,
     },
   }
 }

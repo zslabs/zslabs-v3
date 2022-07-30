@@ -5,6 +5,7 @@ import Highlight, { defaultProps } from 'prism-react-renderer'
 import { CopyToClipboard } from 'react-copy-to-clipboard'
 
 import Icon from './Icon'
+import Tooltip from './Tooltip'
 
 interface CodeProps {
   codeString: string
@@ -31,41 +32,45 @@ export default function Code({ codeString, language }: CodeProps) {
       language={language}
     >
       {({ className, tokens, getLineProps, getTokenProps }) => (
-        <aside className="max-h-120 overflow-auto overscroll-contain rounded-xl bg-overlay-8 p-4 font-mono tracking-normal">
-          <pre className={className}>
+        <div className="relative">
+          <div className="absolute left-0 z-10">
             {isCopied ? (
-              <Icon name="clipboard-check" />
+              <Tooltip content="Copied!">
+                <Icon name="clipboard-check" />
+              </Tooltip>
             ) : (
               <CopyToClipboard text={codeString} onCopy={handleCopy}>
-                <button
-                  type="button"
-                  className="block focus:outline-none"
-                  title="Copy snippet"
-                >
-                  <Icon name="clipboard" />
+                <button type="button" className="block focus:outline-none">
+                  <Tooltip content="Copy snippet">
+                    <Icon name="clipboard" />
+                  </Tooltip>
                 </button>
               </CopyToClipboard>
             )}
-            {tokens.map((line, i) => {
-              const lineKey = `line-${i}`
+          </div>
+          <aside className="max-h-120 overflow-auto overscroll-contain rounded-xl bg-overlay-8 p-8 font-mono tracking-normal code-clip">
+            <pre className={className}>
+              {tokens.map((line, i) => {
+                const lineKey = `line-${i}`
 
-              return (
-                <div key={lineKey} {...getLineProps({ line, key: i })}>
-                  {line.length === 1 && line[0].empty === true && (
-                    <span>&#8203;</span>
-                  )}
-                  {line.map((token, index) => {
-                    const key = `line-${index}`
+                return (
+                  <div key={lineKey} {...getLineProps({ line, key: i })}>
+                    {line.length === 1 && line[0].empty === true && (
+                      <span>&#8203;</span>
+                    )}
+                    {line.map((token, index) => {
+                      const key = `line-${index}`
 
-                    return (
-                      <span key={key} {...getTokenProps({ token, index })} />
-                    )
-                  })}
-                </div>
-              )
-            })}
-          </pre>
-        </aside>
+                      return (
+                        <span key={key} {...getTokenProps({ token, index })} />
+                      )
+                    })}
+                  </div>
+                )
+              })}
+            </pre>
+          </aside>
+        </div>
       )}
     </Highlight>
   )

@@ -12,6 +12,7 @@ import { useRouter } from 'next/router'
 
 import Icon from '~components/Icon'
 import TextLink from '~components/TextLink'
+import Tooltip from '~components/Tooltip'
 import useLayoutAnimationState from '~hooks/useLayoutAnimationState'
 import type { ChildrenOnlyProps } from '~types/custom'
 
@@ -109,39 +110,45 @@ const BaseLayout: React.FC<ChildrenOnlyProps> = ({ children }) => {
               controls={controls}
               custom={2}
             >
-              <TextLink
-                href="https://github.com/zslabs"
-                className="text-xl text-slate-11 transition-colors hocus:text-slate-12"
-              >
-                <Icon name="github" />
-              </TextLink>
+              <Tooltip content="GitHub">
+                <TextLink
+                  href="https://github.com/zslabs"
+                  className="text-xl text-slate-11 transition-colors hocus:text-slate-12"
+                >
+                  <Icon name="github" />
+                </TextLink>
+              </Tooltip>
             </HeaderItemWrapper>
             <HeaderItemWrapper
               runAnimation={runAnimation}
               controls={controls}
               custom={3}
             >
-              <TextLink
-                href="https://twitter.com/zslabs"
-                className="text-xl text-slate-11 transition-colors hocus:text-slate-12"
-              >
-                <Icon name="twitter" />
-              </TextLink>
+              <Tooltip content="Twitter">
+                <TextLink
+                  href="https://twitter.com/zslabs"
+                  className="text-xl text-slate-11 transition-colors hocus:text-slate-12"
+                >
+                  <Icon name="twitter" />
+                </TextLink>
+              </Tooltip>
             </HeaderItemWrapper>
             <HeaderItemWrapper
               runAnimation={runAnimation}
               controls={controls}
               custom={4}
             >
-              <TextLink href="/#about">
-                <Image
-                  className="shrink-0 rounded-full"
-                  src="/media/me.png"
-                  width="32px"
-                  height="32px"
-                  alt="Zach Schnackel"
-                />
-              </TextLink>
+              <Tooltip content="About me">
+                <TextLink href="/#about">
+                  <Image
+                    className="shrink-0 rounded-full"
+                    src="/media/me.png"
+                    width="32px"
+                    height="32px"
+                    alt="Zach Schnackel"
+                  />
+                </TextLink>
+              </Tooltip>
             </HeaderItemWrapper>
           </div>
         </header>

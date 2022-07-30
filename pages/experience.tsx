@@ -8,6 +8,7 @@ import { List, ListItem } from '~components/List'
 import SectionTitle from '~components/SectionTitle'
 import SEO from '~components/SEO'
 import TextLink from '~components/TextLink'
+import Tooltip from '~components/Tooltip'
 import {
   fadeInAnimate,
   fadeInDownInitial,
@@ -60,12 +61,11 @@ const Experience: NextPage = () => {
         </List>
 
         <div className="mt-6">
-          <TextLink
-            title="LinkedIn"
-            href="https://www.linkedin.com/in/zachschnackel/"
-          >
-            <Icon name="more" />
-          </TextLink>
+          <Tooltip content="LinkedIn">
+            <TextLink href="https://www.linkedin.com/in/zachschnackel/">
+              <Icon name="more" />
+            </TextLink>
+          </Tooltip>
         </div>
       </motion.main>
     </>

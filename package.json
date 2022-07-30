@@ -33,6 +33,7 @@
     "@hookform/resolvers": "2.9.6",
     "@iconify/tools": "2.0.18",
     "@netlify/classnames-template-literals": "1.0.3",
+    "@radix-ui/react-tooltip": "1.0.0",
     "@tailwindcss/line-clamp": "0.4.0",
     "@types/fs-extra": "9.0.13",
     "@types/gtag.js": "0.0.10",
