@@ -151,6 +151,10 @@ module.exports = {
       '9xl': ['8rem', { lineHeight: '1', letterSpacing: dynamicTracking(8) }],
     },
     extend: {
+      boxShadow: {
+        button:
+          '-15px 0 30px -10px var(--tomato7), 0 0 30px -10px var(--blue7), 15px 0 30px -10px var(--violet7)',
+      },
       fontFamily: {
         sans: ['ZS Sans', ...defaultTheme.fontFamily.sans],
         mono: ['JetBrains Mono', ...defaultTheme.fontFamily.mono],

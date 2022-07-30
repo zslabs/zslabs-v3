@@ -10,7 +10,7 @@ export type BlockquoteProps = ChildrenOnlyProps &
 const Blockquote: React.FC<BlockquoteProps> = ({ children, ...rest }) => {
   return (
     <blockquote
-      className="relative my-8 rounded-lg border-2 border-slate-7 bg-slate-1 p-6"
+      className="relative my-8 rounded-xl border-2 border-slate-7 bg-slate-1 p-6"
       {...rest}
     >
       {children}

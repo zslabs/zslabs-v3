@@ -31,7 +31,7 @@ export default function Code({ codeString, language }: CodeProps) {
       language={language}
     >
       {({ className, tokens, getLineProps, getTokenProps }) => (
-        <aside className="max-h-120 overflow-auto overscroll-contain rounded-lg p-4 font-mono tracking-normal">
+        <aside className="max-h-120 overflow-auto overscroll-contain rounded-xl bg-overlay-8 p-4 font-mono tracking-normal">
           <pre className={className}>
             {isCopied ? (
               <Icon name="clipboard-check" />

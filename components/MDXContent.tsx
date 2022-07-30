@@ -31,13 +31,13 @@ function Image({
 }: ImageProps & React.HTMLAttributes<HTMLDivElement>) {
   return (
     <figure className="my-8 text-center">
-      <div className="relative mx-auto grid w-fit rounded-lg shadow">
-        <div className="absolute -inset-2 rounded-lg bg-slate-3 shadow-inner" />
+      <div className="relative mx-auto grid w-fit rounded-xl shadow">
+        <div className="absolute -inset-2 rounded-xl bg-slate-3 shadow-inner" />
         <NextImage
           src={src}
           height={height}
           width={width}
-          className="rounded-lg"
+          className="rounded-xl"
         />
       </div>
       {caption && (

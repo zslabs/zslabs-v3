@@ -14,7 +14,7 @@ const Alert = React.forwardRef<
     <div
       ref={ref}
       className={ctl(`
-        my-8 rounded-lg border-l-8 p-6
+        my-8 rounded-xl border-l-8 p-6
 
         ${variation === 'primary' && 'border-primary-9 bg-primary-3'}
         ${variation === 'danger' && 'border-danger-9 bg-danger-3'}

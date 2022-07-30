@@ -29,7 +29,9 @@ function Button<T extends React.ElementType = 'button'>({
           relative inline-block h-9 overflow-hidden rounded-full text-sm font-semibold duration-150 focus:outline-none
 
           ${variation === 'default' && `bg-slate-2 hocus:bg-slate-4`}
-          ${variation === 'contrast' && 'bg-slate-12 text-slate-1'}
+          ${
+            variation === 'contrast' && 'bg-slate-12 text-slate-1 shadow-button'
+          }
           ${loading && `pointer-events-none opacity-50`}
           ${iconOnly ? 'w-9' : 'px-4'}
         `)}

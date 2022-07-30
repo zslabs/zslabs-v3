@@ -133,7 +133,7 @@ function Index({ posts }: { posts: ReducedPosts }) {
 
   const pageAnimation = React.useCallback(async () => {
     indexControls.start('onscreen')
-  }, [])
+  }, [indexControls])
 
   React.useEffect(() => {
     if (done) {
