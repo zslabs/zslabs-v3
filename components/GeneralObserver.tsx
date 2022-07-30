@@ -5,8 +5,6 @@
  */
 import React from 'react'
 
-import { noop } from 'lodash'
-
 import type { ChildrenOnlyProps } from '~types/custom'
 
 interface IGeneralObserverProps extends ChildrenOnlyProps {
@@ -18,7 +16,8 @@ interface IGeneralObserverProps extends ChildrenOnlyProps {
 
 const GeneralObserver: React.FC<IGeneralObserverProps> = ({
   children,
-  onEnter = noop,
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  onEnter = () => {},
   height = 0,
 }) => {
   const ref = React.useRef<HTMLElement>(null)

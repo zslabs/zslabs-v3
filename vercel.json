@@ -37,6 +37,10 @@
     {
       "source": "/articles/i-❤%EF%B8%8F-loaders/",
       "destination": "/articles/i-love-loaders/"
+    },
+    {
+      "source": "/contact",
+      "destination": "/"
     }
   ]
 }
