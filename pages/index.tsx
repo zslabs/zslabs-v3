@@ -2,8 +2,8 @@ import fs from 'fs'
 
 import * as React from 'react'
 
-import type { Post } from 'contentlayer/generated'
 import { allPosts } from 'contentlayer/generated'
+import { motion, useAnimation } from 'framer-motion'
 import type { GetStaticProps } from 'next'
 
 import Button from '~components/Button'
@@ -12,10 +12,10 @@ import { List, ListItem } from '~components/List'
 import Prose from '~components/Prose'
 import SectionTitle from '~components/SectionTitle'
 import TextLink from '~components/TextLink'
+import { fadeInUp } from '~helpers/styles'
 import useLayoutAnimationState from '~hooks/useLayoutAnimationState'
 import { getRssXml } from '~lib/rss'
-
-type ReducedPosts = Pick<Post, 'title' | 'date' | 'url'>[]
+import type { ReducedPosts } from '~types/custom'
 
 function Intro() {
   return (
@@ -129,10 +129,10 @@ function Articles({ posts }: { posts: ReducedPosts }) {
 
 function Index({ posts }: { posts: ReducedPosts }) {
   const done = useLayoutAnimationState((state) => state.done)
+  const indexControls = useAnimation()
 
   const pageAnimation = React.useCallback(async () => {
-    // eslint-disable-next-line no-console
-    console.log('do index page animation')
+    indexControls.start('onscreen')
   }, [])
 
   React.useEffect(() => {
@@ -142,11 +142,16 @@ function Index({ posts }: { posts: ReducedPosts }) {
   }, [done, pageAnimation])
 
   return (
-    <div className="space-y-12 md:space-y-16">
+    <motion.div
+      className="space-y-12 md:space-y-16"
+      initial="offscreen"
+      variants={fadeInUp}
+      animate={indexControls}
+    >
       <Intro />
       <Projects />
       <Articles posts={posts} />
-    </div>
+    </motion.div>
   )
 }
 
@@ -170,7 +175,16 @@ export const getStaticProps: GetStaticProps = async () => {
 
   fs.writeFileSync('./public/rss.xml', rss)
 
+  const postsForPage = reducedPosts.splice(0, 3).map((post) => ({
+    ...post,
+    date: new Date(post.date).toLocaleDateString('en-us', {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric',
+    }),
+  }))
+
   return {
-    props: { posts: reducedPosts },
+    props: { posts: postsForPage },
   }
 }

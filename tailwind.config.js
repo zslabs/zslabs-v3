@@ -46,7 +46,7 @@ module.exports = {
       transparent: 'transparent',
       current: 'currentColor',
       overlay: {
-        1: 'var(--overlay1)',
+        8: 'var(--overlay8)',
       },
       primary: {
         1: 'var(--blue1)',

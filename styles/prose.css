@@ -30,6 +30,7 @@
   h5 {
     font-weight: theme('fontWeight.semibold');
     font-size: theme('fontSize.lg');
+    color: theme('colors.slate.12');
   }
 
   * + h2,
@@ -83,11 +84,12 @@
     background: theme('colors.slate.9');
     border-radius: theme('borderRadius.full');
 
-    @apply ring-2 ring-slate-6 md:top-3;
+    @apply ring-2 ring-slate-6;
   }
 
   code {
-    background: theme('colors.slate.2');
+    color: theme('colors.slate.12');
+    background: theme('colors.overlay.8');
     padding-inline: theme('spacing.1');
     padding-block: theme('spacing.[0.5]');
     border-radius: theme('borderRadius.lg');

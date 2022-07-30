@@ -1,9 +1,12 @@
 import * as React from 'react'
 
+import { motion } from 'framer-motion'
+
 import Icon from './Icon'
 import Prose from './Prose'
 import TextLink from './TextLink'
 
+import { fadeInUp, viewportInViewOptions } from '~helpers/styles'
 import type { IconName } from '~icons/build/types'
 
 export function List({ children }: { children: React.ReactNode }) {
@@ -24,7 +27,13 @@ export function ListItem({
   icon?: IconName
 }) {
   return (
-    <li className="flex gap-4">
+    <motion.li
+      className="flex gap-4"
+      initial="offscreen"
+      whileInView="onscreen"
+      variants={fadeInUp}
+      viewport={viewportInViewOptions}
+    >
       {icon && (
         <div className="relative top-1">
           <Icon name={icon} />
@@ -51,7 +60,7 @@ export function ListItem({
           )}
         </div>
         <div>
-          <Prose>{children}</Prose>
+          {children && <Prose>{children}</Prose>}
           {meta && (
             <div className="mt-2 font-mono text-sm uppercase text-slate-12">
               {meta}
@@ -59,6 +68,6 @@ export function ListItem({
           )}
         </div>
       </div>
-    </li>
+    </motion.li>
   )
 }

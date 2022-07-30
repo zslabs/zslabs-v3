@@ -8,7 +8,7 @@
 
 @layer base {
   :root {
-    --overlay1: rgba(0, 0, 0, 0);
+    --overlay8: hsla(0, 0%, 0%, 0.22);
 
     --blue1: hsl(206 100% 99.2%);
     --blue2: hsl(210 100% 98%);
