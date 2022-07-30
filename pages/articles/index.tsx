@@ -3,6 +3,7 @@ import * as React from 'react'
 import { allPosts } from 'contentlayer/generated'
 import type { GetStaticProps } from 'next'
 
+import { MotionHeader, MotionMain } from '~components/ContentWrappers'
 import { List, ListItem } from '~components/List'
 import SectionTitle from '~components/SectionTitle'
 import type { ReducedPosts } from '~types/custom'
@@ -10,19 +11,23 @@ import type { ReducedPosts } from '~types/custom'
 function Articles({ posts }: { posts: ReducedPosts }) {
   return (
     <section id="articles">
-      <SectionTitle>Articles</SectionTitle>
-      <List>
-        {posts.map((post) => (
-          <ListItem
-            key={post.url}
-            label={post.title}
-            href={post.url}
-            meta={post.date}
-          >
-            Test stuff
-          </ListItem>
-        ))}
-      </List>
+      <MotionHeader>
+        <SectionTitle>Articles</SectionTitle>
+      </MotionHeader>
+      <MotionMain>
+        <List>
+          {posts.map((post) => (
+            <ListItem
+              key={post.url}
+              label={post.title}
+              href={post.url}
+              meta={post.date}
+            >
+              Test stuff
+            </ListItem>
+          ))}
+        </List>
+      </MotionMain>
     </section>
   )
 }

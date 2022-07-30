@@ -6,6 +6,7 @@ import type { MDX } from 'contentlayer/core'
 import { bundleMDX } from 'mdx-bundler'
 import type { GetStaticProps, NextPage } from 'next'
 
+import { MotionHeader, MotionMain } from '~components/ContentWrappers'
 import MDXContent from '~components/MDXContent'
 import SectionTitle from '~components/SectionTitle'
 import SEO from '~components/SEO'
@@ -18,10 +19,12 @@ const Privacy: NextPage<PrivacyProps> = ({ content }) => {
   return (
     <>
       <SEO title="Privacy" />
-      <>
-        <SectionTitle>Privacy</SectionTitle>
+      <MotionHeader>
+        <SectionTitle>Terms</SectionTitle>
+      </MotionHeader>
+      <MotionMain>
         <MDXContent content={content} />
-      </>
+      </MotionMain>
     </>
   )
 }

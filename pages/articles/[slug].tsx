@@ -1,16 +1,11 @@
 import type { Post } from 'contentlayer/generated'
 import { allPosts } from 'contentlayer/generated'
-import { motion } from 'framer-motion'
 import type { GetStaticProps, GetStaticPaths } from 'next'
 
+import { MotionHeader, MotionMain } from '~components/ContentWrappers'
 import MDXContent from '~components/MDXContent'
 import SectionTitle from '~components/SectionTitle'
 import SEO from '~components/SEO'
-import {
-  fadeInAnimate,
-  fadeInDownInitial,
-  fadeInUpInitial,
-} from '~helpers/styles'
 
 interface PostSingleProps {
   post: Post
@@ -22,15 +17,15 @@ export default function PostSingle({ post }: PostSingleProps) {
       <SEO title={post.title} />
 
       <article>
-        <motion.header initial={fadeInDownInitial} animate={fadeInAnimate}>
+        <MotionHeader>
           <SectionTitle>{post.title}</SectionTitle>
-        </motion.header>
-        <motion.div initial={fadeInUpInitial} animate={fadeInAnimate}>
+        </MotionHeader>
+        <MotionMain>
           <MDXContent content={post.body} />
           <div className="mt-12 font-mono text-sm uppercase text-slate-12">
             Published {post.date}
           </div>
-        </motion.div>
+        </MotionMain>
       </article>
     </>
   )

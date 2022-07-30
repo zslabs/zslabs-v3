@@ -1,29 +1,24 @@
 import * as React from 'react'
 
-import { motion } from 'framer-motion'
 import type { NextPage } from 'next'
 
+import { MotionHeader, MotionMain } from '~components/ContentWrappers'
 import Icon from '~components/Icon'
 import { List, ListItem } from '~components/List'
 import SectionTitle from '~components/SectionTitle'
 import SEO from '~components/SEO'
 import TextLink from '~components/TextLink'
 import Tooltip from '~components/Tooltip'
-import {
-  fadeInAnimate,
-  fadeInDownInitial,
-  fadeInUpInitial,
-} from '~helpers/styles'
 
 const Experience: NextPage = () => {
   return (
     <>
       <SEO title="Experience" />
 
-      <motion.header initial={fadeInDownInitial} animate={fadeInAnimate}>
+      <MotionHeader>
         <SectionTitle>Experience</SectionTitle>
-      </motion.header>
-      <motion.main initial={fadeInUpInitial} animate={fadeInAnimate}>
+      </MotionHeader>
+      <MotionMain>
         <List>
           <ListItem
             label="Slack"
@@ -67,7 +62,7 @@ const Experience: NextPage = () => {
             </TextLink>
           </Tooltip>
         </div>
-      </motion.main>
+      </MotionMain>
     </>
   )
 }
