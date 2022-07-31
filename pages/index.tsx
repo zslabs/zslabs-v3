@@ -50,6 +50,11 @@ function Intro() {
             Experience
           </Button>
         </TextLink>
+        <TextLink href="/uses">
+          <Button as="div" variation="default">
+            Uses
+          </Button>
+        </TextLink>
       </div>
     </section>
   )

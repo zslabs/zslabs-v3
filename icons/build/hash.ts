@@ -1,1 +1,1 @@
-export const hash = 'hao';
+export const hash = 'xif';
