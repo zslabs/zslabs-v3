@@ -115,7 +115,7 @@ function Articles({ posts }: { posts: ReducedPosts }) {
             href={post.url}
             meta={post.date}
           >
-            Test stuff
+            {post.excerpt || null}
           </ListItem>
         ))}
       </List>
@@ -170,6 +170,7 @@ export const getStaticProps: GetStaticProps = async () => {
       title: post.title,
       date: post.date,
       url: post.url,
+      excerpt: post.excerpt,
     }
   })
 
@@ -188,6 +189,6 @@ export const getStaticProps: GetStaticProps = async () => {
   }))
 
   return {
-    props: { posts: postsForPage },
+    props: { posts: JSON.parse(JSON.stringify(postsForPage)) },
   }
 }

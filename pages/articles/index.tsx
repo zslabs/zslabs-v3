@@ -23,7 +23,7 @@ function Articles({ posts }: { posts: ReducedPosts }) {
               href={post.url}
               meta={post.date}
             >
-              Test stuff
+              {post.excerpt || null}
             </ListItem>
           ))}
         </List>
@@ -48,10 +48,11 @@ export const getStaticProps: GetStaticProps = async () => {
         day: 'numeric',
       }),
       url: post.url,
+      excerpt: post.excerpt,
     }
   })
 
   return {
-    props: { posts: reducedPosts },
+    props: { posts: JSON.parse(JSON.stringify(reducedPosts)) },
   }
 }

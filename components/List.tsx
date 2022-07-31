@@ -22,7 +22,7 @@ export function ListItem({
 }: {
   label: React.ReactNode
   meta?: string
-  children: React.ReactNode
+  children?: React.ReactNode
   href?: string
   icon?: IconName
 }) {

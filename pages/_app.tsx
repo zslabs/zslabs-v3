@@ -26,7 +26,7 @@ Router.events.on('routeChangeComplete', (url) => {
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <Tooltip.Provider>
+    <Tooltip.Provider delayDuration={250}>
       <MotionConfig transition={spring}>
         <DefaultSeo {...SEO} />
         <BaseLayout>

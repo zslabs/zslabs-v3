@@ -190,6 +190,35 @@ module.exports = {
       '9xl': ['8rem', { lineHeight: '1', letterSpacing: dynamicTracking(8) }],
     },
     extend: {
+      animation: {
+        // Tooltip
+        'slide-up-fade': 'slide-up-fade 0.25s cubic-bezier(0.16, 1, 0.3, 1)',
+        'slide-right-fade':
+          'slide-right-fade 0.25s cubic-bezier(0.16, 1, 0.3, 1)',
+        'slide-down-fade':
+          'slide-down-fade 0.25s cubic-bezier(0.16, 1, 0.3, 1)',
+        'slide-left-fade':
+          'slide-left-fade 0.25s cubic-bezier(0.16, 1, 0.3, 1)',
+      },
+      keyframes: {
+        // Tooltip
+        'slide-up-fade': {
+          '0%': { opacity: 0, transform: 'translateY(0.25rem)' },
+          '100%': { opacity: 1, transform: 'translateY(0)' },
+        },
+        'slide-right-fade': {
+          '0%': { opacity: 0, transform: 'translateX(-0.25rem)' },
+          '100%': { opacity: 1, transform: 'translateX(0)' },
+        },
+        'slide-down-fade': {
+          '0%': { opacity: 0, transform: 'translateY(-0.25rem)' },
+          '100%': { opacity: 1, transform: 'translateY(0)' },
+        },
+        'slide-left-fade': {
+          '0%': { opacity: 0, transform: 'translateX(0.25rem)' },
+          '100%': { opacity: 1, transform: 'translateX(0)' },
+        },
+      },
       boxShadow: {
         button:
           '-15px 0 30px -10px var(--tomato7), 0 0 30px -10px var(--blue7), 15px 0 30px -10px var(--violet7)',
@@ -209,5 +238,10 @@ module.exports = {
       },
     },
   },
-  plugins: [lineClamp, patterns, utilities],
+  plugins: [
+    lineClamp,
+    patterns,
+    utilities,
+    require('tailwindcss-radix')({ variantPrefix: 'rdx' }),
+  ],
 }

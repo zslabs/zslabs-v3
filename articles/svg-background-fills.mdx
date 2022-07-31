@@ -1,7 +1,7 @@
 ---
 title: Modifying SVG background fills
 date: 2014/09/29
-dateModified: 2019/02/22
+excerpt: LESS-driven improvements for once static assets.
 ---
 
 Working with generated SVG-sprites provide access to individual symbols like so:
@@ -17,7 +17,7 @@ Since the sprites are added statically within the document; we get the benefit o
 As with most things I dive into with too much optimism - I ran into a snag. Inline SVGs work great, but when specifying a specific SVG as a background, I ran into a couple of issues:
 
 1. You can't specify `xlink:href` attributes within CSS; so I'd need to reference an individual SVG - no biggy.
-1. You can't modify the fill color the same as you would an icon font (with a simple `color` attribute).
+2. You can't modify the fill color the same as you would an icon font (with a simple `color` attribute).
 
 Aside from the first; which I could deal with, not being able to modify the fill color of a SVG specified as a background-image seemed like a deal-breaker to me. Here's a few solutions to the issue.
 
