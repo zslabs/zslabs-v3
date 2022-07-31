@@ -26,6 +26,9 @@ const patterns = plugin(({ addUtilities }) => {
     '.ooorganize': {
       backgroundImage: "url('/media/ooorganize-bg.svg')",
     },
+    '.gggyrate': {
+      backgroundImage: "url('/media/gggyrate.svg')",
+    },
   })
 })
 
