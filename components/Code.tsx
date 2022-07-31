@@ -55,7 +55,7 @@ export default function Code({ codeString, language }: CodeProps) {
               )}
             </div>
           </header>
-          <aside className="max-h-120 overflow-auto overscroll-contain bg-overlay-8 p-4">
+          <aside className="max-h-120 overflow-auto overscroll-contain rounded-b-xl bg-overlay-8 p-4">
             <pre className={className}>
               {tokens.map((line, i) => {
                 const lineKey = `line-${i}`
