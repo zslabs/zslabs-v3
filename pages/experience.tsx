@@ -23,6 +23,7 @@ const Experience: NextPage = () => {
           <ListItem
             label="Slack"
             meta="Senior software engineer :: 05/2021 - current"
+            icon="slack"
           >
             I'm part of the design infrastructure team, building tools to help
             designers and engineers collaborate more efficiently.
@@ -30,6 +31,7 @@ const Experience: NextPage = () => {
           <ListItem
             label="Gremlin"
             meta="Senior software engineer :: 09/2018 - 05/2021"
+            icon="gremlin"
           >
             Revamped their marketing platform, alongside creating a
             component-library used throughout their ecosystem. Lead technical
@@ -39,6 +41,7 @@ const Experience: NextPage = () => {
           <ListItem
             label="Rhinogram"
             meta="Senior UI Engineer :: 01/2017 - 08/2018"
+            icon="rhinogram"
           >
             Managed a React-powered styleguide that in-turn was integrated into
             the flagship application that helps both physicians and patients
@@ -47,6 +50,7 @@ const Experience: NextPage = () => {
           <ListItem
             label="DigitalOcean"
             meta="UI Engineer :: 01/2016 - 01/2017"
+            icon="digitalocean"
           >
             Lead development efforts on creating an internal framework used to
             power the main website and ongoing brand initiatives. Implemented
@@ -55,7 +59,7 @@ const Experience: NextPage = () => {
           </ListItem>
         </List>
 
-        <div className="mt-6">
+        <div className="mt-12 text-xl">
           <Tooltip content="LinkedIn">
             <TextLink href="https://www.linkedin.com/in/zachschnackel/">
               <Icon name="more" />

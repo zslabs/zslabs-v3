@@ -111,7 +111,7 @@ function Articles({ posts }: { posts: ReducedPosts }) {
           </ListItem>
         ))}
       </List>
-      <div className="mt-6">
+      <div className="mt-12 text-xl">
         <Tooltip content="More articles">
           <TextLink href="/articles">
             <Icon name="more" />

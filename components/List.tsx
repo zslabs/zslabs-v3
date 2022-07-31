@@ -35,7 +35,7 @@ export function ListItem({
       viewport={viewportInViewOptions}
     >
       {icon && (
-        <div className="relative top-1">
+        <div className="relative top-0.5 text-xl">
           <Icon name={icon} />
         </div>
       )}
