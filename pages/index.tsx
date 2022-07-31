@@ -44,7 +44,7 @@ function Intro() {
           </span>
         </p>
       </Prose>
-      <div className="mt-6 flex gap-4">
+      <div className="mt-6 flex justify-between gap-4">
         <TextLink href="/experience">
           <Button as="div" variation="contrast">
             Experience

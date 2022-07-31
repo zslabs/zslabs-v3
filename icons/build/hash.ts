@@ -1,1 +1,1 @@
-export const hash = 'xif';
+export const hash = 'h0k';
