@@ -11,6 +11,7 @@ import Image from 'next/image'
 import { useRouter } from 'next/router'
 
 import Icon from '~components/Icon'
+import Prose from '~components/Prose'
 import TextLink from '~components/TextLink'
 import Tooltip from '~components/Tooltip'
 import useLayoutAnimationState from '~hooks/useLayoutAnimationState'
@@ -162,10 +163,19 @@ const BaseLayout: React.FC<ChildrenOnlyProps> = ({ children }) => {
           initial={runAnimation ? 'hidden' : false}
           className="mt-12 text-center text-sm text-slate-11 md:mt-16"
         >
-          Copyright &copy; {new Date().getFullYear()} Zach Schnackel{' '}
-          <span className="text-slate-12">
-            <Icon name="peace" inline />
-          </span>
+          <p className="mb-1">
+            Copyright &copy; {new Date().getFullYear()} Zach Schnackel{' '}
+            <span className="text-slate-12">
+              <Icon name="peace" inline />
+            </span>
+          </p>
+          <Prose>
+            <div className="flex justify-center gap-2">
+              <TextLink href="mailto:info@zslabs.com">Contact</TextLink> ::{' '}
+              <TextLink href="/privacy">Privacy</TextLink> ::{' '}
+              <TextLink href="/terms">Terms</TextLink>
+            </div>
+          </Prose>
         </motion.footer>
       </div>
     </>
