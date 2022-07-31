@@ -61,25 +61,12 @@ function Projects() {
       <SectionTitle>Projects</SectionTitle>
       <List>
         <ListItem label="Design tokens" icon="tokens" meta="Internal">
-          Build tool that works alongside{' '}
-          <TextLink href="https://www.figma.com/community/plugin/843461159747178978/Figma-Tokens">
-            Figma Tokens
-          </TextLink>{' '}
-          and{' '}
-          <TextLink href="https://amzn.github.io/style-dictionary/">
-            Style Dictionary
-          </TextLink>{' '}
-          to create a{' '}
-          <TextLink href="https://tailwindcss.com/">Tailwind CSS</TextLink>{' '}
-          driven system that scales to desktop, iOS, and Android.
+          Build tool that uses Figma design primitives to scale across desktop,
+          iOS, and Android.
         </ListItem>
         <ListItem label="Icon automation library" icon="icons" meta="Internal">
-          Build tool that integrates with{' '}
-          <TextLink href="https://www.figma.com/developers/api">
-            Figma API
-          </TextLink>{' '}
-          to extract and create SVG icons for use across desktop, iOS, and
-          Android.
+          Build tool that integrates with Figma API to extract and create SVG
+          icons for use across desktop, iOS, and Android.
         </ListItem>
         <ListItem
           label="List"
