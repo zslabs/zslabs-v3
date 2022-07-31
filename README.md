@@ -1,12 +1,12 @@
 ## Introduction
 
-Portfolio site for myself. Built with [Next.js](https://nextjs.org).
+Portfolio site for myself. Built with [Next.js](https://nextjs.org) and [Tailwind CSS](https://tailwindcss.com).
 
 ## Color scale
 
-https://www.radix-ui.com/docs/colors/palette-composition/understanding-the-scale
+[Radix Colors](https://www.radix-ui.com/docs/colors/palette-composition/understanding-the-scale)
 
-### Step : Use Case
+**Step : Use Case**
 
 1 : App background<br />
 2 : Subtle background<br />
@@ -23,4 +23,6 @@ https://www.radix-ui.com/docs/colors/palette-composition/understanding-the-scale
 
 ---
 
-Patterns from https://fffuel.co
+Patterns from [fffuel](https://fffuel.co)
+
+Icons are a mix of self-made, [Iconoir](https://iconoir.com/), and [Lucide](https://lucide.dev)
