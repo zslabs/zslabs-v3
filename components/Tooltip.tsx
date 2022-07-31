@@ -23,7 +23,7 @@ const Tooltip = React.forwardRef<HTMLButtonElement, TooltipProps>(
             align={align}
             sideOffset={2}
             className={ctl(
-              `z-50 max-w-[240px] rounded-lg bg-overlay-8 py-2 px-3 text-center text-sm text-slate-12`
+              `z-50 max-w-[240px] rounded-lg bg-overlay-11 py-2 px-3 text-center text-sm text-slate-12`
             )}
           >
             {content}

@@ -1,7 +1,6 @@
-import type { State } from 'zustand'
 import create from 'zustand'
 
-interface LayoutAnimationState extends State {
+interface LayoutAnimationState {
   done: boolean
   setDone: () => void
 }

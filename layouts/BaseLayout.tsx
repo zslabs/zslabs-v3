@@ -99,7 +99,7 @@ const BaseLayout: React.FC<ChildrenOnlyProps> = ({ children }) => {
             controls={controls}
             custom={1}
           >
-            <TextLink href="/" className="text-3xl">
+            <TextLink href="/" aria-label="Home" className="text-3xl">
               <Icon name="logo" />
             </TextLink>
           </HeaderItemWrapper>

@@ -23,7 +23,7 @@ export default function PostSingle({ post }: PostSingleProps) {
         <MotionMain>
           <MDXContent content={post.body} />
           <div className="mt-12 font-mono text-sm uppercase text-slate-12">
-            Published {post.date}
+            :: Published {post.date} ::
           </div>
         </MotionMain>
       </article>

@@ -8,7 +8,18 @@
 
 @layer base {
   :root {
-    --overlay8: hsla(0, 0%, 0%, 0.22);
+    --blackA1: hsla(0, 0%, 0%, 0.012);
+    --blackA2: hsla(0, 0%, 0%, 0.027);
+    --blackA3: hsla(0, 0%, 0%, 0.047);
+    --blackA4: hsla(0, 0%, 0%, 0.071);
+    --blackA5: hsla(0, 0%, 0%, 0.09);
+    --blackA6: hsla(0, 0%, 0%, 0.114);
+    --blackA7: hsla(0, 0%, 0%, 0.141);
+    --blackA8: hsla(0, 0%, 0%, 0.22);
+    --blackA9: hsla(0, 0%, 0%, 0.439);
+    --blackA10: hsla(0, 0%, 0%, 0.478);
+    --blackA11: hsla(0, 0%, 0%, 0.565);
+    --blackA12: hsla(0, 0%, 0%, 0.91);
 
     --blue1: hsl(212 35% 9.2%);
     --blue2: hsl(216 50% 11.8%);
@@ -48,6 +59,32 @@
     --tomato10: hsl(10 81.7% 59%);
     --tomato11: hsl(10 85% 62.8%);
     --tomato12: hsl(10 89% 96%);
+
+    --green1: hsl(146, 30%, 7.4%);
+    --green2: hsl(155, 44.2%, 8.4%);
+    --green3: hsl(155, 46.7%, 10.9%);
+    --green4: hsl(154, 48.4%, 12.9%);
+    --green5: hsl(154, 49.7%, 14.9%);
+    --green6: hsl(154, 50.9%, 17.6%);
+    --green7: hsl(153, 51.8%, 21.8%);
+    --green8: hsl(151, 51.7%, 28.4%);
+    --green9: hsl(151, 55%, 41.5%);
+    --green10: hsl(151, 49.3%, 46.5%);
+    --green11: hsl(151, 50%, 53.2%);
+    --green12: hsl(137, 72%, 94%);
+
+    --yellow1: hsl(45, 100%, 5.5%);
+    --yellow2: hsl(46, 100%, 6.7%);
+    --yellow3: hsl(45, 100%, 8.7%);
+    --yellow4: hsl(45, 100%, 10.4%);
+    --yellow5: hsl(47, 100%, 12.1%);
+    --yellow6: hsl(49, 100%, 14.3%);
+    --yellow7: hsl(49, 90.3%, 18.4%);
+    --yellow8: hsl(50, 100%, 22%);
+    --yellow9: hsl(53, 92%, 50%);
+    --yellow10: hsl(54, 100%, 68%);
+    --yellow11: hsl(48, 100%, 47%);
+    --yellow12: hsl(53, 100%, 91%);
 
     --slate1: hsl(200 7% 8.8%);
     --slate2: hsl(195 7.1% 11%);

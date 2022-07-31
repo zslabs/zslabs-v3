@@ -29,15 +29,6 @@ const patterns = plugin(({ addUtilities }) => {
   })
 })
 
-const clips = plugin(({ addUtilities }) => {
-  addUtilities({
-    '.code-clip': {
-      maskImage:
-        'radial-gradient(circle 1rem at 0.5rem 0.5rem, transparent 1rem, #000 0)',
-    },
-  })
-})
-
 const utilities = plugin(({ addVariant }) => {
   addVariant('hocus', ['&:hover', '&:focus'])
   addVariant('group-hocus', ['.group:hover &', '.group:focus &'])
@@ -55,7 +46,18 @@ module.exports = {
       transparent: 'transparent',
       current: 'currentColor',
       overlay: {
-        8: 'var(--overlay8)',
+        1: 'var(--blackA1)',
+        2: 'var(--blackA2)',
+        3: 'var(--blackA3)',
+        4: 'var(--blackA4)',
+        5: 'var(--blackA5)',
+        6: 'var(--blackA6)',
+        7: 'var(--blackA7)',
+        8: 'var(--blackA8)',
+        9: 'var(--blackA9)',
+        10: 'var(--blackA10)',
+        11: 'var(--blackA11)',
+        12: 'var(--blackA12)',
       },
       primary: {
         1: 'var(--blue1)',
@@ -85,6 +87,20 @@ module.exports = {
         11: 'var(--violet11)',
         12: 'var(--violet12)',
       },
+      warning: {
+        1: 'var(--yellow1)',
+        2: 'var(--yellow2)',
+        3: 'var(--yellow3)',
+        4: 'var(--yellow4)',
+        5: 'var(--yellow5)',
+        6: 'var(--yellow6)',
+        7: 'var(--yellow7)',
+        8: 'var(--yellow8)',
+        9: 'var(--yellow9)',
+        10: 'var(--yellow10)',
+        11: 'var(--yellow11)',
+        12: 'var(--yellow12)',
+      },
       danger: {
         1: 'var(--tomato1)',
         2: 'var(--tomato2)',
@@ -98,6 +114,20 @@ module.exports = {
         10: 'var(--tomato10)',
         11: 'var(--tomato11)',
         12: 'var(--tomato12)',
+      },
+      success: {
+        1: 'var(--green1)',
+        2: 'var(--green2)',
+        3: 'var(--green3)',
+        4: 'var(--green4)',
+        5: 'var(--green5)',
+        6: 'var(--green6)',
+        7: 'var(--green7)',
+        8: 'var(--green8)',
+        9: 'var(--green9)',
+        10: 'var(--green10)',
+        11: 'var(--green11)',
+        12: 'var(--green12)',
       },
       slate: {
         1: 'var(--slate1)',
@@ -179,5 +209,5 @@ module.exports = {
       },
     },
   },
-  plugins: [lineClamp, patterns, clips, utilities],
+  plugins: [lineClamp, patterns, utilities],
 }
