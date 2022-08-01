@@ -5,6 +5,7 @@ import type { GetStaticProps } from 'next'
 
 import { MotionHeader, MotionMain } from '~components/ContentWrappers'
 import { List, ListItem } from '~components/List'
+import Prose from '~components/Prose'
 import SectionTitle from '~components/SectionTitle'
 import type { ReducedPosts } from '~types/custom'
 
@@ -15,6 +16,14 @@ function Articles({ posts }: { posts: ReducedPosts }) {
         <SectionTitle>Articles</SectionTitle>
       </MotionHeader>
       <MotionMain>
+        <div className="mb-12">
+          <Prose>
+            <p>
+              Occassionally, I need more than 280 characters to share my
+              thoughts. Here's where you'll find my brain-dumps and ramblings.
+            </p>
+          </Prose>
+        </div>
         <List>
           {posts.map((post) => (
             <ListItem

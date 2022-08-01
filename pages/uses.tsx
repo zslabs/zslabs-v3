@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 
 import { MotionHeader, MotionMain } from '~components/ContentWrappers'
 import { List, ListItem } from '~components/List'
+import Prose from '~components/Prose'
 import SectionTitle from '~components/SectionTitle'
 import SEO from '~components/SEO'
 
@@ -109,8 +110,14 @@ const Uses: NextPage = () => {
         <SectionTitle>Uses</SectionTitle>
       </MotionHeader>
       <MotionMain>
-        A collection of the things I use on my personal device(s) that make me
-        look smarter than I actually am.
+        <div className="mb-12">
+          <Prose>
+            <p>
+              A collection of the things I use on my personal device(s) that
+              make me look smarter than I actually am.
+            </p>
+          </Prose>
+        </div>
         <div className="my-12 space-y-12 md:space-y-16">
           <Desktop />
           <Hardware />

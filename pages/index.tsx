@@ -24,8 +24,8 @@ function Intro() {
       <SectionTitle>Zach Schnackel</SectionTitle>
       <Prose>
         <p>
-          I'm a UI developer based in Boone, NC. My background involves pushing
-          the limits of what we can build on the backend and how we can
+          I'm a Software Engineer based in Boone, NC. My background involves
+          pushing the limits of what we can build on the backend and how we can
           experience it on the frontend.
         </p>
         <p>
@@ -44,7 +44,7 @@ function Intro() {
           </span>
         </p>
       </Prose>
-      <div className="mt-6 flex justify-between gap-4">
+      <div className="mt-8 flex justify-between gap-4">
         <TextLink href="/experience">
           <Button as="div" variation="contrast">
             Experience

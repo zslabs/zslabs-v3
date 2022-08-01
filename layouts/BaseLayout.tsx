@@ -92,7 +92,7 @@ const BaseLayout: React.FC<ChildrenOnlyProps> = ({ children }) => {
     <>
       <div className="pointer-events-none fixed inset-0 -z-1 mix-blend-color-dodge nnnoise" />
       <div className="pointer-events-none fixed inset-0 -z-1 bg-center opacity-30 mix-blend-color-dodge ooorganize" />
-      <div className="pointer-events-none fixed inset-0 -z-1 translate-y-1/2 bg-center bg-no-repeat opacity-20 gggyrate" />
+      <div className="pointer-events-none fixed inset-0 -z-1 translate-y-1/2 bg-center bg-no-repeat opacity-30 gggyrate" />
 
       <div className="mx-auto max-w-[calc(65ch+2rem)] px-4 py-8 md:py-12">
         <header className="mb-12 flex items-center justify-between gap-6 md:mb-16">
