@@ -1,6 +1,9 @@
 {
-	"prefix": "uh4i",
+	"prefix": "ol2",
 	"icons": {
+		"1password": {
+			"body": "<path fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M14 12a4 4 0 1 0 8 0 4 4 0 0 0-8 0Zm0 0H2v3m4-3v3\"/>"
+		},
 		"arrow-down": {
 			"body": "<path fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M12.25 5.5V18m0 0-6-6m6 6 6-6\"/>"
 		},

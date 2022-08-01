@@ -65,6 +65,9 @@ function Desktop() {
         >
           Handles multiple Google-based email accounts like a champ.
         </ListItem>
+        <ListItem icon="1password" label="1Password">
+          Synced across all my devices; never had an issue.
+        </ListItem>
         <ListItem icon="reminders" label="Apple Reminders">
           I've tried a few different apps, but the iCloud integration and
           feature-set has always been enough for me.
