@@ -18,9 +18,9 @@ interface TermsProps {
 const Terms: NextPage<TermsProps> = ({ content }) => {
   return (
     <>
-      <SEO title="Terms" />
+      <SEO title="Terms & conditions" />
       <MotionHeader>
-        <SectionTitle>Terms</SectionTitle>
+        <SectionTitle>Terms & conditions</SectionTitle>
       </MotionHeader>
       <MotionMain>
         <MDXContent content={content} />

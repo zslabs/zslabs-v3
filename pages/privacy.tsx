@@ -18,9 +18,9 @@ interface PrivacyProps {
 const Privacy: NextPage<PrivacyProps> = ({ content }) => {
   return (
     <>
-      <SEO title="Privacy" />
+      <SEO title="Privacy policy" />
       <MotionHeader>
-        <SectionTitle>Terms</SectionTitle>
+        <SectionTitle>Privacy policy</SectionTitle>
       </MotionHeader>
       <MotionMain>
         <MDXContent content={content} />
