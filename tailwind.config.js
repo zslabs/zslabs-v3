@@ -223,10 +223,10 @@ module.exports = {
         },
       },
       boxShadow: {
-        button:
-          '-15px 0 30px -5px var(--tomato7), 0 0 30px -5px var(--blue7), 15px 0 30px -5px var(--violet7)',
+        'button-contrast':
+          '-15px 0 30px -5px var(--tomato5), 0 0 30px -5px var(--blue5), 15px 0 30px -5px var(--violet5)',
         'button-default':
-          '-15px 0 30px -5px var(--violet4), 0 0 30px -5px var(--blue4), 15px 0 30px -5px var(--green4)',
+          '-15px 0 30px -5px var(--violet5), 0 0 30px -5px var(--blue5), 15px 0 30px -5px var(--green5)',
       },
       fontFamily: {
         sans: ['ZS Sans', ...defaultTheme.fontFamily.sans],

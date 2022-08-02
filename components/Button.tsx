@@ -33,7 +33,8 @@ function Button<T extends React.ElementType = 'button'>({
             `bg-overlay-8 shadow-button-default hocus:bg-overlay-10`
           }
           ${
-            variation === 'contrast' && 'bg-slate-12 text-slate-1 shadow-button'
+            variation === 'contrast' &&
+            'bg-slate-12 text-slate-1 shadow-button-contrast'
           }
           ${loading && `pointer-events-none opacity-50`}
           ${iconOnly ? 'w-9' : 'px-4'}
