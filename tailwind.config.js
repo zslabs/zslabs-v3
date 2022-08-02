@@ -225,6 +225,8 @@ module.exports = {
       boxShadow: {
         button:
           '-15px 0 30px -5px var(--tomato7), 0 0 30px -5px var(--blue7), 15px 0 30px -5px var(--violet7)',
+        'button-default':
+          '-15px 0 30px -5px var(--violet4), 0 0 30px -5px var(--blue4), 15px 0 30px -5px var(--green4)',
       },
       fontFamily: {
         sans: ['ZS Sans', ...defaultTheme.fontFamily.sans],

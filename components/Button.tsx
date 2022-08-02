@@ -28,7 +28,10 @@ function Button<T extends React.ElementType = 'button'>({
       className={ctl(`
           relative inline-block h-9 overflow-hidden rounded-full text-sm font-semibold duration-150 focus:outline-none
 
-          ${variation === 'default' && `bg-overlay-8 hocus:bg-overlay-10`}
+          ${
+            variation === 'default' &&
+            `bg-overlay-8 shadow-button-default hocus:bg-overlay-10`
+          }
           ${
             variation === 'contrast' && 'bg-slate-12 text-slate-1 shadow-button'
           }

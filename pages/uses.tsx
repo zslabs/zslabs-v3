@@ -108,9 +108,9 @@ function Hardware() {
 const Uses: NextPage = () => {
   return (
     <>
-      <SEO title="Uses" />
+      <SEO title="What I use" />
       <MotionHeader>
-        <SectionTitle>Uses</SectionTitle>
+        <SectionTitle>What I use</SectionTitle>
       </MotionHeader>
       <MotionMain>
         <div className="mb-12">

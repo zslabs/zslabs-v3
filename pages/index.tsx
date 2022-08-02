@@ -50,9 +50,9 @@ function Intro() {
             Experience
           </Button>
         </TextLink>
-        <TextLink href="/uses">
+        <TextLink href="/uses" className="cursor-help">
           <Button as="div" variation="default">
-            Uses
+            What I use
           </Button>
         </TextLink>
       </div>
