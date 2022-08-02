@@ -59,7 +59,7 @@ const Experience: NextPage = () => {
           </ListItem>
         </List>
 
-        <div className="mt-12 w-fit text-xl">
+        <div className="mt-12 ml-1 w-fit text-xl">
           <Tooltip content="LinkedIn">
             <TextLink href="https://www.linkedin.com/in/zachschnackel/">
               <Icon name="more" />

@@ -35,7 +35,7 @@ export function ListItem({
       viewport={viewportInViewOptions}
     >
       {icon && (
-        <div className="relative top-0.5 text-xl">
+        <div className="relative self-start rounded-full bg-overlay-8 p-1 text-xl">
           <Icon name={icon} />
         </div>
       )}
