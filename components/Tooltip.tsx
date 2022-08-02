@@ -37,7 +37,7 @@ const Tooltip = React.forwardRef<HTMLButtonElement, TooltipProps>(
               width={12}
               height={6}
               offset={8}
-              className={ctl(`fill-overlay-8`)}
+              className={ctl(`fill-overlay-11`)}
             />
           </TooltipPrimitive.Content>
         </TooltipPrimitive.Portal>
