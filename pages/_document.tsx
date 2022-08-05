@@ -30,7 +30,7 @@ class MyDocument extends Document {
             type="font/woff2"
             crossOrigin="anonymous"
           />
-          <link rel="icon" href="/media/me.png" />
+          <link rel="icon" href="/media/favicon.png" />
           <Analytics />
           <link
             rel="alternate"
