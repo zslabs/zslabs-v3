@@ -13,10 +13,10 @@ const SEO = {
     description,
     images: [
       {
-        url: 'https://zslabs.com/media/me.png',
+        url: 'https://zslabs.com/media/og.png',
         alt: title,
-        width: 460,
-        height: 460,
+        width: 2400,
+        height: 1200,
       },
     ],
   },
