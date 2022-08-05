@@ -26,7 +26,7 @@ function Button<T extends React.ElementType = 'button'>({
     <Component
       type={Component === 'button' ? 'button' : undefined}
       className={ctl(`
-          relative inline-block h-9 overflow-hidden rounded-full text-sm font-semibold duration-150 focus:outline-none
+          relative inline-block h-9 overflow-hidden rounded-full text-sm font-semibold duration-150 focus:outline-none hocus:scale-105
 
           ${
             variation === 'default' &&
