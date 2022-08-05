@@ -1,4 +1,7 @@
+import * as React from 'react'
+
 import * as TabsPrimitive from '@radix-ui/react-tabs'
+import { AnimateSharedLayout, motion } from 'framer-motion'
 import type { NextPage } from 'next'
 
 import { MotionHeader, MotionMain } from '~components/ContentWrappers'
@@ -111,6 +114,7 @@ const tabs: { title: string; value: string }[] = [
 ]
 
 const Uses: NextPage = () => {
+  const [tab, setTab] = React.useState('desktop')
   return (
     <>
       <SEO title="What I use" />
@@ -126,25 +130,29 @@ const Uses: NextPage = () => {
             </p>
           </Prose>
         </div>
-        <TabsPrimitive.Root defaultValue="desktop">
+        <TabsPrimitive.Root value={tab} onValueChange={setTab}>
           <TabsPrimitive.TabsList
             aria-label="What I use"
             className="mb-8 flex items-center gap-6"
           >
-            {tabs.map(({ title, value }, index) => (
-              <>
-                {index !== 0 && (
-                  <span className="text-lg text-slate-11">::</span>
-                )}
-                <TabsPrimitive.TabsTrigger
-                  key={value}
-                  className="relative text-lg font-semibold text-slate-11 transition-colors before:absolute before:inset-x-0 before:-bottom-0.5 before:h-0.5 before:translate-y-1 before:rounded-full before:bg-gradient-to-r before:from-primary-9 before:to-accent-9 before:opacity-0 before:transition-all hocus:text-slate-12 rdx-state-active:translate-y-0 rdx-state-active:text-slate-12 rdx-state-active:before:opacity-100"
-                  value={value}
-                >
-                  {title}
-                </TabsPrimitive.TabsTrigger>
-              </>
-            ))}
+            <AnimateSharedLayout>
+              {tabs.map(({ title, value }) => (
+                <React.Fragment key={value}>
+                  <TabsPrimitive.TabsTrigger
+                    className="relative text-lg font-semibold text-slate-11 transition-colors hocus:text-slate-12 rdx-state-active:text-slate-12"
+                    value={value}
+                  >
+                    {title}
+                    {value === tab && (
+                      <motion.span
+                        className="absolute inset-x-0 -bottom-1.5 h-0.5 rounded-full bg-gradient-to-r from-primary-9 to-accent-9"
+                        layoutId="underline"
+                      />
+                    )}
+                  </TabsPrimitive.TabsTrigger>
+                </React.Fragment>
+              ))}
+            </AnimateSharedLayout>
           </TabsPrimitive.TabsList>
           <TabsPrimitive.Content value="desktop">
             <Desktop />
