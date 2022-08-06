@@ -1,7 +1,6 @@
 const path = require('path')
 
 const ESLintPlugin = require('eslint-webpack-plugin')
-const withPlugins = require('next-compose-plugins')
 const { withContentlayer } = require('next-contentlayer')
 
 /**
@@ -40,4 +39,14 @@ const nextConfig = {
   },
 }
 
-module.exports = withPlugins([[withContentlayer, {}]], nextConfig)
+module.exports = () => {
+  const plugins = [[withContentlayer, {}]]
+  const config = plugins.reduce(
+    (acc, next) => (Array.isArray(next) ? next[0](acc) : next(acc)),
+    {
+      ...nextConfig,
+    }
+  )
+
+  return config
+}
