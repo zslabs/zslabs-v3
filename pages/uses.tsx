@@ -66,7 +66,7 @@ function Desktop() {
       >
         Handles multiple Google-based email accounts like a champ.
       </ListItem>
-      <ListItem icon="1password" label="1Password">
+      <ListItem icon="1password" label="1Password" href="https://1password.com">
         Synced across all my devices; never had an issue.
       </ListItem>
       <ListItem icon="reminders" label="Apple Reminders">
