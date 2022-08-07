@@ -10,9 +10,10 @@ import Tooltip from './Tooltip'
 interface CodeProps {
   codeString: string
   language: Language
+  meta?: Record<string, string | number | boolean>
 }
 
-export default function Code({ codeString, language }: CodeProps) {
+export default function Code({ codeString, language, meta }: CodeProps) {
   const [isCopied, setCopied] = React.useState(false)
 
   // Reset icon after 3 seconds
@@ -34,10 +35,17 @@ export default function Code({ codeString, language }: CodeProps) {
       {({ className, tokens, getLineProps, getTokenProps }) => (
         <div className="rounded-xl font-mono font-normal tracking-normal">
           <header className="flex items-center justify-between gap-4 rounded-t-xl bg-overlay-11 px-4 py-2">
-            <div className="flex gap-2">
-              <span className="h-3 w-3 rounded-full bg-danger-9" />
-              <span className="h-3 w-3 rounded-full bg-warning-9" />
-              <span className="h-3 w-3 rounded-full bg-success-9" />
+            <div className="flex items-center gap-4">
+              <div className="flex gap-2">
+                <span className="h-3 w-3 rounded-full bg-danger-9" />
+                <span className="h-3 w-3 rounded-full bg-warning-9" />
+                <span className="h-3 w-3 rounded-full bg-success-9" />
+              </div>
+              {meta?.filename && (
+                <div className="font-sans text-sm leading-none tracking-normal">
+                  {meta.filename}
+                </div>
+              )}
             </div>
             <div>
               {isCopied ? (

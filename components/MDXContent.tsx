@@ -71,13 +71,29 @@ const components = {
     const {
       children: {
         // @ts-expect-error MDX generated
-        props: { children, className },
+        props: { children, className, meta },
       },
     } = preProps
+
+    let metaProps: Record<string, string | number | boolean> = {}
+
+    if (meta) {
+      metaProps = meta
+        .split(' ')
+        .reduce(
+          (acc: Record<string, string | number | boolean>, curr: string) => {
+            const [key, value] = curr.split('=')
+
+            return { ...acc, [key]: value }
+          },
+          {}
+        )
+    }
 
     const props = {
       codeString: children.trim(),
       language: className && className.split('-')[1],
+      meta: metaProps,
     }
 
     return (

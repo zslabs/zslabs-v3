@@ -1,4 +1,16 @@
 import { defineDocumentType, makeSource } from 'contentlayer/source-files'
+import { visit } from 'unist-util-visit'
+
+function rehypeMetaAsAttributes() {
+  return (tree) => {
+    visit(tree, 'element', (node) => {
+      if (node.tagName === 'code' && node.data && node.data.meta) {
+        // eslint-disable-next-line no-param-reassign
+        node.properties.meta = node.data.meta
+      }
+    })
+  }
+}
 
 export const Post = defineDocumentType(() => ({
   name: 'Post',
@@ -32,4 +44,5 @@ export const Post = defineDocumentType(() => ({
 export default makeSource({
   contentDirPath: 'articles',
   documentTypes: [Post],
+  mdx: { rehypePlugins: [rehypeMetaAsAttributes] },
 })
