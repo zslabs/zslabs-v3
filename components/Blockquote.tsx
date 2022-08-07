@@ -10,8 +10,8 @@ export type BlockquoteProps = ChildrenOnlyProps &
 const Blockquote: React.FC<BlockquoteProps> = ({ children, ...rest }) => {
   return (
     <blockquote
-      className="my-8 rounded-xl bg-overlay-8 p-4 font-mono"
       {...rest}
+      className="my-8 rounded-xl bg-overlay-8 p-4 font-mono"
     >
       <div className="text-lg">
         <Icon name="quote" />

@@ -25,6 +25,7 @@ function Button<T extends React.ElementType = 'button'>({
   return (
     <Component
       type={Component === 'button' ? 'button' : undefined}
+      {...rest}
       className={ctl(`
           relative inline-block h-9 overflow-hidden rounded-full text-sm font-semibold duration-150 focus:outline-none hocus:scale-105
 
@@ -39,7 +40,6 @@ function Button<T extends React.ElementType = 'button'>({
           ${loading && `pointer-events-none opacity-50`}
           ${iconOnly ? 'w-9' : 'px-4'}
         `)}
-      {...rest}
     >
       <span
         className={ctl(`

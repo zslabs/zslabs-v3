@@ -9,11 +9,11 @@ const AutoLinkHeader: React.FC<
 > = ({ as: Component = 'h1', children, ...rest }) => {
   return (
     <Component
+      {...rest}
       id={slugify((children as string).toString(), {
         lower: true,
         locale: 'en',
       })}
-      {...rest}
     >
       {children}
     </Component>
