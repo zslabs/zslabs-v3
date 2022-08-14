@@ -248,5 +248,6 @@ module.exports = {
     patterns,
     utilities,
     require('tailwindcss-radix')({ variantPrefix: 'rdx' }),
+    require('@thoughtbot/tailwindcss-aria-attributes'),
   ],
 }

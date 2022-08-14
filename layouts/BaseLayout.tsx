@@ -10,6 +10,7 @@ import { motion, useAnimation } from 'framer-motion'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 
+import CommandMenu from '~components/CommandMenu'
 import Icon from '~components/Icon'
 import Prose from '~components/Prose'
 import TextLink from '~components/TextLink'
@@ -95,6 +96,7 @@ const BaseLayout: React.FC<ChildrenOnlyProps> = ({ children }) => {
       <div className="pointer-events-none fixed inset-0 -z-1 translate-y-1/2 translate-x-1/4 bg-right bg-no-repeat opacity-30 gggyrate" />
 
       <div className="mx-auto max-w-[calc(65ch+2rem)] px-4 py-8 md:py-12">
+        <CommandMenu />
         <header className="mb-12 flex items-center justify-between gap-6 md:mb-16">
           <HeaderItemWrapper
             runAnimation={runAnimation}
