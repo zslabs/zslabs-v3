@@ -48,19 +48,19 @@ export default function Code({ codeString, language, meta }: CodeProps) {
               )}
             </div>
             <div>
-              {isCopied ? (
-                <Tooltip content="Copied!">
-                  <Icon name="clipboard-check" />
-                </Tooltip>
-              ) : (
-                <CopyToClipboard text={codeString} onCopy={handleCopy}>
+              <CopyToClipboard text={codeString} onCopy={handleCopy}>
+                {isCopied ? (
+                  <Tooltip content="Copied!">
+                    <Icon name="check" />
+                  </Tooltip>
+                ) : (
                   <button type="button" className="block focus:outline-none">
                     <Tooltip content="Copy snippet">
                       <Icon name="clipboard" />
                     </Tooltip>
                   </button>
-                </CopyToClipboard>
-              )}
+                )}
+              </CopyToClipboard>
             </div>
           </header>
           <aside className="max-h-120 overflow-auto overscroll-contain rounded-b-xl bg-overlay-8 p-4">
