@@ -15,6 +15,7 @@ import Icon from '~components/Icon'
 import Prose from '~components/Prose'
 import TextLink from '~components/TextLink'
 import Tooltip from '~components/Tooltip'
+import useCommandSearchState from '~hooks/useCommandSearchState'
 import useLayoutAnimationState from '~hooks/useLayoutAnimationState'
 import type { ChildrenOnlyProps } from '~types/custom'
 
@@ -74,6 +75,7 @@ const BaseLayout: React.FC<ChildrenOnlyProps> = ({ children }) => {
   const { pathname } = useRouter()
   const controls = useAnimation()
   const setDone = useLayoutAnimationState((state) => state.setDone)
+  const toggle = useCommandSearchState((state) => state.toggle)
 
   const runAnimation = pathname === '/'
 
@@ -96,7 +98,6 @@ const BaseLayout: React.FC<ChildrenOnlyProps> = ({ children }) => {
       <div className="pointer-events-none fixed inset-0 -z-1 translate-y-1/2 translate-x-1/4 bg-right bg-no-repeat opacity-30 gggyrate" />
 
       <div className="mx-auto max-w-[calc(65ch+2rem)] px-4 py-8 md:py-12">
-        <CommandMenu />
         <header className="mb-12 flex items-center justify-between gap-6 md:mb-16">
           <HeaderItemWrapper
             runAnimation={runAnimation}
@@ -114,6 +115,21 @@ const BaseLayout: React.FC<ChildrenOnlyProps> = ({ children }) => {
               controls={controls}
               custom={2}
             >
+              <Tooltip content="Command">
+                <button
+                  type="button"
+                  className="block text-xl text-slate-11 transition-colors hocus:text-slate-12"
+                  onClick={toggle}
+                >
+                  <Icon name="command" />
+                </button>
+              </Tooltip>
+            </HeaderItemWrapper>
+            <HeaderItemWrapper
+              runAnimation={runAnimation}
+              controls={controls}
+              custom={3}
+            >
               <Tooltip content="GitHub">
                 <TextLink
                   href="https://github.com/zslabs"
@@ -126,7 +142,7 @@ const BaseLayout: React.FC<ChildrenOnlyProps> = ({ children }) => {
             <HeaderItemWrapper
               runAnimation={runAnimation}
               controls={controls}
-              custom={3}
+              custom={4}
             >
               <Tooltip content="Twitter">
                 <TextLink
@@ -140,7 +156,7 @@ const BaseLayout: React.FC<ChildrenOnlyProps> = ({ children }) => {
             <HeaderItemWrapper
               runAnimation={runAnimation}
               controls={controls}
-              custom={4}
+              custom={5}
             >
               <Tooltip content="About me">
                 <TextLink href="/#about">
@@ -180,6 +196,7 @@ const BaseLayout: React.FC<ChildrenOnlyProps> = ({ children }) => {
           </Prose>
         </motion.footer>
       </div>
+      <CommandMenu />
     </>
   )
 }
