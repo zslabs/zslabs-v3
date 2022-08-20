@@ -9,6 +9,7 @@ import { List, ListItem } from '~components/List'
 import Prose from '~components/Prose'
 import SectionTitle from '~components/SectionTitle'
 import SEO from '~components/SEO'
+import TextLink from '~components/TextLink'
 
 function Desktop() {
   return (
@@ -80,23 +81,38 @@ function Desktop() {
 function Hardware() {
   return (
     <List>
-      <ListItem icon="mbpro" label="MacBook Pro (15-inch, 2019)">
+      <ListItem
+        href="https://amzn.to/3AuEVVV"
+        icon="mbpro"
+        label="MacBook Pro (15-inch, 2019)"
+      >
         Stuck with the 'ole touch-bar for now, but very much looking forward to
         giving the M2 models a shot.
       </ListItem>
-      <ListItem icon="iphone" label="iPhone 13 Pro">
+      <ListItem
+        href="https://amzn.to/3QXI333"
+        icon="iphone"
+        label="iPhone 13 Pro"
+      >
         I swap for a new model every 2-3 years.
       </ListItem>
       <ListItem icon="monitor" label="Monitors">
-        LG 32UL750-W front and center, with a Dell UltraSharp U2720Q rotated 90º
-        to my left.
+        <TextLink href="https://amzn.to/3K5ZSe9">LG 32UL750-W</TextLink> front
+        and center, with a{' '}
+        <TextLink href="https://amzn.to/3pxBokr">
+          Dell UltraSharp U2720Q
+        </TextLink>{' '}
+        rotated 90º to my left.
       </ListItem>
       <ListItem icon="mouse" label="Logitech MX Masters">
-        Took almost no time to get used to either the keyboard or mouse.
+        Took almost no time to get used to either the{' '}
+        <TextLink href="https://amzn.to/3PCyVzG">keyboard</TextLink> or{' '}
+        <TextLink href="https://amzn.to/3ccyLS8">mouse</TextLink>.
       </ListItem>
-      <ListItem icon="webcam" label="Logitech Brio">
+      <ListItem href="https://amzn.to/3QEn99r" icon="webcam" label="Lumina">
         I'll eventually switch over to Continuity in iOS 16, but this has worked
-        well so far.
+        well so far. I used to use a{' '}
+        <TextLink href="https://amzn.to/3T1SQel">Logitech Brio</TextLink>.
       </ListItem>
     </List>
   )

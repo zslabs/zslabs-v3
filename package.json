@@ -37,7 +37,7 @@
     "@tailwindcss/line-clamp": "0.4.0",
     "@types/fs-extra": "9.0.13",
     "@types/gtag.js": "0.0.10",
-    "@types/node": "18.7.6",
+    "@types/node": "18.7.8",
     "@types/react": "18.0.17",
     "@types/react-copy-to-clipboard": "5.0.4",
     "@typescript-eslint/eslint-plugin": "5.33.1",
@@ -80,7 +80,7 @@
     "tsx": "3.8.2",
     "typescript": "4.7.4",
     "unist-util-visit": "4.1.0",
-    "zustand": "4.0.0"
+    "zustand": "4.1.0"
   },
   "devDependencies": {
     "@svgr/webpack": "6.3.1",
