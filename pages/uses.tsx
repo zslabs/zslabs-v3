@@ -96,6 +96,14 @@ function Hardware() {
       >
         I swap for a new model every 2-3 years.
       </ListItem>
+      <ListItem
+        href="https://amzn.to/3ABcerh"
+        icon="watch"
+        label="Apple Watch Series 7 45mm"
+      >
+        Longtime Fitbit user, but notifications work so much better now. I
+        thought I'd miss the 4-5 days of battery life, but I get a solid 2 days.
+      </ListItem>
       <ListItem icon="monitor" label="Monitors">
         <TextLink href="https://amzn.to/3K5ZSe9">LG 32UL750-W</TextLink> front
         and center, with a{' '}
@@ -113,6 +121,13 @@ function Hardware() {
         I'll eventually switch over to Continuity in iOS 16, but this has worked
         well so far. I used to use a{' '}
         <TextLink href="https://amzn.to/3T1SQel">Logitech Brio</TextLink>.
+      </ListItem>
+      <ListItem
+        href="https://amzn.to/3dGpYIp"
+        icon="stand"
+        label="Rain Design mStand"
+      >
+        Had this since 2016 and still looks/works great.
       </ListItem>
     </List>
   )
