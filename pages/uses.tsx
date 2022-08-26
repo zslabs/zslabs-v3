@@ -123,6 +123,14 @@ function Hardware() {
         <TextLink href="https://amzn.to/3T1SQel">Logitech Brio</TextLink>.
       </ListItem>
       <ListItem
+        href="https://amzn.to/3TnaoSf"
+        icon="dock"
+        label="CalDigit TS3 Plus Dock"
+      >
+        Having a single cord (with power) that connects all my devices to my
+        laptop is great!
+      </ListItem>
+      <ListItem
         href="https://amzn.to/3dGpYIp"
         icon="stand"
         label="Rain Design mStand"
