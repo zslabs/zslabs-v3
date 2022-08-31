@@ -84,5 +84,11 @@
     padding-inline: theme('spacing.1');
     padding-block: theme('spacing.[0.5]');
     border-radius: theme('borderRadius.lg');
+    position: relative;
+
+    &::before,
+    &::after {
+      content: '`';
+    }
   }
 }
