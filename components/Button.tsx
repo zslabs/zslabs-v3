@@ -43,9 +43,7 @@ function Button<T extends React.ElementType = 'button'>({
     >
       <span
         className={ctl(`
-            relative z-10 grid h-full grid-flow-col place-items-center gap-2 whitespace-nowrap
-
-            ${iconOnly ? 'auto-cols-auto' : 'auto-cols-min'}
+            relative z-10 flex h-full place-content-center place-items-center gap-2 whitespace-nowrap
           `)}
       >
         {children}
