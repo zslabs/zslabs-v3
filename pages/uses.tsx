@@ -117,9 +117,14 @@ function Hardware() {
         <TextLink href="https://amzn.to/3PCyVzG">keyboard</TextLink> or{' '}
         <TextLink href="https://amzn.to/3ccyLS8">mouse</TextLink>.
       </ListItem>
-      <ListItem href="https://amzn.to/3QEn99r" icon="webcam" label="Lumina">
+      <ListItem
+        href="https://opalcamera.com/"
+        icon="webcam"
+        label="Opal Camera"
+      >
         I'll eventually switch over to Continuity in iOS 16, but this has worked
-        well so far. I used to use a{' '}
+        well so far. I've tried{' '}
+        <TextLink href="https://amzn.to/3QEn99r">Lumina</TextLink> and{' '}
         <TextLink href="https://amzn.to/3T1SQel">Logitech Brio</TextLink>.
       </ListItem>
       <ListItem
