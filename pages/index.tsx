@@ -39,9 +39,11 @@ function Intro() {
         <p>
           Outside of technology, I love spending time with my family and hiking
           in the NC mountains{' '}
-          <span className="text-slate-12">
-            <Icon inline name="mountain-snow" />
-          </span>
+          <TextLink href="https://www.ncparks.gov/state-parks/elk-knob-state-park">
+            <span className="text-slate-12">
+              <Icon inline name="mountain-snow" />
+            </span>
+          </TextLink>
         </p>
       </Prose>
       <div className="mt-8 flex justify-between gap-4">
