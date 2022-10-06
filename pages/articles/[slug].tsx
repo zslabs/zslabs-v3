@@ -1,17 +1,40 @@
-import type { Post } from 'contentlayer/generated'
 import { allPosts } from 'contentlayer/generated'
-import type { GetStaticProps, GetStaticPaths } from 'next'
+import type {
+  GetStaticPaths,
+  InferGetStaticPropsType,
+  GetStaticPropsContext,
+} from 'next'
 
 import { MotionHeader, MotionMain } from '~components/ContentWrappers'
 import MDXContent from '~components/MDXContent'
 import SectionTitle from '~components/SectionTitle'
 import SEO from '~components/SEO'
 
-interface PostSingleProps {
-  post: Post
+export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+  const currentPost = allPosts.find((post) => {
+    return post.slug === params?.slug
+  })!
+
+  const postFormatted = {
+    ...currentPost,
+    date: new Date(currentPost.date).toLocaleDateString('en-us', {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric',
+    }),
+  }
+
+  return {
+    props: {
+      post: postFormatted,
+    },
+  }
 }
 
-export default function PostSingle({ post }: PostSingleProps) {
+export default function PostSingle({
+  post,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
       <SEO title={post.title} />
@@ -29,35 +52,6 @@ export default function PostSingle({ post }: PostSingleProps) {
       </article>
     </>
   )
-}
-
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const currentPost = allPosts.find((post) => {
-    return post.slug === params?.slug
-  })
-
-  if (!currentPost) {
-    return {
-      props: {
-        post: {},
-      },
-    }
-  }
-
-  const postFormatted = {
-    ...currentPost,
-    date: new Date(currentPost.date).toLocaleDateString('en-us', {
-      year: 'numeric',
-      month: 'short',
-      day: 'numeric',
-    }),
-  }
-
-  return {
-    props: {
-      post: postFormatted,
-    },
-  }
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
