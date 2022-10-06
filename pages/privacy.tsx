@@ -1,45 +1,38 @@
-import path from 'path'
-
 import * as React from 'react'
 
-import type { MDX } from 'contentlayer/core'
-import { bundleMDX } from 'mdx-bundler'
-import type { GetStaticProps, NextPage } from 'next'
+import { allStatics } from 'contentlayer/generated'
+import type { InferGetStaticPropsType } from 'next'
 
 import { MotionHeader, MotionMain } from '~components/ContentWrappers'
 import MDXContent from '~components/MDXContent'
 import SectionTitle from '~components/SectionTitle'
 import SEO from '~components/SEO'
 
-interface PrivacyProps {
-  content: MDX
+export const getStaticProps = async () => {
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+  const currentPage = allStatics.find((page) => {
+    return page.slug === 'privacy'
+  })!
+
+  return {
+    props: {
+      page: currentPage,
+    },
+  }
 }
 
-const Privacy: NextPage<PrivacyProps> = ({ content }) => {
+const Privacy = ({ page }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <>
-      <SEO title="Privacy policy" />
+      <SEO title={page.title} />
       <MotionHeader>
-        <SectionTitle>Privacy policy</SectionTitle>
+        <SectionTitle>{page.title}</SectionTitle>
       </MotionHeader>
       <MotionMain>
-        <MDXContent content={content} />
+        <MDXContent content={page.body} />
       </MotionMain>
     </>
   )
 }
 
 export default Privacy
-
-export const getStaticProps: GetStaticProps = async () => {
-  const dataDirectory = path.join(process.cwd(), 'data')
-  const filePath = path.join(dataDirectory, 'privacy.mdx')
-
-  const content = await bundleMDX({ file: filePath })
-
-  return {
-    props: {
-      content,
-    },
-  }
-}

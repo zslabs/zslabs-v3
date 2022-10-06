@@ -32,9 +32,9 @@ export default function PostSingle({ post }: PostSingleProps) {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const currentPost = allPosts.find(
-    (post) => post._raw.flattenedPath === params?.slug
-  )
+  const currentPost = allPosts.find((post) => {
+    return post.slug === params?.slug
+  })
 
   if (!currentPost) {
     return {

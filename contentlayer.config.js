@@ -1,4 +1,5 @@
 import { defineDocumentType, makeSource } from 'contentlayer/source-files'
+import rehypeSlug from 'rehype-slug'
 import { visit } from 'unist-util-visit'
 
 function rehypeMetaAsAttributes() {
@@ -14,7 +15,7 @@ function rehypeMetaAsAttributes() {
 
 export const Post = defineDocumentType(() => ({
   name: 'Post',
-  filePathPattern: '**/*.mdx',
+  filePathPattern: './articles/*.mdx',
   contentType: 'mdx',
   fields: {
     title: {
@@ -36,13 +37,36 @@ export const Post = defineDocumentType(() => ({
   computedFields: {
     url: {
       type: 'string',
-      resolve: (post) => `/articles/${post._raw.flattenedPath}`,
+      resolve: (post) => `/${post._raw.flattenedPath}`,
+    },
+    slug: {
+      type: 'string',
+      resolve: (post) => post._raw.flattenedPath.replace('articles/', ''),
+    },
+  },
+}))
+
+export const Static = defineDocumentType(() => ({
+  name: 'Static',
+  filePathPattern: './data/*.mdx',
+  contentType: 'mdx',
+  fields: {
+    title: {
+      type: 'string',
+      description: 'The title of the post',
+      required: true,
+    },
+  },
+  computedFields: {
+    slug: {
+      type: 'string',
+      resolve: (post) => post._raw.flattenedPath.replace('data/', ''),
     },
   },
 }))
 
 export default makeSource({
-  contentDirPath: 'articles',
-  documentTypes: [Post],
-  mdx: { rehypePlugins: [rehypeMetaAsAttributes] },
+  contentDirPath: 'content',
+  documentTypes: [Post, Static],
+  mdx: { rehypePlugins: [rehypeMetaAsAttributes, rehypeSlug] },
 })
