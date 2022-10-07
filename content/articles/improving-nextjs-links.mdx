@@ -70,8 +70,7 @@ const TextLink = React.forwardRef<HTMLAnchorElement, TextLinkProps>(
         ref={forwardRef}
         data-link-external
         href={href}
-        target="_blank"
-        rel="noopener noreferrer nofollow"
+        rel="nofollow"
         {...rest}
       >
         {children}
@@ -88,7 +87,7 @@ The above `<TextLink />` component accomplishes the simplicity I was after by do
 - Updates any absolute links that match our `domainRegex` and makes them relative
 - Returns `next/link` as the link component for any relative links
 - Returns a normal `href` for non-http protocols
-- Attaches `target="_blank" rel="noopener noreferrer nofollow"` for external links that match none of the above
+- Attaches `rel="nofollow"` for external links that match none of the above
 - Best of all, I can write my links as I normally would, with all props passed-through to their appropriate areas:
 
   ```markup
@@ -105,7 +104,7 @@ The above `<TextLink />` component accomplishes the simplicity I was after by do
   <!-- Input -->
   <TextLink href="https://nextjs.org">Next.js</TextLink>
   <!-- Output -->
-  <a href="http://nextjs.org" target="_blank" rel="noopener noreferrer nofollow">Next.js</a>
+  <a href="http://nextjs.org" rel="nofollow">Next.js</a>
   ```
 
 I also use this as part of the [components](https://github.com/zslabs/zslabs-next/blob/master/pages/articles/%5Bslug%5D.js#L29) I pass-through to [next-mdx-remote](https://github.com/hashicorp/next-mdx-remote) to transform Markdown links automatically.

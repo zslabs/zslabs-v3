@@ -45,15 +45,7 @@ const MarkdownLink = ({ href, ...rest }) => {
     return <a href={href} {...rest} /> // eslint-disable-line jsx-a11y/anchor-has-content
   }
 
-  return (
-    <a
-      data-link-external
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer nofollow"
-      {...rest}
-    />
-  )
+  return <a data-link-external href={href} rel="nofollow" {...rest} />
 }
 
 MarkdownLink.propTypes = {
