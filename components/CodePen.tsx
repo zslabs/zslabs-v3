@@ -44,7 +44,6 @@ const CodePen: React.FC<ICodePenProps> = ({
         editable ? '&editable=true' : ''
       }`}
       frameBorder="no"
-      allowFullScreen
     />
   </GeneralObserver>
 )

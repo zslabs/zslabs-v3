@@ -5,6 +5,7 @@ import { getMDXComponent } from 'mdx-bundler/client'
 import NextImage from 'next/image'
 
 import Alert from '~components/Alert'
+import AutoLinkHeader from '~components/AutoLinkHeader'
 import type { BlockquoteProps } from '~components/Blockquote'
 import Blockquote from '~components/Blockquote'
 import Code from '~components/Code'
@@ -50,6 +51,21 @@ function Image({
 const components = {
   a: (props: TextLinkProps) => <TextLink {...props} />,
   blockquote: (props: BlockquoteProps) => <Blockquote {...props} />,
+  h1: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
+    <AutoLinkHeader as="h1" {...props} />
+  ),
+  h2: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
+    <AutoLinkHeader as="h2" {...props} />
+  ),
+  h3: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
+    <AutoLinkHeader as="h3" {...props} />
+  ),
+  h4: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
+    <AutoLinkHeader as="h4" {...props} />
+  ),
+  h5: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
+    <AutoLinkHeader as="h5" {...props} />
+  ),
   pre: (preProps: React.HTMLAttributes<HTMLPreElement>) => {
     const {
       children: {
