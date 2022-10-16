@@ -83,9 +83,9 @@
     "zustand": "4.1.2"
   },
   "devDependencies": {
-    "@svgr/webpack": "6.4.0",
+    "@svgr/webpack": "6.5.0",
     "husky": "8.0.1",
     "lint-staged": "13.0.3",
-    "next-sitemap": "3.1.24"
+    "next-sitemap": "3.1.25"
   }
 }
