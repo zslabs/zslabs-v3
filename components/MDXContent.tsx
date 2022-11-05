@@ -2,6 +2,7 @@ import React from 'react'
 
 import type { MDX } from 'contentlayer/core'
 import { getMDXComponent } from 'mdx-bundler/client'
+import type { ImageProps } from 'next/image'
 import NextImage from 'next/image'
 
 import Alert from '~components/Alert'
@@ -15,11 +16,11 @@ import type { TextLinkProps } from '~components/TextLink'
 import TextLink from '~components/TextLink'
 import Tweet from '~components/Tweet'
 
-interface ImageProps {
+interface NextImageProps {
   caption?: string
-  src: string
-  height: string
-  width: string
+  src: ImageProps['src']
+  height: ImageProps['height']
+  width: ImageProps['width']
 }
 
 function Image({
@@ -27,7 +28,7 @@ function Image({
   src,
   height,
   width,
-}: ImageProps & React.HTMLAttributes<HTMLDivElement>) {
+}: NextImageProps & React.HTMLAttributes<HTMLDivElement>) {
   return (
     <figure className="my-8 text-center">
       <div className="relative mx-auto grid w-fit rounded-xl shadow">
