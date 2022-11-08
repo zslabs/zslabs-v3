@@ -1,7 +1,7 @@
 import * as React from 'react'
 
 import * as TabsPrimitive from '@radix-ui/react-tabs'
-import { AnimateSharedLayout, motion } from 'framer-motion'
+import { motion } from 'framer-motion'
 import type { NextPage } from 'next'
 
 import { MotionHeader, MotionMain } from '~components/ContentWrappers'
@@ -179,24 +179,22 @@ const Uses: NextPage = () => {
             aria-label="What I use"
             className="mb-8 flex items-center gap-6"
           >
-            <AnimateSharedLayout>
-              {tabs.map(({ title, value }) => (
-                <React.Fragment key={value}>
-                  <TabsPrimitive.TabsTrigger
-                    className="relative text-lg font-semibold text-slate-11 transition-colors hocus:text-slate-12 rdx-state-active:text-slate-12"
-                    value={value}
-                  >
-                    {title}
-                    {value === tab && (
-                      <motion.span
-                        className="absolute inset-x-0 -bottom-1.5 h-0.5 rounded-full bg-gradient-to-r from-primary-9 to-accent-9"
-                        layoutId="underline"
-                      />
-                    )}
-                  </TabsPrimitive.TabsTrigger>
-                </React.Fragment>
-              ))}
-            </AnimateSharedLayout>
+            {tabs.map(({ title, value }) => (
+              <React.Fragment key={value}>
+                <TabsPrimitive.TabsTrigger
+                  className="relative text-lg font-semibold text-slate-11 transition-colors hocus:text-slate-12 rdx-state-active:text-slate-12"
+                  value={value}
+                >
+                  {title}
+                  {value === tab && (
+                    <motion.span
+                      className="absolute inset-x-0 -bottom-1.5 h-0.5 rounded-full bg-gradient-to-r from-primary-9 to-accent-9"
+                      layoutId="underline"
+                    />
+                  )}
+                </TabsPrimitive.TabsTrigger>
+              </React.Fragment>
+            ))}
           </TabsPrimitive.TabsList>
           <TabsPrimitive.Content value="desktop">
             <Desktop />

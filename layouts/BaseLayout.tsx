@@ -141,8 +141,8 @@ const BaseLayout: React.FC<ChildrenOnlyProps> = ({ children }) => {
                   <Image
                     className="shrink-0 rounded-full"
                     src="/media/me.png"
-                    width="32px"
-                    height="32px"
+                    width="32"
+                    height="32"
                     alt="Zach Schnackel"
                   />
                 </TextLink>

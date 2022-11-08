@@ -17,6 +17,7 @@ import TextLink from '~components/TextLink'
 import Tweet from '~components/Tweet'
 
 interface NextImageProps {
+  alt?: ImageProps['alt']
   caption?: string
   src: ImageProps['src']
   height: ImageProps['height']
@@ -24,6 +25,7 @@ interface NextImageProps {
 }
 
 function Image({
+  alt = '',
   caption,
   src,
   height,
@@ -32,8 +34,9 @@ function Image({
   return (
     <figure className="my-8 text-center">
       <div className="relative mx-auto grid w-fit rounded-xl shadow">
-        <div className="absolute -inset-2 rounded-xl bg-overlay-8 shadow-inner" />
+        <div className="-z-1 absolute -inset-2 rounded-xl bg-overlay-8 shadow-inner" />
         <NextImage
+          alt={alt}
           src={src}
           height={height}
           width={width}

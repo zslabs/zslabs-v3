@@ -22,10 +22,8 @@ const TextLink = React.forwardRef<HTMLAnchorElement, TextLinkProps>(
     // If our link is relative, we can assume it's an internal link and use `next/link`
     if (href.startsWith('/')) {
       return (
-        <Link href={href}>
-          <a ref={forwardRef} data-link-internal {...rest}>
-            {children}
-          </a>
+        <Link href={href} ref={forwardRef} data-link-internal {...rest}>
+          {children}
         </Link>
       )
     }
