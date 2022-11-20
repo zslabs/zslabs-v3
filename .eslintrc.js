@@ -32,7 +32,6 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
     'plugin:react-perf/all',
-    'plugin:tailwindcss/recommended',
   ],
   rules: {
     // Global
@@ -98,6 +97,11 @@ module.exports = {
     'jsx-a11y/anchor-is-valid': 0,
     'jsx-a11y/anchor-has-content': 0,
     // Tailwind CSS
-    'tailwindcss/no-custom-classname': ['error'],
+    'tailwindcss/no-custom-classname': [
+      'error',
+      {
+        skipClassAttribute: true,
+      },
+    ],
   },
 }

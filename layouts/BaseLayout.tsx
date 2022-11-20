@@ -97,8 +97,15 @@ const BaseLayout: React.FC<ChildrenOnlyProps> = ({ children }) => {
             controls={controls}
             custom={1}
           >
-            <TextLink href="/" aria-label="Home" className="text-3xl">
+            <TextLink
+              href="/"
+              aria-label="Home"
+              className="group relative text-3xl"
+            >
               <Icon name="logo" />
+              <div className="pointer-events-none absolute top-0 left-0 -z-1 rotate-12 opacity-0 blur-xl transition-opacity duration-150 group-hover:opacity-80">
+                <Icon name="logo" />
+              </div>
             </TextLink>
           </HeaderItemWrapper>
 
