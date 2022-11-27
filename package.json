@@ -24,11 +24,6 @@
     "postbuild": "next-sitemap",
     "postinstall": "husky install"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "dependencies": {
     "@iconify/tools": "2.1.2",
     "@netlify/classnames-template-literals": "1.0.3",
@@ -85,7 +80,7 @@
   "devDependencies": {
     "@svgr/webpack": "6.5.1",
     "husky": "8.0.2",
-    "lint-staged": "13.0.3",
+    "nano-staged": "0.8.0",
     "next-sitemap": "3.1.32"
   }
 }

@@ -1,6 +1,6 @@
 {
-	"prefix": "8h5",
-	"lastModified": 1665441586,
+	"prefix": "h7r",
+	"lastModified": 1669584656,
 	"icons": {
 		"1password": {
 			"body": "<path fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M14 12a4 4 0 1 0 8 0 4 4 0 0 0-8 0Zm0 0H2v3m4-3v3\"/>"
@@ -40,9 +40,6 @@
 		},
 		"iphone": {
 			"body": "<g fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"m12 16.01.01-.011\"/><path d=\"M7 19.4V4.6a.6.6 0 0 1 .6-.6h8.8a.6.6 0 0 1 .6.6v14.8a.6.6 0 0 1-.6.6H7.6a.6.6 0 0 1-.6-.6Z\"/></g>"
-		},
-		"iterm": {
-			"body": "<g fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\"><path d=\"M13 16h5M6 8l4 4-4 4\"/><path d=\"M2 18V6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2Z\"/></g>"
 		},
 		"list": {
 			"body": "<path fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"m16.004 3.995-.011.01m4.011-.01-.011.01m.011 3.99-.011.01m.011 3.99-.011.01m.011 3.99-.011.01m.011 3.99-.011.01m-3.989-.01-.011.01m-3.987-16.01h-8v16h8v-16Z\"/>"
@@ -103,6 +100,9 @@
 		},
 		"stand": {
 			"body": "<path fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M10 12h4M3 3h18m0 4v13.4a.6.6 0 0 1-.6.6H3.6a.6.6 0 0 1-.6-.6V7\"/>"
+		},
+		"terminal": {
+			"body": "<g fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\"><path d=\"M13 16h5M6 8l4 4-4 4\"/><path d=\"M2 18V6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2Z\"/></g>"
 		},
 		"tokens": {
 			"body": "<g fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\"><circle cx=\"8\" cy=\"8\" r=\"6\"/><path d=\"M18.09 10.37A6 6 0 1 1 10.34 18M7 6h1v4\"/><path d=\"m16.71 13.88.7.71-2.82 2.82\"/></g>"

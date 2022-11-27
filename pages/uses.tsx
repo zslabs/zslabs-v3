@@ -11,7 +11,7 @@ import SectionTitle from '~components/SectionTitle'
 import SEO from '~components/SEO'
 import TextLink from '~components/TextLink'
 
-function Desktop() {
+function Software() {
   return (
     <List>
       <ListItem
@@ -48,7 +48,7 @@ function Desktop() {
       >
         More recently Firefox, but Chrome's consistency keeps bringing me back.
       </ListItem>
-      <ListItem icon="iterm" label="iTerm2" href="https://iterm2.com/">
+      <ListItem icon="terminal" label="Warp" href="https://www.warp.dev/">
         The built-in terminal in VS Code is fine; though I'm fortunate enough to
         have the screen real-estate for a dedicated, always-open terminal.
       </ListItem>
@@ -78,7 +78,7 @@ function Desktop() {
   )
 }
 
-function Hardware() {
+function Gear() {
   return (
     <List>
       <ListItem
@@ -148,17 +148,17 @@ function Hardware() {
 
 const tabs: { title: string; value: string }[] = [
   {
-    title: 'Desktop',
-    value: 'desktop',
+    title: 'Software',
+    value: 'software',
   },
   {
-    title: 'Hardware',
-    value: 'hardware',
+    title: 'Gear',
+    value: 'gear',
   },
 ]
 
 const Uses: NextPage = () => {
-  const [tab, setTab] = React.useState('desktop')
+  const [tab, setTab] = React.useState('software')
   return (
     <>
       <SEO title="What I use" />
@@ -196,11 +196,11 @@ const Uses: NextPage = () => {
               </React.Fragment>
             ))}
           </TabsPrimitive.TabsList>
-          <TabsPrimitive.Content value="desktop">
-            <Desktop />
+          <TabsPrimitive.Content value="software">
+            <Software />
           </TabsPrimitive.Content>
-          <TabsPrimitive.Content value="hardware">
-            <Hardware />
+          <TabsPrimitive.Content value="gear">
+            <Gear />
           </TabsPrimitive.Content>
         </TabsPrimitive.Root>
       </MotionMain>
