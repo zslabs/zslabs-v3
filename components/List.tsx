@@ -50,7 +50,7 @@ export function ListItem({
                 {label}
               </span>
               {!href?.startsWith('/') && (
-                <div className="rotate-[-135deg] text-lg leading-none text-slate-11">
+                <div className="rotate-[-135deg] text-lg leading-none text-slate-11 transition-transform duration-200 ease-in-out group-hocus:translate-x-0.5 group-hocus:rotate-[-90deg] group-hocus:translate-y-[0.075rem] will-change-transform">
                   <Icon name="arrow-down" inline />
                 </div>
               )}

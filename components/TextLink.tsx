@@ -43,7 +43,8 @@ const TextLink = React.forwardRef<HTMLAnchorElement, TextLinkProps>(
         ref={forwardRef}
         data-link-external
         href={href}
-        rel="nofollow"
+        target="_blank"
+        rel="nofollow noreferrer"
         {...rest}
       >
         {children}
