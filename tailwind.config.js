@@ -62,6 +62,20 @@ module.exports = {
         11: 'var(--blackA11)',
         12: 'var(--blackA12)',
       },
+      'overlay-contrast': {
+        1: 'var(--whiteA1)',
+        2: 'var(--whiteA2)',
+        3: 'var(--whiteA3)',
+        4: 'var(--whiteA4)',
+        5: 'var(--whiteA5)',
+        6: 'var(--whiteA6)',
+        7: 'var(--whiteA7)',
+        8: 'var(--whiteA8)',
+        9: 'var(--whiteA9)',
+        10: 'var(--whiteA10)',
+        11: 'var(--whiteA11)',
+        12: 'var(--whiteA12)',
+      },
       primary: {
         1: 'var(--blue1)',
         2: 'var(--blue2)',
@@ -227,6 +241,7 @@ module.exports = {
           '-15px 0 30px -5px var(--tomato5), 0 0 30px -5px var(--blue5), 15px 0 30px -5px var(--violet5)',
         'button-default':
           '-15px 0 30px -5px var(--violet5), 0 0 30px -5px var(--blue5), 15px 0 30px -5px var(--green5)',
+        'button-overlay-contrast': '0 0 0 1px var(--whiteA6)',
       },
       fontFamily: {
         sans: ['ZS Sans', ...defaultTheme.fontFamily.sans],

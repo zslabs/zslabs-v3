@@ -1,6 +1,6 @@
 {
-	"prefix": "rku",
-	"lastModified": 1670471007,
+	"prefix": "tyg",
+	"lastModified": 1670528264,
 	"icons": {
 		"1password": {
 			"body": "<path fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M14 12a4 4 0 1 0 8 0 4 4 0 0 0-8 0Zm0 0H2v3m4-3v3\"/>"
@@ -47,6 +47,9 @@
 		"logo": {
 			"body": "<g fill=\"currentColor\"><path d=\"M13.2 10.4 10.9 8l-2.8 2.8 2.4 2.3L2.6 21l2.7 2.8L16 13.1z\"/><path d=\"m5.3 16 2.8-2.8-2.4-2.3L13.6 3 10.9.2.2 10.9 3 13.6z\"/></g>",
 			"width": 16
+		},
+		"map-arrow": {
+			"body": "<path fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"m4.031 8.917 15.477-4.334a.5.5 0 0 1 .616.617l-4.333 15.476a.5.5 0 0 1-.94.067l-3.248-7.382a.5.5 0 0 0-.256-.257L3.965 9.856a.5.5 0 0 1 .066-.94z\" color=\"currentColor\"/>"
 		},
 		"mbpro": {
 			"body": "<g fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"><path d=\"M3.2 14.222V4a2 2 0 0 1 2-2h13.6a2 2 0 0 1 2 2v10.222m-17.6 0h17.6m-17.6 0-1.48 5.234A2 2 0 0 0 3.644 22h16.712a2 2 0 0 0 1.924-2.544l-1.48-5.234\"/><path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M11 19h2\"/></g>"
@@ -103,6 +106,9 @@
 		},
 		"stand": {
 			"body": "<path fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M10 12h4M3 3h18m0 4v13.4a.6.6 0 0 1-.6.6H3.6a.6.6 0 0 1-.6-.6V7\"/>"
+		},
+		"star": {
+			"body": "<path fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"m8.587 8.236 2.598-5.232a.911.911 0 0 1 1.63 0l2.598 5.232 5.808.844a.902.902 0 0 1 .503 1.542l-4.202 4.07.992 5.75c.127.738-.653 1.3-1.32.952L12 18.678l-5.195 2.716c-.666.349-1.446-.214-1.319-.953l.992-5.75-4.202-4.07a.902.902 0 0 1 .503-1.54l5.808-.845z\" color=\"currentColor\"/>"
 		},
 		"terminal": {
 			"body": "<g fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\"><path d=\"M13 16h5M6 8l4 4-4 4\"/><path d=\"M2 18V6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2Z\"/></g>"
