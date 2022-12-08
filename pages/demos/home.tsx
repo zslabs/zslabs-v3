@@ -21,20 +21,23 @@ function HeaderProp({ value, label }: { value: string; label: string }) {
 function Header() {
   return (
     <header>
-      <div className="flex gap-6 items-center">
+      <div className="flex max-sm:flex-col gap-6 items-center">
         <div className="flex-1">
-          <h1>
+          <h1 className="max-sm:text-center">
             <div className="text-2xl font-semibold">1234 Test Place</div>
             <div className="text-slate-11">Charlotte, NC 28270</div>
           </h1>
         </div>
-        <Tooltip content="Save">
-          <div>
-            <Button iconOnly variation="overlay-hover">
-              <Icon name="star" />
-            </Button>
-          </div>
-        </Tooltip>
+        <div className="flex gap-6">
+          <Tooltip content="Save">
+            <div>
+              <Button iconOnly variation="overlay-hover">
+                <Icon name="star" />
+              </Button>
+            </div>
+          </Tooltip>
+          <Button variation="cta">Contact</Button>
+        </div>
       </div>
     </header>
   )
@@ -45,7 +48,10 @@ function Nav() {
     <nav className="fixed bottom-4 max-w-[65ch] left-1/2 -translate-x-1/2 bg-overlay-9 backdrop-blur-md rounded-full py-3 px-6 text-sm">
       <ul className="flex gap-6">
         <li>
-          <a href="#">Overview</a>
+          <a href="#" className="relative">
+            Overview
+            <span className="pointer-events-none absolute -bottom-1.5 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-primary-9 to-accent-9 h-1 w-1" />
+          </a>
         </li>
         <li>
           <a href="#">Location</a>

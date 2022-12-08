@@ -4,7 +4,7 @@ import ctl from '@netlify/classnames-template-literals'
 
 interface ButtonPropsPrimitive<T extends React.ElementType> {
   as?: T
-  variation?: 'default' | 'contrast' | 'overlay-hover'
+  variation?: 'default' | 'contrast' | 'overlay-hover' | 'cta'
   loading?: boolean
   iconOnly?: boolean
   type?: 'submit' | 'button' | 'reset'
@@ -40,6 +40,10 @@ function Button<T extends React.ElementType = 'button'>({
           ${
             variation === 'overlay-hover' &&
             'hocus:bg-overlay-8 shadow-button-overlay-contrast'
+          }
+          ${
+            variation === 'cta' &&
+            'bg-gradient-to-br from-primary-9 to-primary-8 text-primary-12 shadow-button-cta'
           }
 
           ${loading && `pointer-events-none opacity-50`}

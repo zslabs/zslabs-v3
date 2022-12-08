@@ -241,6 +241,8 @@ module.exports = {
           '-15px 0 30px -5px var(--tomato5), 0 0 30px -5px var(--blue5), 15px 0 30px -5px var(--violet5)',
         'button-default':
           '-15px 0 30px -5px var(--violet5), 0 0 30px -5px var(--blue5), 15px 0 30px -5px var(--green5)',
+        'button-cta':
+          '-15px 0 30px -5px var(--violet5), 0 0 30px -5px var(--blue5), 15px 0 30px -5px var(--tomato5)',
         'button-overlay-contrast': '0 0 0 1px var(--whiteA6)',
       },
       fontFamily: {
