@@ -6,6 +6,7 @@ import Button from '~components/Button'
 import Icon from '~components/Icon'
 import Prose from '~components/Prose'
 import SectionTitle from '~components/SectionTitle'
+import { Table, TableCell, TableHeader, TableRow } from '~components/Table'
 import Tooltip from '~components/Tooltip'
 import StaticLayout from '~layouts/StaticLayout'
 
@@ -20,11 +21,11 @@ function HeaderProp({ value, label }: { value: string; label: string }) {
 
 function Header() {
   return (
-    <header>
+    <header id="home">
       <div className="flex max-sm:flex-col gap-6 items-center">
         <div className="flex-1">
           <h1 className="max-sm:text-center">
-            <div className="text-2xl font-semibold">1234 Test Place</div>
+            <div className="text-xl font-semibold">1234 Test Place</div>
             <div className="text-slate-11">Charlotte, NC 28270</div>
           </h1>
         </div>
@@ -46,7 +47,7 @@ function Header() {
 function Nav() {
   return (
     <nav className="fixed bottom-4 max-w-[65ch] left-1/2 -translate-x-1/2 bg-overlay-9 backdrop-blur-md rounded-full py-3 px-6 text-sm">
-      <ul className="flex gap-6">
+      <ul className="flex gap-6 items-center">
         <li>
           <a href="#" className="relative">
             Overview
@@ -83,7 +84,7 @@ function Meta() {
 
 function Overview() {
   return (
-    <main>
+    <main id="overview">
       <Prose>
         This open concept home has such a cool vibe and personality! The beams
         on the vaulted ceiling, large angled picture windows, and skylights make
@@ -100,33 +101,51 @@ function Overview() {
 
 function Location() {
   return (
-    <div>
+    <section>
       <SectionTitle>Location</SectionTitle>
-    </div>
+    </section>
   )
 }
 
 function History() {
   return (
-    <div>
+    <section>
       <SectionTitle>Property history</SectionTitle>
-    </div>
+      <Table>
+        <thead>
+          <tr>
+            <TableHeader>Date</TableHeader>
+            <TableHeader>Price</TableHeader>
+          </tr>
+        </thead>
+        <tbody>
+          <TableRow>
+            <TableCell>November 11, 2022</TableCell>
+            <TableCell>$625,000</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell isLast>September 04, 2014</TableCell>
+            <TableCell isLast>$325,000</TableCell>
+          </TableRow>
+        </tbody>
+      </Table>
+    </section>
   )
 }
 
 function Schools() {
   return (
-    <div>
+    <section>
       <SectionTitle>Schools</SectionTitle>
-    </div>
+    </section>
   )
 }
 
 function Similar() {
   return (
-    <div>
+    <section>
       <SectionTitle>Similar</SectionTitle>
-    </div>
+    </section>
   )
 }
 
