@@ -118,6 +118,14 @@ function Gear() {
         <TextLink href="https://amzn.to/3ccyLS8">mouse</TextLink>.
       </ListItem>
       <ListItem
+        href="https://www.aersf.com/travel-pack-3-black"
+        icon="backpack"
+        label="Aer Travel Pack 3"
+      >
+        I spent way too much time researching backpacks, but this is a
+        much-needed, dual-purpose upgrade that I'm happy to add.
+      </ListItem>
+      <ListItem
         href="https://opalcamera.com/"
         icon="webcam"
         label="Opal Camera"
