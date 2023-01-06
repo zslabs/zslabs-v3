@@ -67,7 +67,6 @@ async function processSvgs() {
           'removeUnusedNS',
           'cleanupEnableBackground',
           'cleanupAttrs',
-          'cleanupIDs',
           'cleanupNumericValues',
           'cleanupListOfValues',
           'mergePaths',
