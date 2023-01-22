@@ -1,8 +1,8 @@
 import * as React from 'react'
 
+import { useRouter } from 'next/router'
 import { NextSeo } from 'next-seo'
 import type { OpenGraph } from 'next-seo/lib/types'
-import { useRouter } from 'next/router'
 
 interface SEOProps {
   title: string

@@ -1,9 +1,9 @@
 import * as Tooltip from '@radix-ui/react-tooltip'
 import { MotionConfig } from 'framer-motion'
 import type { NextPage } from 'next'
-import { DefaultSeo } from 'next-seo'
 import type { AppProps } from 'next/app'
 import Router from 'next/router'
+import { DefaultSeo } from 'next-seo'
 
 import SEO from '../next-seo.config'
 
