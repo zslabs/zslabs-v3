@@ -1,8 +1,6 @@
 import type { DocumentContext, DocumentInitialProps } from 'next/document'
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 
-import Analytics from '~components/Analytics'
-
 class MyDocument extends Document {
   static async getInitialProps(
     ctx: DocumentContext
@@ -31,7 +29,6 @@ class MyDocument extends Document {
             crossOrigin="anonymous"
           />
           <link rel="icon" href="/media/favicon.png" />
-          <Analytics />
           <link
             rel="alternate"
             type="application/rss+xml"
