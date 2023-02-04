@@ -27,14 +27,6 @@ function Software() {
         of community-driven plugins.
       </ListItem>
       <ListItem
-        icon="tweetbot"
-        label="Tweetbot"
-        href="https://tapbots.com/tweetbot/mac/"
-      >
-        I use Twitter as my main news source for all things development.
-        Tweetbot removes all ads and displays items in chronological order.
-      </ListItem>
-      <ListItem
         icon="rectangle"
         label="Rectangle"
         href="https://rectangleapp.com/"
