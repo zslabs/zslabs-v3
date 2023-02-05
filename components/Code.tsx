@@ -42,9 +42,7 @@ export default function Code({ codeString, language, meta }: CodeProps) {
                 <span className="h-3 w-3 rounded-full bg-success-9" />
               </div>
               {meta?.filename && (
-                <div className="font-sans text-sm leading-none tracking-normal">
-                  {meta.filename}
-                </div>
+                <div className="text-sm leading-none">{meta.filename}</div>
               )}
             </div>
             <div>
