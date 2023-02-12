@@ -89,8 +89,12 @@ While I had heard of [Tailwind CSS](https://tailwindcss.com/), I (like many) was
 
 - **Dark-mode FTW:** This is something I've wanted to explore more, but was always an afterthought with previous design-systems I've built. Tailwind CSS makes this straight-forward with its native [dark-mode support](https://tailwindcss.com/docs/dark-mode):
 
-  ```markup
-  <div className="text-slate-900 dark:text-slate-100 bg-slate-100 dark:bg-slate-900 p-4">Watch me go!</div>
+  ```html
+  <div
+    className="text-slate-900 dark:text-slate-100 bg-slate-100 dark:bg-slate-900 p-4"
+  >
+    Watch me go!
+  </div>
   ```
 
   For Next.js - I highly recommended [next-themes](https://github.com/pacocoursey/next-themes); which provides a straight-forward approach.
