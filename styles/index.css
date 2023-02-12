@@ -1,5 +1,4 @@
 @import './prose.css';
-@import './prism.css';
 @import '../icons/build/styles.css';
 
 @tailwind base;

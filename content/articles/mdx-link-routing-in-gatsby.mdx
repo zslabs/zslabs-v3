@@ -20,7 +20,7 @@ With the help of a few plugins, we're able to make these links do a bit more for
 
 With MDX's ability to override normal DOM elements, I was able to encapsulate the logic from all three of these plugins into a handy snippet:
 
-```js filename=MarkdownLink.js
+```js title="MarkdownLink.js"
 import PropTypes from 'prop-types'
 import { Link as GatsbyLink } from 'gatsby'
 
@@ -57,7 +57,7 @@ export default MarkdownLink
 
 This can then be passed into `<MDXProvider />` to override default links:
 
-```js filename=Article.js
+```js title="Article.js"
 import { MDXProvider } from '@mdx-js/react'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 

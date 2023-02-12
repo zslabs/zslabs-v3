@@ -30,7 +30,7 @@ When I transitioned this site over to MDX, I immediately went to work creating a
 
 Storing additional types of data in Markdown frontmatter is a pretty common-practice; especially with CMS solutions like [Netlify CMS](https://www.netlifycms.org/). This allows us seperate out chunks you may want to present in different ways - like so:
 
-```mdx filename=article.md
+```mdx title="article.md"
 ---
 title: My article
 items:
@@ -42,7 +42,7 @@ items:
 Article content.
 ```
 
-```js filename=Article.js
+```js title="Article.js"
 const Article = ({ frontmatter, html }) => (
   <div>
     <h1>{frontmatter.title}</h1>
@@ -60,7 +60,7 @@ const Article = ({ frontmatter, html }) => (
 
 But - what if you have Markdown content within your frontmatter - or better yet, MDX?
 
-```mdx filename=article.md
+```mdx title="article.md"
 ---
 title: My article
 items:
@@ -79,7 +79,7 @@ Article content.
 
 Solutions within [Gatsby](https://www.gatsbyjs.org) for normal Markdown frontmatter previously led me down the path of creating a runtime component to parse the Markdown strings that would be queried on the frontend:
 
-```js filename=Data.js
+```js title="Data.js"
 import PropTypes from 'prop-types'
 import remark from 'remark'
 import html from 'remark-html'
@@ -96,7 +96,7 @@ Data.propTypes = {
 export default Data
 ```
 
-```js filename=Article.js
+```js title="Article.js"
 import Data from '../components/Data'
 
 const Article = ({ frontmatter, html }) => (
@@ -124,7 +124,7 @@ With MDX thrown in the mix, [@mdx-js/runtime](https://mdxjs.com/advanced/runtime
 
 After struggling with a few different suggestions across the Gatsby community, I came across [a method](https://github.com/gatsbyjs/gatsby/issues/21789#issuecomment-592110650) that was straight-forward and easy to extend - enter [createSchemaCustomization](https://www.gatsbyjs.org/docs/node-apis/#createSchemaCustomization). This allows us to customize Gatsby’s GraphQL schema by creating type definitions, field extensions or adding third-party schemas.
 
-```js filename=gatsby-node.js
+```js title="gatsby-node.js"
 exports.createSchemaCustomization = ({
   actions: { createTypes, createFieldExtension },
   createContentDigest,
@@ -180,7 +180,7 @@ The above functionality does a few things:
 
 When querying this data with Gatsby's built-in [graphiql](https://github.com/graphql/graphiql) tool, what's returned is the transformed body content, ready to be consumed by `<MDXRenderer />`.
 
-```js filename=Article.js
+```js title="Article.js"
 import { MDXProvider } from '@mdx-js/react'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 

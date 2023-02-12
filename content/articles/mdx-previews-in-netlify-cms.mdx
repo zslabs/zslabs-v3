@@ -27,7 +27,7 @@ This normally wouldn't be a huge deal. We're able to see the fields and parsed M
 
 Luckily, Netlify CMS is [pluggable](https://www.netlifycms.org/docs/customization/), and allows us to hook into and generate our own previews per collection-type:
 
-```js filename=cms.js
+```js title="cms.js"
 import CMS from 'netlify-cms-app'
 
 ... // CMS.init() functionality
@@ -37,7 +37,7 @@ CMS.registerPreviewTemplate('posts', withEmotion(ArticlePreview))
 
 In my case, I also wanted to wrap the iFrame that powers the preview and utilize [Emotion](https://emotion.sh/), so a [HOC](https://reactjs.org/docs/higher-order-components.html) was created to target and provide that scope:
 
-```js filename=withEmotion.js
+```js title="withEmotion.js"
 import { CacheProvider, Global } from '@emotion/core'
 import createCache from '@emotion/cache'
 import weakMemoize from '@emotion/weak-memoize'
@@ -80,7 +80,7 @@ export default (Component) => (props) => {
 
 Finally, we are ready to tackle the preview render:
 
-```js filename=MDXPreview.js
+```js title="MDXPreview.js"
 import MDX from 'mdx-scoped-runtime'
 
 const MDXPreview = ({ entry }) => {
@@ -108,7 +108,7 @@ export default MDXPreview
 
 [mdx-scoped-runtime](https://www.npmjs.com/package/mdx-scoped-runtime) comes to the rescue with the ability to parse MDX on-the-fly. We can then use this component alongside any other fields we want to display within our preview.
 
-```js filename=ArticlePreview.js
+```js title="ArticlePreview.js"
 import MDXPreview from './MDXPreview'
 
 const ArticlePreview = ({ entry }) => <MDXPreview entry={entry} />
@@ -131,7 +131,7 @@ export default ArticlePreview
 
 For scenarios where you may have components that use a bit more [Gatsby](https://www.gatsbyjs.org/) magic than what `mdx-scoped-runtime` can provide; like [graphql](https://graphql.org/), you can override the default behavior to provide a fallback component as needed to avoid compilation errors:
 
-```js filename=MDXPreview.js
+```js title="MDXPreview.js"
 import MDX from 'mdx-scoped-runtime'
 
 const UnsupportedComponent = ({ label, ...rest }) => (

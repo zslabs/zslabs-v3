@@ -9,8 +9,8 @@ import Alert from '~components/Alert'
 import AutoLinkHeader from '~components/AutoLinkHeader'
 import type { BlockquoteProps } from '~components/Blockquote'
 import Blockquote from '~components/Blockquote'
-import Code from '~components/Code'
 import CodePen from '~components/CodePen'
+import CodeWrapper from '~components/CodeWrapper'
 import Prose from '~components/Prose'
 import type { TextLinkProps } from '~components/TextLink'
 import TextLink from '~components/TextLink'
@@ -70,46 +70,23 @@ const components = {
   h5: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
     <AutoLinkHeader as="h5" {...props} />
   ),
-  pre: (preProps: React.HTMLAttributes<HTMLPreElement>) => {
-    const {
-      children: {
-        // @ts-expect-error MDX generated
-        props: { children, className, meta },
-      },
-    } = preProps
-
-    let metaProps: Record<string, string | number | boolean> = {}
-
-    if (meta) {
-      metaProps = meta
-        .split(' ')
-        .reduce(
-          (acc: Record<string, string | number | boolean>, curr: string) => {
-            const [key, value] = curr.split('=')
-
-            return { ...acc, [key]: value }
-          },
-          {}
-        )
-    }
-
-    const props = {
-      codeString: children.trim(),
-      language: className && className.split('-')[1],
-      meta: metaProps,
-    }
-
-    return (
-      <div className="my-8">
-        <Code {...props} />
-      </div>
-    )
-  },
   Alert,
   Image,
   CodePen,
   Tweet,
   TextLink,
+  pre: ({
+    __rawString__,
+    ...rest
+  }: React.HTMLAttributes<HTMLPreElement> & {
+    __rawString__: string
+  }) => {
+    return (
+      <CodeWrapper codeString={__rawString__}>
+        <pre className="grid" {...rest} />
+      </CodeWrapper>
+    )
+  },
 }
 
 const MDXContent: React.FC<{

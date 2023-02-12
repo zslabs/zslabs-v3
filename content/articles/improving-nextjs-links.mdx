@@ -11,7 +11,7 @@ excerpt: Better DX makes for better links
 
 [Next.js](https://nextjs.org) ships with a `<Link />` component, available via the [next/link](https://nextjs.org/docs/api-reference/next/link) module. Both client-side transitions and preloading routes make this a must-have for fast user experiences.
 
-```js filename=index.tsx
+```js title="index.tsx"
 import Link from 'next/link'
 
 export default function Home() {
@@ -27,7 +27,7 @@ One aspect that's always looked a bit odd to me is how the DOM is constructed. I
 
 Similar to a previous article on [MDX link routing in Gatsby](/articles/mdx-link-routing-in-gatsby), it turns-out we can use a very similar approach in Next.js:
 
-```tsx filename=TextLink.tsx
+```tsx title="TextLink.tsx"
 import * as React from 'react'
 
 import Link from 'next/link'

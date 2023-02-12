@@ -16,7 +16,7 @@ While I had heard of [Tailwind CSS](https://tailwindcss.com/), I (like many) was
 
   Don't be afraid of writing HTML. Take a look at a component comparison from my previous site:
 
-  ```js filename=BubbleList.old.js
+  ```js title="BubbleList.old.js"
   export const BubbleList = ({ ...opts }) => {
     const theme = useTheme()
 
@@ -54,7 +54,7 @@ While I had heard of [Tailwind CSS](https://tailwindcss.com/), I (like many) was
   }
   ```
 
-  ```js filename=BubbleList.new.js
+  ```js title="BubbleList.new.js"
   export default function BubbleList({ children, ...rest }) {
     return (
       <div className="relative" {...rest}>
@@ -71,7 +71,7 @@ While I had heard of [Tailwind CSS](https://tailwindcss.com/), I (like many) was
 
 - **Classes don't make your code messy:** The way in which you use them does. [React](https://reactjs.org); or any templating language like it, provide you a platform to build configurable components that work with Tailwind CSS, not against it. Take a look at the `<Alert />` component for my site:
 
-  ```js filename=Alert.js
+  ```js title="Alert.js"
   export default function Alert({ variation = 'primary', ...rest }) {
     return (
       <aside
