@@ -49,7 +49,7 @@ function Header() {
 
 function Nav() {
   return (
-    <nav className="fixed bottom-4 max-w-[65ch] left-1/2 -translate-x-1/2 bg-overlay-9 backdrop-blur-md rounded-full py-3 px-6 text-sm">
+    <nav className="fixed z-20 bottom-4 max-w-[65ch] left-1/2 -translate-x-1/2 bg-overlay-9 backdrop-blur-md rounded-full py-3 px-6 text-sm">
       <ul className="flex gap-6 items-center">
         <li>
           <a href="#" className="relative">
