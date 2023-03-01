@@ -1,5 +1,8 @@
 import * as React from 'react'
 
+import type { Transition } from 'framer-motion'
+import { AnimatePresence, wrap, motion } from 'framer-motion'
+import Image from 'next/image'
 import type { NextPageWithLayout } from 'pages/_app'
 
 import Button from '~components/Button'
@@ -68,6 +71,101 @@ function Nav() {
         </li>
       </ul>
     </nav>
+  )
+}
+
+const images = [
+  '/media/demos/home/r-architecture-0tKCSyLXqQM-unsplash.jpg',
+  '/media/demos/home/r-architecture-2gDwlIim3Uw-unsplash.jpg',
+  '/media/demos/home/r-architecture-A8W70m5jv_k-unsplash.jpg',
+  '/media/demos/home/r-architecture-Cn87TISYij8-unsplash.jpg',
+  '/media/demos/home/r-architecture-GGupkreKwxA-unsplash.jpg',
+  '/media/demos/home/r-architecture-JvQ0Q5IkeMM-unsplash.jpg',
+  '/media/demos/home/r-architecture-QMo-jtdyAQU-unsplash.jpg',
+  '/media/demos/home/r-architecture-rOk4VSMS3Ck-unsplash.jpg',
+  '/media/demos/home/r-architecture-T6d96Qrb5MY-unsplash.jpg',
+  '/media/demos/home/r-architecture-UpAX8YLpRBM-unsplash.jpg',
+  '/media/demos/home/r-architecture-wot0Q5sg91E-unsplash.jpg',
+  '/media/demos/home/r-architecture-Y8MJFQYYjh8-unsplash.jpg',
+]
+
+const galleryVariants = {
+  enter: (direction: number) => {
+    return {
+      x: direction > 0 ? '100%' : '-100%',
+      opacity: 0,
+    }
+  },
+  center: {
+    zIndex: 1,
+    x: 0,
+    opacity: 1,
+  },
+  exit: (direction: number) => {
+    return {
+      zIndex: 0,
+      x: direction < 0 ? '100%' : '-100%',
+      opacity: 0,
+    }
+  },
+}
+
+const galleryTransition: Transition = {
+  x: { stiffness: 1000 },
+}
+
+function Media() {
+  const [[page, direction], setPage] = React.useState([0, 0])
+
+  const imageIndex = wrap(0, images.length, page)
+
+  const paginate = React.useCallback(
+    (newDirection: number): void => {
+      setPage([page + newDirection, newDirection])
+    },
+    [page]
+  )
+
+  const handlePaginateLeft = React.useCallback(() => paginate(-1), [paginate])
+  const handlePaginateRight = React.useCallback(() => paginate(1), [paginate])
+
+  return (
+    <div className="relative grid place-content-center overflow-hidden bg-overlay-12 aspect-video rounded-xl shadow-lg">
+      <AnimatePresence initial={false} custom={direction}>
+        <motion.figure
+          className="absolute inset-0"
+          key={page}
+          custom={direction}
+          variants={galleryVariants}
+          initial="enter"
+          animate="center"
+          exit="exit"
+          transition={galleryTransition}
+        >
+          <Image
+            className="object-contain"
+            fill
+            src={images[imageIndex]}
+            alt=""
+          />
+        </motion.figure>
+      </AnimatePresence>
+      <>
+        <div className="absolute top-1/2 left-2 z-10 -translate-y-1/2">
+          <Button iconOnly title="Previous" onClick={handlePaginateLeft}>
+            <Icon name="arrow-left" />
+          </Button>
+        </div>
+        <div className="absolute top-1/2 right-2 z-10 -translate-y-1/2">
+          <Button iconOnly title="Next" onClick={handlePaginateRight}>
+            <Icon name="arrow-right" />
+          </Button>
+        </div>
+        <div className="absolute bottom-2 left-1/2 z-10 w-fit -translate-x-1/2 rounded-full bg-overlay-11 py-1 px-2 text-sm text-slate-2 dark:text-slate-11">
+          {imageIndex + 1} / {images.length}
+        </div>
+      </>
+    </div>
   )
 }
 
@@ -156,6 +254,7 @@ const Home: NextPageWithLayout = () => {
         <div className="space-y-12 md:space-y-16">
           <Header />
           <Meta />
+          <Media />
           <Overview />
           <Location />
           <History />
