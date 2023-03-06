@@ -6,9 +6,12 @@ import type {
 } from 'next'
 
 import { MotionHeader, MotionMain } from '~components/ContentWrappers'
+import Icon from '~components/Icon'
 import MDXContent from '~components/MDXContent'
 import SectionTitle from '~components/SectionTitle'
 import SEO from '~components/SEO'
+import TextLink from '~components/TextLink'
+import Tooltip from '~components/Tooltip'
 
 export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
@@ -45,8 +48,15 @@ export default function PostSingle({
         </MotionHeader>
         <MotionMain>
           <MDXContent content={post.body} />
-          <div className="mt-12 font-mono text-sm uppercase text-slate-12">
-            :: Published {post.date} ::
+          <div className="flex mt-12 gap-4 justify-between items-center">
+            <div className="font-mono text-sm uppercase text-slate-12">
+              :: Published {post.date} ::
+            </div>
+            <Tooltip content="More articles">
+              <TextLink href="/articles">
+                <Icon name="more" />
+              </TextLink>
+            </Tooltip>
           </div>
         </MotionMain>
       </article>
