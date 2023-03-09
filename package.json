@@ -30,6 +30,7 @@
     "@radix-ui/react-tabs": "1.0.2",
     "@radix-ui/react-tooltip": "1.0.4",
     "@tailwindcss/line-clamp": "0.4.2",
+    "@total-typescript/ts-reset": "0.4.2",
     "@types/fs-extra": "11.0.1",
     "@types/node": "18.14.4",
     "@types/react": "18.0.28",
