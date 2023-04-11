@@ -1,4 +1,3 @@
-const lineClamp = require('@tailwindcss/line-clamp')
 const defaultTheme = require('tailwindcss/defaultTheme')
 const plugin = require('tailwindcss/plugin')
 
@@ -261,7 +260,6 @@ module.exports = {
     },
   },
   plugins: [
-    lineClamp,
     patterns,
     utilities,
     require('tailwindcss-radix')({ variantPrefix: 'rdx' }),
