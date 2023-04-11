@@ -1,8 +1,8 @@
 import * as React from 'react'
 
-import { allStatics } from 'contentlayer/generated'
 import type { InferGetStaticPropsType } from 'next'
 
+import { allStatics } from 'contentlayer/generated'
 import { MotionHeader, MotionMain } from '~components/ContentWrappers'
 import MDXContent from '~components/MDXContent'
 import SectionTitle from '~components/SectionTitle'

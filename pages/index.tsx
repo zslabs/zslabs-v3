@@ -2,10 +2,10 @@ import fs from 'fs'
 
 import * as React from 'react'
 
-import { allPosts } from 'contentlayer/generated'
 import { motion, useAnimation } from 'framer-motion'
 import type { GetStaticProps } from 'next'
 
+import { allPosts } from 'contentlayer/generated'
 import Button from '~components/Button'
 import Icon from '~components/Icon'
 import { List, ListItem } from '~components/List'

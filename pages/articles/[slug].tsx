@@ -1,10 +1,10 @@
-import { allPosts } from 'contentlayer/generated'
 import type {
   GetStaticPaths,
   InferGetStaticPropsType,
   GetStaticPropsContext,
 } from 'next'
 
+import { allPosts } from 'contentlayer/generated'
 import { MotionHeader, MotionMain } from '~components/ContentWrappers'
 import Icon from '~components/Icon'
 import MDXContent from '~components/MDXContent'

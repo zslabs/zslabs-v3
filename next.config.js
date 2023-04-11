@@ -7,9 +7,6 @@ const { withContentlayer } = require('next-contentlayer')
  * @type {import('next').NextConfig}
  */
 const nextConfig = {
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
   webpack: (config, { dev }) => {
     if (dev) {
       config.plugins.push(

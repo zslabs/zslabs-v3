@@ -1,8 +1,8 @@
 import * as React from 'react'
 
-import { allPosts } from 'contentlayer/generated'
 import type { GetStaticProps } from 'next'
 
+import { allPosts } from 'contentlayer/generated'
 import { MotionHeader, MotionMain } from '~components/ContentWrappers'
 import { List, ListItem } from '~components/List'
 import Prose from '~components/Prose'

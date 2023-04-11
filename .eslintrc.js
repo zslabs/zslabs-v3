@@ -22,6 +22,7 @@ module.exports = {
     'tailwindcss',
   ],
   extends: [
+    'next/core-web-vitals',
     'airbnb',
     'eslint:recommended',
     'plugin:@typescript-eslint/eslint-recommended',
