@@ -6,7 +6,6 @@ export const spring: Transition = {
   stiffness: 300,
 }
 
-/* eslint-disable import/prefer-default-export */
 export const fadeInUp: Variants = {
   offscreen: {
     opacity: 0,
