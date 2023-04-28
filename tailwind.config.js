@@ -32,12 +32,24 @@ const patterns = plugin(({ addUtilities }) => {
 })
 
 const utilities = plugin(({ addVariant }) => {
-  addVariant('hocus', ['&:hover', '&:focus'])
-  addVariant('group-hocus', ['.group:hover &', '.group:focus &'])
+  addVariant('hocus', [
+    '@media (hover: hover) and (pointer: fine) { &:hover }',
+    '&:focus',
+  ])
+  addVariant('group-hocus', [
+    '@media (hover: hover) and (pointer: fine) { .group:hover & }',
+    '.group:focus &',
+  ])
 })
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  experimental: {
+    optimizeUniversalDefaults: true,
+  },
+  future: {
+    hoverOnlyWhenSupported: true,
+  },
   content: [
     './components/**/*.{js,ts,jsx,tsx}',
     './layouts/**/*.{js,ts,jsx,tsx}',
