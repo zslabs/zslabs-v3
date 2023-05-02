@@ -4,11 +4,11 @@ import { performance } from 'perf_hooks'
 import { importDirectory } from '@iconify/tools/lib/import/directory'
 import { runSVGO } from '@iconify/tools/lib/optimise/svgo'
 import { cleanupSVG } from '@iconify/tools/lib/svg/cleanup'
-import autoprefixer from 'autoprefixer'
-import cssnano from 'cssnano'
 import fsExtra from 'fs-extra'
 import { createSpinner } from 'nanospinner'
 import postcss from 'postcss'
+// @ts-expect-error No types for this package
+import lightning from 'postcss-lightningcss'
 
 /** Function to return unique value to deter direct-styling of icons */
 function makeBuildHash(): string {
@@ -127,16 +127,13 @@ async function processSvgs() {
   vertical-align: -0.125em;
 }
 `
-  // Run through Autoprefixer
-  const result = await postcss([autoprefixer, cssnano]).process(css, {
+  // Generate CSS
+  const result = await postcss([lightning]).process(css, {
     from: undefined,
   })
 
-  // Remove unneeded `charset` added by https://github.com/cssnano/cssnano/issues/245 but taken care of in `mini-svg-data-uri`
-  const cssMin = result.css.replace(/;charset=utf-8/g, '')
-
   // Save CSS to file
-  await fs.writeFile(`icons/build/styles.css`, cssMin, 'utf8')
+  await fs.writeFile(`icons/build/styles.css`, result.css, 'utf8')
 
   // Save build hash to file
   await fs.writeFile(
