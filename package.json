@@ -8,10 +8,8 @@
   },
   "private": true,
   "browserslist": [
-    ">5%",
-    "not IE 11",
-    "not dead",
-    "not op_mini all"
+    "last 2 versions and > 0.25%",
+    "not dead"
   ],
   "scripts": {
     "dev": "next dev",

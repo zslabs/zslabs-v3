@@ -10,6 +10,8 @@ import postcss from 'postcss'
 // @ts-expect-error No types for this package
 import lightning from 'postcss-lightningcss'
 
+import { browserslist } from '../package.json'
+
 /** Function to return unique value to deter direct-styling of icons */
 function makeBuildHash(): string {
   return (Math.random() + 1).toString(36).substring(9)
@@ -128,7 +130,11 @@ async function processSvgs() {
 }
 `
   // Generate CSS
-  const result = await postcss([lightning]).process(css, {
+  const result = await postcss([
+    lightning({
+      browsers: browserslist.join(', '),
+    }),
+  ]).process(css, {
     from: undefined,
   })
 
