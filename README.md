@@ -26,3 +26,7 @@ Portfolio site for myself. Built with [Next.js](https://nextjs.org) and [Tailwin
 Patterns from [fffuel](https://fffuel.co)
 
 Icons are a mix of self-made, [Iconoir](https://iconoir.com/), and [Lucide](https://lucide.dev)
+
+## Browser support
+
+[browserslist](https://browserslist.dev/?q=bGFzdCAyIHZlcnNpb25zIGFuZCA%2BIDAuMjUlLCBub3QgZGVhZA%3D%3D)
