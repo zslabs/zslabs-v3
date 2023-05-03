@@ -1,4 +1,5 @@
 import * as Tooltip from '@radix-ui/react-tooltip'
+import { Analytics } from '@vercel/analytics/react'
 import { MotionConfig } from 'framer-motion'
 import type { NextPage } from 'next'
 import type { AppProps } from 'next/app'
@@ -29,6 +30,7 @@ export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
       <MotionConfig transition={spring}>
         <DefaultSeo {...SEO} />
         {getLayout(<Component {...pageProps} />)}
+        <Analytics />
       </MotionConfig>
     </Tooltip.Provider>
   )
