@@ -182,7 +182,7 @@ const Uses: NextPage = () => {
             {tabs.map(({ title, value }) => (
               <React.Fragment key={value}>
                 <TabsPrimitive.TabsTrigger
-                  className="relative text-lg font-semibold text-slate-11 transition-colors hocus:text-slate-12 rdx-state-active:text-slate-12"
+                  className="relative text-lg font-medium text-slate-11 transition-colors hocus:text-slate-12 rdx-state-active:text-slate-12"
                   value={value}
                 >
                   {title}

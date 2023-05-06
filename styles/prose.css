@@ -28,7 +28,7 @@
   h3,
   h4,
   h5 {
-    font-weight: theme('fontWeight.semibold');
+    font-weight: theme('fontWeight.medium');
     font-size: theme('fontSize.lg');
     color: theme('colors.slate.12');
     margin-top: theme('space.10');
@@ -49,7 +49,7 @@
     content: counter(list-counter) '.';
     position: absolute;
     left: theme('inset.1');
-    font-weight: theme('fontWeight.semibold');
+    font-weight: theme('fontWeight.medium');
   }
 
   li {

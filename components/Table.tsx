@@ -18,7 +18,7 @@ export function TableHeader({ children }: ChildrenOnlyProps) {
   return (
     <th
       className={ctl(`
-        sticky top-0 z-10 border-b border-b-slate-7 bg-slate-2 p-4 text-left text-sm font-semibold uppercase tracking-wide
+        sticky top-0 z-10 border-b border-b-slate-7 bg-slate-2 p-4 text-left text-sm font-medium uppercase tracking-wide
       `)}
     >
       {children}

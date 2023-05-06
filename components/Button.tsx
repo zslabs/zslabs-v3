@@ -27,7 +27,7 @@ function Button<T extends React.ElementType = 'button'>({
       type={Component === 'button' ? 'button' : undefined}
       {...rest}
       className={ctl(`
-          relative h-9 overflow-hidden rounded-full text-sm font-semibold duration-150 focus:outline-none hocus:scale-105
+          relative h-9 overflow-hidden rounded-full text-sm font-medium duration-150 focus:outline-none hocus:scale-105
 
           ${Component === 'button' ? 'inline-block' : 'inline-grid'}
 
