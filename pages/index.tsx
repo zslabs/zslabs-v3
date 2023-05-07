@@ -37,8 +37,8 @@ function Intro() {
           efficiently.
         </p>
         <p>
-          Outside of technology, I love spending time with my family + hiking in
-          the NC mountains{' '}
+          Outside of technology, I love spending time with my family and hiking
+          in the NC mountains{' '}
           <TextLink
             title="Elk Knob State Park"
             href="https://www.ncparks.gov/state-parks/elk-knob-state-park"
