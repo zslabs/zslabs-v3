@@ -16,7 +16,7 @@ import StaticLayout from '~layouts/StaticLayout'
 function HeaderProp({ value, label }: { value: string; label: string }) {
   return (
     <div className="text-center">
-      <div className="text-xl font-medium">{value}</div>
+      <div className="text-xl font-semibold">{value}</div>
       <div className="text-slate-11">{label}</div>
     </div>
   )
@@ -28,7 +28,7 @@ function Header() {
       <div className="flex max-sm:flex-col gap-6 items-center">
         <div className="flex-1">
           <h1 className="max-sm:text-center">
-            <div className="text-xl font-medium">1234 Test Place</div>
+            <div className="text-xl font-semibold">1234 Test Place</div>
             <div className="text-slate-11">Charlotte, NC 28270</div>
           </h1>
         </div>
