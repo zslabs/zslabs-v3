@@ -36,4 +36,14 @@ const nextConfig = {
   },
 }
 
-module.exports = withContentlayer(nextConfig)
+module.exports = () => {
+  const plugins = [[withContentlayer, {}]]
+  const config = plugins.reduce(
+    (acc, next) => (Array.isArray(next) ? next[0](acc) : next(acc)),
+    {
+      ...nextConfig,
+    }
+  )
+
+  return config
+}
