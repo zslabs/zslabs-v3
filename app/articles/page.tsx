@@ -1,7 +1,5 @@
 import * as React from 'react'
 
-import type { GetStaticProps } from 'next'
-
 import { allPosts } from 'contentlayer/generated'
 import { MotionHeader, MotionMain } from '~components/ContentWrappers'
 import { List, ListItem } from '~components/List'
@@ -9,7 +7,24 @@ import Prose from '~components/Prose'
 import SectionTitle from '~components/SectionTitle'
 import type { ReducedPosts } from '~types/custom'
 
-function Articles({ posts }: { posts: ReducedPosts }) {
+function Articles() {
+  const allPostsSorted = allPosts.sort(
+    (post1, post2) => +new Date(post2.date) - +new Date(post1.date)
+  )
+
+  const posts: ReducedPosts = allPostsSorted.map((post) => {
+    return {
+      title: post.title,
+      date: new Date(post.date).toLocaleDateString('en-us', {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+      }),
+      url: post.url,
+      excerpt: post.excerpt,
+    }
+  })
+
   return (
     <section id="articles">
       <MotionHeader>
@@ -42,26 +57,3 @@ function Articles({ posts }: { posts: ReducedPosts }) {
 }
 
 export default Articles
-
-export const getStaticProps: GetStaticProps = async () => {
-  const posts = allPosts.sort(
-    (post1, post2) => +new Date(post2.date) - +new Date(post1.date)
-  )
-
-  const reducedPosts: ReducedPosts = posts.map((post) => {
-    return {
-      title: post.title,
-      date: new Date(post.date).toLocaleDateString('en-us', {
-        year: 'numeric',
-        month: 'short',
-        day: 'numeric',
-      }),
-      url: post.url,
-      excerpt: post.excerpt,
-    }
-  })
-
-  return {
-    props: { posts: JSON.parse(JSON.stringify(reducedPosts)) },
-  }
-}

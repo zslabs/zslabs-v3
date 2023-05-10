@@ -53,7 +53,7 @@ module.exports = {
   content: [
     './components/**/*.{js,ts,jsx,tsx}',
     './layouts/**/*.{js,ts,jsx,tsx}',
-    './pages/**/*.{js,ts,jsx,tsx}',
+    './app/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
     colors: {
@@ -257,8 +257,8 @@ module.exports = {
         'button-overlay-contrast': '0 0 0 1px var(--whiteA6)',
       },
       fontFamily: {
-        sans: ['ZS Sans', ...defaultTheme.fontFamily.sans],
-        mono: ['JetBrains Mono', ...defaultTheme.fontFamily.mono],
+        sans: ['var(--font-sans)', ...defaultTheme.fontFamily.sans],
+        mono: ['var(--font-mono)', ...defaultTheme.fontFamily.mono],
       },
       maxHeight: {
         120: '30rem',

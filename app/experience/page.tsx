@@ -6,15 +6,12 @@ import { MotionHeader, MotionMain } from '~components/ContentWrappers'
 import Icon from '~components/Icon'
 import { List, ListItem } from '~components/List'
 import SectionTitle from '~components/SectionTitle'
-import SEO from '~components/SEO'
 import TextLink from '~components/TextLink'
 import Tooltip from '~components/Tooltip'
 
 const Experience: NextPage = () => {
   return (
     <>
-      <SEO title="Experience" />
-
       <MotionHeader>
         <SectionTitle>Experience</SectionTitle>
       </MotionHeader>

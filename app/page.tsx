@@ -1,9 +1,8 @@
-import fs from 'fs'
+'use client'
 
 import * as React from 'react'
 
 import { motion, useAnimation } from 'framer-motion'
-import type { GetStaticProps } from 'next'
 
 import { allPosts } from 'contentlayer/generated'
 import Button from '~components/Button'
@@ -15,7 +14,6 @@ import TextLink from '~components/TextLink'
 import Tooltip from '~components/Tooltip'
 import { fadeInUp } from '~helpers/styles'
 import useLayoutAnimationState from '~hooks/useLayoutAnimationState'
-import { getRssXml } from '~lib/rss'
 import type { ReducedPosts } from '~types/custom'
 
 function Intro() {
@@ -100,7 +98,20 @@ function Projects() {
   )
 }
 
-function Articles({ posts }: { posts: ReducedPosts }) {
+function Articles() {
+  const allPostsSorted = allPosts.sort(
+    (post1, post2) => +new Date(post2.date) - +new Date(post1.date)
+  )
+
+  const posts: ReducedPosts = allPostsSorted.map((post) => {
+    return {
+      title: post.title,
+      date: post.date,
+      url: post.url,
+      excerpt: post.excerpt,
+    }
+  })
+
   return (
     <section id="articles">
       <SectionTitle>Articles</SectionTitle>
@@ -127,7 +138,7 @@ function Articles({ posts }: { posts: ReducedPosts }) {
   )
 }
 
-function Index({ posts }: { posts: ReducedPosts }) {
+function Index() {
   const done = useLayoutAnimationState((state) => state.done)
   const indexControls = useAnimation()
 
@@ -150,42 +161,9 @@ function Index({ posts }: { posts: ReducedPosts }) {
     >
       <Intro />
       <Projects />
-      <Articles posts={posts} />
+      <Articles />
     </motion.div>
   )
 }
 
 export default Index
-
-export const getStaticProps: GetStaticProps = async () => {
-  const posts = allPosts.sort(
-    (post1, post2) => +new Date(post2.date) - +new Date(post1.date)
-  )
-
-  const reducedPosts: ReducedPosts = posts.map((post) => {
-    return {
-      title: post.title,
-      date: post.date,
-      url: post.url,
-      excerpt: post.excerpt,
-    }
-  })
-
-  // Generate RSS feed
-  const rss = getRssXml(reducedPosts)
-
-  fs.writeFileSync('./public/rss.xml', rss)
-
-  const postsForPage = reducedPosts.splice(0, 3).map((post) => ({
-    ...post,
-    date: new Date(post.date).toLocaleDateString('en-us', {
-      year: 'numeric',
-      month: 'short',
-      day: 'numeric',
-    }),
-  }))
-
-  return {
-    props: { posts: JSON.parse(JSON.stringify(postsForPage)) },
-  }
-}

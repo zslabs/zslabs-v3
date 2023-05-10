@@ -1,3 +1,5 @@
+'use client'
+
 import * as React from 'react'
 
 import * as TabsPrimitive from '@radix-ui/react-tabs'
@@ -8,7 +10,6 @@ import { MotionHeader, MotionMain } from '~components/ContentWrappers'
 import { List, ListItem } from '~components/List'
 import Prose from '~components/Prose'
 import SectionTitle from '~components/SectionTitle'
-import SEO from '~components/SEO'
 import TextLink from '~components/TextLink'
 
 function Software() {
@@ -161,7 +162,6 @@ const Uses: NextPage = () => {
   const [tab, setTab] = React.useState('software')
   return (
     <>
-      <SEO title="What I use" />
       <MotionHeader>
         <SectionTitle>What I use</SectionTitle>
       </MotionHeader>

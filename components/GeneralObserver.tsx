@@ -1,3 +1,5 @@
+'use client'
+
 /**
  * @SOURCE https://github.com/PaulieScanlon/mdx-embed/blob/main/packages/mdx-embed/src/components/general-observer/general-observer.tsx
  * MIT License

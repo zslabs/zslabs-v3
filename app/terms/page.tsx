@@ -1,30 +1,16 @@
-import * as React from 'react'
-
-import type { InferGetStaticPropsType } from 'next'
-
 import { allStatics } from 'contentlayer/generated'
 import { MotionHeader, MotionMain } from '~components/ContentWrappers'
 import MDXContent from '~components/MDXContent'
 import SectionTitle from '~components/SectionTitle'
-import SEO from '~components/SEO'
 
-export const getStaticProps = async () => {
+const Terms = () => {
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-  const currentPage = allStatics.find((page) => {
-    return page.slug === 'privacy'
+  const page = allStatics.find((p) => {
+    return p.slug === 'terms'
   })!
 
-  return {
-    props: {
-      page: currentPage,
-    },
-  }
-}
-
-const Privacy = ({ page }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <>
-      <SEO title={page.title} />
       <MotionHeader>
         <SectionTitle>{page.title}</SectionTitle>
       </MotionHeader>
@@ -35,4 +21,4 @@ const Privacy = ({ page }: InferGetStaticPropsType<typeof getStaticProps>) => {
   )
 }
 
-export default Privacy
+export default Terms
