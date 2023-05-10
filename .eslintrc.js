@@ -64,11 +64,6 @@ module.exports = {
             group: 'external',
             position: 'before',
           },
-          {
-            pattern: 'remix',
-            group: 'external',
-            position: 'before',
-          },
         ],
         pathGroupsExcludedImportTypes: ['builtin'],
       },
