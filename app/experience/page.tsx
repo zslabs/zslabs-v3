@@ -1,12 +1,12 @@
 import * as React from 'react'
 
 import type { NextPage } from 'next'
+import Link from 'next/link'
 
 import { MotionHeader, MotionMain } from '~components/ContentWrappers'
 import Icon from '~components/Icon'
 import { List, ListItem } from '~components/List'
 import SectionTitle from '~components/SectionTitle'
-import TextLink from '~components/TextLink'
 import Tooltip from '~components/Tooltip'
 
 const Experience: NextPage = () => {
@@ -58,9 +58,9 @@ const Experience: NextPage = () => {
 
         <div className="mt-12 ml-1 w-fit text-xl">
           <Tooltip content="LinkedIn">
-            <TextLink href="https://www.linkedin.com/in/zachschnackel/">
+            <Link href="https://www.linkedin.com/in/zachschnackel/">
               <Icon name="more" />
-            </TextLink>
+            </Link>
           </Tooltip>
         </div>
       </MotionMain>

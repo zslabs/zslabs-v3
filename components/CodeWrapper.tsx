@@ -1,11 +1,4 @@
-'use client'
-
-import * as React from 'react'
-
-import { CopyToClipboard } from 'react-copy-to-clipboard'
-
-import Icon from './Icon'
-import Tooltip from './Tooltip'
+import CopySnippet from '~components/CopySnippet'
 
 interface CodeProps {
   codeString: string
@@ -13,17 +6,6 @@ interface CodeProps {
 }
 
 export default function CodeWrapper({ codeString, children }: CodeProps) {
-  const [isCopied, setCopied] = React.useState(false)
-
-  // Reset icon after 3 seconds
-  React.useEffect(() => {
-    if (isCopied) {
-      setTimeout(() => setCopied(false), 3000)
-    }
-  }, [isCopied])
-
-  const handleCopy = React.useCallback(() => setCopied(true), [])
-
   return (
     <div className="rounded-xl font-mono font-normal tracking-normal">
       <header className="flex items-center justify-between gap-4 rounded-t-xl bg-overlay-11 px-4 py-2">
@@ -35,19 +17,7 @@ export default function CodeWrapper({ codeString, children }: CodeProps) {
           </div>
         </div>
         <div>
-          <CopyToClipboard text={codeString} onCopy={handleCopy}>
-            {isCopied ? (
-              <Tooltip content="Copied!">
-                <Icon name="check" />
-              </Tooltip>
-            ) : (
-              <button type="button" className="block focus:outline-none">
-                <Tooltip content="Copy snippet">
-                  <Icon name="clipboard" />
-                </Tooltip>
-              </button>
-            )}
-          </CopyToClipboard>
+          <CopySnippet codeString={codeString} />
         </div>
       </header>
       <aside className="max-h-120 overflow-auto overscroll-contain rounded-b-xl bg-overlay-8 p-4">

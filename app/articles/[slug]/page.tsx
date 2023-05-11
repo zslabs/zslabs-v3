@@ -1,10 +1,8 @@
 import { allPosts } from 'contentlayer/generated'
 import { MotionHeader, MotionMain } from '~components/ContentWrappers'
-import Icon from '~components/Icon'
 import MDXContent from '~components/MDXContent'
+import MoreArticlesLink from '~components/MoreArticlesLink'
 import SectionTitle from '~components/SectionTitle'
-import TextLink from '~components/TextLink'
-import Tooltip from '~components/Tooltip'
 
 export default function PostSingle({ params }: { params: { slug: string } }) {
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
@@ -33,11 +31,7 @@ export default function PostSingle({ params }: { params: { slug: string } }) {
             <div className="font-mono text-sm uppercase text-slate-12">
               :: Published {post.date} ::
             </div>
-            <Tooltip content="More articles">
-              <TextLink href="/articles">
-                <Icon name="more" />
-              </TextLink>
-            </Tooltip>
+            <MoreArticlesLink />
           </div>
         </MotionMain>
       </article>

@@ -10,11 +10,11 @@ import type {
 } from 'framer-motion'
 import { motion, useAnimation } from 'framer-motion'
 import Image from 'next/image'
+import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
 import Icon from '~components/Icon'
 import Prose from '~components/Prose'
-import TextLink from '~components/TextLink'
 import Tooltip from '~components/Tooltip'
 import useLayoutAnimationState from '~hooks/useLayoutAnimationState'
 import type { ChildrenOnlyProps } from '~types/custom'
@@ -99,7 +99,7 @@ const BaseLayout: React.FC<ChildrenOnlyProps> = ({ children }) => {
             controls={controls}
             custom={1}
           >
-            <TextLink
+            <Link
               href="/"
               aria-label="Home"
               className="group relative text-3xl"
@@ -108,7 +108,7 @@ const BaseLayout: React.FC<ChildrenOnlyProps> = ({ children }) => {
               <div className="pointer-events-none absolute top-0 left-0 -z-1 rotate-12 opacity-0 blur-xl transition-opacity duration-150 group-hover:opacity-80">
                 <Icon name="logo" />
               </div>
-            </TextLink>
+            </Link>
           </HeaderItemWrapper>
 
           <div className="flex items-center justify-end gap-6">
@@ -118,12 +118,12 @@ const BaseLayout: React.FC<ChildrenOnlyProps> = ({ children }) => {
               custom={2}
             >
               <Tooltip content="GitHub">
-                <TextLink
+                <Link
                   href="https://github.com/zslabs"
                   className="text-xl text-slate-11 transition-colors hocus:text-slate-12"
                 >
                   <Icon name="github" />
-                </TextLink>
+                </Link>
               </Tooltip>
             </HeaderItemWrapper>
             <HeaderItemWrapper
@@ -132,12 +132,12 @@ const BaseLayout: React.FC<ChildrenOnlyProps> = ({ children }) => {
               custom={3}
             >
               <Tooltip content="Twitter">
-                <TextLink
+                <Link
                   href="https://twitter.com/zslabs"
                   className="text-xl text-slate-11 transition-colors hocus:text-slate-12"
                 >
                   <Icon name="twitter" />
-                </TextLink>
+                </Link>
               </Tooltip>
             </HeaderItemWrapper>
             <HeaderItemWrapper
@@ -146,7 +146,7 @@ const BaseLayout: React.FC<ChildrenOnlyProps> = ({ children }) => {
               custom={4}
             >
               <Tooltip content="About me">
-                <TextLink href="/#about">
+                <Link href="/#about">
                   <Image
                     className="shrink-0 rounded-full"
                     src="/media/me.png"
@@ -154,7 +154,7 @@ const BaseLayout: React.FC<ChildrenOnlyProps> = ({ children }) => {
                     height="32"
                     alt="Zach Schnackel"
                   />
-                </TextLink>
+                </Link>
               </Tooltip>
             </HeaderItemWrapper>
           </div>
@@ -176,9 +176,9 @@ const BaseLayout: React.FC<ChildrenOnlyProps> = ({ children }) => {
           </p>
           <Prose>
             <div className="flex justify-center gap-2">
-              <TextLink href="mailto:info@zslabs.com">Contact</TextLink> ::{' '}
-              <TextLink href="/privacy">Privacy</TextLink> ::{' '}
-              <TextLink href="/terms">Terms</TextLink>
+              <Link href="mailto:info@zslabs.com">Contact</Link> ::{' '}
+              <Link href="/privacy">Privacy</Link> ::{' '}
+              <Link href="/terms">Terms</Link>
             </div>
           </Prose>
         </motion.footer>

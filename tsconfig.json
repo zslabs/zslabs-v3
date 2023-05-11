@@ -2,46 +2,20 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "~data/*": [
-        "data/*"
-      ],
-      "~components/*": [
-        "components/*"
-      ],
-      "~helpers/*": [
-        "helpers/*"
-      ],
-      "~hooks/*": [
-        "hooks/*"
-      ],
-      "~icons/*": [
-        "icons/*"
-      ],
-      "~layouts/*": [
-        "layouts/*"
-      ],
-      "~lib/*": [
-        "lib/*"
-      ],
-      "~media/*": [
-        "media/*"
-      ],
-      "~styles/*": [
-        "styles/*"
-      ],
-      "~types/*": [
-        "types/*"
-      ],
-      "contentlayer/generated": [
-        "./.contentlayer/generated"
-      ]
+      "~data/*": ["data/*"],
+      "~components/*": ["components/*"],
+      "~helpers/*": ["helpers/*"],
+      "~hooks/*": ["hooks/*"],
+      "~icons/*": ["icons/*"],
+      "~layouts/*": ["layouts/*"],
+      "~lib/*": ["lib/*"],
+      "~media/*": ["media/*"],
+      "~styles/*": ["styles/*"],
+      "~types/*": ["types/*"],
+      "contentlayer/generated": ["./.contentlayer/generated"]
     },
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -67,10 +41,6 @@
     ".contentlayer/generated",
     ".next/types/**/*.ts"
   ],
-  "types": [
-    "types"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "types": ["types"],
+  "exclude": ["node_modules"]
 }

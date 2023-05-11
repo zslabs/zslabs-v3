@@ -3,6 +3,7 @@
 import * as React from 'react'
 
 import { motion, useAnimation } from 'framer-motion'
+import Link from 'next/link'
 
 import { allPosts } from 'contentlayer/generated'
 import Button from '~components/Button'
@@ -10,7 +11,6 @@ import Icon from '~components/Icon'
 import { List, ListItem } from '~components/List'
 import Prose from '~components/Prose'
 import SectionTitle from '~components/SectionTitle'
-import TextLink from '~components/TextLink'
 import Tooltip from '~components/Tooltip'
 import { fadeInUp } from '~helpers/styles'
 import useLayoutAnimationState from '~hooks/useLayoutAnimationState'
@@ -28,36 +28,36 @@ function Intro() {
         </p>
         <p>
           Happy to be part of the design infrastructure team at{' '}
-          <TextLink href="https://slack.com">
+          <Link href="https://slack.com">
             <Icon inline name="slack" /> Slack
-          </TextLink>
+          </Link>
           ; building tools to help designers and engineers collaborate more
           efficiently.
         </p>
         <p>
           Outside of technology, I love spending time with my family and hiking
           in the NC mountains{' '}
-          <TextLink
+          <Link
             title="Elk Knob State Park"
             href="https://www.ncparks.gov/state-parks/elk-knob-state-park"
           >
             <span className="text-slate-12">
               <Icon inline name="mountain-snow" />
             </span>
-          </TextLink>
+          </Link>
         </p>
       </Prose>
       <div className="mt-8 flex justify-between gap-4">
-        <TextLink href="/experience">
+        <Link href="/experience">
           <Button as="div" variation="contrast">
             Experience
           </Button>
-        </TextLink>
-        <TextLink href="/uses" className="cursor-help">
+        </Link>
+        <Link href="/uses" className="cursor-help">
           <Button as="div" variation="default">
             What I use
           </Button>
-        </TextLink>
+        </Link>
       </div>
     </section>
   )
@@ -106,7 +106,11 @@ function Articles() {
   const posts: ReducedPosts = allPostsSorted.map((post) => {
     return {
       title: post.title,
-      date: post.date,
+      date: new Date(post.date).toLocaleDateString('en-us', {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+      }),
       url: post.url,
       excerpt: post.excerpt,
     }
@@ -129,9 +133,9 @@ function Articles() {
       </List>
       <div className="mt-12 w-fit text-xl">
         <Tooltip content="More articles">
-          <TextLink href="/articles">
+          <Link href="/articles">
             <Icon name="more" />
-          </TextLink>
+          </Link>
         </Tooltip>
       </div>
     </section>

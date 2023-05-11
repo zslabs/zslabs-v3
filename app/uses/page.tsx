@@ -5,12 +5,12 @@ import * as React from 'react'
 import * as TabsPrimitive from '@radix-ui/react-tabs'
 import { motion } from 'framer-motion'
 import type { NextPage } from 'next'
+import Link from 'next/link'
 
 import { MotionHeader, MotionMain } from '~components/ContentWrappers'
 import { List, ListItem } from '~components/List'
 import Prose from '~components/Prose'
 import SectionTitle from '~components/SectionTitle'
-import TextLink from '~components/TextLink'
 
 function Software() {
   return (
@@ -98,17 +98,15 @@ function Gear() {
         thought I'd miss the 4-5 days of battery life, but I get a solid 2 days.
       </ListItem>
       <ListItem icon="monitor" label="Monitors">
-        <TextLink href="https://amzn.to/3K5ZSe9">LG 32UL750-W</TextLink> front
-        and center, with a{' '}
-        <TextLink href="https://amzn.to/3pxBokr">
-          Dell UltraSharp U2720Q
-        </TextLink>{' '}
+        <Link href="https://amzn.to/3K5ZSe9">LG 32UL750-W</Link> front and
+        center, with a{' '}
+        <Link href="https://amzn.to/3pxBokr">Dell UltraSharp U2720Q</Link>{' '}
         rotated 90º to my left.
       </ListItem>
       <ListItem icon="mouse" label="Logitech MX Masters">
         Took almost no time to get used to either the{' '}
-        <TextLink href="https://amzn.to/3PCyVzG">keyboard</TextLink> or{' '}
-        <TextLink href="https://amzn.to/3ccyLS8">mouse</TextLink>.
+        <Link href="https://amzn.to/3PCyVzG">keyboard</Link> or{' '}
+        <Link href="https://amzn.to/3ccyLS8">mouse</Link>.
       </ListItem>
       <ListItem
         href="https://www.aersf.com/travel-pack-3-black"
@@ -125,8 +123,8 @@ function Gear() {
       >
         I'll eventually switch over to Continuity in iOS 16, but this has worked
         well so far. I've tried{' '}
-        <TextLink href="https://amzn.to/3QEn99r">Lumina</TextLink> and{' '}
-        <TextLink href="https://amzn.to/3T1SQel">Logitech Brio</TextLink>.
+        <Link href="https://amzn.to/3QEn99r">Lumina</Link> and{' '}
+        <Link href="https://amzn.to/3T1SQel">Logitech Brio</Link>.
       </ListItem>
       <ListItem
         href="https://amzn.to/3TnaoSf"
