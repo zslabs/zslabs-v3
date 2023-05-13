@@ -19,7 +19,6 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
     "type:check": "tsc --project tsconfig.json --pretty --noEmit",
-    "postbuild": "next-sitemap",
     "postinstall": "husky install"
   },
   "dependencies": {
@@ -56,7 +55,6 @@
     "next": "13.4.2",
     "next-contentlayer": "0.3.1",
     "next-images": "1.8.5",
-    "next-seo": "6.0.0",
     "postcss": "8.4.23",
     "postcss-import": "15.1.0",
     "postcss-lightningcss": "0.7.0",
@@ -79,7 +77,6 @@
   "devDependencies": {
     "@svgr/webpack": "8.0.1",
     "husky": "8.0.3",
-    "nano-staged": "0.8.0",
-    "next-sitemap": "4.0.9"
+    "nano-staged": "0.8.0"
   }
 }
