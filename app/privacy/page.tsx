@@ -3,7 +3,11 @@ import { MotionHeader, MotionMain } from '~components/ContentWrappers'
 import MDXContent from '~components/MDXContent'
 import SectionTitle from '~components/SectionTitle'
 
-const Privacy = () => {
+export const metadata = {
+  title: 'Privacy policy',
+}
+
+export default function Privacy() {
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   const page = allStatics.find((p) => {
     return p.slug === 'privacy'
@@ -20,5 +24,3 @@ const Privacy = () => {
     </>
   )
 }
-
-export default Privacy

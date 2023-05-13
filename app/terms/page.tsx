@@ -3,7 +3,11 @@ import { MotionHeader, MotionMain } from '~components/ContentWrappers'
 import MDXContent from '~components/MDXContent'
 import SectionTitle from '~components/SectionTitle'
 
-const Terms = () => {
+export const metadata = {
+  title: 'Terms & conditions',
+}
+
+export default function Terms() {
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   const page = allStatics.find((p) => {
     return p.slug === 'terms'
@@ -20,5 +24,3 @@ const Terms = () => {
     </>
   )
 }
-
-export default Terms

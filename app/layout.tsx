@@ -7,6 +7,8 @@ import BaseLayout from '~layouts/BaseLayout'
 import '~styles/index.css'
 
 export const metadata = {
+  title: 'Zach Schnackel',
+  description: 'Full-stack/motion developer',
   alternates: {
     types: {
       'application/rss+xml': '/rss.xml',

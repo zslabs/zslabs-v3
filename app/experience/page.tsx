@@ -1,14 +1,16 @@
 import * as React from 'react'
 
-import type { NextPage } from 'next'
-
 import LinkedIn from './components/LinkedIn'
 
 import { MotionHeader, MotionMain } from '~components/ContentWrappers'
 import { List, ListItem } from '~components/List'
 import SectionTitle from '~components/SectionTitle'
 
-const Experience: NextPage = () => {
+export const metadata = {
+  title: 'Experience',
+}
+
+export default function Experience() {
   return (
     <>
       <MotionHeader>
@@ -62,5 +64,3 @@ const Experience: NextPage = () => {
     </>
   )
 }
-
-export default Experience

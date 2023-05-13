@@ -4,13 +4,16 @@ import * as React from 'react'
 
 import * as TabsPrimitive from '@radix-ui/react-tabs'
 import { motion } from 'framer-motion'
-import type { NextPage } from 'next'
 import Link from 'next/link'
 
 import { MotionHeader, MotionMain } from '~components/ContentWrappers'
 import { List, ListItem } from '~components/List'
 import Prose from '~components/Prose'
 import SectionTitle from '~components/SectionTitle'
+
+export const metadata = {
+  title: 'Uses',
+}
 
 function Software() {
   return (
@@ -156,7 +159,7 @@ const tabs: { title: string; value: string }[] = [
   },
 ]
 
-const Uses: NextPage = () => {
+export default function Uses() {
   const [tab, setTab] = React.useState('software')
   return (
     <>
@@ -205,5 +208,3 @@ const Uses: NextPage = () => {
     </>
   )
 }
-
-export default Uses

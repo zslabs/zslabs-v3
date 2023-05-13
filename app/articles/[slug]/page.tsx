@@ -4,6 +4,23 @@ import MDXContent from '~components/MDXContent'
 import MoreArticlesLink from '~components/MoreArticlesLink'
 import SectionTitle from '~components/SectionTitle'
 
+export const dynamicParams = false
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string }
+}) {
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+  const currentPost = allPosts.find((post) => {
+    return post.slug === params.slug
+  })!
+
+  return {
+    title: currentPost.title,
+  }
+}
+
 export default function PostSingle({ params }: { params: { slug: string } }) {
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   const currentPost = allPosts.find((post) => {
@@ -40,9 +57,7 @@ export default function PostSingle({ params }: { params: { slug: string } }) {
 }
 
 export async function generateStaticParams() {
-  const posts = allPosts.map((post) => post.url)
-
-  return posts.map((post) => ({
-    slug: post,
+  return allPosts.map((post) => ({
+    slug: post.slug,
   }))
 }
