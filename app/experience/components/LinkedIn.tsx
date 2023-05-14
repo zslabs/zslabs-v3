@@ -1,16 +1,15 @@
 'use client'
 
-import Link from 'next/link'
-
 import Icon from '~components/Icon'
+import TextLink from '~components/TextLink'
 import Tooltip from '~components/Tooltip'
 
 export default function LinkedIn() {
   return (
     <Tooltip content="LinkedIn">
-      <Link href="https://www.linkedin.com/in/zachschnackel/">
+      <TextLink href="https://www.linkedin.com/in/zachschnackel/">
         <Icon name="more" />
-      </Link>
+      </TextLink>
     </Tooltip>
   )
 }

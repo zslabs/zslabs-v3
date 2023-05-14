@@ -3,7 +3,6 @@
 import * as React from 'react'
 
 import { motion, useAnimation } from 'framer-motion'
-import Link from 'next/link'
 
 import { allPosts } from 'contentlayer/generated'
 import Button from '~components/Button'
@@ -11,6 +10,7 @@ import Icon from '~components/Icon'
 import { List, ListItem } from '~components/List'
 import Prose from '~components/Prose'
 import SectionTitle from '~components/SectionTitle'
+import TextLink from '~components/TextLink'
 import Tooltip from '~components/Tooltip'
 import { fadeInUp } from '~helpers/styles'
 import useLayoutAnimationState from '~hooks/useLayoutAnimationState'
@@ -28,36 +28,36 @@ function Intro() {
         </p>
         <p>
           Happy to be part of the design infrastructure team at{' '}
-          <Link href="https://slack.com">
+          <TextLink href="https://slack.com">
             <Icon inline name="slack" /> Slack
-          </Link>
+          </TextLink>
           ; building tools to help designers and engineers collaborate more
           efficiently.
         </p>
         <p>
           Outside of technology, I love spending time with my family and hiking
           in the NC mountains{' '}
-          <Link
+          <TextLink
             title="Elk Knob State Park"
             href="https://www.ncparks.gov/state-parks/elk-knob-state-park"
           >
             <span className="text-slate-12">
               <Icon inline name="mountain-snow" />
             </span>
-          </Link>
+          </TextLink>
         </p>
       </Prose>
       <div className="mt-8 flex justify-between gap-4">
-        <Link href="/experience">
+        <TextLink href="/experience">
           <Button as="div" variation="contrast">
             Experience
           </Button>
-        </Link>
-        <Link href="/uses" className="cursor-help">
+        </TextLink>
+        <TextLink href="/uses" className="cursor-help">
           <Button as="div" variation="default">
             What I use
           </Button>
-        </Link>
+        </TextLink>
       </div>
     </section>
   )
@@ -133,9 +133,9 @@ function Articles() {
       </List>
       <div className="mt-12 w-fit text-xl">
         <Tooltip content="More articles">
-          <Link href="/articles">
+          <TextLink href="/articles">
             <Icon name="more" />
-          </Link>
+          </TextLink>
         </Tooltip>
       </div>
     </section>

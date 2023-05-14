@@ -2,10 +2,8 @@ import React from 'react'
 
 import type { MDX } from 'contentlayer/core'
 import { getMDXComponent } from 'mdx-bundler/client'
-import type { Url } from 'next/dist/shared/lib/router/router'
 import type { ImageProps } from 'next/image'
 import NextImage from 'next/image'
-import Link from 'next/link'
 
 import Alert from '~components/Alert'
 import AutoLinkHeader from '~components/AutoLinkHeader'
@@ -14,6 +12,8 @@ import Blockquote from '~components/Blockquote'
 import CodePen from '~components/CodePen'
 import CodeWrapper from '~components/CodeWrapper'
 import Prose from '~components/Prose'
+import type { TextLinkProps } from '~components/TextLink'
+import TextLink from '~components/TextLink'
 import Tweet from '~components/Tweet'
 
 interface NextImageProps {
@@ -53,9 +53,7 @@ function Image({
 }
 
 const components = {
-  a: ({ href, ...rest }: typeof Link & { href: Url }) => (
-    <Link href={href} {...rest} />
-  ),
+  a: (props: TextLinkProps) => <TextLink {...props} />,
   blockquote: (props: BlockquoteProps) => <Blockquote {...props} />,
   h1: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
     <AutoLinkHeader as="h1" {...props} />
@@ -76,7 +74,7 @@ const components = {
   Image,
   CodePen,
   Tweet,
-  Link,
+  TextLink,
   pre: ({
     __rawString__,
     ...rest

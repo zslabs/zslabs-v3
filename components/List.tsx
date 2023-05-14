@@ -3,11 +3,11 @@
 import * as React from 'react'
 
 import { motion } from 'framer-motion'
-import Link from 'next/link'
 
 import Icon from './Icon'
 import Prose from './Prose'
 
+import TextLink from '~components/TextLink'
 import { fadeInUp, viewportInViewOptions } from '~helpers/styles'
 import type { IconName } from '~icons/build/types'
 
@@ -44,7 +44,10 @@ export function ListItem({
       <div>
         <div className="mb-1">
           {href ? (
-            <Link className="group flex w-fit items-baseline gap-1" href={href}>
+            <TextLink
+              className="group flex w-fit items-baseline gap-1"
+              href={href}
+            >
               <span className="underline decoration-dotted underline-offset-4 transition-all group-hocus:underline-offset-5">
                 {label}
               </span>
@@ -53,7 +56,7 @@ export function ListItem({
                   <Icon name="arrow-down" inline />
                 </div>
               )}
-            </Link>
+            </TextLink>
           ) : (
             <span>{label}</span>
           )}
