@@ -1,3 +1,5 @@
+'use client'
+
 import * as React from 'react'
 
 import type {
@@ -8,7 +10,7 @@ import type {
 } from 'framer-motion'
 import { motion, useAnimation } from 'framer-motion'
 import Image from 'next/image'
-import { useRouter } from 'next/router'
+import { usePathname } from 'next/navigation'
 
 import Icon from '~components/Icon'
 import Prose from '~components/Prose'
@@ -70,7 +72,7 @@ const footerVariants: Variants = {
 }
 
 const BaseLayout: React.FC<ChildrenOnlyProps> = ({ children }) => {
-  const { pathname } = useRouter()
+  const pathname = usePathname()
   const controls = useAnimation()
   const setDone = useLayoutAnimationState((state) => state.setDone)
 
@@ -86,7 +88,7 @@ const BaseLayout: React.FC<ChildrenOnlyProps> = ({ children }) => {
     if (runAnimation) {
       runAnimationFunc()
     }
-  }, [controls, pathname, setDone, runAnimation])
+  }, [controls, setDone, runAnimation])
 
   return (
     <>

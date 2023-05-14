@@ -92,10 +92,7 @@ const components = {
 const MDXContent: React.FC<{
   content: MDX
 }> = ({ content }) => {
-  const Component = React.useMemo(
-    () => getMDXComponent(content.code),
-    [content]
-  )
+  const Component = getMDXComponent(content.code)
 
   return (
     <Prose>

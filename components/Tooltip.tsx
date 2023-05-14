@@ -1,3 +1,5 @@
+'use client'
+
 import * as React from 'react'
 
 import ctl from '@netlify/classnames-template-literals'

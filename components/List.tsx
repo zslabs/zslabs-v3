@@ -1,11 +1,13 @@
+'use client'
+
 import * as React from 'react'
 
 import { motion } from 'framer-motion'
 
 import Icon from './Icon'
 import Prose from './Prose'
-import TextLink from './TextLink'
 
+import TextLink from '~components/TextLink'
 import { fadeInUp, viewportInViewOptions } from '~helpers/styles'
 import type { IconName } from '~icons/build/types'
 

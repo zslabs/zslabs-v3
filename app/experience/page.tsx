@@ -1,20 +1,18 @@
 import * as React from 'react'
 
-import type { NextPage } from 'next'
+import LinkedIn from './components/LinkedIn'
 
 import { MotionHeader, MotionMain } from '~components/ContentWrappers'
-import Icon from '~components/Icon'
 import { List, ListItem } from '~components/List'
 import SectionTitle from '~components/SectionTitle'
-import SEO from '~components/SEO'
-import TextLink from '~components/TextLink'
-import Tooltip from '~components/Tooltip'
 
-const Experience: NextPage = () => {
+export const metadata = {
+  title: 'Experience',
+}
+
+export default function Experience() {
   return (
     <>
-      <SEO title="Experience" />
-
       <MotionHeader>
         <SectionTitle>Experience</SectionTitle>
       </MotionHeader>
@@ -60,15 +58,9 @@ const Experience: NextPage = () => {
         </List>
 
         <div className="mt-12 ml-1 w-fit text-xl">
-          <Tooltip content="LinkedIn">
-            <TextLink href="https://www.linkedin.com/in/zachschnackel/">
-              <Icon name="more" />
-            </TextLink>
-          </Tooltip>
+          <LinkedIn />
         </div>
       </MotionMain>
     </>
   )
 }
-
-export default Experience

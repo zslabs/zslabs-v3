@@ -1,15 +1,23 @@
+'use client'
+
 import * as React from 'react'
 
 import * as TabsPrimitive from '@radix-ui/react-tabs'
 import { motion } from 'framer-motion'
-import type { NextPage } from 'next'
 
-import { MotionHeader, MotionMain } from '~components/ContentWrappers'
 import { List, ListItem } from '~components/List'
-import Prose from '~components/Prose'
-import SectionTitle from '~components/SectionTitle'
-import SEO from '~components/SEO'
 import TextLink from '~components/TextLink'
+
+const tabs: { title: string; value: string }[] = [
+  {
+    title: 'Software',
+    value: 'software',
+  },
+  {
+    title: 'Gear',
+    value: 'gear',
+  },
+]
 
 function Software() {
   return (
@@ -146,66 +154,38 @@ function Gear() {
   )
 }
 
-const tabs: { title: string; value: string }[] = [
-  {
-    title: 'Software',
-    value: 'software',
-  },
-  {
-    title: 'Gear',
-    value: 'gear',
-  },
-]
-
-const Uses: NextPage = () => {
+export default function Tabs() {
   const [tab, setTab] = React.useState('software')
+
   return (
-    <>
-      <SEO title="What I use" />
-      <MotionHeader>
-        <SectionTitle>What I use</SectionTitle>
-      </MotionHeader>
-      <MotionMain>
-        <div className="mb-12">
-          <Prose>
-            <p>
-              A collection of the things I use on my personal device(s) that
-              make me look smarter than I actually am.
-            </p>
-          </Prose>
-        </div>
-        <TabsPrimitive.Root value={tab} onValueChange={setTab}>
-          <TabsPrimitive.TabsList
-            aria-label="What I use"
-            className="mb-8 flex items-center gap-6"
-          >
-            {tabs.map(({ title, value }) => (
-              <React.Fragment key={value}>
-                <TabsPrimitive.TabsTrigger
-                  className="relative text-lg font-semibold text-slate-11 transition-colors hocus:text-slate-12 rdx-state-active:text-slate-12"
-                  value={value}
-                >
-                  {title}
-                  {value === tab && (
-                    <motion.span
-                      className="absolute inset-x-0 -bottom-1.5 h-0.5 rounded-full bg-gradient-to-r from-primary-9 to-accent-9"
-                      layoutId="underline"
-                    />
-                  )}
-                </TabsPrimitive.TabsTrigger>
-              </React.Fragment>
-            ))}
-          </TabsPrimitive.TabsList>
-          <TabsPrimitive.Content value="software">
-            <Software />
-          </TabsPrimitive.Content>
-          <TabsPrimitive.Content value="gear">
-            <Gear />
-          </TabsPrimitive.Content>
-        </TabsPrimitive.Root>
-      </MotionMain>
-    </>
+    <TabsPrimitive.Root value={tab} onValueChange={setTab}>
+      <TabsPrimitive.TabsList
+        aria-label="What I use"
+        className="mb-8 flex items-center gap-6"
+      >
+        {tabs.map(({ title, value }) => (
+          <React.Fragment key={value}>
+            <TabsPrimitive.TabsTrigger
+              className="relative text-lg font-semibold text-slate-11 transition-colors hocus:text-slate-12 rdx-state-active:text-slate-12"
+              value={value}
+            >
+              {title}
+              {value === tab && (
+                <motion.span
+                  className="absolute inset-x-0 -bottom-1.5 h-0.5 rounded-full bg-gradient-to-r from-primary-9 to-accent-9"
+                  layoutId="underline"
+                />
+              )}
+            </TabsPrimitive.TabsTrigger>
+          </React.Fragment>
+        ))}
+      </TabsPrimitive.TabsList>
+      <TabsPrimitive.Content value="software">
+        <Software />
+      </TabsPrimitive.Content>
+      <TabsPrimitive.Content value="gear">
+        <Gear />
+      </TabsPrimitive.Content>
+    </TabsPrimitive.Root>
   )
 }
-
-export default Uses

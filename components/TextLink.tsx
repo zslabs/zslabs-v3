@@ -53,4 +53,4 @@ const TextLink = React.forwardRef<HTMLAnchorElement, TextLinkProps>(
   }
 )
 
-export default React.memo(TextLink)
+export default TextLink
