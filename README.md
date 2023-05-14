@@ -1,7 +1,3 @@
-## RSC TODO
-
-- Generate RSS feed
-
 ## Introduction
 
 Portfolio site for myself. Built with [Next.js](https://nextjs.org) and [Tailwind CSS](https://tailwindcss.com).

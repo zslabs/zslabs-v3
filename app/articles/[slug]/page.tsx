@@ -18,6 +18,7 @@ export async function generateMetadata({
 
   return {
     title: currentPost.title,
+    description: currentPost.excerpt || null,
   }
 }
 
@@ -37,22 +38,20 @@ export default function PostSingle({ params }: { params: { slug: string } }) {
   }
 
   return (
-    <>
-      <article>
-        <MotionHeader>
-          <SectionTitle>{post.title}</SectionTitle>
-        </MotionHeader>
-        <MotionMain>
-          <MDXContent content={post.body} />
-          <div className="flex mt-12 gap-4 justify-between items-center">
-            <div className="font-mono text-sm uppercase text-slate-12">
-              :: Published {post.date} ::
-            </div>
-            <MoreArticlesLink />
+    <article>
+      <MotionHeader>
+        <SectionTitle>{post.title}</SectionTitle>
+      </MotionHeader>
+      <MotionMain>
+        <MDXContent content={post.body} />
+        <div className="flex mt-12 gap-4 justify-between items-center">
+          <div className="font-mono text-sm uppercase text-slate-12">
+            :: Published {post.date} ::
           </div>
-        </MotionMain>
-      </article>
-    </>
+          <MoreArticlesLink />
+        </div>
+      </MotionMain>
+    </article>
   )
 }
 
