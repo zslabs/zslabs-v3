@@ -103,18 +103,20 @@ function Articles() {
     (post1, post2) => +new Date(post2.date) - +new Date(post1.date)
   )
 
-  const posts: ReducedPosts = allPostsSorted.map((post) => {
-    return {
-      title: post.title,
-      date: new Date(post.date).toLocaleDateString('en-us', {
-        year: 'numeric',
-        month: 'short',
-        day: 'numeric',
-      }),
-      url: post.url,
-      excerpt: post.excerpt,
-    }
-  })
+  const posts: ReducedPosts = allPostsSorted
+    .map((post) => {
+      return {
+        title: post.title,
+        date: new Date(post.date).toLocaleDateString('en-us', {
+          year: 'numeric',
+          month: 'short',
+          day: 'numeric',
+        }),
+        url: post.url,
+        excerpt: post.excerpt,
+      }
+    })
+    .slice(0, 5)
 
   return (
     <section id="articles">
