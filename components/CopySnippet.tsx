@@ -2,36 +2,31 @@
 
 import * as React from 'react'
 
-import { CopyToClipboard } from 'react-copy-to-clipboard'
-
 import Icon from '~components/Icon'
-import Tooltip from '~components/Tooltip'
 
 export default function CopySnippet({ codeString }: { codeString: string }) {
-  const [isCopied, setCopied] = React.useState(false)
-
-  // Reset icon after 3 seconds
-  React.useEffect(() => {
-    if (isCopied) {
-      setTimeout(() => setCopied(false), 3000)
+  const handleCopy = React.useCallback(async () => {
+    try {
+      await navigator.clipboard.writeText(codeString)
+    } catch (err) {
+      // eslint-disable-next-line no-console
+      console.error('Failed to copy: ', err)
     }
-  }, [isCopied])
-
-  const handleCopy = React.useCallback(() => setCopied(true), [])
+  }, [codeString])
 
   return (
-    <CopyToClipboard text={codeString} onCopy={handleCopy}>
-      {isCopied ? (
-        <Tooltip content="Copied!">
-          <Icon name="check" />
-        </Tooltip>
-      ) : (
-        <button type="button" className="block focus:outline-none">
-          <Tooltip content="Copy snippet">
-            <Icon name="clipboard" />
-          </Tooltip>
-        </button>
-      )}
-    </CopyToClipboard>
+    <button
+      type="button"
+      onClick={handleCopy}
+      aria-label="Copy snippet"
+      className="block focus:outline-none group"
+    >
+      <span className="group-active:hidden">
+        <Icon name="clipboard" />
+      </span>
+      <span className="hidden group-active:block">
+        <Icon name="check" />
+      </span>
+    </button>
   )
 }

@@ -1,3 +1,5 @@
+import { notFound } from 'next/navigation'
+
 import { allStatics } from 'contentlayer/generated'
 import { MotionHeader, MotionMain } from '~components/ContentWrappers'
 import MDXContent from '~components/MDXContent'
@@ -8,10 +10,13 @@ export const metadata = {
 }
 
 export default function Terms() {
-  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   const page = allStatics.find((p) => {
     return p.slug === 'terms'
-  })!
+  })
+
+  if (!page) {
+    notFound()
+  }
 
   return (
     <>

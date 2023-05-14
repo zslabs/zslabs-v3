@@ -1,3 +1,5 @@
+import { notFound } from 'next/navigation'
+
 import { allPosts } from 'contentlayer/generated'
 import { MotionHeader, MotionMain } from '~components/ContentWrappers'
 import MDXContent from '~components/MDXContent'
@@ -11,10 +13,13 @@ export async function generateMetadata({
 }: {
   params: { slug: string }
 }) {
-  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   const currentPost = allPosts.find((post) => {
     return post.slug === params.slug
-  })!
+  })
+
+  if (!currentPost) {
+    return {}
+  }
 
   return {
     title: currentPost.title,
@@ -23,10 +28,13 @@ export async function generateMetadata({
 }
 
 export default function PostSingle({ params }: { params: { slug: string } }) {
-  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   const currentPost = allPosts.find((post) => {
     return post.slug === params.slug
-  })!
+  })
+
+  if (!currentPost) {
+    notFound()
+  }
 
   const post = {
     ...currentPost,

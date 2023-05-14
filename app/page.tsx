@@ -8,10 +8,10 @@ import { allPosts } from 'contentlayer/generated'
 import Button from '~components/Button'
 import Icon from '~components/Icon'
 import { List, ListItem } from '~components/List'
+import MoreArticlesLink from '~components/MoreArticlesLink'
 import Prose from '~components/Prose'
 import SectionTitle from '~components/SectionTitle'
 import TextLink from '~components/TextLink'
-import Tooltip from '~components/Tooltip'
 import { fadeInUp } from '~helpers/styles'
 import useLayoutAnimationState from '~hooks/useLayoutAnimationState'
 import type { ReducedPosts } from '~types/custom'
@@ -134,11 +134,7 @@ function Articles() {
         ))}
       </List>
       <div className="mt-12 w-fit text-xl">
-        <Tooltip content="More articles">
-          <TextLink href="/articles">
-            <Icon name="more" />
-          </TextLink>
-        </Tooltip>
+        <MoreArticlesLink />
       </div>
     </section>
   )
