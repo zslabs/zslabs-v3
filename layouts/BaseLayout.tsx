@@ -32,7 +32,7 @@ const HeaderItemWrapper: React.FC<
     () => ({
       hidden: {
         opacity: 0,
-        y: '-0.5rem',
+        y: '-0.75rem',
       },
       visible: {
         opacity: 1,

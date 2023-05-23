@@ -9,7 +9,7 @@ export const spring: Transition = {
 export const fadeInUp: Variants = {
   offscreen: {
     opacity: 0,
-    y: '0.5rem',
+    y: '0.75rem',
   },
   onscreen: {
     opacity: 1,
@@ -24,12 +24,12 @@ export const viewportInViewOptions = {
 
 export const fadeInDownInitial: MotionProps['initial'] = {
   opacity: 0,
-  y: '-0.5rem',
+  y: '-0.75rem',
 }
 
 export const fadeInUpInitial: MotionProps['initial'] = {
   opacity: 0,
-  y: '0.5rem',
+  y: '0.75rem',
 }
 
 export const fadeInAnimate: MotionProps['animate'] = { opacity: 1, y: 0 }
