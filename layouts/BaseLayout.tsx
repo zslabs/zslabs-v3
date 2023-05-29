@@ -17,6 +17,7 @@ import Prose from '~components/Prose'
 import TextLink from '~components/TextLink'
 import Tooltip from '~components/Tooltip'
 import useLayoutAnimationState from '~hooks/useLayoutAnimationState'
+import Year from '~layouts/components/Year'
 import type { ChildrenOnlyProps } from '~types/custom'
 
 interface HeaderItemWrapperProps {
@@ -169,7 +170,7 @@ const BaseLayout: React.FC<ChildrenOnlyProps> = ({ children }) => {
           className="mt-12 text-center text-sm text-slate-11 md:mt-16"
         >
           <p className="mb-1">
-            Copyright &copy; {new Date().getFullYear()} Zach Schnackel{' '}
+            Copyright &copy; <Year /> Zach Schnackel{' '}
             <span className="text-slate-12">
               <Icon name="peace" inline />
             </span>
