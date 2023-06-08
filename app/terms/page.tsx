@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation'
 import { allStatics } from 'contentlayer/generated'
 import { MotionHeader, MotionMain } from '~components/ContentWrappers'
 import MDXContent from '~components/MDXContent'
-import SectionTitle from '~components/SectionTitle'
+import PageTitle from '~components/PageTitle'
 
 export const metadata = {
   title: 'Terms & conditions',
@@ -21,7 +21,7 @@ export default function Terms() {
   return (
     <>
       <MotionHeader>
-        <SectionTitle>{page.title}</SectionTitle>
+        <PageTitle>{page.title}</PageTitle>
       </MotionHeader>
       <MotionMain>
         <MDXContent content={page.body} />

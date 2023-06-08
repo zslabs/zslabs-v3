@@ -257,6 +257,7 @@ module.exports = {
         'button-overlay-contrast': '0 0 0 1px var(--whiteA6)',
       },
       fontFamily: {
+        heading: ['var(--font-heading)', ...defaultTheme.fontFamily.sans],
         sans: ['var(--font-sans)', ...defaultTheme.fontFamily.sans],
         mono: ['var(--font-mono)', ...defaultTheme.fontFamily.mono],
       },

@@ -3,6 +3,7 @@ import * as React from 'react'
 import { allPosts } from 'contentlayer/generated'
 import { MotionHeader, MotionMain } from '~components/ContentWrappers'
 import { List, ListItem } from '~components/List'
+import PageTitle from '~components/PageTitle'
 import Prose from '~components/Prose'
 import SectionTitle from '~components/SectionTitle'
 import type { ReducedPosts } from '~types/custom'
@@ -28,7 +29,7 @@ function Articles() {
   return (
     <section id="articles">
       <MotionHeader>
-        <SectionTitle>Articles</SectionTitle>
+        <PageTitle>Articles</PageTitle>
       </MotionHeader>
       <MotionMain>
         <div className="mb-12">
