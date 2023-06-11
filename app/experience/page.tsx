@@ -4,7 +4,7 @@ import LinkedIn from './components/LinkedIn'
 
 import { MotionHeader, MotionMain } from '~components/ContentWrappers'
 import { List, ListItem } from '~components/List'
-import PageTitle from '~components/PageTitle'
+import SectionTitle from '~components/SectionTitle'
 
 export const metadata = {
   title: 'Experience',
@@ -14,7 +14,7 @@ export default function Experience() {
   return (
     <>
       <MotionHeader>
-        <PageTitle>Experience</PageTitle>
+        <SectionTitle>Experience</SectionTitle>
       </MotionHeader>
       <MotionMain>
         <List>

@@ -4,7 +4,7 @@ import { allPosts } from 'contentlayer/generated'
 import { MotionHeader, MotionMain } from '~components/ContentWrappers'
 import MDXContent from '~components/MDXContent'
 import MoreArticlesLink from '~components/MoreArticlesLink'
-import PageTitle from '~components/PageTitle'
+import SectionTitle from '~components/SectionTitle'
 
 export const dynamicParams = false
 
@@ -48,7 +48,7 @@ export default function PostSingle({ params }: { params: { slug: string } }) {
   return (
     <article>
       <MotionHeader>
-        <PageTitle>{post.title}</PageTitle>
+        <SectionTitle>{post.title}</SectionTitle>
       </MotionHeader>
       <MotionMain>
         <MDXContent content={post.body} />

@@ -9,7 +9,6 @@ import Button from '~components/Button'
 import Icon from '~components/Icon'
 import { List, ListItem } from '~components/List'
 import MoreArticlesLink from '~components/MoreArticlesLink'
-import PageTitle from '~components/PageTitle'
 import Prose from '~components/Prose'
 import SectionTitle from '~components/SectionTitle'
 import TextLink from '~components/TextLink'
@@ -20,7 +19,7 @@ import type { ReducedPosts } from '~types/custom'
 function Intro() {
   return (
     <section id="about">
-      <PageTitle>Zach Schnackel</PageTitle>
+      <SectionTitle>Zach Schnackel</SectionTitle>
       <Prose>
         <p>
           I'm a Software Engineer based in Boone, NC. My background involves
