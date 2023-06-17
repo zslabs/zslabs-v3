@@ -1,4 +1,6 @@
-interface SectionTitleProps {
+import type { HTMLAttributes } from 'react'
+
+interface SectionTitleProps extends HTMLAttributes<HTMLHeadingElement> {
   children: React.ReactNode
 }
 

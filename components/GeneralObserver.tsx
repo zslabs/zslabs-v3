@@ -16,12 +16,12 @@ interface IGeneralObserverProps extends ChildrenOnlyProps {
   height?: number
 }
 
-const GeneralObserver: React.FC<IGeneralObserverProps> = ({
+export default function GeneralObserver({
   children,
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   onEnter = () => {},
   height = 0,
-}) => {
+}: IGeneralObserverProps) {
   const ref = React.useRef<HTMLElement>(null)
   const [isChildVisible, setIsChildVisible] = React.useState(false)
 
@@ -61,5 +61,3 @@ const GeneralObserver: React.FC<IGeneralObserverProps> = ({
     </div>
   )
 }
-
-export default GeneralObserver

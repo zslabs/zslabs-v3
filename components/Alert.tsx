@@ -8,7 +8,7 @@ interface AlertProps {
 
 const Alert = React.forwardRef<
   HTMLDivElement,
-  React.HTMLProps<HTMLDivElement> & AlertProps
+  React.HTMLAttributes<HTMLDivElement> & AlertProps
 >(({ variation = 'primary', ...rest }, ref) => {
   return (
     <div

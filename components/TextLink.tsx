@@ -5,7 +5,7 @@ import Link from 'next/link'
 // Checks against absolute URLs that share 👇 so we can still pass it along to our internal link component
 const domainRegex = /http[s]*:\/\/[www.]*zslabs\.com[/]?/
 
-export interface TextLinkProps extends React.ComponentPropsWithoutRef<'a'> {
+export interface TextLinkProps extends React.HTMLAttributes<HTMLAnchorElement> {
   href: string
 }
 

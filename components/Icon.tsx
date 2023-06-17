@@ -4,7 +4,7 @@ import * as React from 'react'
 import manifest from '~icons/build/manifest.json'
 import type { IconName } from '~icons/build/types'
 
-interface IconProps extends React.ComponentPropsWithoutRef<'svg'> {
+interface IconProps extends React.HTMLAttributes<SVGSVGElement> {
   name: IconName
   /** Useful when we need to use an icon within a sentence */
   inline?: boolean

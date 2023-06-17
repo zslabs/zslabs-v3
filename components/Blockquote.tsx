@@ -5,9 +5,9 @@ import Icon from './Icon'
 import type { ChildrenOnlyProps } from '~types/custom'
 
 export type BlockquoteProps = ChildrenOnlyProps &
-  React.BlockquoteHTMLAttributes<HTMLQuoteElement>
+  React.HTMLAttributes<HTMLQuoteElement>
 
-const Blockquote: React.FC<BlockquoteProps> = ({ children, ...rest }) => {
+export default function Blockquote({ children, ...rest }: BlockquoteProps) {
   return (
     <blockquote
       {...rest}
@@ -20,5 +20,3 @@ const Blockquote: React.FC<BlockquoteProps> = ({ children, ...rest }) => {
     </blockquote>
   )
 }
-
-export default Blockquote

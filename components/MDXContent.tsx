@@ -89,9 +89,7 @@ const components = {
   },
 }
 
-const MDXContent: React.FC<{
-  content: MDX
-}> = ({ content }) => {
+export default function MDXContent({ content }: { content: MDX }) {
   const Component = getMDXComponent(content.code)
 
   return (
@@ -101,5 +99,3 @@ const MDXContent: React.FC<{
     </Prose>
   )
 }
-
-export default MDXContent

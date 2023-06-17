@@ -10,6 +10,10 @@ import React from 'react'
 import GeneralObserver from '~components/GeneralObserver'
 import useScript from '~hooks/useScript'
 
+declare const window: {
+  twttr: unknown
+} & Window
+
 export interface ITweetProps {
   /** Tweet link */
   tweetLink: string
@@ -21,12 +25,12 @@ export interface ITweetProps {
   hideConversation?: boolean
 }
 
-const Tweet: React.FC<ITweetProps> = ({
+export default function Tweet({
   tweetLink,
   theme = 'light',
   align = 'left',
   hideConversation = false,
-}: ITweetProps) => {
+}: ITweetProps) {
   useScript('https://platform.twitter.com/widgets.js')
 
   return (
@@ -38,15 +42,10 @@ const Tweet: React.FC<ITweetProps> = ({
           data-conversation={hideConversation ? 'none' : ''}
         >
           <a href={`https://twitter.com/${tweetLink}?ref_src=twsrc%5Etfw`}>
-            {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-            {typeof window !== 'undefined' && !(window as any).twttr
-              ? 'Loading'
-              : ''}
+            {typeof window !== 'undefined' && window?.twttr ? 'Loading' : ''}
           </a>
         </blockquote>
       </div>
     </GeneralObserver>
   )
 }
-
-export default Tweet

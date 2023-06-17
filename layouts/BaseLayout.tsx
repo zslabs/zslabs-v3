@@ -26,9 +26,12 @@ interface HeaderItemWrapperProps {
   custom: number
 }
 
-const HeaderItemWrapper: React.FC<
-  HeaderItemWrapperProps & HTMLMotionProps<'div'>
-> = ({ runAnimation, controls, custom, ...rest }) => {
+function HeaderItemWrapper({
+  runAnimation,
+  controls,
+  custom,
+  ...rest
+}: HeaderItemWrapperProps & HTMLMotionProps<'div'>) {
   const variants: Variants = React.useMemo(
     () => ({
       hidden: {
@@ -72,7 +75,7 @@ const footerVariants: Variants = {
   },
 }
 
-const BaseLayout: React.FC<ChildrenOnlyProps> = ({ children }) => {
+export default function BaseLayout({ children }: ChildrenOnlyProps) {
   const pathname = usePathname()
   const controls = useAnimation()
   const setDone = useLayoutAnimationState((state) => state.setDone)
@@ -192,5 +195,3 @@ const BaseLayout: React.FC<ChildrenOnlyProps> = ({ children }) => {
     </>
   )
 }
-
-export default BaseLayout

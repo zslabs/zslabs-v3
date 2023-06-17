@@ -23,29 +23,29 @@ export interface ICodePenProps {
   theme?: string | 'light' | 'dark' | 'default'
 }
 
-const CodePen: React.FC<ICodePenProps> = ({
+export default function CodePen({
   codePenId,
   height = 500,
   tabs = 'result',
   clickToLoad = false,
   editable = false,
   theme = 'default',
-}: ICodePenProps) => (
-  <GeneralObserver height={height}>
-    <iframe
-      data-testid="codepen"
-      title={`codepen-${codePenId}`}
-      height={height}
-      className="w-full"
-      scrolling="no"
-      src={`https://codepen.io/team/codepen/embed${
-        clickToLoad ? '/preview' : ''
-      }/${codePenId}?height=265&theme-id=${theme}&default-tab=${tabs}${
-        editable ? '&editable=true' : ''
-      }`}
-      frameBorder="no"
-    />
-  </GeneralObserver>
-)
-
-export default CodePen
+  ...rest
+}: ICodePenProps & React.HTMLAttributes<HTMLIFrameElement>) {
+  return (
+    <GeneralObserver height={height}>
+      <iframe
+        {...rest}
+        data-testid="codepen"
+        title={`codepen-${codePenId}`}
+        height={height}
+        className="w-full"
+        src={`https://codepen.io/team/codepen/embed${
+          clickToLoad ? '/preview' : ''
+        }/${codePenId}?height=265&theme-id=${theme}&default-tab=${tabs}${
+          editable ? '&editable=true' : ''
+        }`}
+      />
+    </GeneralObserver>
+  )
+}

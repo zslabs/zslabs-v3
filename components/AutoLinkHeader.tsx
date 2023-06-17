@@ -4,9 +4,11 @@ interface AutoLinkHeaderProps {
   as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5'
 }
 
-const AutoLinkHeader: React.FC<
-  AutoLinkHeaderProps & React.HTMLAttributes<HTMLHeadingElement>
-> = ({ as: Component = 'h1', children, ...rest }) => {
+export default function AutoLinkHeader({
+  as: Component = 'h1',
+  children,
+  ...rest
+}: AutoLinkHeaderProps & React.HTMLAttributes<HTMLHeadingElement>) {
   return (
     <Component {...rest}>
       <a href={`#${rest.id}`} className="group">
@@ -18,5 +20,3 @@ const AutoLinkHeader: React.FC<
     </Component>
   )
 }
-
-export default AutoLinkHeader
