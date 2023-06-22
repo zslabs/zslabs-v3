@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
 import { allStatics } from 'contentlayer/generated'
@@ -5,7 +6,7 @@ import { MotionHeader, MotionMain } from '~components/ContentWrappers'
 import MDXContent from '~components/MDXContent'
 import SectionTitle from '~components/SectionTitle'
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Privacy policy',
 }
 

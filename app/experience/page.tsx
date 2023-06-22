@@ -1,12 +1,14 @@
 import * as React from 'react'
 
+import type { Metadata } from 'next'
+
 import LinkedIn from './components/LinkedIn'
 
 import { MotionHeader, MotionMain } from '~components/ContentWrappers'
 import { List, ListItem } from '~components/List'
 import SectionTitle from '~components/SectionTitle'
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Experience',
 }
 

@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
 import { allPosts } from 'contentlayer/generated'
@@ -8,11 +9,13 @@ import SectionTitle from '~components/SectionTitle'
 
 export const dynamicParams = false
 
+type MetadataProps = {
+  params: { slug: string }
+}
+
 export async function generateMetadata({
   params,
-}: {
-  params: { slug: string }
-}) {
+}: MetadataProps): Promise<Metadata> {
   const currentPost = allPosts.find((post) => {
     return post.slug === params.slug
   })
