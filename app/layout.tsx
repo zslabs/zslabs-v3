@@ -1,13 +1,15 @@
 import { Analytics } from '@vercel/analytics/react'
+import type { Metadata } from 'next'
 
 import { manrope, jetBrainsMono } from './fonts'
 import Providers from './providers'
 
 import BaseLayout from '~layouts/BaseLayout'
+
 import '~styles/index.css'
 
-export const metadata = {
-  title: 'Zach Schnackel',
+export const metadata: Metadata = {
+  title: { default: 'Zach Schnackel', template: '%s | Zach Schnackel' },
   description: 'Full-stack/motion developer',
   alternates: {
     types: {
