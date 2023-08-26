@@ -126,16 +126,6 @@ function Gear() {
         much-needed, dual-purpose upgrade that I'm happy to add.
       </ListItem>
       <ListItem
-        href="https://opalcamera.com/"
-        icon="webcam"
-        label="Opal Camera"
-      >
-        I'll eventually switch over to Continuity in iOS 16, but this has worked
-        well so far. I've tried{' '}
-        <TextLink href="https://amzn.to/3QEn99r">Lumina</TextLink> and{' '}
-        <TextLink href="https://amzn.to/3T1SQel">Logitech Brio</TextLink>.
-      </ListItem>
-      <ListItem
         href="https://amzn.to/3TnaoSf"
         icon="dock"
         label="CalDigit TS3 Plus Dock"
