@@ -72,7 +72,13 @@ function Projects() {
           Technical and team lead for Slack's new theming infrastructure across
           desktop, iOS, and Android. Developed migration methods across
           thousands of assets, while simplifying both the storage, application,
-          and manipulation of color preferences throughout each platform.
+          and manipulation of color preferences throughout each platform.{' '}
+          <TextLink
+            title="Release announcement"
+            href="https://twitter.com/zslabs/status/1698304419979313651"
+          >
+            <Icon inline name="twitter" />
+          </TextLink>
         </ListItem>
         <ListItem label="Design tokens" icon="tokens" meta="Slack">
           Build tool that uses Figma design primitives to scale across desktop,
