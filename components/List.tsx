@@ -64,7 +64,7 @@ export function ListItem({
         <div>
           {children && <Prose>{children}</Prose>}
           {meta && (
-            <div className="mt-2 font-mono text-sm uppercase text-slate-12">
+            <div className="mt-2 font-mono text-sm uppercase text-slate-12 rounded-full bg-overlay-8 leading-none px-2 py-1 w-fit">
               {meta}
             </div>
           )}

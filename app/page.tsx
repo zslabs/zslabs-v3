@@ -68,11 +68,17 @@ function Projects() {
     <section id="projects">
       <SectionTitle>Projects</SectionTitle>
       <List>
-        <ListItem label="Design tokens" icon="tokens" meta="Internal">
+        <ListItem label="Theming" icon="brush" meta="Slack">
+          Technical and team lead for Slack's new theming infrastructure across
+          desktop, iOS, and Android. Developed migration methods across
+          thousands of assets, while simplifying both the storage, application,
+          and manipulation of color preferences throughout each platform.
+        </ListItem>
+        <ListItem label="Design tokens" icon="tokens" meta="Slack">
           Build tool that uses Figma design primitives to scale across desktop,
           iOS, and Android.
         </ListItem>
-        <ListItem label="Icon automation library" icon="icons" meta="Internal">
+        <ListItem label="Icon automation library" icon="icons" meta="Slack">
           Build tool that integrates with Figma API to extract and create SVG
           icons for use across desktop, iOS, and Android.
         </ListItem>
