@@ -16,6 +16,8 @@
     "build": "next build",
     "start": "next start",
     "build:icons": "tsx scripts/icons.ts",
+    "build:colors": "tsx scripts/colors.ts",
+    "build:assets": "npm run build:icons && npm run build:colors",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
     "type:check": "tsc --project tsconfig.json --pretty --noEmit",
@@ -24,6 +26,7 @@
   "dependencies": {
     "@iconify/tools": "3.0.5",
     "@netlify/classnames-template-literals": "1.0.3",
+    "@radix-ui/colors": "3.0.0-rc.4",
     "@radix-ui/react-tabs": "1.0.4",
     "@radix-ui/react-tooltip": "1.0.6",
     "@total-typescript/ts-reset": "0.5.1",

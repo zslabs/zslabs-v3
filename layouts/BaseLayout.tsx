@@ -109,7 +109,7 @@ export default function BaseLayout({ children }: ChildrenOnlyProps) {
               className="group relative text-3xl"
             >
               <Icon name="logo" />
-              <div className="pointer-events-none absolute top-0 left-0 -z-1 rotate-12 opacity-0 blur-xl transition-opacity duration-150 group-hover:opacity-80">
+              <div className="pointer-events-none absolute left-0 top-0 -z-1 rotate-12 opacity-0 blur-xl transition-opacity duration-150 group-hover:opacity-80">
                 <Icon name="logo" />
               </div>
             </TextLink>
@@ -190,7 +190,7 @@ export default function BaseLayout({ children }: ChildrenOnlyProps) {
       <div className="pointer-events-none relative isolate -z-1 opacity-30">
         <div className="fixed inset-0 mix-blend-color-dodge nnnoise" />
         <div className="fixed inset-0 bg-center mix-blend-color-dodge ooorganize" />
-        <div className="fixed inset-0 translate-y-1/2 translate-x-1/4 bg-right bg-no-repeat gggyrate" />
+        <div className="fixed inset-0 translate-x-1/4 translate-y-1/2 bg-right bg-no-repeat gggyrate" />
       </div>
     </>
   )

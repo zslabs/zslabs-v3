@@ -41,7 +41,7 @@ function Button<T extends React.ElementType = 'button'>({
           }
           ${
             variation === 'overlay-hover' &&
-            'hocus:bg-overlay-8 shadow-button-overlay-contrast'
+            'shadow-button-overlay-contrast hocus:bg-overlay-8'
           }
           ${
             variation === 'cta' &&

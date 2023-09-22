@@ -5,6 +5,7 @@ import type { ChildrenOnlyProps } from '~types/custom'
 export function Table({ children }: ChildrenOnlyProps) {
   return (
     <div className="inline-block min-w-full align-middle">
+      {/* eslint-disable-next-line tailwindcss/migration-from-tailwind-2 */}
       <div className="shadow ring-1 ring-slate-7 ring-opacity-100">
         <table className="min-w-full border-separate border-spacing-0">
           {children}

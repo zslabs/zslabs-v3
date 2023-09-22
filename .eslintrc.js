@@ -19,7 +19,6 @@ module.exports = {
     'react-hooks',
     'react-perf',
     'jsx-a11y',
-    'tailwindcss',
   ],
   extends: [
     'next/core-web-vitals',
@@ -33,6 +32,7 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
     'plugin:react-perf/all',
+    'plugin:tailwindcss/recommended',
   ],
   rules: {
     // Global

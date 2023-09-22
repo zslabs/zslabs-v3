@@ -55,7 +55,7 @@ export default function PostSingle({ params }: { params: { slug: string } }) {
       </MotionHeader>
       <MotionMain>
         <MDXContent content={post.body} />
-        <div className="flex mt-12 gap-4 justify-between items-center">
+        <div className="mt-12 flex items-center justify-between gap-4">
           <div className="font-mono text-sm uppercase text-slate-12">
             :: Published {post.date} ::
           </div>

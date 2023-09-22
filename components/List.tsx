@@ -52,7 +52,7 @@ export function ListItem({
                 {label}
               </span>
               {!href?.startsWith('/') && (
-                <div className="rotate-[-135deg] text-lg leading-none text-slate-11 transition-transform duration-200 ease-in-out group-hocus:translate-x-0.5 group-hocus:rotate-[-90deg] group-hocus:translate-y-[0.075rem] will-change-transform">
+                <div className="rotate-[-135deg] text-lg leading-none text-slate-11 transition-transform duration-200 ease-in-out will-change-transform group-hocus:translate-x-0.5 group-hocus:translate-y-[0.075rem] group-hocus:rotate-[-90deg]">
                   <Icon name="arrow-down" inline />
                 </div>
               )}
@@ -64,7 +64,7 @@ export function ListItem({
         <div>
           {children && <Prose>{children}</Prose>}
           {meta && (
-            <div className="mt-2 font-mono text-sm uppercase text-slate-12 rounded-full bg-overlay-8 leading-none px-2 py-1 w-fit">
+            <div className="mt-2 w-fit rounded-full bg-overlay-8 px-2 py-1 font-mono text-sm uppercase leading-none text-slate-12">
               {meta}
             </div>
           )}

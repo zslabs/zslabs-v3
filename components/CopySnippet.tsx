@@ -19,7 +19,7 @@ export default function CopySnippet({ codeString }: { codeString: string }) {
       type="button"
       onClick={handleCopy}
       aria-label="Copy snippet"
-      className="block focus:outline-none group"
+      className="group block focus:outline-none"
     >
       <span className="group-active:hidden">
         <Icon name="clipboard" />

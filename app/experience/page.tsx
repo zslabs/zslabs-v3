@@ -59,7 +59,7 @@ export default function Experience() {
           </ListItem>
         </List>
 
-        <div className="mt-12 ml-1 w-fit text-xl">
+        <div className="ml-1 mt-12 w-fit text-xl">
           <LinkedIn />
         </div>
       </MotionMain>
