@@ -22,7 +22,7 @@ function Intro() {
       <SectionTitle>Zach Schnackel</SectionTitle>
       <Prose>
         <p>
-          I'm a Software Engineer based in Boone, NC. My background involves
+          I'm a Software Engineer based in Charlotte, NC. My background involves
           pushing the limits of what we can build on the backend and how we can
           experience it on the frontend.
         </p>
