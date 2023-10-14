@@ -5,12 +5,15 @@ import Link from 'next/link'
 // Checks against absolute URLs that share 👇 so we can still pass it along to our internal link component
 const domainRegex = /http[s]*:\/\/[www.]*zslabs\.com[/]?/
 
-export interface TextLinkProps extends React.HTMLAttributes<HTMLAnchorElement> {
-  href: string
+export interface TextLinkProps
+  extends React.PropsWithoutRef<React.HTMLAttributes<HTMLAnchorElement>> {
+  href?: string
 }
 
 const TextLink = React.forwardRef<HTMLAnchorElement, TextLinkProps>(
   ({ href, children, ...rest }, forwardRef) => {
+    if (!href) return null
+
     const sameDomain = domainRegex.test(href)
 
     // If our link matches the `domainRegex` above, update to become relative

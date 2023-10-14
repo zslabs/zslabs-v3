@@ -2,10 +2,7 @@ import * as React from 'react'
 
 import Icon from './Icon'
 
-import type { ChildrenOnlyProps } from '~types/custom'
-
-export type BlockquoteProps = ChildrenOnlyProps &
-  React.HTMLAttributes<HTMLQuoteElement>
+export type BlockquoteProps = React.HTMLAttributes<HTMLQuoteElement>
 
 export default function Blockquote({ children, ...rest }: BlockquoteProps) {
   return (

@@ -1,9 +1,10 @@
 import React from 'react'
 
 import type { MDX } from 'contentlayer/core'
-import { getMDXComponent } from 'mdx-bundler/client'
+import type { MDXComponents } from 'mdx/types'
 import type { ImageProps } from 'next/image'
 import NextImage from 'next/image'
+import { useMDXComponent } from 'next-contentlayer/hooks'
 
 import Alert from '~components/Alert'
 import AutoLinkHeader from '~components/AutoLinkHeader'
@@ -52,7 +53,7 @@ function Image({
   )
 }
 
-const components = {
+const components: MDXComponents = {
   a: (props: TextLinkProps) => <TextLink {...props} />,
   blockquote: (props: BlockquoteProps) => <Blockquote {...props} />,
   h1: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
@@ -75,6 +76,7 @@ const components = {
   CodePen,
   Tweet,
   TextLink,
+  // @ts-expect-error Stingy types
   pre: ({
     __rawString__,
     ...rest
@@ -90,11 +92,10 @@ const components = {
 }
 
 export default function MDXContent({ content }: { content: MDX }) {
-  const Component = getMDXComponent(content.code)
+  const Component = useMDXComponent(content.code)
 
   return (
     <Prose>
-      {/* @ts-expect-error TODO Component mismatch */}
       <Component components={components} />
     </Prose>
   )
