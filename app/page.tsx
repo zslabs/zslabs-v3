@@ -75,9 +75,9 @@ function Projects() {
           and manipulation of color preferences throughout each platform.{' '}
           <TextLink
             title="Release announcement"
-            href="https://twitter.com/zslabs/status/1698304419979313651"
+            href="https://x.com/zslabs/status/1698304419979313651"
           >
-            <Icon inline name="twitter" />
+            <Icon inline name="x" />
           </TextLink>
         </ListItem>
         <ListItem label="Design tokens" icon="tokens" meta="Slack">

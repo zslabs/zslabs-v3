@@ -1,6 +1,6 @@
 {
-	"prefix": "wrf",
-	"lastModified": 1695398147,
+	"prefix": "t1v",
+	"lastModified": 1699151434,
 	"icons": {
 		"1password": {
 			"body": "<path fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M14 12a4 4 0 1 0 8 0 4 4 0 0 0-8 0Zm0 0H2v3m4-3v3\"/>"
@@ -128,9 +128,6 @@
 		"tokens": {
 			"body": "<g fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\"><circle cx=\"8\" cy=\"8\" r=\"6\"/><path d=\"M18.09 10.37A6 6 0 1 1 10.34 18M7 6h1v4\"/><path d=\"m16.71 13.88.7.71-2.82 2.82\"/></g>"
 		},
-		"twitter": {
-			"body": "<path fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M23 3.01s-2.018 1.192-3.14 1.53a4.48 4.48 0 0 0-7.86 3v1a10.66 10.66 0 0 1-9-4.53s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5 0-.278-.028-.556-.08-.83C21.94 5.674 23 3.01 23 3.01Z\"/>"
-		},
 		"vs-code": {
 			"body": "<g fill=\"currentColor\"><path d=\"m21.293 4.106-4.119-1.983a1.245 1.245 0 0 0-1.42.242L2.272 14.657a.833.833 0 0 0 0 1.232l1.102 1.001c.297.27.744.29 1.063.047L20.673 4.621A.827.827 0 0 1 22 5.28v-.048c0-.48-.275-.918-.707-1.126Z\"/><path d=\"m21.293 19.778-4.119 1.983a1.245 1.245 0 0 1-1.42-.241L2.272 9.227a.833.833 0 0 1 0-1.231l1.102-1.002a.833.833 0 0 1 1.063-.047l16.236 12.317a.827.827 0 0 0 1.327-.66v.049c0 .48-.275.917-.707 1.125Z\"/><path d=\"M17.174 21.761a1.245 1.245 0 0 1-1.42-.241.732.732 0 0 0 1.249-.518V2.882a.732.732 0 0 0-1.25-.517 1.247 1.247 0 0 1 1.421-.242l4.118 1.98c.433.208.708.646.708 1.126v13.427c0 .48-.275.917-.708 1.125l-4.118 1.98Z\"/></g>"
 		},
@@ -139,6 +136,9 @@
 		},
 		"webcam": {
 			"body": "<g fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\"><circle cx=\"12\" cy=\"10\" r=\"8\"/><circle cx=\"12\" cy=\"10\" r=\"3\"/><path d=\"M7 22h10m-5 0v-4\"/></g>"
+		},
+		"x": {
+			"body": "<path fill=\"currentColor\" d=\"M13.905 10.477 21.35 2h-1.764L13.12 9.359 7.956 2H2l7.809 11.129L2 22.017h1.764l6.827-7.773 5.453 7.773H22M4.4 3.303h2.71l12.476 17.475h-2.71\"/>"
 		}
 	},
 	"width": 24,

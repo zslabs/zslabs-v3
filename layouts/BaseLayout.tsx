@@ -135,12 +135,12 @@ export default function BaseLayout({ children }: ChildrenOnlyProps) {
               controls={controls}
               custom={3}
             >
-              <Tooltip content="Twitter">
+              <Tooltip content="X">
                 <TextLink
-                  href="https://twitter.com/zslabs"
+                  href="https://x.com/zslabs"
                   className="text-xl text-slate-11 transition-colors hocus:text-slate-12"
                 >
-                  <Icon name="twitter" />
+                  <Icon name="x" />
                 </TextLink>
               </Tooltip>
             </HeaderItemWrapper>
