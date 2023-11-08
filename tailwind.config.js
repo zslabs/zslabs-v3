@@ -148,8 +148,8 @@ module.exports = {
         'button-overlay-contrast': '0 0 0 1px var(--whiteA6)',
       },
       fontFamily: {
-        sans: ['var(--font-sans)', ...defaultTheme.fontFamily.sans],
-        mono: ['var(--font-mono)', ...defaultTheme.fontFamily.mono],
+        sans: ['Manrope Variable', ...defaultTheme.fontFamily.sans],
+        mono: ['JetBrains Mono Variable', ...defaultTheme.fontFamily.mono],
       },
       maxHeight: {
         120: '30rem',

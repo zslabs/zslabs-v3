@@ -24,6 +24,8 @@
     "postinstall": "husky install"
   },
   "dependencies": {
+    "@fontsource-variable/jetbrains-mono": "5.0.18",
+    "@fontsource-variable/manrope": "5.0.17",
     "@iconify/tools": "3.0.5",
     "@netlify/classnames-template-literals": "1.0.3",
     "@radix-ui/colors": "3.0.0",
