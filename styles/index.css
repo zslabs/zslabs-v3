@@ -10,4 +10,19 @@
   html {
     scroll-behavior: smooth;
   }
+
+  *,
+  &::before,
+  *::after {
+    letter-spacing: -0.0125ch;
+  }
+
+  h3 {
+    font-size: 100px;
+  }
+
+  code,
+  pre {
+    letter-spacing: normal;
+  }
 }
