@@ -18,7 +18,7 @@ interface IGeneralObserverProps extends ChildrenOnlyProps {
 
 export default function GeneralObserver({
   children,
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
+
   onEnter = () => {},
   height = 0,
 }: IGeneralObserverProps) {

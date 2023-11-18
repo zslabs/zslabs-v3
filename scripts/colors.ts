@@ -52,7 +52,6 @@ type Colors = typeof colors
 function updateKeys(color: Colors[number]['value']) {
   return Object.entries(color).reduce(
     (acc, curr, index) => {
-      // eslint-disable-next-line prefer-destructuring
       acc[index + 1] = `var(--${curr[0]})`
       return acc
     },
@@ -83,7 +82,6 @@ function writeVars(color: Colors[number]['value']) {
   }, '')
 }
 
-// eslint-disable-next-line
 ;(async () => {
   // Let's kick things off!
   const startTime = performance.now()

@@ -140,7 +140,6 @@ async function processSvgs() {
   await fs.writeFile(`icons/build/manifest.json`, exported, 'utf8')
 }
 
-// eslint-disable-next-line
 ;(async () => {
   // Let's kick things off!
   const startTime = performance.now()
