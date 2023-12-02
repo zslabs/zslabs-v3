@@ -104,13 +104,12 @@ function Gear() {
         Longtime Fitbit user, but notifications work so much better now. I
         thought I'd miss the 4-5 days of battery life, but I get a solid 2 days.
       </ListItem>
-      <ListItem icon="monitor" label="Monitors">
-        <TextLink href="https://amzn.to/3K5ZSe9">LG 32UL750-W</TextLink> front
-        and center, with a{' '}
-        <TextLink href="https://amzn.to/3pxBokr">
-          Dell UltraSharp U2720Q
-        </TextLink>{' '}
-        rotated 90º to my left.
+      <ListItem
+        icon="monitor"
+        label="Samsung M80C"
+        href="https://amzn.to/47ZTBLK"
+      >
+        One front and center, with the other rotated 90º to my left.
       </ListItem>
       <ListItem icon="mouse" label="Logitech MX Masters">
         Took almost no time to get used to either the{' '}
