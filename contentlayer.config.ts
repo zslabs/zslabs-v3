@@ -101,6 +101,7 @@ export default makeSource({
           }
         })
       },
+      // @ts-expect-error https://github.com/atomiks/rehype-pretty-code/issues/127
       [rehypePrettyCode, rehypePrettyCodeOptions],
       () => (tree) => {
         visit(tree, (node) => {
