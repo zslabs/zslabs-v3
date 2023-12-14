@@ -90,9 +90,9 @@ function Gear() {
         giving the M2 models a shot.
       </ListItem>
       <ListItem
-        href="https://amzn.to/3QXI333"
+        href="https://www.apple.com/iphone-15-pro/"
         icon="iphone"
-        label="iPhone 13 Pro"
+        label="iPhone 15 Pro"
       >
         I swap for a new model every 2-3 years.
       </ListItem>

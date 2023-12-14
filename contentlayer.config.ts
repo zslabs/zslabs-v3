@@ -10,7 +10,7 @@ import { visit } from 'unist-util-visit'
 /* @SOURCE for rehype content blocks; https://github.com/shadcn/ui/blob/main/apps/www/contentlayer.config.js */
 
 const rehypePrettyCodeOptions: Options = {
-  // Use one of Shiki's packaged themes
+  // Use one of Shikiji's packaged themes
   theme: 'one-dark-pro',
 
   // Keep the background or use a custom background color
@@ -105,8 +105,8 @@ export default makeSource({
       [rehypePrettyCode, rehypePrettyCodeOptions],
       () => (tree) => {
         visit(tree, (node) => {
-          if (node?.type === 'element' && node?.tagName === 'div') {
-            if (!('data-rehype-pretty-code-fragment' in node.properties)) {
+          if (node?.type === 'element' && node?.tagName === 'figure') {
+            if (!('data-rehype-pretty-code-figure' in node.properties)) {
               return
             }
 

@@ -6,7 +6,7 @@
   * + blockquote:not([class]),
   * + address,
   * + fieldset,
-  * + [data-rehype-pretty-code-fragment] {
+  * + [data-rehype-pretty-code-figure] {
     margin-top: theme('space.6');
   }
 
@@ -96,5 +96,9 @@
     padding: theme('spacing.1') theme('spacing.2');
     margin-bottom: theme('spacing.2');
     cursor: default;
+  }
+
+  pre [data-line] {
+    padding-right: theme('spacing.4');
   }
 }
