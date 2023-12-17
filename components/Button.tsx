@@ -49,7 +49,7 @@ function Button<T extends React.ElementType = 'button'>({
           }
 
           ${loading && `pointer-events-none opacity-50`}
-          ${iconOnly ? 'w-9' : 'px-4'}
+          ${iconOnly ? 'w-10' : 'px-4'}
         `)}
     >
       <span
