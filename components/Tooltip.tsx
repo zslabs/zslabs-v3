@@ -25,7 +25,7 @@ const Tooltip = React.forwardRef<HTMLButtonElement, TooltipProps>(
             align={align}
             sideOffset={2}
             className={ctl(`
-              z-50 max-w-[240px] rounded-lg bg-overlay-11 px-3
+              z-50 max-w-[240px] rounded-xl bg-overlay-11 px-3
 
               py-2 text-center text-sm text-slate-12
               rdx-side-bottom:animate-slide-up-fade

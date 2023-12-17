@@ -9,18 +9,15 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-  }
-
-  *,
-  &::before,
-  *::after {
     letter-spacing: -0.0125ch;
   }
 
   code,
   pre {
-    * {
-      letter-spacing: normal !important;
-    }
+    letter-spacing: normal !important;
+  }
+
+  .font-mono {
+    letter-spacing: normal;
   }
 }

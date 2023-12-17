@@ -96,7 +96,7 @@ export default function BaseLayout({ children }: ChildrenOnlyProps) {
 
   return (
     <>
-      <div className="mx-auto max-w-[calc(65ch+2rem)] px-4 py-8 md:py-12">
+      <div className="mx-auto max-w-2xl px-4 py-8 md:py-12">
         <header className="mb-12 flex items-center justify-between gap-6 md:mb-16">
           <HeaderItemWrapper
             runAnimation={runAnimation}
@@ -135,9 +135,9 @@ export default function BaseLayout({ children }: ChildrenOnlyProps) {
               controls={controls}
               custom={3}
             >
-              <Tooltip content="X">
+              <Tooltip content="Twitter">
                 <TextLink
-                  href="https://x.com/zslabs"
+                  href="https://twitter.com/zslabs"
                   className="text-xl text-slate-11 transition-colors hocus:text-slate-12"
                 >
                   <Icon name="x" />
@@ -152,10 +152,10 @@ export default function BaseLayout({ children }: ChildrenOnlyProps) {
               <Tooltip content="About me">
                 <TextLink href="/#about">
                   <Image
-                    className="shrink-0 rounded-full"
+                    className="shrink-0 rounded-[33%]"
                     src="/media/me.png"
-                    width="32"
-                    height="32"
+                    width="40"
+                    height="40"
                     alt="Zach Schnackel"
                   />
                 </TextLink>

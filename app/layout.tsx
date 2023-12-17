@@ -4,7 +4,7 @@ import type { Metadata } from 'next'
 import Providers from './providers'
 
 import BaseLayout from '~layouts/BaseLayout'
-import '@fontsource-variable/manrope'
+import '@fontsource-variable/plus-jakarta-sans'
 import '@fontsource-variable/jetbrains-mono'
 
 import '~styles/index.css'

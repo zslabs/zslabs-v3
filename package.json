@@ -25,11 +25,14 @@
   "overrides": {
     "next-contentlayer": {
       "next": "$next"
+    },
+    "rehype-pretty-code": {
+      "shikiji": "0.9.9"
     }
   },
   "dependencies": {
     "@fontsource-variable/jetbrains-mono": "5.0.19",
-    "@fontsource-variable/manrope": "5.0.18",
+    "@fontsource-variable/plus-jakarta-sans": "5.0.19",
     "@iconify/tools": "3.0.7",
     "@netlify/classnames-template-literals": "1.0.3",
     "@radix-ui/colors": "3.0.0",
@@ -44,11 +47,11 @@
     "@typescript-eslint/parser": "6.14.0",
     "@vercel/analytics": "1.1.1",
     "contentlayer": "0.3.4",
-    "eslint": "8.55.0",
+    "eslint": "8.56.0",
     "eslint-config-airbnb": "19.0.4",
     "eslint-config-next": "14.0.4",
     "eslint-config-prettier": "9.1.0",
-    "eslint-plugin-import": "2.29.0",
+    "eslint-plugin-import": "2.29.1",
     "eslint-plugin-jsx-a11y": "6.8.0",
     "eslint-plugin-prettier": "5.0.1",
     "eslint-plugin-react": "7.33.2",
@@ -73,7 +76,7 @@
     "remark-code-import": "1.2.0",
     "rss": "1.2.2",
     "sharp": "0.33.0",
-    "shikiji": "0.8.7",
+    "shikiji": "0.9.9",
     "tailwindcss": "3.3.6",
     "tailwindcss-radix": "2.8.0",
     "tsx": "4.6.2",

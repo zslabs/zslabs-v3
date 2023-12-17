@@ -68,6 +68,10 @@ function Projects() {
     <section id="projects">
       <SectionTitle>Projects</SectionTitle>
       <List>
+        <ListItem label="Stats" icon="question" meta="Coming soon">
+          The fastest, most reliable way to get insights across all your
+          favorite sports.
+        </ListItem>
         <ListItem label="Theming" icon="brush" meta="Slack">
           Technical and team lead for Slack's new theming infrastructure across
           desktop, iOS, and Android. Developed migration methods across
@@ -75,7 +79,7 @@ function Projects() {
           and manipulation of color preferences throughout each platform.{' '}
           <TextLink
             title="Release announcement"
-            href="https://x.com/zslabs/status/1698304419979313651"
+            href="https://twitter.com/zslabs/status/1698304419979313651"
           >
             <Icon inline name="x" />
           </TextLink>
