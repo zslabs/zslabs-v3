@@ -154,8 +154,8 @@ export default function BaseLayout({ children }: ChildrenOnlyProps) {
                   <Image
                     className="shrink-0 rounded-[33%]"
                     src="/media/me.png"
-                    width="40"
-                    height="40"
+                    width="36"
+                    height="36"
                     alt="Zach Schnackel"
                   />
                 </TextLink>
