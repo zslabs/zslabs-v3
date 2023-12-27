@@ -7,7 +7,7 @@ interface CodeProps {
 
 export default function CodeWrapper({ codeString, children }: CodeProps) {
   return (
-    <div className="rounded-xl font-mono font-normal tracking-normal">
+    <div className="rounded-lg font-mono font-normal tracking-normal">
       <header className="flex items-center justify-between gap-4 rounded-t-xl bg-overlay-11 px-4 py-2">
         <div className="flex items-center gap-4">
           <div className="flex gap-2">

@@ -8,7 +8,7 @@ export default function Blockquote({ children, ...rest }: BlockquoteProps) {
   return (
     <blockquote
       {...rest}
-      className="my-8 rounded-xl bg-overlay-8 p-4 font-mono"
+      className="my-8 rounded-lg bg-overlay-8 p-4 font-mono"
     >
       <div className="text-lg">
         <Icon name="quote" />

@@ -1,4 +1,6 @@
 .prose {
+  text-wrap: pretty;
+
   * + p,
   * + ul,
   * + ol,

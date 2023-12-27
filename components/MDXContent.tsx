@@ -34,14 +34,14 @@ function Image({
 }: NextImageProps & React.HTMLAttributes<HTMLDivElement>) {
   return (
     <figure className="my-8 text-center">
-      <div className="relative mx-auto grid w-fit rounded-xl shadow">
-        <div className="absolute -inset-2 -z-1 rounded-xl bg-overlay-8 shadow-inner" />
+      <div className="relative mx-auto grid w-fit rounded-lg shadow">
+        <div className="absolute -inset-2 -z-1 rounded-lg bg-overlay-8 shadow-inner" />
         <NextImage
           alt={alt}
           src={src}
           height={height}
           width={width}
-          className="rounded-xl"
+          className="rounded-lg"
         />
       </div>
       {caption && (

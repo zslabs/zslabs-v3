@@ -23,11 +23,11 @@ const Tooltip = React.forwardRef<HTMLButtonElement, TooltipProps>(
           <TooltipPrimitive.Content
             side={side}
             align={align}
-            sideOffset={2}
+            sideOffset={6}
             className={ctl(`
-              z-50 max-w-[240px] rounded-xl bg-overlay-11 px-3
+              z-50 max-w-[240px] rounded-lg bg-overlay-11 px-3
 
-              py-2 text-center text-sm text-slate-12
+              py-1.5 text-center text-sm text-slate-12
               rdx-side-bottom:animate-slide-up-fade
               rdx-side-left:animate-slide-right-fade
               rdx-side-right:animate-slide-left-fade
@@ -35,12 +35,6 @@ const Tooltip = React.forwardRef<HTMLButtonElement, TooltipProps>(
             `)}
           >
             {content}
-            <TooltipPrimitive.Arrow
-              width={12}
-              height={6}
-              offset={8}
-              className={ctl(`fill-overlay-11`)}
-            />
           </TooltipPrimitive.Content>
         </TooltipPrimitive.Portal>
       </TooltipPrimitive.Root>

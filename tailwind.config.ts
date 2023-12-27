@@ -1,7 +1,8 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
-const plugin = require('tailwindcss/plugin')
+import defaultTheme from 'tailwindcss/defaultTheme'
+import plugin from 'tailwindcss/plugin'
+import type { Config } from 'tailwindcss/types/config'
 
-const colors = require('./helpers/tw.json')
+import colors from './helpers/tw.json'
 
 // @NOTE Use https://colorbox.io/ to generate color palettes
 // Primary: #3990b9
@@ -33,8 +34,7 @@ const utilities = plugin(({ addVariant }) => {
   ])
 })
 
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
   experimental: {
     optimizeUniversalDefaults: true,
   },
@@ -126,4 +126,4 @@ module.exports = {
     utilities,
     require('tailwindcss-radix')({ variantPrefix: 'rdx' }),
   ],
-}
+} satisfies Config
