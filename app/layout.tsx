@@ -26,7 +26,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="overflow-x-hidden overflow-y-scroll bg-slate-1 font-medium text-slate-12 antialiased selection:bg-primary-5 selection:text-slate-12">
+      <body className="overflow-x-hidden overflow-y-scroll bg-slate-1 font-medium text-slate-12 selection:bg-primary-5 selection:text-slate-12">
         <Providers>
           <BaseLayout>{children}</BaseLayout>
         </Providers>
