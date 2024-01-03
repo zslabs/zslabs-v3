@@ -18,6 +18,11 @@
     letter-spacing: -0.0125ch;
   }
 
+  strong,
+  b {
+    font-weight: theme('fontWeight.medium');
+  }
+
   code,
   pre,
   .font-mono {
