@@ -48,7 +48,7 @@ export function ListItem({
               className="group flex w-fit items-baseline gap-1"
               href={href}
             >
-              <span className="underline decoration-dotted underline-offset-4 transition-all group-hocus:underline-offset-5">
+              <span className="underline decoration-dotted underline-offset-4 transition-all group-hocus:underline-offset-6">
                 {label}
               </span>
               {!href?.startsWith('/') && (

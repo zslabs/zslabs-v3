@@ -23,7 +23,7 @@
   a:not([class]) {
     color: theme('colors.slate.12');
 
-    @apply underline underline-offset-4 decoration-dotted transition-all hocus:underline-offset-5;
+    @apply underline underline-offset-4 decoration-dotted transition-all hocus:underline-offset-6;
   }
 
   h2,

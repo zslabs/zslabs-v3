@@ -114,7 +114,7 @@ export default {
         120: '30rem',
       },
       textUnderlineOffset: {
-        5: '5',
+        6: '6px',
       },
       zIndex: {
         '-1': '-1',
