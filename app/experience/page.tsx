@@ -22,7 +22,7 @@ export default function Experience() {
         <List>
           <ListItem
             label="Slack"
-            meta="Senior software engineer :: 05/2021 - current"
+            meta="Staff software engineer :: 05/2021 - current"
             icon="slack"
           >
             I'm part of the design infrastructure team, building tools to help

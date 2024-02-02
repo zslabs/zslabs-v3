@@ -6,7 +6,6 @@ import * as TabsPrimitive from '@radix-ui/react-tabs'
 import { motion } from 'framer-motion'
 
 import { List, ListItem } from '~components/List'
-import TextLink from '~components/TextLink'
 
 const tabs: { title: string; value: string }[] = [
   {
@@ -111,10 +110,19 @@ function Gear() {
       >
         One front and center, with the other rotated 90º to my left.
       </ListItem>
-      <ListItem icon="mouse" label="Logitech MX Masters">
-        Took almost no time to get used to either the{' '}
-        <TextLink href="https://amzn.to/3PCyVzG">keyboard</TextLink> or{' '}
-        <TextLink href="https://amzn.to/3ccyLS8">mouse</TextLink>.
+      <ListItem
+        icon="mouse"
+        href="https://amzn.to/3ccyLS8"
+        label="Logitech MX Masters"
+      >
+        An absolute powerhouse of a mouse; never looking back.
+      </ListItem>
+      <ListItem
+        icon="keyboard"
+        href="https://www.keychron.com/products/keychron-q5-max-qmk-via-wireless-custom-mechanical-keyboard"
+        label="Keychron Q5 Max Mechanical Keyboard"
+      >
+        My first mechanical keyboard, and I'm loving it so far.
       </ListItem>
       <ListItem
         href="https://www.aersf.com/travel-pack-3-black"
