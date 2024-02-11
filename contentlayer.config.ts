@@ -10,7 +10,7 @@ import { visit } from 'unist-util-visit'
 /* @SOURCE for rehype content blocks; https://github.com/shadcn/ui/blob/main/apps/www/contentlayer.config.js */
 
 const rehypePrettyCodeOptions: Options = {
-  // Use one of Shikiji's packaged themes
+  // Use one of Shiki's packaged themes
   theme: 'one-dark-pro',
 
   // Keep the background or use a custom background color
