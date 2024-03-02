@@ -187,10 +187,10 @@ export default function BaseLayout({ children }: ChildrenOnlyProps) {
           </Prose>
         </motion.footer>
       </div>
-      <div className="pointer-events-none relative isolate -z-1 opacity-30">
-        <div className="fixed inset-0 mix-blend-color-dodge nnnoise" />
-        <div className="fixed inset-0 bg-center mix-blend-color-dodge ooorganize" />
-        <div className="fixed inset-0 translate-x-1/4 translate-y-1/2 bg-right bg-no-repeat gggyrate" />
+      <div className="pointer-events-none relative isolate -z-1">
+        <div className="fixed inset-0 opacity-50 mix-blend-color-dodge nnnoise" />
+        <div className="fixed inset-0 bg-center opacity-30 mix-blend-color-dodge ooorganize" />
+        <div className="fixed inset-0 translate-x-1/4 translate-y-1/2 bg-right bg-no-repeat opacity-30 gggyrate" />
       </div>
     </>
   )
