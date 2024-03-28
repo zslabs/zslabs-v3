@@ -40,12 +40,8 @@ function Software() {
       >
         The easiest window-management tool I've ever used.
       </ListItem>
-      <ListItem
-        icon="chrome"
-        label="Google Chrome"
-        href="https://www.google.com/chrome"
-      >
-        More recently Firefox, but Chrome's consistency keeps bringing me back.
+      <ListItem icon="arc" label="Arc" href="https://arc.net/">
+        Giving the new kid on the block a shot; so far, so good.
       </ListItem>
       <ListItem icon="terminal" label="Warp" href="https://www.warp.dev/">
         The built-in terminal in VS Code is fine; though I'm fortunate enough to
