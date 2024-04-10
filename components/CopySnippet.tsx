@@ -9,7 +9,6 @@ export default function CopySnippet({ codeString }: { codeString: string }) {
     try {
       await navigator.clipboard.writeText(codeString)
     } catch (err) {
-      // eslint-disable-next-line no-console
       console.error('Failed to copy: ', err)
     }
   }, [codeString])

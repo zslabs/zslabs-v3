@@ -1,5 +1,3 @@
-/* eslint-disable no-param-reassign */
-
 import { defineDocumentType, makeSource } from 'contentlayer/source-files'
 import type { Options, LineElement, CharsElement } from 'rehype-pretty-code'
 import rehypePrettyCode from 'rehype-pretty-code'

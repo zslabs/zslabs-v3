@@ -1,0 +1,41 @@
+{
+  "plugins": ["@typescript-eslint", "react-perf", "tailwindcss"],
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:prettier/recommended",
+    "prettier",
+    "plugin:react-perf/recommended",
+    "plugin:tailwindcss/recommended"
+  ],
+  "rules": {
+    "react/display-name": "off",
+    "global-require": "off",
+    "@typescript-eslint/no-var-requires": "off",
+    "@typescript-eslint/consistent-type-imports": "error",
+    "import/order": [
+      "error",
+      {
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        },
+        "newlines-between": "always",
+        "groups": ["builtin", "external", "parent", "sibling", "index"],
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "group": "external",
+            "position": "before"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["builtin"]
+      }
+    ],
+    "tailwindcss/no-custom-classname": [
+      "error",
+      {
+        "skipClassAttribute": true
+      }
+    ]
+  }
+}

@@ -75,7 +75,6 @@ function useScript(src: string): Status {
 
       // Remove event listeners on cleanup
 
-      // eslint-disable-next-line consistent-return
       return () => {
         if (script) {
           script.removeEventListener('load', setStateFromEvent)

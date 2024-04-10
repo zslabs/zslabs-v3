@@ -26,8 +26,8 @@ function Software() {
         label="VS Code"
         href="https://code.visualstudio.com/"
       >
-        I've tried them all; Dreamweaver, Sublime Text, BB Edit, Textmate, Atom,
-        etc.
+        I&apos;ve tried them all; Dreamweaver, Sublime Text, BB Edit, Textmate,
+        Atom, etc.
       </ListItem>
       <ListItem icon="figma" label="Figma" href="https://www.figma.com">
         Previously Sketch, but Figma is just too good to ignore; with a plethora
@@ -38,14 +38,15 @@ function Software() {
         label="Rectangle"
         href="https://rectangleapp.com/"
       >
-        The easiest window-management tool I've ever used.
+        The easiest window-management tool I&apos;ve ever used.
       </ListItem>
       <ListItem icon="arc" label="Arc" href="https://arc.net/">
         Giving the new kid on the block a shot; so far, so good.
       </ListItem>
       <ListItem icon="terminal" label="Warp" href="https://www.warp.dev/">
-        The built-in terminal in VS Code is fine; though I'm fortunate enough to
-        have the screen real-estate for a dedicated, always-open terminal.
+        The built-in terminal in VS Code is fine; though I&apos;m fortunate
+        enough to have the screen real-estate for a dedicated, always-open
+        terminal.
       </ListItem>
       <ListItem
         icon="github"
@@ -53,7 +54,7 @@ function Software() {
         href="https://desktop.github.com/"
       >
         I do feel more accomplished in the terminal at-times, but the interface
-        and ease-of-use can't be understated for all my projects.
+        and ease-of-use can&apos;t be understated for all my projects.
       </ListItem>
       <ListItem
         icon="mimestream"
@@ -66,7 +67,7 @@ function Software() {
         Synced across all my devices; never had an issue.
       </ListItem>
       <ListItem icon="reminders" label="Apple Reminders">
-        I've tried a few different apps, but the iCloud integration and
+        I&apos;ve tried a few different apps, but the iCloud integration and
         feature-set has always been enough for me.
       </ListItem>
     </List>
@@ -81,8 +82,8 @@ function Gear() {
         icon="mbpro"
         label="MacBook Pro (15-inch, 2019)"
       >
-        Stuck with the 'ole touch-bar for now, but very much looking forward to
-        giving the M2 models a shot.
+        Stuck with the &apos;ole touch-bar for now, but very much looking
+        forward to giving the M2 models a shot.
       </ListItem>
       <ListItem
         href="https://www.apple.com/iphone-15-pro/"
@@ -97,7 +98,8 @@ function Gear() {
         label="Apple Watch Series 7 45mm"
       >
         Longtime Fitbit user, but notifications work so much better now. I
-        thought I'd miss the 4-5 days of battery life, but I get a solid 2 days.
+        thought I&apos;d miss the 4-5 days of battery life, but I get a solid 2
+        days.
       </ListItem>
       <ListItem
         icon="monitor"
@@ -118,7 +120,7 @@ function Gear() {
         href="https://www.keychron.com/products/keychron-q5-max-qmk-via-wireless-custom-mechanical-keyboard"
         label="Keychron Q5 Max Mechanical Keyboard"
       >
-        My first mechanical keyboard, and I'm loving it so far.
+        My first mechanical keyboard, and I&apos;m loving it so far.
       </ListItem>
       <ListItem
         href="https://www.aersf.com/travel-pack-3-black"
@@ -126,7 +128,7 @@ function Gear() {
         label="Aer Travel Pack 3"
       >
         I spent way too much time researching backpacks, but this is a
-        much-needed, dual-purpose upgrade that I'm happy to add.
+        much-needed, dual-purpose upgrade that I&apos;m happy to add.
       </ListItem>
       <ListItem
         href="https://amzn.to/3TnaoSf"

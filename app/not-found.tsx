@@ -13,7 +13,7 @@ export default function PageNotFound() {
       <MotionHeader>
         <SectionTitle>404</SectionTitle>
       </MotionHeader>
-      <MotionMain>It's probably something you did.</MotionMain>
+      <MotionMain>It&apos;s probably something you did.</MotionMain>
     </>
   )
 }

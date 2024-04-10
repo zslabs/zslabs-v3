@@ -41,7 +41,8 @@ function Articles() {
           <Prose>
             <p>
               Occassionally, I need more than 280 characters to share my
-              thoughts. Here's where you'll find my brain-dumps and ramblings.
+              thoughts. Here&apos;s where you&apos;ll find my brain-dumps and
+              ramblings.
             </p>
           </Prose>
         </div>

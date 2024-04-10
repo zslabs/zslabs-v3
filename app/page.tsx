@@ -22,9 +22,9 @@ function Intro() {
       <SectionTitle>Zach Schnackel</SectionTitle>
       <Prose>
         <p>
-          I'm a Software Engineer based in Charlotte, NC. My background involves
-          pushing the limits of what we can build on the backend and how we can
-          experience it on the frontend.
+          I&apos;m a Software Engineer based in Charlotte, NC. My background
+          involves pushing the limits of what we can build on the backend and
+          how we can experience it on the frontend.
         </p>
         <p>
           Happy to be part of the design infrastructure team at{' '}
@@ -73,8 +73,8 @@ function Projects() {
           favorite sports.
         </ListItem>
         <ListItem label="Theming" icon="brush" meta="Slack">
-          Technical and team lead for Slack's new theming infrastructure across
-          desktop, iOS, and Android. Developed migration methods across
+          Technical and team lead for Slack&apos;s new theming infrastructure
+          across desktop, iOS, and Android. Developed migration methods across
           thousands of assets, while simplifying both the storage, application,
           and manipulation of color preferences throughout each platform.{' '}
           <TextLink

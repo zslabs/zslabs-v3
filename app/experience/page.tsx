@@ -25,8 +25,8 @@ export default function Experience() {
             meta="Staff software engineer :: 05/2021 - current"
             icon="slack"
           >
-            I'm part of the design infrastructure team, building tools to help
-            designers and engineers collaborate more efficiently.
+            I&apos;m part of the design infrastructure team, building tools to
+            help designers and engineers collaborate more efficiently.
           </ListItem>
           <ListItem
             label="Gremlin"

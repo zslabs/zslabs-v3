@@ -18,7 +18,6 @@ const TextLink = React.forwardRef<HTMLAnchorElement, TextLinkProps>(
 
     // If our link matches the `domainRegex` above, update to become relative
     if (sameDomain) {
-      // eslint-disable-next-line no-param-reassign
       href = href.replace(domainRegex, '/')
     }
 

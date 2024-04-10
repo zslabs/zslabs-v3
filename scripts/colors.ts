@@ -76,7 +76,6 @@ const twColors = colors.reduce(
 
 function writeVars(color: Colors[number]['value']) {
   return Object.entries(color).reduce((acc, curr) => {
-    // eslint-disable-next-line no-param-reassign
     acc += `\n  --${curr[0]}: ${curr[1]};`
     return acc
   }, '')

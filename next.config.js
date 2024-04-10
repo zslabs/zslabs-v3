@@ -1,6 +1,5 @@
 const path = require('path')
 
-const ESLintPlugin = require('eslint-webpack-plugin')
 const { withContentlayer } = require('next-contentlayer')
 
 /**
@@ -8,14 +7,6 @@ const { withContentlayer } = require('next-contentlayer')
  */
 const nextConfig = {
   webpack: (config, { dev }) => {
-    if (dev) {
-      config.plugins.push(
-        new ESLintPlugin({
-          extensions: ['js', 'jsx', 'ts', 'tsx'],
-        })
-      )
-    }
-
     config.module.rules.push({
       test: /\.svg$/i,
       issuer: /\.tsx?$/,
