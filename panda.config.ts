@@ -24,6 +24,27 @@ const globalCss = defineGlobalStyles({
   'code, pre': {
     letterSpacing: 'normal',
   },
+  'code:not([data-language])': {
+    color: 'slate.12',
+    backgroundColor: 'black.a.8',
+    paddingInline: '1',
+    paddingBlock: '0.5',
+    borderRadius: 'lg',
+  },
+  '[data-rehype-pretty-code-title]': {
+    color: 'slate.12',
+    fontSize: 'xs',
+    borderRadius: 'full',
+    fontFamily: 'code',
+    backgroundColor: 'black.a.8',
+    width: 'fit',
+    paddingInline: '1',
+    paddingBlock: '2',
+    marginBlockEnd: '2',
+  },
+  '[data-line]': {
+    paddingInlineEnd: '4',
+  },
 })
 
 export default defineConfig({
@@ -71,6 +92,9 @@ export default defineConfig({
           },
           slate: {
             value: '0 0 0.5rem {colors.slate.a.10}',
+          },
+          slateSolid: {
+            value: '0 0 0 0.125rem {colors.slate.a.4}',
           },
         },
       },

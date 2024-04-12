@@ -24,7 +24,7 @@ const Prose = ({ children, ...rest }: ProseProps) => {
             marginBlockStart: '6',
           },
 
-        '& > :first_child': {
+        '& > :first-child': {
           marginBlockStart: '0',
         },
 
@@ -43,6 +43,49 @@ const Prose = ({ children, ...rest }: ProseProps) => {
 
           _hover: {
             textUnderlineOffset: '6',
+          },
+        },
+
+        '& ol': {
+          paddingInlineStart: '4',
+          counterReset: 'list-counter',
+
+          '& li': {
+            position: 'relative',
+            counterIncrement: 'list-counter',
+            paddingLeft: '7',
+
+            _before: {
+              content: 'counter(list-counter) "."',
+              position: 'absolute',
+              left: '1',
+              fontWeight: 'medium',
+            },
+          },
+        },
+
+        '& li': {
+          marginBlock: '2',
+        },
+
+        '& ul': {
+          paddingInlineStart: '4',
+
+          '& > li': {
+            position: 'relative',
+            paddingLeft: '7',
+
+            _before: {
+              content: '""',
+              position: 'absolute',
+              left: '1',
+              top: '2',
+              width: '2',
+              height: '2',
+              borderRadius: 'full',
+              backgroundColor: 'slate.9',
+              boxShadow: 'slateSolid',
+            },
           },
         },
       })}
