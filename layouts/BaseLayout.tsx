@@ -97,8 +97,31 @@ export default function BaseLayout({ children }: ChildrenOnlyProps) {
 
   return (
     <>
-      <div className="mx-auto max-w-2xl px-4 py-8 md:py-12">
-        <header className="mb-12 flex items-center justify-between gap-6 md:mb-16">
+      <div
+        className={css({
+          marginInline: 'auto',
+          maxWidth: '2xl',
+          paddingBlock: '8',
+          paddingInline: '4',
+
+          md: {
+            paddingBlock: '12',
+          },
+        })}
+      >
+        <header
+          className={css({
+            marginBlockEnd: '12',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: '6',
+
+            md: {
+              marginBlockEnd: '16',
+            },
+          })}
+        >
           <HeaderItemWrapper
             runAnimation={runAnimation}
             controls={controls}
@@ -107,16 +130,23 @@ export default function BaseLayout({ children }: ChildrenOnlyProps) {
             <TextLink
               href="/"
               aria-label="Home"
-              className="group relative text-3xl"
+              className={css({
+                position: 'relative',
+                fontSize: '3xl',
+              })}
             >
               <Icon name="logo" />
-              <div className="pointer-events-none absolute left-0 top-0 -z-1 rotate-12 opacity-0 blur-xl transition-opacity duration-150 group-hover:opacity-80">
-                <Icon name="logo" />
-              </div>
             </TextLink>
           </HeaderItemWrapper>
 
-          <div className="flex items-center justify-end gap-6">
+          <div
+            className={css({
+              gap: '6',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'end',
+            })}
+          >
             <HeaderItemWrapper
               runAnimation={runAnimation}
               controls={controls}
@@ -125,7 +155,17 @@ export default function BaseLayout({ children }: ChildrenOnlyProps) {
               <Tooltip content="GitHub">
                 <TextLink
                   href="https://github.com/zslabs"
-                  className="text-xl text-slate-11 transition-colors hocus:text-slate-12"
+                  className={css({
+                    fontSize: 'xl',
+                    color: 'slate.11',
+                    transitionProperty: 'color',
+                    transitionDuration: 'fast',
+                    transitionTimingFunction: 'in-out',
+
+                    _hover: {
+                      color: 'slate.12',
+                    },
+                  })}
                 >
                   <Icon name="github" />
                 </TextLink>
@@ -139,7 +179,17 @@ export default function BaseLayout({ children }: ChildrenOnlyProps) {
               <Tooltip content="Twitter">
                 <TextLink
                   href="https://twitter.com/zslabs"
-                  className="text-xl text-slate-11 transition-colors hocus:text-slate-12"
+                  className={css({
+                    fontSize: 'xl',
+                    color: 'slate.11',
+                    transitionProperty: 'color',
+                    transitionDuration: 'fast',
+                    transitionTimingFunction: 'in-out',
+
+                    _hover: {
+                      color: 'slate.12',
+                    },
+                  })}
                 >
                   <Icon name="x" />
                 </TextLink>
@@ -153,7 +203,10 @@ export default function BaseLayout({ children }: ChildrenOnlyProps) {
               <Tooltip content="About me">
                 <TextLink href="/#about">
                   <Image
-                    className="shrink-0 rounded-[33%]"
+                    className={css({
+                      borderRadius: 'full',
+                      flexShrink: '0',
+                    })}
                     src="/media/me.png"
                     width="36"
                     height="36"
@@ -171,16 +224,39 @@ export default function BaseLayout({ children }: ChildrenOnlyProps) {
           animate={controls}
           variants={footerVariants}
           initial={runAnimation ? 'hidden' : false}
-          className="mt-12 text-center text-sm text-slate-11 md:mt-16"
+          className={css({
+            marginBlockStart: '12',
+            color: 'slate.11',
+            fontSize: 'sm',
+            textAlign: 'center',
+
+            md: {
+              marginBlockStart: '16',
+            },
+          })}
         >
-          <p className="mb-1">
+          <p
+            className={css({
+              marginBlockEnd: '1',
+            })}
+          >
             Copyright &copy; <Year /> Zach Schnackel{' '}
-            <span className="text-slate-12">
+            <span
+              className={css({
+                color: 'slate.12',
+              })}
+            >
               <Icon name="peace" inline />
             </span>
           </p>
           <Prose>
-            <div className="flex justify-center gap-2">
+            <div
+              className={css({
+                justifyContent: 'center',
+                gap: '2',
+                display: 'flex',
+              })}
+            >
               <TextLink href="mailto:info@zslabs.com">Contact</TextLink> ::{' '}
               <TextLink href="/privacy">Privacy</TextLink> ::{' '}
               <TextLink href="/terms">Terms</TextLink>

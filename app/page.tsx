@@ -12,6 +12,8 @@ import MoreArticlesLink from '~components/MoreArticlesLink'
 import Prose from '~components/Prose'
 import SectionTitle from '~components/SectionTitle'
 import TextLink from '~components/TextLink'
+import { css } from '~css/css'
+import { stack } from '~css/patterns'
 import { fadeInUp } from '~helpers/styles'
 import useLayoutAnimationState from '~hooks/useLayoutAnimationState'
 import type { ReducedPosts } from '~types/custom'
@@ -41,19 +43,35 @@ function Intro() {
             title="Elk Knob State Park"
             href="https://www.ncparks.gov/state-parks/elk-knob-state-park"
           >
-            <span className="text-slate-12">
+            <span
+              className={css({
+                color: 'slate.12',
+              })}
+            >
               <Icon inline name="mountain-snow" />
             </span>
           </TextLink>
         </p>
       </Prose>
-      <div className="mt-8 flex justify-between gap-4">
+      <div
+        className={css({
+          display: 'flex',
+          justifyContent: 'space-between',
+          gap: '4',
+          marginBlockStart: '8',
+        })}
+      >
         <TextLink href="/experience">
           <Button as="div" variation="contrast">
             Experience
           </Button>
         </TextLink>
-        <TextLink href="/uses" className="cursor-help">
+        <TextLink
+          href="/uses"
+          className={css({
+            cursor: 'help',
+          })}
+        >
           <Button as="div" variation="default">
             What I use
           </Button>
@@ -149,7 +167,12 @@ function Articles() {
           </ListItem>
         ))}
       </List>
-      <div className="mt-12 w-fit text-xl">
+      <div
+        className={css({
+          marginBlockStart: '12',
+          fontSize: 'xl',
+        })}
+      >
         <MoreArticlesLink />
       </div>
     </section>
@@ -172,7 +195,12 @@ function Index() {
 
   return (
     <motion.div
-      className="space-y-12 md:space-y-16"
+      className={stack({
+        gap: '12',
+        md: {
+          gap: '16',
+        },
+      })}
       initial="offscreen"
       variants={fadeInUp}
       animate={indexControls}

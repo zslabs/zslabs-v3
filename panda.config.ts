@@ -52,8 +52,15 @@ export default defineConfig({
   presets: [
     radixColorsPreset({
       darkMode: true,
-      autoP3: true,
-      colorScales: ['slate', 'blue', 'white', 'black'],
+      colorScales: [
+        'slate',
+        'blue',
+        'white',
+        'black',
+        'yellow',
+        'tomato',
+        'green',
+      ],
     }),
     preset,
   ],

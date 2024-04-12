@@ -7,6 +7,7 @@ import { MotionHeader, MotionMain } from '~components/ContentWrappers'
 import { List, ListItem } from '~components/List'
 import Prose from '~components/Prose'
 import SectionTitle from '~components/SectionTitle'
+import { css } from '~css/css'
 import type { ReducedPosts } from '~types/custom'
 
 export const metadata: Metadata = {
@@ -37,7 +38,11 @@ function Articles() {
         <SectionTitle>Articles</SectionTitle>
       </MotionHeader>
       <MotionMain>
-        <div className="mb-12">
+        <div
+          className={css({
+            marginBlockEnd: '12',
+          })}
+        >
           <Prose>
             <p>
               Occassionally, I need more than 280 characters to share my

@@ -7,6 +7,7 @@ import LinkedIn from './components/LinkedIn'
 import { MotionHeader, MotionMain } from '~components/ContentWrappers'
 import { List, ListItem } from '~components/List'
 import SectionTitle from '~components/SectionTitle'
+import { css } from '~css/css'
 
 export const metadata: Metadata = {
   title: 'Experience',
@@ -59,7 +60,14 @@ export default function Experience() {
           </ListItem>
         </List>
 
-        <div className="ml-1 mt-12 w-fit text-xl">
+        <div
+          className={css({
+            marginInlineStart: '1',
+            marginBlockStart: '12',
+            fontSize: 'xl',
+            width: 'fit',
+          })}
+        >
           <LinkedIn />
         </div>
       </MotionMain>

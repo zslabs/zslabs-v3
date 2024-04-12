@@ -8,6 +8,7 @@ import Icon from './Icon'
 import Prose from './Prose'
 
 import TextLink from '~components/TextLink'
+import { css } from '~css/css'
 import { fadeInUp, viewportInViewOptions } from '~helpers/styles'
 import type { IconName } from '~icons/build/types'
 
@@ -30,25 +31,58 @@ export function ListItem({
 }) {
   return (
     <motion.li
-      className="flex gap-4"
+      className={css({
+        display: 'flex',
+        gap: '4',
+      })}
       initial="offscreen"
       whileInView="onscreen"
       variants={fadeInUp}
       viewport={viewportInViewOptions}
     >
       {icon && (
-        <div className="relative self-start rounded-full bg-overlay-8 p-1 text-xl">
+        <div
+          className={css({
+            position: 'relative',
+            alignSelf: 'start',
+            borderRadius: 'full',
+            backgroundColor: 'black.a.8',
+            padding: '1',
+            fontSize: 'xl',
+          })}
+        >
           <Icon name={icon} />
         </div>
       )}
       <div>
-        <div className="mb-1">
+        <div
+          className={css({
+            marginBlockEnd: '1',
+          })}
+        >
           {href ? (
             <TextLink
-              className="group flex w-fit items-baseline gap-1"
+              className={`group ${css({
+                display: 'flex',
+                gap: '1',
+                alignItems: 'baseline',
+                width: 'fit',
+              })}`}
               href={href}
             >
-              <span className="underline decoration-dotted underline-offset-4 transition-all group-hocus:underline-offset-6">
+              <span
+                className={css({
+                  textDecorationLine: 'underline',
+                  textDecorationStyle: 'dotted',
+                  textUnderlineOffset: '4',
+                  transitionProperty: 'all',
+                  transitionDuration: 'fast',
+                  transitionTimingFunction: 'in-out',
+                  _hover: {
+                    textUnderlineOffset: '6',
+                  },
+                })}
+              >
                 {label}
               </span>
               {!href?.startsWith('/') && (

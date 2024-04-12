@@ -1,4 +1,5 @@
 import CopySnippet from '~components/CopySnippet'
+import { css } from '~css/css'
 
 interface CodeProps {
   codeString: string
@@ -7,13 +8,64 @@ interface CodeProps {
 
 export default function CodeWrapper({ codeString, children }: CodeProps) {
   return (
-    <div className="rounded-lg font-mono font-normal tracking-normal">
-      <header className="flex items-center justify-between gap-4 rounded-t-xl bg-overlay-11 px-4 py-2">
-        <div className="flex items-center gap-4">
-          <div className="flex gap-2">
-            <span className="size-3 rounded-full bg-danger-9" />
-            <span className="size-3 rounded-full bg-warning-9" />
-            <span className="size-3 rounded-full bg-success-9" />
+    <div
+      className={css({
+        borderRadius: 'lg',
+        fontFamily: 'code',
+        fontWeight: 'normal',
+        letterSpacing: 'normal',
+      })}
+    >
+      <header
+        className={css({
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          gap: '4',
+          borderTopLeftRadius: 'xl',
+          borderTopRightRadius: 'xl',
+          paddingBlock: '2',
+          paddingInline: '4',
+          backgroundColor: 'black.a.11',
+        })}
+      >
+        <div
+          className={css({
+            display: 'flex',
+            alignItems: 'center',
+            gap: '4',
+          })}
+        >
+          <div
+            className={css({
+              display: 'flex',
+              gap: '2',
+            })}
+          >
+            <span
+              className={css({
+                width: '3',
+                height: '3',
+                borderRadius: 'full',
+                backgroundColor: 'tomato.9',
+              })}
+            />
+            <span
+              className={css({
+                width: '3',
+                height: '3',
+                borderRadius: 'full',
+                backgroundColor: 'yellow.9',
+              })}
+            />
+            <span
+              className={css({
+                width: '3',
+                height: '3',
+                borderRadius: 'full',
+                backgroundColor: 'green.9',
+              })}
+            />
           </div>
         </div>
         <div>

@@ -16,6 +16,7 @@ import Prose from '~components/Prose'
 import type { TextLinkProps } from '~components/TextLink'
 import TextLink from '~components/TextLink'
 import Tweet from '~components/Tweet'
+import { css } from '~css/css'
 
 interface NextImageProps {
   alt?: ImageProps['alt']
@@ -33,19 +34,48 @@ function Image({
   width,
 }: NextImageProps & React.HTMLAttributes<HTMLDivElement>) {
   return (
-    <figure className="my-8 text-center">
-      <div className="relative mx-auto grid w-fit rounded-lg shadow">
-        <div className="absolute -inset-2 -z-1 rounded-lg bg-overlay-8 shadow-inner" />
+    <figure
+      className={css({
+        marginBlock: '8',
+        textAlign: 'center',
+      })}
+    >
+      <div
+        className={css({
+          position: 'relative',
+          marginInline: 'auto',
+          borderRadius: 'lg',
+          width: 'fit',
+          display: 'grid',
+        })}
+      >
+        <div
+          className={css({
+            position: 'absolute',
+            inset: '-2',
+            zIndex: '-1',
+            borderRadius: 'lg',
+            backgroundColor: 'black.a.8',
+          })}
+        />
         <NextImage
           alt={alt}
           src={src}
           height={height}
           width={width}
-          className="rounded-lg"
+          className={css({
+            borderRadius: 'lg',
+          })}
         />
       </div>
       {caption && (
-        <figcaption className="mt-4 text-sm text-slate-11">
+        <figcaption
+          className={css({
+            marginBlockStart: '4',
+            color: 'slate.11',
+            fontSize: 'sm',
+          })}
+        >
           {caption}
         </figcaption>
       )}
@@ -85,7 +115,12 @@ const components: MDXComponents = {
   }) => {
     return (
       <CodeWrapper codeString={__rawString__}>
-        <pre className="grid" {...rest} />
+        <pre
+          className={css({
+            display: 'grid',
+          })}
+          {...rest}
+        />
       </CodeWrapper>
     )
   },
