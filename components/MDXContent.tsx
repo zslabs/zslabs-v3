@@ -15,7 +15,6 @@ import CodeWrapper from '~components/CodeWrapper'
 import Prose from '~components/Prose'
 import type { TextLinkProps } from '~components/TextLink'
 import TextLink from '~components/TextLink'
-import Tweet from '~components/Tweet'
 import { css } from '~css/css'
 
 interface NextImageProps {
@@ -104,7 +103,6 @@ const components: MDXComponents = {
   Alert,
   Image,
   CodePen,
-  Tweet,
   TextLink,
   // @ts-expect-error Stingy types
   pre: ({

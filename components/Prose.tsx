@@ -39,7 +39,7 @@ const Prose = ({ children, ...rest }: ProseProps) => {
           textDecorationStyle: 'dotted',
           transitionProperty: 'all',
           transitionDuration: 'fast',
-          transitionTimingFunction: 'in-out',
+          transitionTimingFunction: 'default',
 
           _hover: {
             textUnderlineOffset: '6',
@@ -53,12 +53,12 @@ const Prose = ({ children, ...rest }: ProseProps) => {
           '& li': {
             position: 'relative',
             counterIncrement: 'list-counter',
-            paddingLeft: '7',
+            paddingInlineStart: '7',
 
             _before: {
               content: 'counter(list-counter) "."',
               position: 'absolute',
-              left: '1',
+              insetInlineStart: '1',
               fontWeight: 'medium',
             },
           },
@@ -73,13 +73,13 @@ const Prose = ({ children, ...rest }: ProseProps) => {
 
           '& > li': {
             position: 'relative',
-            paddingLeft: '7',
+            paddingInlineStart: '7',
 
             _before: {
               content: '""',
               position: 'absolute',
-              left: '1',
-              top: '2',
+              insetInlineStart: '1',
+              insetBlockStart: '2',
               width: '2',
               height: '2',
               borderRadius: 'full',

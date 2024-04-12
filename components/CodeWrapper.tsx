@@ -22,8 +22,8 @@ export default function CodeWrapper({ codeString, children }: CodeProps) {
           alignItems: 'center',
           justifyContent: 'space-between',
           gap: '4',
-          borderTopLeftRadius: 'xl',
-          borderTopRightRadius: 'xl',
+          borderStartStartRadius: 'xl',
+          borderStartEndRadius: 'xl',
           paddingBlock: '2',
           paddingInline: '4',
           backgroundColor: 'black.a.11',
@@ -72,7 +72,17 @@ export default function CodeWrapper({ codeString, children }: CodeProps) {
           <CopySnippet codeString={codeString} />
         </div>
       </header>
-      <aside className="max-h-120 overflow-auto overscroll-contain rounded-b-xl bg-overlay-8 p-4">
+      <aside
+        className={css({
+          maxHeight: '120',
+          overflow: 'auto',
+          overscrollBehavior: 'contain',
+          borderEndStartRadius: 'xl',
+          borderEndEndRadius: 'xl',
+          padding: '4',
+          backgroundColor: 'black.a.8',
+        })}
+      >
         {children}
       </aside>
     </div>

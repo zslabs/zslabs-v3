@@ -13,7 +13,17 @@ import { fadeInUp, viewportInViewOptions } from '~helpers/styles'
 import type { IconName } from '~icons/build/types'
 
 export function List({ children }: { children: React.ReactNode }) {
-  return <ul className="grid grid-cols-1 gap-6">{children}</ul>
+  return (
+    <ul
+      className={css({
+        display: 'grid',
+        gap: '6',
+        gridTemplateColumns: '1',
+      })}
+    >
+      {children}
+    </ul>
+  )
 }
 
 export function ListItem({
@@ -77,7 +87,7 @@ export function ListItem({
                   textUnderlineOffset: '4',
                   transitionProperty: 'all',
                   transitionDuration: 'fast',
-                  transitionTimingFunction: 'in-out',
+                  transitionTimingFunction: 'default',
                   _hover: {
                     textUnderlineOffset: '6',
                   },
@@ -98,7 +108,21 @@ export function ListItem({
         <div>
           {children && <Prose>{children}</Prose>}
           {meta && (
-            <div className="relative mt-2 w-fit px-2 py-1 font-mono text-sm uppercase leading-none text-slate-12 before:absolute before:inset-0 before:-z-1 before:skew-x-12 before:rounded-sm before:bg-overlay-contrast-5 before:opacity-25">
+            <div
+              className={css({
+                color: 'slate.12',
+                fontSize: 'sm',
+                borderRadius: 'sm',
+                fontFamily: 'code',
+                textTransform: 'uppercase',
+                letterSpacing: 'normal',
+                backgroundColor: 'black.a.8',
+                width: 'fit',
+                paddingInline: '2',
+                paddingBlock: '1',
+                marginBlockStart: '2',
+              })}
+            >
               {meta}
             </div>
           )}

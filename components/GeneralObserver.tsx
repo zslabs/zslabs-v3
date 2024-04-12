@@ -7,6 +7,7 @@
  */
 import React from 'react'
 
+import { css } from '~css/css'
 import type { ChildrenOnlyProps } from '~types/custom'
 
 interface IGeneralObserverProps extends ChildrenOnlyProps {
@@ -55,7 +56,9 @@ export default function GeneralObserver({
     <div
       ref={ref as React.RefObject<HTMLDivElement>}
       data-testid="general-observer"
-      className="my-8"
+      className={css({
+        marginBlock: '8',
+      })}
     >
       {isChildVisible ? children : <div style={style} />}
     </div>

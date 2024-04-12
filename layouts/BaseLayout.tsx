@@ -160,7 +160,7 @@ export default function BaseLayout({ children }: ChildrenOnlyProps) {
                     color: 'slate.11',
                     transitionProperty: 'color',
                     transitionDuration: 'fast',
-                    transitionTimingFunction: 'in-out',
+                    transitionTimingFunction: 'default',
 
                     _hover: {
                       color: 'slate.12',
@@ -184,7 +184,7 @@ export default function BaseLayout({ children }: ChildrenOnlyProps) {
                     color: 'slate.11',
                     transitionProperty: 'color',
                     transitionDuration: 'fast',
-                    transitionTimingFunction: 'in-out',
+                    transitionTimingFunction: 'default',
 
                     _hover: {
                       color: 'slate.12',

@@ -5,7 +5,8 @@
     "plugin:@pandacss/recommended",
     "plugin:prettier/recommended",
     "prettier",
-    "plugin:react-perf/recommended"
+    "plugin:react-perf/recommended",
+    "plugin:@pandacss/recommended"
   ],
   "rules": {
     "react/display-name": "off",
@@ -14,6 +15,7 @@
     "@pandacss/no-important": "error",
     "@pandacss/prefer-longhand-properties": "error",
     "@pandacss/prefer-unified-property-style": "error",
+    "@pandacss/no-physical-properties": "error",
     "@typescript-eslint/no-var-requires": "off",
     "@typescript-eslint/consistent-type-imports": "error",
     "import/order": [

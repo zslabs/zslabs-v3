@@ -2,18 +2,36 @@ import * as React from 'react'
 
 import Icon from './Icon'
 
+import { css } from '~css/css'
+
 export type BlockquoteProps = React.HTMLAttributes<HTMLQuoteElement>
 
 export default function Blockquote({ children, ...rest }: BlockquoteProps) {
   return (
     <blockquote
       {...rest}
-      className="my-8 rounded-lg bg-overlay-8 p-4 font-mono"
+      className={css({
+        marginBlock: '8',
+        padding: '4',
+        fontFamily: 'code',
+        borderRadius: 'lg',
+        backgroundColor: 'black.a.8',
+      })}
     >
-      <div className="text-lg">
+      <div
+        className={css({
+          fontSize: 'lg',
+        })}
+      >
         <Icon name="quote" />
       </div>
-      <div className="mt-2">{children}</div>
+      <div
+        className={css({
+          marginBlockStart: '2',
+        })}
+      >
+        {children}
+      </div>
     </blockquote>
   )
 }

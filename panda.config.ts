@@ -1,3 +1,5 @@
+import { defineKeyframes } from '@pandacss/dev'
+import { defineTokens } from '@pandacss/dev'
 import { defineConfig, defineGlobalStyles } from '@pandacss/dev'
 import pandaPreset from '@pandacss/preset-panda'
 import { produce } from 'immer'
@@ -7,6 +9,108 @@ import radixColorsPreset from 'pandacss-preset-radix-colors'
 const preset = produce(pandaPreset, (draft) => {
   // @ts-expect-error
   delete draft.theme.tokens.colors
+})
+
+// @SOURCE https://github.com/cschroeter/park-ui/blob/main/plugins/panda/src/theme/tokens/easings.ts
+export const easings = defineTokens.easings({
+  pulse: { value: 'cubic-bezier(0.4, 0.0, 0.6, 1.0)' },
+  default: { value: 'cubic-bezier(0.2, 0.0, 0, 1.0)' },
+  'emphasized-in': { value: 'cubic-bezier(0.05, 0.7, 0.1, 1.0)' },
+  'emphasized-out': { value: 'cubic-bezier(0.3, 0.0, 0.8, 0.15)' },
+})
+
+// @SOURCE https://github.com/cschroeter/park-ui/blob/main/plugins/panda/src/theme/tokens/animations.ts
+export const animations = defineTokens.animations({
+  'backdrop-in': {
+    value: 'fade-in 250ms {easings.emphasized-in}',
+  },
+  'backdrop-out': {
+    value: 'fade-out 200ms {easings.emphasized-out}',
+  },
+  'dialog-in': {
+    value: 'slide-in 400ms {easings.emphasized-in}',
+  },
+  'dialog-out': {
+    value: 'slide-out 200ms {easings.emphasized-out}',
+  },
+  'drawer-in-left': {
+    value: 'slide-in-left 400ms {easings.emphasized-in}',
+  },
+  'drawer-out-left': {
+    value: 'slide-out-left 200ms {easings.emphasized-out}',
+  },
+  'drawer-in-right': {
+    value: 'slide-in-right 400ms {easings.emphasized-in}',
+  },
+  'drawer-out-right': {
+    value: 'slide-out-right 200ms {easings.emphasized-out}',
+  },
+  'skeleton-pulse': {
+    value: 'skeleton-pulse 2s {easings.pulse} infinite',
+  },
+  'fade-in': {
+    value: 'fade-in 400ms {easings.emphasized-in}',
+  },
+  'collapse-in': {
+    value: 'collapse-in 250ms {easings.emphasized-in}',
+  },
+  'collapse-out': {
+    value: 'collapse-out 200ms {easings.emphasized-out}',
+  },
+})
+
+export const keyframes = defineKeyframes({
+  'fade-in': {
+    from: { opacity: '0' },
+    to: { opacity: '1' },
+  },
+  'fade-out': {
+    from: { opacity: '1' },
+    to: { opacity: '0' },
+  },
+  'slide-in': {
+    '0%': { opacity: '0', transform: 'translateY(64px)' },
+    '100%': { opacity: '1', transform: 'translateY(0)' },
+  },
+  'slide-out': {
+    '0%': { opacity: '1', transform: 'translateY(0)' },
+    '100%': { opacity: '0', transform: 'translateY(64px)' },
+  },
+  'slide-in-left': {
+    '0%': { transform: 'translateX(-100%)' },
+    '100%': { transform: 'translateX(0%)' },
+  },
+  'slide-out-left': {
+    '0%': { transform: 'translateX(0%)' },
+    '100%': { transform: 'translateX(-100%)' },
+  },
+  'slide-in-right': {
+    '0%': { transform: 'translateX(100%)' },
+    '100%': { transform: 'translateX(0%)' },
+  },
+  'slide-out-right': {
+    '0%': { transform: 'translateX(0%)' },
+    '100%': { transform: 'translateX(100%)' },
+  },
+  'collapse-in': {
+    '0%': { height: '0' },
+    '100%': { height: 'var(--height)' },
+  },
+  'collapse-out': {
+    '0%': { height: 'var(--height)' },
+    '100%': { height: '0' },
+  },
+  fadeIn: {
+    '0%': { opacity: '0', transform: 'translateY(-4px)' },
+    '100%': { opacity: '1', transform: 'translateY(0)' },
+  },
+  fadeOut: {
+    '0%': { opacity: '1', transform: 'translateY(0)' },
+    '100%': { opacity: '0', transform: 'translateY(-4px)' },
+  },
+  'skeleton-pulse': {
+    '50%': { opacity: '0.5' },
+  },
 })
 
 const globalCss = defineGlobalStyles({
@@ -20,6 +124,7 @@ const globalCss = defineGlobalStyles({
   },
   'strong, b': {
     fontWeight: 'semibold',
+    color: 'slate.12',
   },
   'code, pre': {
     letterSpacing: 'normal',
@@ -38,8 +143,8 @@ const globalCss = defineGlobalStyles({
     fontFamily: 'code',
     backgroundColor: 'black.a.8',
     width: 'fit',
-    paddingInline: '1',
-    paddingBlock: '2',
+    paddingInline: '2',
+    paddingBlock: '1',
     marginBlockEnd: '2',
   },
   '[data-line]': {
@@ -81,6 +186,8 @@ export default defineConfig({
   theme: {
     extend: {
       tokens: {
+        animations,
+        easings,
         fonts: {
           code: {
             value: "'JetBrains Mono Variable', monospace",
@@ -92,6 +199,7 @@ export default defineConfig({
         sizes: {
           fit: { value: 'fit-content' },
           current: { value: '1em' },
+          120: { value: '30rem' },
         },
         shadows: {
           blue: {
@@ -109,6 +217,7 @@ export default defineConfig({
   },
   utilities: {
     extend: {
+      keyframes,
       backgroundImage: {
         values: {
           nnnoise: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' viewBox='0 0 700 700' width='700' height='700' opacity='1'%3E%3Cdefs%3E%3Cfilter id='nnnoise-filter' x='-20%25' y='-20%25' width='140%25' height='140%25' filterUnits='objectBoundingBox' primitiveUnits='userSpaceOnUse' color-interpolation-filters='linearRGB'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.114' numOctaves='4' seed='15' stitchTiles='stitch' x='0%25' y='0%25' width='100%25' height='100%25' result='turbulence'/%3E%3CfeSpecularLighting surfaceScale='15' specularConstant='0.75' specularExponent='20' lighting-color='%23CF3266' x='0%25' y='0%25' width='100%25' height='100%25' in='turbulence' result='specularLighting'%3E%3CfeDistantLight azimuth='3' elevation='100'/%3E%3C/feSpecularLighting%3E%3CfeColorMatrix type='saturate' values='0' x='0%25' y='0%25' width='100%25' height='100%25' in='specularLighting' result='colormatrix'/%3E%3C/filter%3E%3C/defs%3E%3Crect width='700' height='700' fill='transparent'/%3E%3Crect width='700' height='700' fill='%23cf3266' filter='url(%23nnnoise-filter)'/%3E%3C/svg%3E%0A")`,
@@ -121,10 +230,9 @@ export default defineConfig({
       textWrap: {
         values: ['pretty'],
       },
-      scale: {
+      verticalAlign: {
         values: {
-          100: '1',
-          105: '1.05',
+          inline: '-0.125em',
         },
       },
     },
