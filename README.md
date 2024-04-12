@@ -1,6 +1,6 @@
 ## Introduction
 
-Portfolio site for myself. Built with [Next.js](https://nextjs.org) and [Tailwind CSS](https://tailwindcss.com).
+Portfolio site for myself. Built with [Next.js](https://nextjs.org) and [Panda CSS](https://panda-css.com).
 
 ## Color scale
 

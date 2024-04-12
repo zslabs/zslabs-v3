@@ -16,6 +16,7 @@ import Icon from '~components/Icon'
 import Prose from '~components/Prose'
 import TextLink from '~components/TextLink'
 import Tooltip from '~components/Tooltip'
+import { css } from '~css/css'
 import useLayoutAnimationState from '~hooks/useLayoutAnimationState'
 import Year from '~layouts/components/Year'
 import type { ChildrenOnlyProps } from '~types/custom'
@@ -187,10 +188,32 @@ export default function BaseLayout({ children }: ChildrenOnlyProps) {
           </Prose>
         </motion.footer>
       </div>
-      <div className="pointer-events-none relative isolate -z-1">
-        <div className="fixed inset-0 opacity-50 mix-blend-color-dodge nnnoise" />
-        <div className="fixed inset-0 bg-center opacity-30 mix-blend-color-dodge ooorganize" />
-        <div className="fixed inset-0 translate-x-1/4 translate-y-1/2 bg-right bg-no-repeat opacity-30 gggyrate" />
+      <div
+        className={css({
+          pointerEvents: 'none',
+          position: 'relative',
+          isolation: 'isolate',
+          zIndex: '-1',
+        })}
+      >
+        <div
+          className={css({
+            position: 'fixed',
+            inset: '0',
+            opacity: '0.5',
+            mixBlendMode: 'color-dodge',
+            backgroundImage: 'nnnoise',
+          })}
+        />
+        <div
+          className={css({
+            position: 'fixed',
+            inset: '0',
+            opacity: '0.35',
+            mixBlendMode: 'color-dodge',
+            backgroundImage: 'ooorganize',
+          })}
+        />
       </div>
     </>
   )

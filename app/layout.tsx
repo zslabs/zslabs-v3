@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 
 import Providers from './providers'
 
+import { css } from '~css/css'
 import BaseLayout from '~layouts/BaseLayout'
 import '@fontsource-variable/plus-jakarta-sans'
 import '@fontsource-variable/jetbrains-mono'
@@ -25,8 +26,16 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className="overflow-x-hidden overflow-y-scroll bg-slate-1 font-normal text-slate-12 selection:bg-primary-5 selection:text-slate-12">
+    <html lang="en" className="dark">
+      <body
+        className={css({
+          overflowX: 'hidden',
+          overflowY: 'scroll',
+          backgroundColor: 'slate.1',
+          fontWeight: 'normal',
+          color: 'slate.12',
+        })}
+      >
         <Providers>
           <BaseLayout>{children}</BaseLayout>
         </Providers>

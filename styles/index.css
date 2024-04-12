@@ -1,31 +1,3 @@
-@import './prose.css';
+@layer reset, base, tokens, recipes, utilities;
+
 @import '../icons/build/styles.css';
-@import '../styles/colors.css';
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@layer base {
-  html {
-    scroll-behavior: smooth;
-    text-rendering: optimizeLegibility;
-  }
-
-  *,
-  &::before,
-  &::after {
-    letter-spacing: -0.0125ch;
-  }
-
-  strong,
-  b {
-    font-weight: theme('fontWeight.medium');
-  }
-
-  code,
-  pre,
-  .font-mono {
-    letter-spacing: normal;
-  }
-}
