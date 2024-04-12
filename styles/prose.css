@@ -1,41 +1,4 @@
 .prose {
-  text-wrap: pretty;
-
-  * + p,
-  * + ul,
-  * + ol,
-  * + dl,
-  * + blockquote:not([class]),
-  * + address,
-  * + fieldset,
-  * + [data-rehype-pretty-code-figure] {
-    margin-top: theme('space.6');
-  }
-
-  > :first-child {
-    margin-top: 0;
-  }
-
-  > :last-child {
-    margin-bottom: 0;
-  }
-
-  a:not([class]) {
-    color: theme('colors.slate.12');
-
-    @apply underline underline-offset-4 decoration-dotted transition-all hocus:underline-offset-6;
-  }
-
-  h2,
-  h3,
-  h4,
-  h5 {
-    font-weight: theme('fontWeight.medium');
-    font-size: theme('fontSize.lg');
-    color: theme('colors.slate.12');
-    margin-top: theme('space.10');
-  }
-
   ol {
     padding-left: theme('spacing.4');
     counter-reset: list-counter;
