@@ -171,6 +171,7 @@ function Articles() {
         className={css({
           marginBlockStart: '12',
           fontSize: 'xl',
+          width: 'fit',
         })}
       >
         <MoreArticlesLink />

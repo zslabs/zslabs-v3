@@ -2,14 +2,69 @@ import * as React from 'react'
 
 import ctl from '@netlify/classnames-template-literals'
 
+import type { RecipeVariantProps } from '~css/css'
+import { css, cva } from '~css/css'
+
+type ButtonVariants = RecipeVariantProps<typeof styles>
+
 interface ButtonPropsPrimitive<T extends React.ElementType> {
   as?: T
-  variation?: 'default' | 'contrast' | 'overlay-hover' | 'cta'
-  loading?: boolean
-  iconOnly?: boolean
   type?: 'submit' | 'button' | 'reset'
   children?: React.ReactNode
 }
+
+const styles = cva({
+  base: {
+    position: 'relative',
+    height: '10',
+    overflow: 'hidden',
+    borderRadius: 'lg',
+    fontSize: 'sm',
+    fontWeight: 'medium',
+    outlineStyle: 'dotted',
+    outlineColor: 'transparent',
+    outlineOffset: '0.5',
+    transitionProperty: 'all',
+    transitionDuration: 'fast',
+    display: 'inline-grid',
+    paddingInline: '4',
+
+    _hover: {
+      transform: 'scale(1.05)',
+      outlineColor: 'white.a.4',
+    },
+  },
+  variants: {
+    variation: {
+      default: {
+        backgroundColor: 'black.a.8',
+        boxShadow: 'default',
+
+        _hover: {
+          backgroundColor: 'black.a.10',
+        },
+      },
+      contrast: {
+        backgroundColor: 'slate.12',
+        color: 'slate.1',
+        boxShadow: 'contrast',
+      },
+    },
+    loading: {
+      true: {
+        cursor: 'wait',
+        pointerEvents: 'none',
+        opacity: '50',
+      },
+    },
+    iconOnly: {
+      true: {
+        width: '10',
+        paddingInline: '0',
+      },
+    },
+  },
+})
 
 function Button<T extends React.ElementType = 'button'>({
   as,
@@ -18,7 +73,8 @@ function Button<T extends React.ElementType = 'button'>({
   iconOnly,
   loading,
   ...rest
-}: ButtonPropsPrimitive<T> &
+}: ButtonVariants &
+  ButtonPropsPrimitive<T> &
   Omit<React.ComponentPropsWithoutRef<T>, keyof ButtonPropsPrimitive<T>>) {
   const Component = as || 'button'
 
@@ -26,36 +82,19 @@ function Button<T extends React.ElementType = 'button'>({
     <Component
       type={Component === 'button' ? 'button' : undefined}
       {...rest}
-      className={ctl(`
-          relative h-10 overflow-hidden rounded-lg text-sm font-medium outline-dotted outline-offset-2 outline-transparent transition-all duration-150 hocus:scale-105 hocus:outline-overlay-contrast-4
-
-          ${Component === 'button' ? 'inline-block' : 'inline-grid'}
-
-          ${
-            variation === 'default' &&
-            `bg-overlay-8 shadow-button-default hocus:bg-overlay-10`
-          }
-          ${
-            variation === 'contrast' &&
-            'bg-slate-12 text-slate-1 shadow-button-contrast'
-          }
-          ${
-            variation === 'overlay-hover' &&
-            'shadow-button-overlay-contrast hocus:bg-overlay-8'
-          }
-          ${
-            variation === 'cta' &&
-            'bg-gradient-to-br from-primary-9 to-primary-8 text-primary-12 shadow-button-cta'
-          }
-
-          ${loading && `pointer-events-none opacity-50`}
-          ${iconOnly ? 'w-10' : 'px-4'}
-        `)}
+      className={styles({ variation, iconOnly, loading })}
     >
       <span
-        className={ctl(`
-            relative z-10 flex h-full place-content-center place-items-center gap-2 whitespace-nowrap
-          `)}
+        className={css({
+          position: 'relative',
+          zIndex: '10',
+          display: 'flex',
+          height: 'full',
+          placeContent: 'center',
+          placeItems: 'center',
+          gap: '2',
+          whiteSpace: 'nowrap',
+        })}
       >
         {children}
       </span>

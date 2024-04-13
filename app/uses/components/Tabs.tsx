@@ -6,6 +6,7 @@ import * as TabsPrimitive from '@radix-ui/react-tabs'
 import { motion } from 'framer-motion'
 
 import { List, ListItem } from '~components/List'
+import { css } from '~css/css'
 
 const tabs: { title: string; value: string }[] = [
   {
@@ -156,18 +157,49 @@ export default function Tabs() {
     <TabsPrimitive.Root value={tab} onValueChange={setTab}>
       <TabsPrimitive.TabsList
         aria-label="What I use"
-        className="mb-8 flex items-center gap-6"
+        className={css({
+          marginBlockEnd: '8',
+          display: 'flex',
+          gap: '6',
+          alignItems: 'center',
+        })}
       >
         {tabs.map(({ title, value }) => (
           <React.Fragment key={value}>
             <TabsPrimitive.TabsTrigger
-              className="relative text-lg font-medium text-slate-11 transition-colors hocus:text-slate-12 rdx-state-active:text-slate-12"
+              className={css({
+                position: 'relative',
+                fontSize: 'lg',
+                fontWeight: 'medium',
+                color: 'slate.11',
+                transitionProperty: 'color',
+                transitionDuration: 'fast',
+                transitionTimingFunction: 'default',
+                cursor: 'pointer',
+
+                _hover: {
+                  color: 'slate.12',
+                },
+
+                '&[data-state="active"]': {
+                  color: 'slate.12',
+                },
+              })}
               value={value}
             >
               {title}
               {value === tab && (
                 <motion.span
-                  className="absolute inset-x-0 -bottom-1.5 h-0.5 rounded-full bg-gradient-to-r from-primary-9 to-accent-9"
+                  className={css({
+                    position: 'absolute',
+                    insetInline: '0',
+                    insetBlockEnd: '-1.5',
+                    height: '0.5',
+                    borderRadius: 'full',
+                    backgroundGradient: 'to-r',
+                    gradientFrom: 'blue.9',
+                    gradientTo: 'iris.9',
+                  })}
                   layoutId="underline"
                 />
               )}

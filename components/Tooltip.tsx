@@ -5,6 +5,8 @@ import * as React from 'react'
 import ctl from '@netlify/classnames-template-literals'
 import * as TooltipPrimitive from '@radix-ui/react-tooltip'
 
+import { css } from '~css/css'
+
 interface TooltipProps {
   children: React.ReactNode
   align?: TooltipPrimitive.TooltipContentProps['align']
@@ -24,15 +26,28 @@ const Tooltip = React.forwardRef<HTMLButtonElement, TooltipProps>(
             side={side}
             align={align}
             sideOffset={6}
-            className={ctl(`
-              z-50 max-w-[240px] rounded-lg bg-overlay-11 px-3
+            className={css({
+              borderRadius: 'lg',
+              backgroundColor: 'black.a.11',
+              paddingInline: '3',
+              paddingBlock: '1.5',
+              color: 'slate.12',
+              fontSize: 'sm',
+              textAlign: 'center',
 
-              py-1.5 text-center text-sm text-slate-12
-              rdx-side-bottom:animate-slide-up-fade
-              rdx-side-left:animate-slide-right-fade
-              rdx-side-right:animate-slide-left-fade
-              rdx-side-top:animate-slide-down-fade
-            `)}
+              '&[data-side=bottom]': {
+                animation: 'slide-up-fade',
+              },
+              '&[data-side=top]': {
+                animation: 'slide-down-fade',
+              },
+              '&[data-side=left]': {
+                animation: 'slide-right-fade',
+              },
+              '&[data-side=right]': {
+                animation: 'slide-left-fade',
+              },
+            })}
           >
             {content}
           </TooltipPrimitive.Content>
