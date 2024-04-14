@@ -28,9 +28,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`dark ${css({
+      className={css({
         scrollBehavior: 'smooth',
-      })}`}
+      })}
     >
       <body
         className={css({

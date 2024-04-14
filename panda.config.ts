@@ -2,14 +2,53 @@ import { defineKeyframes } from '@pandacss/dev'
 import { defineTokens } from '@pandacss/dev'
 import { defineConfig, defineGlobalStyles } from '@pandacss/dev'
 import pandaPreset from '@pandacss/preset-panda'
+import {
+  slateDark,
+  blueDark,
+  irisDark,
+  yellowDark,
+  tomatoDark,
+  greenDark,
+  whiteA,
+  blackA,
+} from '@radix-ui/colors'
 import { produce } from 'immer'
-import radixColorsPreset from 'pandacss-preset-radix-colors'
 
 // Cleanup old color tokens we're not using from the default preset
 const preset = produce(pandaPreset, (draft) => {
   // @ts-expect-error
   delete draft.theme.tokens.colors
 })
+
+interface ColorSets {
+  [key: string]: { [key: string]: string }
+}
+
+// Create new color tokens using `@radix-ui/colors`
+const colorSets: ColorSets = {
+  slate: slateDark,
+  blue: blueDark,
+  iris: irisDark,
+  yellow: yellowDark,
+  tomato: tomatoDark,
+  green: greenDark,
+  'white.a': whiteA,
+  'black.a': blackA,
+}
+
+const colors: { [key: string]: { [key: string]: { value: string } } } = {}
+
+for (const colorSetName in colorSets) {
+  colors[colorSetName] = {}
+  const colorSet = colorSets[colorSetName]
+  let index = 1
+  for (const colorKey in colorSet) {
+    colors[colorSetName][index.toString()] = {
+      value: colorSet[colorKey],
+    }
+    index++
+  }
+}
 
 // @SOURCE https://github.com/cschroeter/park-ui/blob/main/plugins/panda/src/theme/tokens/easings.ts
 export const easings = defineTokens.easings({
@@ -79,22 +118,7 @@ const globalCss = defineGlobalStyles({
 
 export default defineConfig({
   preflight: true,
-  presets: [
-    radixColorsPreset({
-      darkMode: true,
-      colorScales: [
-        'slate',
-        'blue',
-        'iris',
-        'white',
-        'black',
-        'yellow',
-        'tomato',
-        'green',
-      ],
-    }),
-    preset,
-  ],
+  presets: [preset],
   include: ['./components/**/*.tsx', './layouts/**/*.tsx', './app/**/*.tsx'],
   exclude: [],
   jsxFramework: 'react',
@@ -134,6 +158,7 @@ export default defineConfig({
         colors: {
           currentColor: { value: 'currentColor' },
           transparent: { value: 'transparent' },
+          ...colors,
         },
         fonts: {
           code: {
@@ -149,14 +174,8 @@ export default defineConfig({
           120: { value: '30rem' },
         },
         shadows: {
-          blue: {
-            value: '0 0 0.5rem {colors.blue.a.10}',
-          },
           slate: {
-            value: '0 0 0.5rem {colors.slate.a.10}',
-          },
-          slateSolid: {
-            value: '0 0 0 0.125rem {colors.slate.a.4}',
+            value: '0 0 0 0.125rem {colors.slate.4}',
           },
           contrast: {
             value:

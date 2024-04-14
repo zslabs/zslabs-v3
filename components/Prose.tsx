@@ -84,7 +84,7 @@ const Prose = ({ children, ...rest }: ProseProps) => {
               height: '2',
               borderRadius: 'full',
               backgroundColor: 'slate.9',
-              boxShadow: 'slateSolid',
+              boxShadow: 'slate',
             },
           },
         },
