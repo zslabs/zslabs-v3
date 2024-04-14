@@ -30,15 +30,17 @@ export default function RootLayout({
       lang="en"
       className={css({
         scrollBehavior: 'smooth',
+        backgroundColor: 'slate.1',
+        fontWeight: 'normal',
+        fontFamily: 'sans',
+        color: 'slate.12',
+        fontSize: 'md',
       })}
     >
       <body
         className={css({
           overflowX: 'hidden',
           overflowY: 'scroll',
-          backgroundColor: 'slate.1',
-          fontWeight: 'normal',
-          color: 'slate.12',
         })}
       >
         <Providers>
