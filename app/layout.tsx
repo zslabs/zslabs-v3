@@ -35,6 +35,7 @@ export default function RootLayout({
         fontFamily: 'sans',
         color: 'slate.12',
         fontSize: 'md',
+        fontSmoothing: 'subpixel-antialiased',
       })}
     >
       <body
