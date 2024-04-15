@@ -1,14 +1,17 @@
 .prose {
   text-wrap: pretty;
 
-  * + p,
-  * + ul,
-  * + ol,
-  * + dl,
-  * + blockquote:not([class]),
-  * + address,
-  * + fieldset,
-  * + [data-rehype-pretty-code-figure] {
+  *
+    + :is(
+      p,
+      ul,
+      ol,
+      dl,
+      blockquote:not([class]),
+      address,
+      fieldset,
+      [data-rehype-pretty-code-figure]
+    ) {
     margin-top: theme('space.6');
   }
 
@@ -26,10 +29,7 @@
     @apply underline underline-offset-4 decoration-dotted transition-all hocus:underline-offset-6;
   }
 
-  h2,
-  h3,
-  h4,
-  h5 {
+  :is(h2, h3, h4, h5) {
     font-weight: theme('fontWeight.medium');
     font-size: theme('fontSize.lg');
     color: theme('colors.slate.12');
@@ -78,29 +78,5 @@
     border-radius: theme('borderRadius.full');
 
     @apply ring-2 ring-slate-6;
-  }
-
-  code:not([data-language]) {
-    color: theme('colors.slate.12');
-    background: theme('colors.overlay.8');
-    padding-inline: theme('spacing.1');
-    padding-block: theme('spacing.[0.5]');
-    border-radius: theme('borderRadius.lg');
-  }
-
-  [data-rehype-pretty-code-title] {
-    color: theme('colors.slate.12');
-    font-size: theme('fontSize.xs');
-    border-radius: theme('borderRadius.full');
-    font-family: theme('fontFamily.mono');
-    background: theme('colors.overlay.8');
-    width: fit-content;
-    padding: theme('spacing.1') theme('spacing.2');
-    margin-bottom: theme('spacing.2');
-    cursor: default;
-  }
-
-  pre [data-line] {
-    padding-right: theme('spacing.4');
   }
 }
