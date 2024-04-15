@@ -207,6 +207,7 @@ export default function BaseLayout({ children }: ChildrenOnlyProps) {
                       borderRadius: 'full',
                       flexShrink: '0',
                     })}
+                    priority
                     src="/media/me.png"
                     width="36"
                     height="36"

@@ -88,7 +88,7 @@ export function ListItem({
                   transitionProperty: 'all',
                   transitionDuration: 'fast',
                   transitionTimingFunction: 'default',
-                  _hover: {
+                  _groupHover: {
                     textUnderlineOffset: '6',
                   },
                 })}
