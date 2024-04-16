@@ -14,8 +14,6 @@ import {
 } from '@radix-ui/colors'
 import { produce } from 'immer'
 
-import { removeUnusedCssVars } from './postcss/remove-unused-css-vars'
-
 // Cleanup old color tokens we're not using from the default preset
 const preset = produce(pandaPreset, (draft) => {
   // @ts-expect-error
@@ -211,11 +209,4 @@ export default defineConfig({
     },
   },
   globalCss,
-  hooks: {
-    'cssgen:done': ({ artifact, content }) => {
-      if (artifact === 'styles.css') {
-        return removeUnusedCssVars(content)
-      }
-    },
-  },
 })
