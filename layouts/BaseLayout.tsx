@@ -299,6 +299,17 @@ export default function BaseLayout({ children }: ChildrenOnlyProps) {
             backgroundImage: 'ooorganize',
           })}
         />
+        <div
+          className={css({
+            position: 'fixed',
+            inset: '0',
+            opacity: '0.3',
+            transform: 'translate(25%, 50%)',
+            backgroundPosition: '75%',
+            backgroundRepeat: 'no-repeat',
+            backgroundImage: 'gggyrate',
+          })}
+        />
       </div>
     </>
   )
