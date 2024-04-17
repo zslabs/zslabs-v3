@@ -26,6 +26,7 @@ const styles = cva({
     outlineOffset: '0.5',
     transitionProperty: 'all',
     transitionDuration: 'fast',
+    transitionTimingFunction: 'default',
     display: 'inline-grid',
     paddingInline: '4',
 

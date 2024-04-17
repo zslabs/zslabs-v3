@@ -14,6 +14,8 @@ import {
 } from '@radix-ui/colors'
 import { produce } from 'immer'
 
+const isProd = process.env.NODE_ENV === 'production'
+
 // Cleanup old color tokens we're not using from the default preset
 const preset = produce(pandaPreset, (draft) => {
   // @ts-expect-error
@@ -125,8 +127,8 @@ export default defineConfig({
   outdir: 'styled-system',
   shorthands: false,
   hash: {
-    cssVar: true,
-    className: true,
+    cssVar: isProd ? true : false,
+    className: isProd ? true : false,
   },
   strictTokens: true,
   optimize: true,

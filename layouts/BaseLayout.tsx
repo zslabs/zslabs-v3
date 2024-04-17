@@ -132,7 +132,15 @@ export default function BaseLayout({ children }: ChildrenOnlyProps) {
               aria-label="Home"
               className={css({
                 position: 'relative',
+                display: 'block',
                 fontSize: '3xl',
+                transitionProperty: 'transform',
+                transitionDuration: 'fast',
+                transitionTimingFunction: 'default',
+
+                _hover: {
+                  transform: 'scale(1.05)',
+                },
               })}
             >
               <Icon name="logo" />
