@@ -10,8 +10,10 @@ import Alert from '~components/Alert'
 import AutoLinkHeader from '~components/AutoLinkHeader'
 import type { BlockquoteProps } from '~components/Blockquote'
 import Blockquote from '~components/Blockquote'
+import Callout from '~components/callout'
 import CodePen from '~components/CodePen'
 import CodeWrapper from '~components/CodeWrapper'
+import LogoWrapper from '~components/logo-wrapper'
 import Prose from '~components/Prose'
 import type { TextLinkProps } from '~components/TextLink'
 import TextLink from '~components/TextLink'
@@ -104,6 +106,8 @@ const components: MDXComponents = {
   Image,
   CodePen,
   TextLink,
+  LogoWrapper,
+  Callout,
   // @ts-expect-error Stingy types
   pre: ({
     __rawString__,
