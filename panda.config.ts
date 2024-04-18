@@ -14,7 +14,7 @@ import {
 } from '@radix-ui/colors'
 import { produce } from 'immer'
 
-const isProd = process.env.NODE_ENV === 'production'
+const isProd = process.env.VERCEL_ENV === 'production'
 
 // Cleanup old color tokens we're not using from the default preset
 const preset = produce(pandaPreset, (draft) => {
