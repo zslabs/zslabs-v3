@@ -1,9 +1,7 @@
 import * as React from 'react'
 
 const InlineIconWrapper = ({ children }: { children: React.ReactNode }) => {
-  return (
-    <span className="inline-block [vertical-align:-0.125em]">{children}</span>
-  )
+  return <span className="is-inline">{children}</span>
 }
 
 export default InlineIconWrapper

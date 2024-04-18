@@ -6,6 +6,7 @@ import { MotionHeader, MotionMain } from '~components/ContentWrappers'
 import MDXContent from '~components/MDXContent'
 import MoreArticlesLink from '~components/MoreArticlesLink'
 import SectionTitle from '~components/SectionTitle'
+import { css } from '~css/css'
 
 export const dynamicParams = false
 
@@ -55,8 +56,23 @@ export default function PostSingle({ params }: { params: { slug: string } }) {
       </MotionHeader>
       <MotionMain>
         <MDXContent content={post.body} />
-        <div className="mt-12 flex items-center justify-between gap-4">
-          <div className="font-mono text-sm uppercase text-slate-12">
+        <div
+          className={css({
+            marginBlockStart: '12',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: '4',
+          })}
+        >
+          <div
+            className={css({
+              fontSize: 'sm',
+              textTransform: 'uppercase',
+              color: 'slate.12',
+              fontFamily: 'code',
+            })}
+          >
             :: Published {post.date} ::
           </div>
           <MoreArticlesLink />

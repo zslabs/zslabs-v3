@@ -7,6 +7,7 @@
 import React from 'react'
 
 import GeneralObserver from '~components/GeneralObserver'
+import { css } from '~css/css'
 
 export interface ICodePenProps {
   /** CodePen id */
@@ -39,7 +40,9 @@ export default function CodePen({
         data-testid="codepen"
         title={`codepen-${codePenId}`}
         height={height}
-        className="w-full"
+        className={css({
+          width: 'full',
+        })}
         src={`https://codepen.io/team/codepen/embed${
           clickToLoad ? '/preview' : ''
         }/${codePenId}?height=265&theme-id=${theme}&default-tab=${tabs}${

@@ -12,6 +12,7 @@
       "~media/*": ["media/*"],
       "~styles/*": ["styles/*"],
       "~types/*": ["types/*"],
+      "~css/*": ["./styled-system/*"],
       "contentlayer/generated": ["./.contentlayer/generated"]
     },
     "target": "es5",
@@ -22,6 +23,7 @@
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
+    "downlevelIteration": true,
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,

@@ -42,3 +42,7 @@ tsconfig.tsbuildinfo
 
 # Contentlayer
 .contentlayer
+
+# Panda CSS
+
+styled-system

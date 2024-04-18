@@ -3,6 +3,7 @@
 import * as React from 'react'
 
 import Icon from '~components/Icon'
+import { css } from '~css/css'
 
 export default function CopySnippet({ codeString }: { codeString: string }) {
   const handleCopy = React.useCallback(async () => {
@@ -18,12 +19,33 @@ export default function CopySnippet({ codeString }: { codeString: string }) {
       type="button"
       onClick={handleCopy}
       aria-label="Copy snippet"
-      className="group block focus:outline-none"
+      className={`group ${css({
+        display: 'block',
+        cursor: 'pointer',
+
+        _focus: {
+          outline: 'none',
+        },
+      })}`}
     >
-      <span className="group-active:hidden">
+      <span
+        className={css({
+          _groupActive: {
+            display: 'none',
+          },
+        })}
+      >
         <Icon name="clipboard" />
       </span>
-      <span className="hidden group-active:block">
+      <span
+        className={css({
+          display: 'none',
+
+          _groupActive: {
+            display: 'block',
+          },
+        })}
+      >
         <Icon name="check" />
       </span>
     </button>

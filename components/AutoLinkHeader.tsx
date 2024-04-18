@@ -1,4 +1,5 @@
 import Icon from '~components/Icon'
+import { css } from '~css/css'
 
 interface AutoLinkHeaderProps {
   as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5'
@@ -13,7 +14,19 @@ export default function AutoLinkHeader({
     <Component {...rest}>
       <a href={`#${rest.id}`} className="group">
         {children}{' '}
-        <span className="opacity-0 transition-opacity duration-150 group-hocus:opacity-100">
+        <span
+          className={css({
+            opacity: '0',
+            transitionProperty: 'opacity',
+            transitionDuration: 'fast',
+            transitionTimingFunction: 'default',
+            color: 'slate.11',
+
+            _groupHover: {
+              opacity: '100',
+            },
+          })}
+        >
           <Icon name="hash" inline />
         </span>
       </a>

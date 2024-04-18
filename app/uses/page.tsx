@@ -7,6 +7,7 @@ import Tabs from './components/Tabs'
 import { MotionHeader, MotionMain } from '~components/ContentWrappers'
 import Prose from '~components/Prose'
 import SectionTitle from '~components/SectionTitle'
+import { css } from '~css/css'
 
 export const metadata: Metadata = {
   title: 'Uses',
@@ -19,7 +20,11 @@ export default function Uses() {
         <SectionTitle>What I use</SectionTitle>
       </MotionHeader>
       <MotionMain>
-        <div className="mb-12">
+        <div
+          className={css({
+            marginBlockEnd: '12',
+          })}
+        >
           <Prose>
             <p>
               A collection of the things I use on my personal device(s) that
