@@ -6,22 +6,20 @@ Portfolio site for myself. Built with [Next.js](https://nextjs.org) and [Panda C
 
 [Radix Colors](https://www.radix-ui.com/docs/colors/palette-composition/understanding-the-scale)
 
-**Step : Use Case**
-
-1 : App background<br />
-2 : Subtle background<br />
-3 : UI element background<br />
-4 : Hovered UI element background<br />
-5 : Active / Selected UI element background<br />
-6 : Subtle borders and separators<br />
-7 : UI element border and focus rings<br />
-8 : Hovered UI element border<br />
-9 : Solid backgrounds<br />
-10 : Hovered solid backgrounds<br />
-11 : Low-contrast text<br />
-12 : High-contrast text<br />
-
----
+| Step | Use case                                |
+| ---- | --------------------------------------- |
+| 1    | App background                          |
+| 2    | Subtle background                       |
+| 3    | UI element background                   |
+| 4    | Hovered UI element background           |
+| 5    | Active / Selected UI element background |
+| 6    | Subtle borders and separators           |
+| 7    | UI element border and focus rings       |
+| 8    | Hovered UI element border               |
+| 9    | Solid backgrounds                       |
+| 10   | Hovered solid backgrounds               |
+| 11   | Low-contrast text                       |
+| 12   | High-contrast text                      |
 
 Patterns from [fffuel](https://fffuel.co)
 
