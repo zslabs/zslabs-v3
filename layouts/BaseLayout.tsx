@@ -248,7 +248,6 @@ export default function BaseLayout({ children }: ChildrenOnlyProps) {
             className={css({
               marginBlockEnd: '1',
             })}
-            suppressHydrationWarning
           >
             Copyright &copy; <Year /> Zach Schnackel{' '}
             <span
