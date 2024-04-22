@@ -196,7 +196,7 @@ export function BoxListItem({
         boxShadow: 'sm',
         display: 'flex',
         flexDirection: 'column',
-        gap: '2',
+        gap: '3',
       })}`}
       initial="offscreen"
       whileInView="onscreen"
