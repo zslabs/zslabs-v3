@@ -7,7 +7,7 @@ import { motion, useAnimation } from 'framer-motion'
 import { allPosts } from 'contentlayer/generated'
 import Button from '~components/Button'
 import Icon from '~components/Icon'
-import { List, ListItem } from '~components/List'
+import { BoxList, BoxListItem, List, ListItem } from '~components/List'
 import MoreArticlesLink from '~components/MoreArticlesLink'
 import Prose from '~components/Prose'
 import SectionTitle from '~components/SectionTitle'
@@ -150,23 +150,23 @@ function Articles() {
         excerpt: post.excerpt,
       }
     })
-    .slice(0, 5)
+    .slice(0, 6)
 
   return (
     <section id="articles">
       <SectionTitle>Articles</SectionTitle>
-      <List>
+      <BoxList>
         {posts.map((post) => (
-          <ListItem
+          <BoxListItem
             key={post.url}
             label={post.title}
             href={post.url}
             meta={post.date}
           >
             {post.excerpt || null}
-          </ListItem>
+          </BoxListItem>
         ))}
-      </List>
+      </BoxList>
       <div
         className={css({
           marginBlockStart: '12',

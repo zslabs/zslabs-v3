@@ -11,6 +11,7 @@ import {
   greenDark,
   whiteA,
   blackA,
+  slateDarkA,
 } from '@radix-ui/colors'
 import { produce } from 'immer'
 
@@ -29,6 +30,7 @@ interface ColorSets {
 // Create new color tokens using `@radix-ui/colors`
 const colorSets: ColorSets = {
   slate: slateDark,
+  'slate.a': slateDarkA,
   blue: blueDark,
   iris: irisDark,
   yellow: yellowDark,

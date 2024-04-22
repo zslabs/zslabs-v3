@@ -4,7 +4,7 @@ import type { Metadata } from 'next'
 
 import { allPosts } from 'contentlayer/generated'
 import { MotionHeader, MotionMain } from '~components/ContentWrappers'
-import { List, ListItem } from '~components/List'
+import { BoxList, BoxListItem, List, ListItem } from '~components/List'
 import Prose from '~components/Prose'
 import SectionTitle from '~components/SectionTitle'
 import { css } from '~css/css'
@@ -51,18 +51,18 @@ function Articles() {
             </p>
           </Prose>
         </div>
-        <List>
+        <BoxList>
           {posts.map((post) => (
-            <ListItem
+            <BoxListItem
               key={post.url}
               label={post.title}
               href={post.url}
               meta={post.date}
             >
               {post.excerpt || null}
-            </ListItem>
+            </BoxListItem>
           ))}
-        </List>
+        </BoxList>
       </MotionMain>
     </section>
   )
