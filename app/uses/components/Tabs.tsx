@@ -41,7 +41,7 @@ function Software() {
       >
         The easiest window-management tool I&apos;ve ever used.
       </ListItem>
-      <ListItem icon="arc" label="Arc" href="https://arc.net/">
+      <ListItem icon="arc" label="Arc" href="https://arc.net/gift/1bc5ff">
         Giving the new kid on the block a shot; so far, so good.
       </ListItem>
       <ListItem icon="terminal" label="Warp" href="https://www.warp.dev/">
