@@ -1,3 +1,6 @@
 export default function Year() {
-  return <>{new Date().getFullYear()}</>
+  const date = new Date()
+  const year = date.getFullYear()
+
+  return <span suppressHydrationWarning>{year}</span>
 }
