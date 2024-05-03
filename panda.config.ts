@@ -83,7 +83,7 @@ export const keyframes = defineKeyframes({
 
 const globalCss = defineGlobalStyles({
   '*, &::before, &::after': {
-    letterSpacing: '-0.0125ch',
+    letterSpacing: '-0.00625ch',
   },
   '::selection': {
     color: '{colors.slate.12}',
