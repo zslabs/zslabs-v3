@@ -31,7 +31,7 @@
   "dependencies": {
     "@emotion/is-prop-valid": "1.2.2",
     "@fontsource-variable/jetbrains-mono": "5.0.21",
-    "@fontsource-variable/plus-jakarta-sans": "5.0.21",
+    "@fontsource-variable/manrope": "5.0.20",
     "@iconify/tools": "4.0.4",
     "@netlify/classnames-template-literals": "1.0.3",
     "@pandacss/eslint-plugin": "0.1.2",

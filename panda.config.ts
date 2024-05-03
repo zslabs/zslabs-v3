@@ -169,7 +169,7 @@ export default defineConfig({
             value: "'JetBrains Mono Variable', monospace",
           },
           sans: {
-            value: "'Plus Jakarta Sans Variable', sans-serif",
+            value: "'Manrope Variable', sans-serif",
           },
         },
         sizes: {

@@ -5,7 +5,7 @@ import Providers from './providers'
 
 import { css } from '~css/css'
 import BaseLayout from '~layouts/BaseLayout'
-import '@fontsource-variable/plus-jakarta-sans'
+import '@fontsource-variable/manrope'
 import '@fontsource-variable/jetbrains-mono'
 
 import '~styles/index.css'
