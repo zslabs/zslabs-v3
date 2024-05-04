@@ -231,6 +231,7 @@ export function BoxListItem({
       <div>
         {meta && (
           <div
+            suppressHydrationWarning
             className={css({
               fontSize: 'sm',
               fontFamily: 'code',
