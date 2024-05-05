@@ -2,7 +2,6 @@
 
 import * as React from 'react'
 
-import ctl from '@netlify/classnames-template-literals'
 import * as TooltipPrimitive from '@radix-ui/react-tooltip'
 
 import { css } from '~css/css'

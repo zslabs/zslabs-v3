@@ -1,7 +1,5 @@
 import * as React from 'react'
 
-import ctl from '@netlify/classnames-template-literals'
-
 import type { RecipeVariantProps } from '~css/css'
 import { cva } from '~css/css'
 
