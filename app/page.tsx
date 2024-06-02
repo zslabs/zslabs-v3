@@ -5,7 +5,7 @@ import * as React from 'react'
 import { motion, useAnimation } from 'framer-motion'
 
 import { allPosts } from 'contentlayer/generated'
-import Button from '~components/Button'
+import { DivButton } from '~components/Button'
 import Icon from '~components/Icon'
 import { BoxList, BoxListItem, List, ListItem } from '~components/List'
 import MoreArticlesLink from '~components/MoreArticlesLink'
@@ -62,9 +62,7 @@ function Intro() {
         })}
       >
         <TextLink href="/experience">
-          <Button as="div" variation="contrast">
-            Experience
-          </Button>
+          <DivButton variation="contrast">Experience</DivButton>
         </TextLink>
         <TextLink
           href="/uses"
@@ -72,9 +70,7 @@ function Intro() {
             cursor: 'help',
           })}
         >
-          <Button as="div" variation="default">
-            What I use
-          </Button>
+          <DivButton variation="default">What I use</DivButton>
         </TextLink>
       </div>
     </section>

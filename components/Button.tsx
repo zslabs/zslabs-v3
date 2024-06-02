@@ -1,15 +1,16 @@
 import * as React from 'react'
 
+import { Button as ButtonPrimitive } from 'react-aria-components'
+import type { ButtonProps as ButtonPropsPrimitive } from 'react-aria-components'
+
 import type { RecipeVariantProps } from '~css/css'
 import { css, cva } from '~css/css'
 
-type ButtonVariants = RecipeVariantProps<typeof styles>
-
-interface ButtonPropsPrimitive<T extends React.ElementType> {
-  as?: T
-  type?: 'submit' | 'button' | 'reset'
-  children?: React.ReactNode
+type ButtonVariants = RecipeVariantProps<typeof styles> & {
+  children: React.ReactNode
 }
+
+type ButtonProps = ButtonPropsPrimitive & ButtonVariants
 
 const styles = cva({
   base: {
@@ -65,23 +66,15 @@ const styles = cva({
   },
 })
 
-function Button<T extends React.ElementType = 'button'>({
-  as,
-  children,
-  variation = 'default',
-  iconOnly,
-  loading,
-  ...rest
-}: ButtonVariants &
-  ButtonPropsPrimitive<T> &
-  Omit<React.ComponentPropsWithoutRef<T>, keyof ButtonPropsPrimitive<T>>) {
-  const Component = as || 'button'
-
+function ButtonWithRef(
+  { children, variation, isDisabled, iconOnly, loading, ...rest }: ButtonProps,
+  ref: React.Ref<HTMLButtonElement>
+) {
   return (
-    <Component
-      type={Component === 'button' ? 'button' : undefined}
+    <ButtonPrimitive
       {...rest}
       className={styles({ variation, iconOnly, loading })}
+      ref={ref}
     >
       <span
         className={css({
@@ -97,8 +90,35 @@ function Button<T extends React.ElementType = 'button'>({
       >
         {children}
       </span>
-    </Component>
+    </ButtonPrimitive>
   )
 }
 
-export default Button
+function DivButtonWithRef(
+  { children, variation, iconOnly, loading, ...rest }: ButtonVariants,
+  ref: React.Ref<HTMLDivElement>
+) {
+  return (
+    <div
+      {...rest}
+      className={styles({ variation, iconOnly, loading })}
+      ref={ref}
+    >
+      <span
+        className={css({
+          display: 'flex',
+          height: 'full',
+          placeContent: 'center',
+          placeItems: 'center',
+          gap: '2',
+          whiteSpace: 'nowrap',
+        })}
+      >
+        {children}
+      </span>
+    </div>
+  )
+}
+
+export const Button = React.forwardRef(ButtonWithRef)
+export const DivButton = React.forwardRef(DivButtonWithRef)

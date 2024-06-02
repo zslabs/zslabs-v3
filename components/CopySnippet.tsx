@@ -2,6 +2,8 @@
 
 import * as React from 'react'
 
+import { Button as ButtonPrimitive } from 'react-aria-components'
+
 import Icon from '~components/Icon'
 import { css } from '~css/css'
 
@@ -15,9 +17,8 @@ export default function CopySnippet({ codeString }: { codeString: string }) {
   }, [codeString])
 
   return (
-    <button
-      type="button"
-      onClick={handleCopy}
+    <ButtonPrimitive
+      onPress={handleCopy}
       aria-label="Copy snippet"
       className={`group ${css({
         display: 'block',
@@ -48,6 +49,6 @@ export default function CopySnippet({ codeString }: { codeString: string }) {
       >
         <Icon name="check" />
       </span>
-    </button>
+    </ButtonPrimitive>
   )
 }

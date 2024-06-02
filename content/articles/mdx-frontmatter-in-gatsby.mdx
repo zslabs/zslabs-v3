@@ -17,7 +17,7 @@ excerpt: The perfect add-on for data-driven websites
 title: My article
 ---
 
-import Button from '../components/Button'
+import { Button } from '../components/Button'
 
 Here's some **markdown content**.
 
@@ -184,7 +184,7 @@ When querying this data with Gatsby's built-in [graphiql](https://github.com/gra
 import { MDXProvider } from '@mdx-js/react'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
-import Button from '../components/Button'
+import { Button } from '../components/Button'
 
 const Article = ({ frontmatter, body }) => (
   <MDXProvider components={[Button]}>
