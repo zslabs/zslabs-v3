@@ -2,21 +2,15 @@
 
 import * as React from 'react'
 
-import * as TabsPrimitive from '@radix-ui/react-tabs'
 import { motion } from 'framer-motion'
+import { Tabs as TabsRoot, TabList, Tab, TabPanel } from 'react-aria-components'
 
 import { List, ListItem } from '~components/List'
 import { css } from '~css/css'
 
-const tabs: { title: string; value: string }[] = [
-  {
-    title: 'Software',
-    value: 'software',
-  },
-  {
-    title: 'Gear',
-    value: 'gear',
-  },
+const tabs = [
+  { id: 'software', title: 'Software' },
+  { id: 'gear', title: 'Gear' },
 ]
 
 function Software() {
@@ -151,12 +145,11 @@ function Gear() {
 }
 
 export default function Tabs() {
-  const [tab, setTab] = React.useState('software')
-
   return (
-    <TabsPrimitive.Root value={tab} onValueChange={setTab}>
-      <TabsPrimitive.TabsList
+    <TabsRoot defaultSelectedKey="software">
+      <TabList
         aria-label="What I use"
+        items={tabs}
         className={css({
           marginBlockEnd: '8',
           display: 'flex',
@@ -164,55 +157,60 @@ export default function Tabs() {
           alignItems: 'center',
         })}
       >
-        {tabs.map(({ title, value }) => (
-          <React.Fragment key={value}>
-            <TabsPrimitive.TabsTrigger
-              className={css({
-                position: 'relative',
-                fontSize: 'lg',
-                fontWeight: 'medium',
-                color: 'slate.11',
-                transitionProperty: 'color',
-                transitionDuration: 'fast',
-                transitionTimingFunction: 'default',
-                cursor: 'pointer',
+        {(item) => (
+          <Tab
+            className={css({
+              position: 'relative',
+              fontSize: 'lg',
+              fontWeight: 'medium',
+              color: 'slate.11',
+              transitionProperty: 'color',
+              transitionDuration: 'fast',
+              transitionTimingFunction: 'default',
+              cursor: 'pointer',
 
-                _hover: {
-                  color: 'slate.12',
-                },
+              _hover: {
+                color: 'slate.12',
+              },
 
-                '&[data-state="active"]': {
-                  color: 'slate.12',
-                },
-              })}
-              value={value}
-            >
-              {title}
-              {value === tab && (
-                <motion.span
-                  className={css({
-                    position: 'absolute',
-                    insetInline: '0',
-                    insetBlockEnd: '-1.5',
-                    height: '0.5',
-                    borderRadius: 'full',
-                    backgroundGradient: 'to-r',
-                    gradientFrom: 'blue.9',
-                    gradientTo: 'iris.9',
-                  })}
-                  layoutId="underline"
-                />
-              )}
-            </TabsPrimitive.TabsTrigger>
-          </React.Fragment>
-        ))}
-      </TabsPrimitive.TabsList>
-      <TabsPrimitive.Content value="software">
+              _focus: {
+                outline: 'none',
+              },
+
+              _selected: {
+                color: 'slate.12',
+              },
+            })}
+          >
+            {({ isSelected }) => (
+              <>
+                {item.title}
+                {isSelected && (
+                  <motion.span
+                    className={css({
+                      position: 'absolute',
+                      insetInline: '0',
+                      insetBlockEnd: '-1.5',
+                      height: '0.5',
+                      borderRadius: 'full',
+                      backgroundGradient: 'to-r',
+                      gradientFrom: 'blue.9',
+                      gradientTo: 'iris.9',
+                    })}
+                    layoutId="underline"
+                  />
+                )}
+              </>
+            )}
+          </Tab>
+        )}
+      </TabList>
+      <TabPanel id="software">
         <Software />
-      </TabsPrimitive.Content>
-      <TabsPrimitive.Content value="gear">
+      </TabPanel>
+      <TabPanel id="gear">
         <Gear />
-      </TabsPrimitive.Content>
-    </TabsPrimitive.Root>
+      </TabPanel>
+    </TabsRoot>
   )
 }
