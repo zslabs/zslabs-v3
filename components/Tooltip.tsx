@@ -2,58 +2,67 @@
 
 import * as React from 'react'
 
-import * as TooltipPrimitive from '@radix-ui/react-tooltip'
+import { mergeProps, useButton } from 'react-aria'
+import {
+  Tooltip as TooltipPrimitive,
+  TooltipTrigger,
+} from 'react-aria-components'
+import type { TooltipProps as TooltipPropsPrimitive } from 'react-aria-components'
 
 import { css } from '~css/css'
 
-interface TooltipProps {
+interface TooltipProps extends Omit<TooltipPropsPrimitive, 'children'> {
   children: React.ReactNode
-  align?: TooltipPrimitive.TooltipContentProps['align']
   content: React.ReactNode
-  side?: TooltipPrimitive.TooltipContentProps['side']
 }
 
-const Tooltip = React.forwardRef<HTMLButtonElement, TooltipProps>(
-  ({ align = 'center', children, content, side = 'bottom' }, forwardedRef) => {
-    return (
-      <TooltipPrimitive.Root>
-        <TooltipPrimitive.Trigger ref={forwardedRef} asChild>
-          {children}
-        </TooltipPrimitive.Trigger>
-        <TooltipPrimitive.Portal>
-          <TooltipPrimitive.Content
-            side={side}
-            align={align}
-            sideOffset={6}
-            className={css({
-              borderRadius: 'lg',
-              backgroundColor: 'black.a.11',
-              paddingInline: '3',
-              paddingBlock: '1.5',
-              color: 'slate.12',
-              fontSize: 'sm',
-              textAlign: 'center',
+function TriggerWrapper(props: any) {
+  const triggerRef = React.useRef<HTMLElement | null>(null)
+  const { buttonProps } = useButton(props, triggerRef)
 
-              '&[data-side=bottom]': {
-                animation: 'slide-up-fade',
-              },
-              '&[data-side=top]': {
-                animation: 'slide-down-fade',
-              },
-              '&[data-side=left]': {
-                animation: 'slide-right-fade',
-              },
-              '&[data-side=right]': {
-                animation: 'slide-left-fade',
-              },
-            })}
-          >
-            {content}
-          </TooltipPrimitive.Content>
-        </TooltipPrimitive.Portal>
-      </TooltipPrimitive.Root>
-    )
-  }
-)
+  return React.cloneElement(
+    props.children,
+    mergeProps(buttonProps, props.children.props, { ref: triggerRef })
+  )
+}
 
-export default Tooltip
+export default function Tooltip({
+  children,
+  content,
+  placement = 'bottom',
+  ...rest
+}: TooltipProps) {
+  return (
+    <TooltipTrigger delay={250} closeDelay={250} {...rest}>
+      <TriggerWrapper>{children}</TriggerWrapper>
+      <TooltipPrimitive
+        placement={placement}
+        offset={6}
+        className={css({
+          borderRadius: 'lg',
+          backgroundColor: 'black.a.11',
+          paddingInline: '3',
+          paddingBlock: '1.5',
+          color: 'slate.12',
+          fontSize: 'sm',
+          textAlign: 'center',
+
+          '&[data-placement=top]': {
+            animation: 'slide-up-fade',
+          },
+          '&[data-placement=bottom]': {
+            animation: 'slide-down-fade',
+          },
+          '&[data-placement=right]': {
+            animation: 'slide-right-fade',
+          },
+          '&[data-placement=left]': {
+            animation: 'slide-left-fade',
+          },
+        })}
+      >
+        {content}
+      </TooltipPrimitive>
+    </TooltipTrigger>
+  )
+}

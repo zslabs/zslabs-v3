@@ -76,6 +76,18 @@ const footerVariants: Variants = {
   },
 }
 
+const headerIconStyles = css({
+  fontSize: 'xl',
+  color: 'slate.11',
+  transitionProperty: 'color',
+  transitionDuration: 'fast',
+  transitionTimingFunction: 'default',
+
+  _hover: {
+    color: 'slate.12',
+  },
+})
+
 export default function BaseLayout({ children }: ChildrenOnlyProps) {
   const pathname = usePathname()
   const controls = useAnimation()
@@ -163,17 +175,7 @@ export default function BaseLayout({ children }: ChildrenOnlyProps) {
               <Tooltip content="GitHub">
                 <TextLink
                   href="https://github.com/zslabs"
-                  className={css({
-                    fontSize: 'xl',
-                    color: 'slate.11',
-                    transitionProperty: 'color',
-                    transitionDuration: 'fast',
-                    transitionTimingFunction: 'default',
-
-                    _hover: {
-                      color: 'slate.12',
-                    },
-                  })}
+                  className={headerIconStyles}
                 >
                   <Icon name="github" />
                 </TextLink>
@@ -187,17 +189,7 @@ export default function BaseLayout({ children }: ChildrenOnlyProps) {
               <Tooltip content="Twitter">
                 <TextLink
                   href="https://twitter.com/zslabs"
-                  className={css({
-                    fontSize: 'xl',
-                    color: 'slate.11',
-                    transitionProperty: 'color',
-                    transitionDuration: 'fast',
-                    transitionTimingFunction: 'default',
-
-                    _hover: {
-                      color: 'slate.12',
-                    },
-                  })}
+                  className={headerIconStyles}
                 >
                   <Icon name="x" />
                 </TextLink>
