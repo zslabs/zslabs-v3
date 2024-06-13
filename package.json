@@ -21,7 +21,8 @@
     "build:assets": "npm run build:icons && npm run build:colors",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0 --fix",
     "type:check": "tsc --project tsconfig.json --pretty --noEmit",
-    "postinstall": "husky install"
+    "postinstall": "husky install",
+    "contentlayer:generate": "contentlayer build"
   },
   "overrides": {
     "next-contentlayer": {
