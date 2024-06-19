@@ -6,7 +6,7 @@ import { cva } from '~css/css'
 const styles = cva({
   base: {
     marginBlock: '8',
-    borderRadius: 'lg',
+    borderRadius: 'xl',
     borderInlineStartWidth: '8',
     padding: '6',
   },

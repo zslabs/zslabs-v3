@@ -17,7 +17,7 @@ const styles = cva({
     position: 'relative',
     height: '10',
     overflow: 'hidden',
-    borderRadius: 'lg',
+    borderRadius: 'xl',
     fontSize: 'sm',
     fontWeight: 'medium',
     outlineStyle: 'dotted',

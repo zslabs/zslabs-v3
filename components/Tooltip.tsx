@@ -39,7 +39,7 @@ export default function Tooltip({
         placement={placement}
         offset={6}
         className={css({
-          borderRadius: 'lg',
+          borderRadius: 'xl',
           backgroundColor: 'black.a.11',
           paddingInline: '3',
           paddingBlock: '1.5',

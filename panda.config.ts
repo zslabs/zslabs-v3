@@ -102,7 +102,7 @@ const globalCss = defineGlobalStyles({
     backgroundColor: 'black.a.8',
     paddingInline: '1',
     paddingBlock: '0.5',
-    borderRadius: 'lg',
+    borderRadius: 'xl',
   },
   '[data-rehype-pretty-code-title]': {
     color: 'slate.12',

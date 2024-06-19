@@ -145,7 +145,7 @@ export function ListItem({
               className={css({
                 color: 'slate.12',
                 fontSize: 'sm',
-                borderRadius: 'sm',
+                borderRadius: 'md',
                 fontFamily: 'code',
                 textTransform: 'uppercase',
                 letterSpacing: 'normal',
@@ -185,7 +185,7 @@ export function BoxListItem({
       className={`group ${css({
         borderWidth: '1',
         borderColor: 'slate.a.5',
-        borderRadius: 'lg',
+        borderRadius: 'xl',
         padding: '4',
         outlineWidth: '4',
         outlineStyle: 'solid',

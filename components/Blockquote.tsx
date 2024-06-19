@@ -14,7 +14,7 @@ export default function Blockquote({ children, ...rest }: BlockquoteProps) {
         marginBlock: '8',
         padding: '4',
         fontFamily: 'code',
-        borderRadius: 'lg',
+        borderRadius: 'xl',
         backgroundColor: 'black.a.8',
       })}
     >

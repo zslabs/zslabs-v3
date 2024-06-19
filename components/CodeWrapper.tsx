@@ -10,7 +10,7 @@ export default function CodeWrapper({ codeString, children }: CodeProps) {
   return (
     <div
       className={css({
-        borderRadius: 'lg',
+        borderRadius: 'xl',
         fontFamily: 'code',
         fontWeight: 'normal',
         letterSpacing: 'normal',

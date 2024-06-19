@@ -43,7 +43,7 @@ function Image({
         className={css({
           position: 'relative',
           marginInline: 'auto',
-          borderRadius: 'lg',
+          borderRadius: 'xl',
           width: 'fit',
           display: 'grid',
         })}
@@ -53,7 +53,7 @@ function Image({
             position: 'absolute',
             inset: '-2',
             zIndex: '-1',
-            borderRadius: 'lg',
+            borderRadius: 'xl',
             backgroundColor: 'black.a.8',
           })}
         />
@@ -63,7 +63,7 @@ function Image({
           height={height}
           width={width}
           className={css({
-            borderRadius: 'lg',
+            borderRadius: 'xl',
           })}
         />
       </div>
