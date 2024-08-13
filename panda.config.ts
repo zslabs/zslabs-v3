@@ -122,6 +122,7 @@ const globalCss = defineGlobalStyles({
 
 export default defineConfig({
   preflight: true,
+  // @ts-expect-error
   presets: [preset],
   include: ['./components/**/*.tsx', './layouts/**/*.tsx', './app/**/*.tsx'],
   exclude: [],
