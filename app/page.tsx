@@ -82,9 +82,14 @@ function Projects() {
     <section id="projects">
       <SectionTitle>Projects</SectionTitle>
       <List>
-        <ListItem label="Stats" icon="question" meta="Coming soon">
-          The fastest, most reliable way to get insights across all your
-          favorite sports.
+        <ListItem
+          label="Wes Anderslack"
+          icon="wes-anderslack"
+          href="https://wesanderslack.vercel.app"
+          meta="Slack :: Vite"
+        >
+          While the original was lost to time, I decided to bring back a
+          fan-favorite; honoring a great director of some of my favorite movies.
         </ListItem>
         <ListItem label="Theming" icon="brush" meta="Slack">
           Technical and team lead for Slack&apos;s new theming infrastructure
