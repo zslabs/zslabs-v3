@@ -184,11 +184,11 @@ export default defineConfig({
           },
           contrast: {
             value:
-              '-15px 0 30px -5px {colors.tomato.5}, 0 0 30px -5px {colors.blue.5}, 15px 0 30px -5px {colors.iris.5}',
+              'inset 0 1px 0 0 {colors.black.a.2}, inset 0 -2px 0 0 {colors.black.a.1},-15px 0 30px -5px {colors.tomato.5}, 0 0 30px -5px {colors.blue.5}, 15px 0 30px -5px {colors.iris.5}',
           },
           default: {
             value:
-              '-15px 0 30px -5px {colors.iris.5}, 0 0 30px -5px {colors.blue.5}, 15px 0 30px -5px {colors.green.5}',
+              'inset 0 1px 0 0 {colors.white.a.2}, inset 0 -2px 0 0 {colors.black.a.4}, -15px 0 30px -5px {colors.iris.5}, 0 0 30px -5px {colors.blue.5}, 15px 0 30px -5px {colors.green.5}',
           },
         },
       },

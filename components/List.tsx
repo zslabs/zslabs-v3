@@ -165,7 +165,7 @@ export function ListItem({
   )
 }
 
-const TextLinkMotion = motion(TextLink)
+const TextLinkMotion = motion.create(TextLink)
 
 export function BoxListItem({
   label,

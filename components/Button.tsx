@@ -23,6 +23,7 @@ const styles = cva({
     outlineStyle: 'dotted',
     outlineColor: 'transparent',
     outlineOffset: '0.5',
+    outlineWidth: '1',
     transitionProperty: 'all',
     transitionDuration: 'fast',
     transitionTimingFunction: 'default',
