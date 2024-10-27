@@ -85,7 +85,7 @@ function Projects() {
         <ListItem
           label="Wes Anderslack"
           icon="wes-anderslack"
-          href="https://wesanderslack.vercel.app"
+          href="https://wesanderslack.zslabs.com"
           meta="Slack :: Vite"
         >
           While the original was lost to time, I decided to bring back a
