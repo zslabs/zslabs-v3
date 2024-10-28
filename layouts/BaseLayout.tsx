@@ -277,9 +277,9 @@ export default function BaseLayout({ children }: ChildrenOnlyProps) {
           className={css({
             position: 'fixed',
             inset: '0',
-            opacity: '0.5',
+            opacity: '0.4',
             mixBlendMode: 'color-dodge',
-            backgroundImage: 'nnnoise',
+            backgroundImage: 'noise',
           })}
         />
         <div

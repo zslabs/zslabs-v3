@@ -199,7 +199,7 @@ export default defineConfig({
       backgroundImage: {
         values: {
           gggyrate: 'url(/media/gggyrate.svg)',
-          nnnoise: 'url(/media/nnnoise-bg.svg)',
+          noise: 'url(/media/noise.png)',
           ooorganize: 'url(/media/ooorganize-bg.svg)',
         },
       },
