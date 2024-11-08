@@ -86,7 +86,7 @@ function Projects() {
           label="Wes Anderslack"
           icon="wes-anderslack"
           href="https://wesanderslack.zslabs.com"
-          meta="Slack :: Vite"
+          meta="Slack :: Remix"
         >
           While the original was lost to time, I decided to bring back a
           fan-favorite; honoring a great director of some of my favorite movies.
