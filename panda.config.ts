@@ -122,7 +122,6 @@ const globalCss = defineGlobalStyles({
 
 export default defineConfig({
   preflight: true,
-  // @ts-expect-error
   presets: [preset],
   include: ['./components/**/*.tsx', './layouts/**/*.tsx', './app/**/*.tsx'],
   exclude: [],
@@ -134,7 +133,6 @@ export default defineConfig({
     className: isProd ? true : false,
   },
   strictTokens: true,
-  optimize: true,
   minify: true,
   lightningcss: true,
   browserslist: ['last 2 versions', 'not dead', 'not < 2%'],
