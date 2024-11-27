@@ -1,4 +1,4 @@
-import { defineDocumentType, makeSource } from 'contentlayer/source-files'
+import { defineDocumentType, makeSource } from 'contentlayer2/source-files'
 import type { Options, LineElement, CharsElement } from 'rehype-pretty-code'
 import rehypePrettyCode from 'rehype-pretty-code'
 import rehypeSlug from 'rehype-slug'
@@ -99,7 +99,6 @@ export default makeSource({
           }
         })
       },
-      // @ts-expect-error https://github.com/atomiks/rehype-pretty-code/issues/127
       [rehypePrettyCode, rehypePrettyCodeOptions],
       () => (tree) => {
         visit(tree, (node) => {

@@ -90,6 +90,18 @@ const globalCss = defineGlobalStyles({
     backgroundColor: '{colors.blue.5}',
     textShadow: 'none',
   },
+  'p, h1, h2, h3, h4, h5, h6': {
+    overflowWrap: 'break-word',
+  },
+  p: {
+    textWrap: 'pretty',
+  },
+  'h1, h2, h3, h4, h5, h6': {
+    textWrap: 'balance',
+  },
+  '#root, #__next': {
+    isolation: 'isolate',
+  },
   'strong, b': {
     fontWeight: 'semibold',
     color: 'slate.12',
@@ -171,6 +183,9 @@ export default defineConfig({
             value: "'Manrope Variable', sans-serif",
           },
         },
+        lineHeights: {
+          normal: { value: '1.65' },
+        },
         sizes: {
           fit: { value: 'fit-content' },
           current: { value: '1em' },
@@ -193,6 +208,80 @@ export default defineConfig({
     },
   },
   utilities: {
+    gridTemplateColumns: {
+      className: 'grid-tc',
+      group: 'Grid Layout',
+      values: {
+        '1': 'repeat(1, minmax(0, 1fr))',
+        '2': 'repeat(2, minmax(0, 1fr))',
+        '3': 'repeat(3, minmax(0, 1fr))',
+        '4': 'repeat(4, minmax(0, 1fr))',
+        '5': 'repeat(5, minmax(0, 1fr))',
+        '6': 'repeat(6, minmax(0, 1fr))',
+        '7': 'repeat(7, minmax(0, 1fr))',
+        '8': 'repeat(8, minmax(0, 1fr))',
+        '9': 'repeat(9, minmax(0, 1fr))',
+        '10': 'repeat(10, minmax(0, 1fr))',
+        '11': 'repeat(11, minmax(0, 1fr))',
+        '12': 'repeat(12, minmax(0, 1fr))',
+      },
+    },
+    gridTemplateRows: {
+      className: 'grid-tr',
+      group: 'Grid Layout',
+      values: {
+        '1': 'repeat(1, minmax(0, 1fr))',
+        '2': 'repeat(2, minmax(0, 1fr))',
+        '3': 'repeat(3, minmax(0, 1fr))',
+        '4': 'repeat(4, minmax(0, 1fr))',
+        '5': 'repeat(5, minmax(0, 1fr))',
+        '6': 'repeat(6, minmax(0, 1fr))',
+        '7': 'repeat(7, minmax(0, 1fr))',
+        '8': 'repeat(8, minmax(0, 1fr))',
+        '9': 'repeat(9, minmax(0, 1fr))',
+        '10': 'repeat(10, minmax(0, 1fr))',
+        '11': 'repeat(11, minmax(0, 1fr))',
+        '12': 'repeat(12, minmax(0, 1fr))',
+      },
+    },
+    gridColumn: {
+      className: 'grid-c',
+      group: 'Grid Layout',
+      values: {
+        full: '1 / -1',
+        '1': 'span 1 / span 1',
+        '2': 'span 2 / span 2',
+        '3': 'span 3 / span 3',
+        '4': 'span 4 / span 4',
+        '5': 'span 5 / span 5',
+        '6': 'span 6 / span 6',
+        '7': 'span 7 / span 7',
+        '8': 'span 8 / span 8',
+        '9': 'span 9 / span 9',
+        '10': 'span 10 / span 10',
+        '11': 'span 11 / span 11',
+        '12': 'span 12 / span 12',
+      },
+    },
+    gridRow: {
+      className: 'grid-r',
+      group: 'Grid Layout',
+      values: {
+        full: '1 / -1',
+        '1': 'span 1 / span 1',
+        '2': 'span 2 / span 2',
+        '3': 'span 3 / span 3',
+        '4': 'span 4 / span 4',
+        '5': 'span 5 / span 5',
+        '6': 'span 6 / span 6',
+        '7': 'span 7 / span 7',
+        '8': 'span 8 / span 8',
+        '9': 'span 9 / span 9',
+        '10': 'span 10 / span 10',
+        '11': 'span 11 / span 11',
+        '12': 'span 12 / span 12',
+      },
+    },
     extend: {
       backgroundImage: {
         values: {

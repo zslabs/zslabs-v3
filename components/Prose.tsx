@@ -10,7 +10,6 @@ const Prose = ({ children, ...rest }: ProseProps) => {
       {...rest}
       className={css({
         color: 'slate.11',
-        textWrap: 'pretty',
 
         '& :is(h2, h3, h4, h5, h6)': {
           fontWeight: 'medium',

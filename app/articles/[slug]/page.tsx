@@ -8,17 +8,15 @@ import MoreArticlesLink from '~components/MoreArticlesLink'
 import SectionTitle from '~components/SectionTitle'
 import { css } from '~css/css'
 
-export const dynamicParams = false
-
-type MetadataProps = {
-  params: { slug: string }
+type Params = {
+  params: Promise<{ slug: string }>
 }
 
-export async function generateMetadata({
-  params,
-}: MetadataProps): Promise<Metadata> {
+export async function generateMetadata({ params }: Params): Promise<Metadata> {
+  const { slug } = await params
+
   const currentPost = allPosts.find((post) => {
-    return post.slug === params.slug
+    return post.slug === slug
   })
 
   if (!currentPost) {
@@ -31,9 +29,11 @@ export async function generateMetadata({
   }
 }
 
-export default function PostSingle({ params }: { params: { slug: string } }) {
+export default async function PostSingle({ params }: Params) {
+  const { slug } = await params
+
   const currentPost = allPosts.find((post) => {
-    return post.slug === params.slug
+    return post.slug === slug
   })
 
   if (!currentPost) {

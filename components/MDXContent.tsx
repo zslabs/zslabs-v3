@@ -1,10 +1,10 @@
 import React from 'react'
 
-import type { MDX } from 'contentlayer/core'
+import type { MDX } from 'contentlayer2/core'
 import type { MDXComponents } from 'mdx/types'
 import type { ImageProps } from 'next/image'
 import NextImage from 'next/image'
-import { useMDXComponent } from 'next-contentlayer/hooks'
+import { useMDXComponent } from 'next-contentlayer2/hooks'
 
 import Alert from '~components/Alert'
 import AutoLinkHeader from '~components/AutoLinkHeader'
