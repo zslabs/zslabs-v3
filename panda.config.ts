@@ -3,15 +3,15 @@ import { defineTokens } from '@pandacss/dev'
 import { defineConfig, defineGlobalStyles } from '@pandacss/dev'
 import pandaPreset from '@pandacss/preset-panda'
 import {
-  slateDark,
-  blueDark,
-  irisDark,
-  yellowDark,
-  tomatoDark,
-  greenDark,
-  whiteA,
-  blackA,
-  slateDarkA,
+  slateDarkP3,
+  blueDarkP3,
+  irisDarkP3,
+  yellowDarkP3,
+  tomatoDarkP3,
+  greenDarkP3,
+  whiteP3A,
+  blackP3A,
+  slateDarkP3A,
 } from '@radix-ui/colors'
 import { produce } from 'immer'
 
@@ -29,15 +29,15 @@ interface ColorSets {
 
 // Create new color tokens using `@radix-ui/colors`
 const colorSets: ColorSets = {
-  slate: slateDark,
-  'slate.a': slateDarkA,
-  blue: blueDark,
-  iris: irisDark,
-  yellow: yellowDark,
-  tomato: tomatoDark,
-  green: greenDark,
-  'white.a': whiteA,
-  'black.a': blackA,
+  slate: slateDarkP3,
+  'slate.a': slateDarkP3A,
+  blue: blueDarkP3,
+  iris: irisDarkP3,
+  yellow: yellowDarkP3,
+  tomato: tomatoDarkP3,
+  green: greenDarkP3,
+  'white.a': whiteP3A,
+  'black.a': blackP3A,
 }
 
 const colors: { [key: string]: { [key: string]: { value: string } } } = {}
