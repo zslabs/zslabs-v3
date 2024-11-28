@@ -286,7 +286,7 @@ export default defineConfig({
         },
       },
       willChange: {
-        values: ['transform'],
+        values: ['opacity', 'transform'],
       },
       zIndex: {
         values: ['-1', '10', '50'],

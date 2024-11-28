@@ -21,6 +21,7 @@ export default function AutoLinkHeader({
             transitionDuration: 'fast',
             transitionTimingFunction: 'default',
             color: 'slate.11',
+            willChange: 'opacity',
 
             _groupHover: {
               opacity: '100',

@@ -106,6 +106,7 @@ export function ListItem({
                   transitionProperty: 'all',
                   transitionDuration: 'fast',
                   transitionTimingFunction: 'default',
+                  willChange: 'transform',
                   _groupHover: {
                     textUnderlineOffset: '6',
                   },

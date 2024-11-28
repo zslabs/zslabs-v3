@@ -29,6 +29,7 @@ const styles = cva({
     transitionTimingFunction: 'default',
     display: 'inline-grid',
     paddingInline: '4',
+    willChange: 'transform',
 
     _hover: {
       transform: 'scale(1.05)',
