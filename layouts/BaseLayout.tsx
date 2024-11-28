@@ -145,7 +145,7 @@ export default function BaseLayout({ children }: ChildrenOnlyProps) {
               className={css({
                 position: 'relative',
                 display: 'block',
-                fontSize: '5xl',
+                fontSize: '4.5xl',
               })}
             >
               <Icon name="logo" />

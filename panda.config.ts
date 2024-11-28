@@ -168,6 +168,9 @@ export default defineConfig({
             value: "'Gabarito Variable', sans-serif",
           },
         },
+        fontSizes: {
+          '4.5xl': { value: '2.5rem' },
+        },
         lineHeights: {
           normal: { value: '1.65' },
         },
@@ -284,9 +287,6 @@ export default defineConfig({
       },
       willChange: {
         values: ['transform'],
-      },
-      textWrap: {
-        values: ['pretty'],
       },
       zIndex: {
         values: ['-1', '10', '50'],
