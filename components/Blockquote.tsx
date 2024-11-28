@@ -17,6 +17,7 @@ export default function Blockquote({ children, ...rest }: BlockquoteProps) {
         borderRadius: 'xl',
         backgroundColor: 'black.a.8',
       })}
+      data-code
     >
       <div
         className={css({

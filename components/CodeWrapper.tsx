@@ -15,6 +15,7 @@ export default function CodeWrapper({ codeString, children }: CodeProps) {
         fontWeight: 'normal',
         letterSpacing: 'normal',
       })}
+      data-code
     >
       <header
         className={css({

@@ -145,14 +145,7 @@ export default function BaseLayout({ children }: ChildrenOnlyProps) {
               className={css({
                 position: 'relative',
                 display: 'block',
-                fontSize: '3xl',
-                transitionProperty: 'transform',
-                transitionDuration: 'fast',
-                transitionTimingFunction: 'default',
-
-                _hover: {
-                  transform: 'scale(1.05)',
-                },
+                fontSize: '5xl',
               })}
             >
               <Icon name="logo" />
@@ -273,16 +266,6 @@ export default function BaseLayout({ children }: ChildrenOnlyProps) {
           zIndex: '-1',
         })}
       >
-        <div
-          className={css({
-            position: 'fixed',
-            inset: '0',
-            opacity: '0.075',
-            backgroundImage: 'noise',
-            backgroundRepeat: 'repeat',
-            backgroundSize: '100px auto',
-          })}
-        />
         <div
           className={css({
             position: 'fixed',

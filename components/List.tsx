@@ -155,6 +155,7 @@ export function ListItem({
                 paddingBlock: '1',
                 marginBlockStart: '2',
               })}
+              data-code
             >
               {meta}
             </div>
@@ -238,6 +239,7 @@ export function BoxListItem({
               textTransform: 'uppercase',
               letterSpacing: 'normal',
             })}
+            data-code
           >
             {meta}
           </div>

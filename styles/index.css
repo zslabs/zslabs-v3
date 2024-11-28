@@ -1,3 +1,71 @@
 @layer reset, base, tokens, recipes, utilities;
 
 @import '../icons/build/styles.css';
+
+@layer base {
+  html,
+  body {
+    min-height: 100%;
+  }
+
+  html {
+    position: relative;
+  }
+
+  html,
+  body {
+    min-height: 100%;
+  }
+
+  :not(code, pre, [data-code], [data-rehype-pretty-code-title]) {
+    font-size-adjust: 0.535;
+    letter-spacing: -0.0175ch;
+  }
+
+  html {
+    position: relative;
+  }
+
+  html::after {
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    display: block;
+    height: 100%;
+    opacity: 0.075;
+    background-image: url('/media/noise-bg.png');
+    background-repeat: repeat;
+    background-size: 100px;
+  }
+
+  /* Avoid text overflows */
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    overflow-wrap: break-word;
+  }
+
+  /* Improve line wrapping */
+  p {
+    text-wrap: pretty;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-wrap: balance;
+  }
+
+  /* Create a root stacking context */
+  #root,
+  #__next {
+    isolation: isolate;
+  }
+}

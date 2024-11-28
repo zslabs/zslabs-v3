@@ -72,6 +72,7 @@ export default async function PostSingle({ params }: Params) {
               color: 'slate.12',
               fontFamily: 'code',
             })}
+            data-code
           >
             :: Published {post.date} ::
           </div>

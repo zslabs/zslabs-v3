@@ -5,7 +5,7 @@ import Providers from './providers'
 
 import { css } from '~css/css'
 import BaseLayout from '~layouts/BaseLayout'
-import '@fontsource-variable/manrope'
+import '@fontsource-variable/gabarito'
 import '@fontsource-variable/jetbrains-mono'
 
 import '~styles/index.css'
@@ -36,7 +36,7 @@ export default function RootLayout({
         color: 'slate.12',
         fontSize: 'md',
         lineHeight: 'normal',
-        fontSmoothing: 'subpixel-antialiased',
+        fontSmoothing: 'antialiased',
       })}
     >
       <body

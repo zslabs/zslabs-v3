@@ -82,28 +82,13 @@ export const keyframes = defineKeyframes({
 })
 
 const globalCss = defineGlobalStyles({
-  '*, &::before, &::after': {
-    letterSpacing: '-0.00625ch',
-  },
   '::selection': {
     color: '{colors.slate.12}',
     backgroundColor: '{colors.blue.5}',
     textShadow: 'none',
   },
-  'p, h1, h2, h3, h4, h5, h6': {
-    overflowWrap: 'break-word',
-  },
-  p: {
-    textWrap: 'pretty',
-  },
-  'h1, h2, h3, h4, h5, h6': {
-    textWrap: 'balance',
-  },
-  '#root, #__next': {
-    isolation: 'isolate',
-  },
   'strong, b': {
-    fontWeight: 'semibold',
+    fontWeight: 'medium',
     color: 'slate.12',
   },
   'code, pre': {
@@ -180,7 +165,7 @@ export default defineConfig({
             value: "'JetBrains Mono Variable', monospace",
           },
           sans: {
-            value: "'Manrope Variable', sans-serif",
+            value: "'Gabarito Variable', sans-serif",
           },
         },
         lineHeights: {
@@ -208,6 +193,13 @@ export default defineConfig({
     },
   },
   utilities: {
+    fontWeight: {
+      className: 'fw',
+      values: {
+        normal: '400',
+        medium: '500',
+      },
+    },
     gridTemplateColumns: {
       className: 'grid-tc',
       group: 'Grid Layout',
