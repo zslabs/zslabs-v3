@@ -19,7 +19,7 @@
 
   :not(code, pre, [data-code], [data-rehype-pretty-code-title]) {
     font-size-adjust: 0.535;
-    letter-spacing: -0.0175ch;
+    letter-spacing: -0.0225ch;
   }
 
   html {
