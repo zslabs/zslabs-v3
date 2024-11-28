@@ -140,7 +140,11 @@ export function ListItem({
           )}
         </div>
         <div>
-          {children && <Prose>{children}</Prose>}
+          {children && (
+            <Prose>
+              <p>{children}</p>
+            </Prose>
+          )}
           {meta && (
             <div
               className={css({
@@ -228,7 +232,11 @@ export function BoxListItem({
         >
           {label}
         </span>
-        {children && <Prose>{children}</Prose>}
+        {children && (
+          <Prose>
+            <p>{children}</p>
+          </Prose>
+        )}
       </div>
       <div>
         {meta && (
