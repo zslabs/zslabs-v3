@@ -7,11 +7,18 @@ import { motion, useAnimation } from 'framer-motion'
 import { allPosts } from 'contentlayer/generated'
 import { DivButton } from '~components/Button'
 import Icon from '~components/Icon'
-import { BoxList, BoxListItem, List, ListItem } from '~components/List'
+import {
+  BoxList,
+  BoxListItem,
+  IconMetaWrapper,
+  List,
+  ListItem,
+} from '~components/List'
 import MoreArticlesLink from '~components/MoreArticlesLink'
 import Prose from '~components/Prose'
 import SectionTitle from '~components/SectionTitle'
 import TextLink from '~components/TextLink'
+import Tooltip from '~components/Tooltip'
 import { css } from '~css/css'
 import { stack } from '~css/patterns'
 import { fadeInUp } from '~helpers/styles'
@@ -86,12 +93,41 @@ function Projects() {
           label="Wes Anderslack"
           icon="wes-anderslack"
           href="https://wesanderslack.zslabs.com"
-          meta="Slack :: Remix"
+          meta={
+            <IconMetaWrapper>
+              <Tooltip content="Remix">
+                <Icon name="remix" />
+              </Tooltip>
+              <Tooltip content="React Aria Components">
+                <Icon name="react-aria" />
+              </Tooltip>
+              <Tooltip content="Tailwind CSS">
+                <span className={css({ fontSize: 'lg' })}>
+                  <Icon name="tailwindcss" />
+                </span>
+              </Tooltip>
+            </IconMetaWrapper>
+          }
         >
           While the original was lost to time, I decided to bring back a
           fan-favorite; honoring a great director of some of my favorite movies.
         </ListItem>
-        <ListItem label="Theming" icon="brush" meta="Slack">
+        <ListItem
+          label="Theming"
+          icon="brush"
+          meta={
+            <IconMetaWrapper>
+              <Tooltip content="Slack">
+                <Icon name="slack-contrast" />
+              </Tooltip>
+              <Tooltip content="Figma">
+                <span className={css({ fontSize: 'lg' })}>
+                  <Icon name="figma" />
+                </span>
+              </Tooltip>
+            </IconMetaWrapper>
+          }
+        >
           Technical and team lead for Slack&apos;s new theming infrastructure
           across desktop, iOS, and Android. Developed migration methods across
           thousands of assets, while simplifying both the storage, application,
@@ -103,11 +139,41 @@ function Projects() {
             <Icon inline name="x" />
           </TextLink>
         </ListItem>
-        <ListItem label="Design tokens" icon="tokens" meta="Slack">
+        <ListItem
+          label="Design tokens"
+          icon="tokens"
+          meta={
+            <IconMetaWrapper>
+              <Tooltip content="Slack">
+                <Icon name="slack-contrast" />
+              </Tooltip>
+              <Tooltip content="Figma">
+                <span className={css({ fontSize: 'lg' })}>
+                  <Icon name="figma" />
+                </span>
+              </Tooltip>
+            </IconMetaWrapper>
+          }
+        >
           Build tool that uses Figma design primitives to scale across desktop,
           iOS, and Android.
         </ListItem>
-        <ListItem label="Icon automation library" icon="icons" meta="Slack">
+        <ListItem
+          label="Icon automation library"
+          icon="icons"
+          meta={
+            <IconMetaWrapper>
+              <Tooltip content="Slack">
+                <Icon name="slack-contrast" />
+              </Tooltip>
+              <Tooltip content="Figma">
+                <span className={css({ fontSize: 'lg' })}>
+                  <Icon name="figma" />
+                </span>
+              </Tooltip>
+            </IconMetaWrapper>
+          }
+        >
           Build tool that integrates with Figma API to extract and create SVG
           icons for use across desktop, iOS, and Android.
         </ListItem>
@@ -115,7 +181,23 @@ function Projects() {
           label="List"
           href="https://list.zslabs.com"
           icon="list"
-          meta="Next.js :: Radix-UI"
+          meta={
+            <IconMetaWrapper>
+              <Tooltip content="Next.js">
+                <span className={css({ fontSize: 'lg' })}>
+                  <Icon name="nextjs" />
+                </span>
+              </Tooltip>
+              <Tooltip content="Radix UI">
+                <Icon name="radix-ui" />
+              </Tooltip>
+              <Tooltip content="Tailwind CSS">
+                <span className={css({ fontSize: 'lg' })}>
+                  <Icon name="tailwindcss" />
+                </span>
+              </Tooltip>
+            </IconMetaWrapper>
+          }
         >
           The best experience for monitoring activity on multiple eBay search
           terms.
@@ -124,7 +206,23 @@ function Projects() {
           label="Sold"
           href="https://sold.zslabs.com"
           icon="sold"
-          meta="Next.js :: Radix-UI"
+          meta={
+            <IconMetaWrapper>
+              <Tooltip content="Next.js">
+                <span className={css({ fontSize: 'lg' })}>
+                  <Icon name="nextjs" />
+                </span>
+              </Tooltip>
+              <Tooltip content="Radix UI">
+                <Icon name="radix-ui" />
+              </Tooltip>
+              <Tooltip content="Tailwind CSS">
+                <span className={css({ fontSize: 'lg' })}>
+                  <Icon name="tailwindcss" />
+                </span>
+              </Tooltip>
+            </IconMetaWrapper>
+          }
         >
           Toolkit for gauging market-prices and trends on eBay.
         </ListItem>

@@ -52,7 +52,7 @@ export function ListItem({
   icon,
 }: {
   label: React.ReactNode
-  meta?: string
+  meta?: React.ReactNode
   children?: React.ReactNode
   href?: string
   icon?: IconName
@@ -247,5 +247,21 @@ export function BoxListItem({
         )}
       </div>
     </TextLinkMotion>
+  )
+}
+
+export function IconMetaWrapper({ children }: { children: React.ReactNode }) {
+  return (
+    <span
+      className={css({
+        display: 'flex',
+        paddingBlock: '1',
+        gap: '4',
+        alignItems: 'center',
+        color: 'slate.11',
+      })}
+    >
+      {children}
+    </span>
   )
 }
