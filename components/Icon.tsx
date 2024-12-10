@@ -31,20 +31,15 @@ const Icon = React.forwardRef<SVGSVGElement, IconProps>(
       height?: number
     }
 
-    const body = React.useMemo(() => ({ __html: icon.body }), [icon.body])
-    const viewBox = React.useMemo(
-      () => `0 0 ${icon.width || 24} ${icon.height || 24}`,
-      [icon.width, icon.height]
-    )
-    const style = React.useMemo(
-      () => ({
-        width:
-          icon.width || icon.height
-            ? `${scaleWidth(icon.width, icon.height)}em`
-            : undefined,
-      }),
-      [icon.width, icon.height]
-    )
+    const body = { __html: icon.body }
+    const viewBox = `0 0 ${icon.width || 24} ${icon.height || 24}`
+
+    const style = {
+      width:
+        icon.width || icon.height
+          ? `${scaleWidth(icon.width, icon.height)}em`
+          : undefined,
+    } as React.CSSProperties
 
     return (
       <svg
@@ -64,4 +59,4 @@ const Icon = React.forwardRef<SVGSVGElement, IconProps>(
 
 Icon.displayName = 'Icon'
 
-export default React.memo(Icon)
+export default Icon

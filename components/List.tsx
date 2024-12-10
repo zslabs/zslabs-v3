@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 
 import Icon from './Icon'
 import Prose from './Prose'
@@ -151,7 +151,7 @@ export function ListItem({
                 color: 'slate.12',
                 fontSize: 'sm',
                 borderRadius: 'md',
-                fontFamily: 'code',
+                textStyle: 'mono',
                 textTransform: 'uppercase',
                 letterSpacing: 'normal',
                 backgroundColor: 'black.a.8',
@@ -244,7 +244,7 @@ export function BoxListItem({
             suppressHydrationWarning
             className={css({
               fontSize: 'sm',
-              fontFamily: 'code',
+              textStyle: 'mono',
               textTransform: 'uppercase',
               letterSpacing: 'normal',
             })}

@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 
-import { motion, useAnimation } from 'framer-motion'
+import { motion, useAnimation } from 'motion/react'
 
 import { allPosts } from 'contentlayer/generated'
 import { DivButton } from '~components/Button'
@@ -283,15 +283,11 @@ function Index() {
   const done = useLayoutAnimationState((state) => state.done)
   const indexControls = useAnimation()
 
-  const pageAnimation = React.useCallback(async () => {
-    indexControls.start('onscreen')
-  }, [indexControls])
-
   React.useEffect(() => {
     if (done) {
-      pageAnimation()
+      indexControls.start('onscreen')
     }
-  }, [done, pageAnimation])
+  }, [done, indexControls])
 
   return (
     <motion.div

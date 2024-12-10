@@ -13,7 +13,7 @@ export default function Blockquote({ children, ...rest }: BlockquoteProps) {
       className={css({
         marginBlock: '8',
         padding: '4',
-        fontFamily: 'code',
+        textStyle: 'mono',
         borderRadius: 'xl',
         backgroundColor: 'black.a.8',
       })}

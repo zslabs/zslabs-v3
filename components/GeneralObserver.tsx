@@ -47,10 +47,7 @@ export default function GeneralObserver({
     }
   }, [ref, onEnter])
 
-  const style: React.CSSProperties = React.useMemo(
-    () => ({ height, width: '100%' }),
-    [height]
-  )
+  const style: React.CSSProperties = { height, width: '100%' }
 
   return (
     <div
