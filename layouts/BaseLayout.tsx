@@ -7,8 +7,8 @@ import type {
   AnimationProps,
   HTMLMotionProps,
   Variants,
-} from 'motion/react'
-import { motion, useAnimation } from 'motion/react'
+} from 'framer-motion'
+import { motion, useAnimation } from 'framer-motion'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 

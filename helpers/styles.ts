@@ -1,4 +1,4 @@
-import type { MotionProps, Transition, Variants } from 'motion/react'
+import type { MotionProps, Transition, Variants } from 'framer-motion'
 
 export const spring: Transition = {
   type: 'spring',

@@ -1,6 +1,6 @@
 'use client'
 
-import { MotionConfig } from 'motion/react'
+import { MotionConfig } from 'framer-motion'
 import { useRouter } from 'next/navigation'
 import { RouterProvider } from 'react-aria-components'
 

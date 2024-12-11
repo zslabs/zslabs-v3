@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 
-import { motion, useAnimation } from 'motion/react'
+import { motion, useAnimation } from 'framer-motion'
 
 import { allPosts } from 'contentlayer/generated'
 import { DivButton } from '~components/Button'
