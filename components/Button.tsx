@@ -68,10 +68,15 @@ const styles = cva({
   },
 })
 
-function ButtonWithRef(
-  { children, variation, isDisabled, iconOnly, loading, ...rest }: ButtonProps,
-  ref: React.Ref<HTMLButtonElement>
-) {
+export function Button({
+  children,
+  variation,
+  isDisabled,
+  iconOnly,
+  loading,
+  ref,
+  ...rest
+}: ButtonProps & { ref?: React.Ref<HTMLButtonElement> }) {
   return (
     <ButtonPrimitive
       {...rest}
@@ -96,10 +101,16 @@ function ButtonWithRef(
   )
 }
 
-function DivButtonWithRef(
-  { children, variation, iconOnly, loading, ...rest }: ButtonVariants,
-  ref: React.Ref<HTMLDivElement>
-) {
+export function DivButton({
+  children,
+  variation,
+  iconOnly,
+  loading,
+  ref,
+  ...rest
+}: ButtonVariants & {
+  ref?: React.Ref<HTMLDivElement>
+}) {
   return (
     <div
       {...rest}
@@ -121,6 +132,3 @@ function DivButtonWithRef(
     </div>
   )
 }
-
-export const Button = React.forwardRef(ButtonWithRef)
-export const DivButton = React.forwardRef(DivButtonWithRef)

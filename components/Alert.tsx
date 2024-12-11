@@ -26,11 +26,12 @@ const styles = cva({
 
 type AlertVariants = RecipeVariantProps<typeof styles>
 
-const Alert = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement> & AlertVariants
->(({ variation = 'primary', ...rest }, ref) => {
+export default function Alert({
+  ref,
+  variation = 'primary',
+  ...rest
+}: AlertVariants & {
+  ref?: React.Ref<HTMLDivElement>
+}) {
   return <div ref={ref} {...rest} className={styles({ variation })} />
-})
-
-export default Alert
+}

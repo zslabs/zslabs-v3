@@ -171,6 +171,7 @@ export function ListItem({
   )
 }
 
+// @ts-expect-error :shrug:
 const TextLinkMotion = motion.create(TextLink)
 
 export function BoxListItem({
