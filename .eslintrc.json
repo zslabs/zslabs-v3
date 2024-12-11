@@ -1,11 +1,10 @@
 {
-  "plugins": ["@typescript-eslint", "react-perf"],
+  "plugins": ["@typescript-eslint"],
   "extends": [
     "next/core-web-vitals",
     "plugin:@pandacss/recommended",
     "plugin:prettier/recommended",
     "prettier",
-    "plugin:react-perf/recommended",
     "plugin:@pandacss/recommended"
   ],
   "rules": {

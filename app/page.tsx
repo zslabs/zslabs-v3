@@ -283,15 +283,11 @@ function Index() {
   const done = useLayoutAnimationState((state) => state.done)
   const indexControls = useAnimation()
 
-  const pageAnimation = React.useCallback(async () => {
-    indexControls.start('onscreen')
-  }, [indexControls])
-
   React.useEffect(() => {
     if (done) {
-      pageAnimation()
+      indexControls.start('onscreen')
     }
-  }, [done, pageAnimation])
+  }, [done, indexControls])
 
   return (
     <motion.div

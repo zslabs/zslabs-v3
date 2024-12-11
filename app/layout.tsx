@@ -4,9 +4,8 @@ import type { Metadata } from 'next'
 import Providers from './providers'
 
 import { css } from '~css/css'
+import { ttCommonsPro, ttCommonsProMono } from '~fonts/index'
 import BaseLayout from '~layouts/BaseLayout'
-import '@fontsource-variable/gabarito'
-import '@fontsource-variable/jetbrains-mono'
 
 import '~styles/index.css'
 
@@ -28,16 +27,16 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={css({
+      className={`${ttCommonsPro.variable} ${ttCommonsProMono.variable} ${css({
         scrollBehavior: 'smooth',
         backgroundColor: 'slate.1',
         fontWeight: 'normal',
-        fontFamily: 'sans',
+        textStyle: 'body',
         color: 'slate.12',
         fontSize: 'md',
         lineHeight: 'normal',
         fontSmoothing: 'antialiased',
-      })}
+      })}`}
     >
       <body
         className={css({

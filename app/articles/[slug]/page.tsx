@@ -70,7 +70,7 @@ export default async function PostSingle({ params }: Params) {
               fontSize: 'sm',
               textTransform: 'uppercase',
               color: 'slate.12',
-              fontFamily: 'code',
+              textStyle: 'mono',
             })}
             data-code
           >

@@ -104,7 +104,6 @@ const components: MDXComponents = {
   Image,
   CodePen,
   TextLink,
-  // @ts-expect-error Stingy types
   pre: ({
     __rawString__,
     ...rest

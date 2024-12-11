@@ -1,10 +1,12 @@
+import fs from 'fs'
+import path from 'path'
+
 import { defineDocumentType, makeSource } from 'contentlayer2/source-files'
 import type { Options, LineElement, CharsElement } from 'rehype-pretty-code'
 import rehypePrettyCode from 'rehype-pretty-code'
 import rehypeSlug from 'rehype-slug'
 import { codeImport } from 'remark-code-import'
 import { visit } from 'unist-util-visit'
-
 /* @SOURCE for rehype content blocks; https://github.com/shadcn/ui/blob/main/apps/www/contentlayer.config.js */
 
 const rehypePrettyCodeOptions: Options = {
@@ -80,6 +82,8 @@ export const Static = defineDocumentType(() => ({
   },
 }))
 
+const GENERATED_FILE_PATH = path.resolve('.contentlayer/generated/index.mjs')
+
 export default makeSource({
   contentDirPath: 'content',
   documentTypes: [Post, Static],
@@ -122,5 +126,18 @@ export default makeSource({
       },
       rehypeSlug,
     ],
+  },
+  onSuccess: async () => {
+    if (fs.existsSync(GENERATED_FILE_PATH)) {
+      let content = fs.readFileSync(GENERATED_FILE_PATH, 'utf-8')
+
+      // Remove invalid syntax like `with { type: 'json' }`
+      content = content.replace(/ with \{.*?\}/g, '')
+
+      fs.writeFileSync(GENERATED_FILE_PATH, content, 'utf-8')
+      console.log(
+        'Patched .contentlayer/generated/index.mjs after Contentlayer generation.'
+      )
+    }
   },
 })

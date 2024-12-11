@@ -27,37 +27,31 @@ interface HeaderItemWrapperProps {
   custom: number
 }
 
+const headerItemVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: '-0.75rem',
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+  },
+}
+
 function HeaderItemWrapper({
   runAnimation,
   controls,
   custom,
   ...rest
 }: HeaderItemWrapperProps & HTMLMotionProps<'div'>) {
-  const variants: Variants = React.useMemo(
-    () => ({
-      hidden: {
-        opacity: 0,
-        y: '-0.75rem',
-      },
-      visible: {
-        opacity: 1,
-        y: 0,
-      },
-    }),
-    []
-  )
-
-  const transition: AnimationProps['transition'] = React.useMemo(
-    () => ({
-      delay: custom * 0.25,
-    }),
-    [custom]
-  )
+  const transition: AnimationProps['transition'] = {
+    delay: custom * 0.25,
+  }
 
   return (
     <motion.div
       animate={controls}
-      variants={variants}
+      variants={headerItemVariants}
       initial={runAnimation ? 'hidden' : false}
       transition={transition}
       {...rest}

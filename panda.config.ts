@@ -1,4 +1,4 @@
-import { defineKeyframes } from '@pandacss/dev'
+import { defineKeyframes, defineTextStyles } from '@pandacss/dev'
 import { defineTokens } from '@pandacss/dev'
 import { defineConfig, defineGlobalStyles } from '@pandacss/dev'
 import pandaPreset from '@pandacss/preset-panda'
@@ -81,18 +81,37 @@ export const keyframes = defineKeyframes({
   },
 })
 
+export const textStyles = defineTextStyles({
+  body: {
+    description: 'The body text style - used in paragraphs',
+    value: {
+      fontFamily: 'sans',
+      fontFeatureSettings: '"ss03", "ss05", "ss18", "liga"',
+      fontVariationSettings: '"slnt" 0',
+    },
+  },
+  mono: {
+    description: 'The monospace text style - used in code blocks',
+    value: {
+      fontFamily: 'mono',
+      fontFeatureSettings: '"salt"',
+      fontVariationSettings: '"slnt" 0',
+    },
+  },
+})
+
 const globalCss = defineGlobalStyles({
   '::selection': {
     color: '{colors.slate.12}',
     backgroundColor: '{colors.blue.5}',
     textShadow: 'none',
   },
+  'code, kbd, samp, pre': {
+    textStyle: 'mono',
+  },
   'strong, b': {
     fontWeight: 'medium',
     color: 'slate.12',
-  },
-  'code, pre': {
-    letterSpacing: 'normal',
   },
   'code:not([data-language])': {
     color: 'slate.12',
@@ -105,7 +124,7 @@ const globalCss = defineGlobalStyles({
     color: 'slate.12',
     fontSize: 'xs',
     borderRadius: 'full',
-    fontFamily: 'code',
+    textStyle: 'mono',
     backgroundColor: 'black.a.8',
     width: 'fit',
     paddingInline: '2',
@@ -134,6 +153,7 @@ export default defineConfig({
   lightningcss: true,
   browserslist: ['last 2 versions', 'not dead', 'not < 2%'],
   theme: {
+    textStyles,
     extend: {
       keyframes,
       tokens: {
@@ -161,11 +181,11 @@ export default defineConfig({
           ...colors,
         },
         fonts: {
-          code: {
-            value: "'JetBrains Mono Variable', monospace",
+          mono: {
+            value: 'var(--font-mono), monospace',
           },
           sans: {
-            value: "'Gabarito Variable', sans-serif",
+            value: 'var(--font-sans), sans-serif',
           },
         },
         fontSizes: {
@@ -199,8 +219,9 @@ export default defineConfig({
     fontWeight: {
       className: 'fw',
       values: {
-        normal: '400',
-        medium: '500',
+        normal: '500',
+        medium: '600',
+        bold: '700',
       },
     },
     gridTemplateColumns: {
