@@ -19,7 +19,7 @@ const isProd = process.env.VERCEL_ENV === 'production'
 
 // Cleanup old color tokens we're not using from the default preset
 const preset = produce(pandaPreset, (draft) => {
-  // @ts-expect-error
+  // @ts-expect-error Stingy types
   delete draft.theme.tokens.colors
 })
 

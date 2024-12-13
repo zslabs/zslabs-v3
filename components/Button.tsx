@@ -71,7 +71,6 @@ const styles = cva({
 export function Button({
   children,
   variation,
-  isDisabled,
   iconOnly,
   loading,
   ref,

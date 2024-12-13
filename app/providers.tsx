@@ -15,7 +15,7 @@ declare module 'react-aria-components' {
 import { spring } from '~helpers/styles'
 
 export default function Providers({ children }: { children: React.ReactNode }) {
-  let router = useRouter()
+  const router = useRouter()
 
   return (
     <MotionConfig transition={spring}>

@@ -16,6 +16,7 @@ interface TooltipProps extends Omit<TooltipPropsPrimitive, 'children'> {
   content: React.ReactNode
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function TriggerWrapper(props: any) {
   const triggerRef = React.useRef<HTMLElement | null>(null)
   const { buttonProps } = useButton(props, triggerRef)

@@ -4,7 +4,7 @@ import type { Metadata } from 'next'
 
 import { allPosts } from 'contentlayer/generated'
 import { MotionHeader, MotionMain } from '~components/ContentWrappers'
-import { BoxList, BoxListItem, List, ListItem } from '~components/List'
+import { BoxList, BoxListItem } from '~components/List'
 import Prose from '~components/Prose'
 import SectionTitle from '~components/SectionTitle'
 import { css } from '~css/css'
