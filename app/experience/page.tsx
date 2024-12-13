@@ -27,7 +27,9 @@ export default function Experience() {
             icon="slack"
           >
             I&apos;m part of the design infrastructure team, building tools to
-            help designers and engineers collaborate more efficiently.
+            help designers and engineers collaborate more efficiently. My
+            focuses include design systems, build tooling, and developer
+            experience.
           </ListItem>
           <ListItem
             label="Gremlin"
