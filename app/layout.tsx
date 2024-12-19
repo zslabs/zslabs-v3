@@ -4,7 +4,6 @@ import type { Metadata } from 'next'
 import Providers from './providers'
 
 import { css } from '~css/css'
-import { ttCommonsPro, ttCommonsProMono } from '~fonts/index'
 import BaseLayout from '~layouts/BaseLayout'
 
 import '~styles/index.css'
@@ -27,7 +26,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${ttCommonsPro.variable} ${ttCommonsProMono.variable} ${css({
+      className={css({
         scrollBehavior: 'smooth',
         backgroundColor: 'slate.1',
         fontWeight: 'normal',
@@ -36,7 +35,7 @@ export default function RootLayout({
         fontSize: 'md',
         lineHeight: 'normal',
         fontSmoothing: 'antialiased',
-      })}`}
+      })}
     >
       <body
         className={css({

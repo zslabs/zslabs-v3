@@ -3,7 +3,6 @@
     "baseUrl": ".",
     "paths": {
       "~data/*": ["data/*"],
-      "~fonts/*": ["app/fonts/*"],
       "~components/*": ["components/*"],
       "~helpers/*": ["helpers/*"],
       "~hooks/*": ["hooks/*"],

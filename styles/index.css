@@ -3,6 +3,22 @@
 @import '../icons/build/styles.css';
 
 @layer base {
+  @font-face {
+    font-family: 'TT Commons Pro Variable';
+    font-style: normal;
+    font-weight: 500 700;
+    font-display: swap;
+    src: url('/fonts/TT_Commons_Pro_Variable.woff2') format('woff2');
+  }
+
+  @font-face {
+    font-family: 'TT Commons Pro Mono Variable';
+    font-style: normal;
+    font-weight: 500 700;
+    font-display: swap;
+    src: url('/fonts/TT_Commons_Pro_Mono_Variable.woff2') format('woff2');
+  }
+
   html,
   body {
     min-height: 100%;

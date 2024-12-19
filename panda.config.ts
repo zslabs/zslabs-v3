@@ -182,10 +182,10 @@ export default defineConfig({
         },
         fonts: {
           mono: {
-            value: 'var(--font-mono), monospace',
+            value: '"TT Commons Pro Mono Variable", monospace',
           },
           sans: {
-            value: 'var(--font-sans), sans-serif',
+            value: '"TT Commons Pro Variable", sans-serif',
           },
         },
         fontSizes: {
@@ -221,7 +221,6 @@ export default defineConfig({
       values: {
         normal: '500',
         medium: '600',
-        bold: '700',
       },
     },
     gridTemplateColumns: {
