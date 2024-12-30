@@ -178,6 +178,30 @@ function Projects() {
           icons for use across desktop, iOS, and Android.
         </ListItem>
         <ListItem
+          label="Profile"
+          href="https://profile.zslabs.com"
+          icon="profile"
+          meta={
+            <IconMetaWrapper>
+              <Tooltip content="Next.js">
+                <span className={css({ fontSize: 'lg' })}>
+                  <Icon name="nextjs" />
+                </span>
+              </Tooltip>
+              <Tooltip content="Radix UI">
+                <Icon name="react-aria" />
+              </Tooltip>
+              <Tooltip content="Tailwind CSS">
+                <span className={css({ fontSize: 'lg' })}>
+                  <Icon name="tailwindcss" />
+                </span>
+              </Tooltip>
+            </IconMetaWrapper>
+          }
+        >
+          Personalized eBay seller profiles; the way they should be.
+        </ListItem>
+        <ListItem
           label="List"
           href="https://list.zslabs.com"
           icon="list"

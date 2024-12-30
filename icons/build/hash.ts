@@ -1,1 +1,1 @@
-export const hash = '3kv';
+export const hash = 'mru';
