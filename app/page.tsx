@@ -188,7 +188,7 @@ function Projects() {
                   <Icon name="nextjs" />
                 </span>
               </Tooltip>
-              <Tooltip content="Radix UI">
+              <Tooltip content="React Aria Components">
                 <Icon name="react-aria" />
               </Tooltip>
               <Tooltip content="Tailwind CSS">
@@ -237,8 +237,8 @@ function Projects() {
                   <Icon name="nextjs" />
                 </span>
               </Tooltip>
-              <Tooltip content="Radix UI">
-                <Icon name="radix-ui" />
+              <Tooltip content="React Aria Components">
+                <Icon name="react-aria" />
               </Tooltip>
               <Tooltip content="Tailwind CSS">
                 <span className={css({ fontSize: 'lg' })}>
