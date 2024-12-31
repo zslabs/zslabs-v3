@@ -70,7 +70,7 @@
     "zustand": "5.0.2"
   },
   "devDependencies": {
-    "@pandacss/dev": "0.50.0",
+    "@pandacss/dev": "0.51.0",
     "@svgr/webpack": "8.1.0",
     "husky": "9.1.7",
     "nano-staged": "0.8.0"

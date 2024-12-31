@@ -95,8 +95,8 @@ function Projects() {
           href="https://wesanderslack.zslabs.com"
           meta={
             <IconMetaWrapper>
-              <Tooltip content="Remix">
-                <Icon name="remix" />
+              <Tooltip content="Next.js">
+                <Icon name="nextjs" />
               </Tooltip>
               <Tooltip content="React Aria Components">
                 <Icon name="react-aria" />
