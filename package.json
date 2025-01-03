@@ -36,7 +36,7 @@
     "@total-typescript/ts-reset": "0.6.1",
     "@types/eslint": "9.6.1",
     "@types/fs-extra": "11.0.4",
-    "@types/node": "22.10.2",
+    "@types/node": "22.10.5",
     "@types/react": "19.0.2",
     "@types/rss": "0.0.32",
     "@vercel/analytics": "1.4.1",
@@ -63,14 +63,14 @@
     "remark-code-import": "1.2.0",
     "rss": "1.2.2",
     "sharp": "0.33.5",
-    "shiki": "1.24.4",
+    "shiki": "1.26.1",
     "tsx": "4.19.2",
     "typescript": "5.7.2",
     "unist-util-visit": "5.0.0",
     "zustand": "5.0.2"
   },
   "devDependencies": {
-    "@pandacss/dev": "0.51.0",
+    "@pandacss/dev": "0.51.1",
     "@svgr/webpack": "8.1.0",
     "husky": "9.1.7",
     "nano-staged": "0.8.0"

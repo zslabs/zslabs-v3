@@ -1,6 +1,6 @@
 {
-	"prefix": "mru",
-	"lastModified": 1735561591,
+	"prefix": "0uq",
+	"lastModified": 1735931746,
 	"icons": {
 		"1password": {
 			"body": "<path fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M14 12a4 4 0 1 0 8 0 4 4 0 0 0-8 0m0 0H2v3m4-3v3\"/>"
@@ -28,6 +28,9 @@
 		},
 		"clipboard": {
 			"body": "<g fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-width=\"1.5\"><path d=\"M8.5 4H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-2.5\"/><path d=\"M8 6.4V4.5a.5.5 0 0 1 .5-.5c.276 0 .504-.224.552-.496C9.2 2.652 9.774 1 12 1s2.8 1.652 2.948 2.504c.048.272.276.496.552.496a.5.5 0 0 1 .5.5v1.9a.6.6 0 0 1-.6.6H8.6a.6.6 0 0 1-.6-.6Z\"/></g>"
+		},
+		"collection": {
+			"body": "<g fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\"><path d=\"m16.02 12 5.48 3.13a1 1 0 0 1 0 1.74L13 21.74a2 2 0 0 1-2 0l-8.5-4.87a1 1 0 0 1 0-1.74L7.98 12\"/><path d=\"M13 13.74a2 2 0 0 1-2 0L2.5 8.87a1 1 0 0 1 0-1.74L11 2.26a2 2 0 0 1 2 0l8.5 4.87a1 1 0 0 1 0 1.74Z\"/></g>"
 		},
 		"digitalocean": {
 			"body": "<g fill=\"currentColor\"><path d=\"M12.002 23v-4.266c4.515 0 8.02-4.478 6.286-9.23a6.39 6.39 0 0 0-3.804-3.792c-4.753-1.721-9.23 1.771-9.23 6.286H1C1 4.801 7.96-.812 15.507 1.546 18.8 2.58 21.432 5.2 22.454 8.493 24.812 16.04 19.2 23 12.002 23\"/><path fill-rule=\"evenodd\" d=\"M12.014 18.759H7.761v-4.253h4.253zM7.76 22.015H4.506v-3.256h3.256zm-3.255-3.256H1.773v-2.732h2.732z\" clip-rule=\"evenodd\"/></g>"

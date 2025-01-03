@@ -202,6 +202,30 @@ function Projects() {
           Personalized eBay seller profiles; the way they should be.
         </ListItem>
         <ListItem
+          label="Collection"
+          href="https://collection.zslabs.com"
+          icon="collection"
+          meta={
+            <IconMetaWrapper>
+              <Tooltip content="Next.js">
+                <span className={css({ fontSize: 'lg' })}>
+                  <Icon name="nextjs" />
+                </span>
+              </Tooltip>
+              <Tooltip content="React Aria Components">
+                <Icon name="react-aria" />
+              </Tooltip>
+              <Tooltip content="Tailwind CSS">
+                <span className={css({ fontSize: 'lg' })}>
+                  <Icon name="tailwindcss" />
+                </span>
+              </Tooltip>
+            </IconMetaWrapper>
+          }
+        >
+          Curated lists of eBay items; no filters needed.
+        </ListItem>
+        <ListItem
           label="List"
           href="https://list.zslabs.com"
           icon="list"
