@@ -11,8 +11,9 @@ function SectionTitle({ children }: SectionTitleProps) {
     <h3
       className={css({
         marginBlockEnd: '8',
-        fontSize: 'xl',
+        fontSize: '2xl',
         fontWeight: 'medium',
+        fontVariationSettings: 'wide',
       })}
     >
       {children}

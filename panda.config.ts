@@ -223,6 +223,12 @@ export default defineConfig({
         medium: '600',
       },
     },
+    fontVariationSettings: {
+      className: 'fvs',
+      values: {
+        wide: "'wdth' 125, 'slnt' 0;",
+      },
+    },
     gridTemplateColumns: {
       className: 'grid-tc',
       group: 'Grid Layout',
