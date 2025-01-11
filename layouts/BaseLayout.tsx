@@ -2,13 +2,9 @@
 
 import * as React from 'react'
 
-import type {
-  AnimationControls,
-  AnimationProps,
-  HTMLMotionProps,
-  Variants,
-} from 'framer-motion'
+import type { AnimationProps, HTMLMotionProps, Variants } from 'framer-motion'
 import { motion, useAnimation } from 'framer-motion'
+import { type animationControls } from 'framer-motion'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 
@@ -20,6 +16,8 @@ import { css } from '~css/css'
 import useLayoutAnimationState from '~hooks/useLayoutAnimationState'
 import Year from '~layouts/components/Year'
 import type { ChildrenOnlyProps } from '~types/custom'
+
+type AnimationControls = ReturnType<typeof animationControls>
 
 interface HeaderItemWrapperProps {
   runAnimation: boolean
