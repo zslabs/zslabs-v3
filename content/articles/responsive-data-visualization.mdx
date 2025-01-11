@@ -19,7 +19,7 @@ The open-source community never seizes to amaze me. Spurring from a suggestion b
 Built on-top of [D3](https://d3js.org/), Nivo provides a wealth of pre-configured graph-types - with a highly extensible API-layer that allowed me to move fast and make changes along the way.
 
 <TextLink href="https://nivo.rocks/storybook/">
-  <Image src="/uploads/nivo.png" width="1000" height="500" />
+  <Image unoptimized src="/uploads/nivo.png" width="1000" height="500" />
 </TextLink>
 
 ### Placing axis labels
@@ -30,9 +30,14 @@ Where this method starts to falls-apart, is when we view large sets of data alon
 
 For this project; I decided to create a custom legend outside of the graph; which I could control with normal HTML/CSS for a more dependable experience on all screen-sizes. Because I defined a dedicated pallette via Nivo's `colors` property, I passed-through my dataset and looped over it; matching to each color instance perfectly.
 
-<Image src="/uploads/graph-labels.png" width="1000" height="475" />
+<Image unoptimized src="/uploads/graph-labels.png" width="1000" height="475" />
 
-<Image src="/uploads/graph-labels-mobile.png" width="500" height="495" />
+<Image
+  unoptimized
+  src="/uploads/graph-labels-mobile.png"
+  width="500"
+  height="495"
+/>
 
 ### Updating graph properties based on screen size
 

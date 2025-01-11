@@ -188,6 +188,7 @@ export default function BaseLayout({ children }: ChildrenOnlyProps) {
               <Tooltip content="About me">
                 <TextLink href="/#about">
                   <Image
+                    unoptimized
                     className={css({
                       borderRadius: 'full',
                       flexShrink: '0',
