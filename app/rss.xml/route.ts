@@ -1,6 +1,6 @@
 import Rss from 'rss'
 
-import { allPosts } from 'contentlayer/generated'
+import { allPosts } from '@contentlayer/generated'
 
 const SITE_URL = 'https://zslabs.com'
 

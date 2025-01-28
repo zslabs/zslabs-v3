@@ -1,9 +1,9 @@
 'use client'
 
-import Icon from '~components/Icon'
-import TextLink from '~components/TextLink'
-import Tooltip from '~components/Tooltip'
-import { css } from '~css/css'
+import TextLink from '@/components/TextLink'
+import Tooltip from '@/components/Tooltip'
+import More from '@/icons/more.svg'
+import { css } from '@css/css'
 
 export default function MoreArticlesLink() {
   return (
@@ -19,7 +19,7 @@ export default function MoreArticlesLink() {
           width: 'fit',
         })}
       >
-        <Icon name="more" />
+        <More />
       </TextLink>
     </Tooltip>
   )

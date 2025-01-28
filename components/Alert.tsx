@@ -1,7 +1,7 @@
 import * as React from 'react'
 
-import type { RecipeVariantProps } from '~css/css'
-import { cva } from '~css/css'
+import type { RecipeVariantProps } from '@css/css'
+import { cva } from '@css/css'
 
 const styles = cva({
   base: {

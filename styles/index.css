@@ -1,7 +1,5 @@
 @layer reset, base, tokens, recipes, utilities;
 
-@import '../icons/build/styles.css';
-
 @layer base {
   @font-face {
     font-family: 'TT Commons Pro Variable';

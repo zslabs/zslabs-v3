@@ -1,12 +1,12 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
-import { allPosts } from 'contentlayer/generated'
-import { MotionHeader, MotionMain } from '~components/ContentWrappers'
-import MDXContent from '~components/MDXContent'
-import MoreArticlesLink from '~components/MoreArticlesLink'
-import SectionTitle from '~components/SectionTitle'
-import { css } from '~css/css'
+import { MotionHeader, MotionMain } from '@/components/ContentWrappers'
+import MDXContent from '@/components/MDXContent'
+import MoreArticlesLink from '@/components/MoreArticlesLink'
+import SectionTitle from '@/components/SectionTitle'
+import { css } from '@css/css'
+import { allPosts } from '@contentlayer/generated'
 
 type Params = {
   params: Promise<{ slug: string }>

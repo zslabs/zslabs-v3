@@ -3,8 +3,8 @@ import * as React from 'react'
 import { Button as ButtonPrimitive } from 'react-aria-components'
 import type { ButtonProps as ButtonPropsPrimitive } from 'react-aria-components'
 
-import type { RecipeVariantProps } from '~css/css'
-import { css, cva } from '~css/css'
+import type { RecipeVariantProps } from '@css/css'
+import { css, cva } from '@css/css'
 
 type ButtonVariants = RecipeVariantProps<typeof styles> & {
   children: React.ReactNode

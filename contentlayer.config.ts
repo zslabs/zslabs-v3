@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 
-import { defineDocumentType, makeSource } from 'contentlayer2/source-files'
+import { defineDocumentType, makeSource } from '@contentlayer2/source-files'
 import type { Options, LineElement, CharsElement } from 'rehype-pretty-code'
 import rehypePrettyCode from 'rehype-pretty-code'
 import rehypeSlug from 'rehype-slug'

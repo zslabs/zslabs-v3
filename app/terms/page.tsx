@@ -1,10 +1,10 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
-import { allStatics } from 'contentlayer/generated'
-import { MotionHeader, MotionMain } from '~components/ContentWrappers'
-import MDXContent from '~components/MDXContent'
-import SectionTitle from '~components/SectionTitle'
+import { MotionHeader, MotionMain } from '@/components/ContentWrappers'
+import MDXContent from '@/components/MDXContent'
+import SectionTitle from '@/components/SectionTitle'
+import { allStatics } from '@contentlayer/generated'
 
 export const metadata: Metadata = {
   title: 'Terms & conditions',

@@ -4,10 +4,10 @@ import type { Metadata } from 'next'
 
 import Tabs from './components/Tabs'
 
-import { MotionHeader, MotionMain } from '~components/ContentWrappers'
-import Prose from '~components/Prose'
-import SectionTitle from '~components/SectionTitle'
-import { css } from '~css/css'
+import { MotionHeader, MotionMain } from '@/components/ContentWrappers'
+import Prose from '@/components/Prose'
+import SectionTitle from '@/components/SectionTitle'
+import { css } from '@css/css'
 
 export const metadata: Metadata = {
   title: 'Uses',

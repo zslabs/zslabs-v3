@@ -1,4 +1,4 @@
-import { css } from '~css/css'
+import { css } from '@css/css'
 
 interface ProseProps {
   children: React.ReactNode

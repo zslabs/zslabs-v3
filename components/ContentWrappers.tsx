@@ -8,7 +8,7 @@ import {
   fadeInAnimate,
   fadeInDownInitial,
   fadeInUpInitial,
-} from '~helpers/styles'
+} from '@/helpers/styles'
 
 export function MotionHeader({ children }: { children: React.ReactNode }) {
   return (

@@ -75,7 +75,7 @@ By using `matchMedia` instead of a generic `resize` listener; we can update our 
 ```js title="MyGraph.js"
 import { ResponsiveBar } from '@nivo/bar'
 
-import useMatchMedia from '~hooks/useMatchMedia'
+import useMatchMedia from '@/hooks/useMatchMedia'
 
 export default function MyGraph() {
   const isLargeScreen = useMatchMedia('(min-width: 768px)')

@@ -2,13 +2,13 @@ import * as React from 'react'
 
 import type { Metadata } from 'next'
 
-import { allPosts } from 'contentlayer/generated'
-import { MotionHeader, MotionMain } from '~components/ContentWrappers'
-import { BoxList, BoxListItem } from '~components/List'
-import Prose from '~components/Prose'
-import SectionTitle from '~components/SectionTitle'
-import { css } from '~css/css'
-import type { ReducedPosts } from '~types/custom'
+import { MotionHeader, MotionMain } from '@/components/ContentWrappers'
+import { BoxList, BoxListItem } from '@/components/List'
+import Prose from '@/components/Prose'
+import SectionTitle from '@/components/SectionTitle'
+import type { ReducedPosts } from '@/types/custom'
+import { allPosts } from '@contentlayer/generated'
+import { css } from '@css/css'
 
 export const metadata: Metadata = {
   title: 'Articles',

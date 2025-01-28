@@ -1,5 +1,6 @@
-import Icon from '~components/Icon'
-import { css } from '~css/css'
+import Hash from '@/icons/hash.svg'
+import { css } from '@css/css'
+import { inlineIcon } from '@css/patterns'
 
 interface AutoLinkHeaderProps {
   as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5'
@@ -28,7 +29,7 @@ export default function AutoLinkHeader({
             },
           })}
         >
-          <Icon name="hash" inline />
+          <Hash className={inlineIcon()} />
         </span>
       </a>
     </Component>

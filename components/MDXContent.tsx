@@ -1,21 +1,21 @@
 import React from 'react'
 
-import type { MDX } from 'contentlayer2/core'
+import type { MDX } from '@contentlayer2/core'
 import type { MDXComponents } from 'mdx/types'
 import type { ImageProps } from 'next/image'
 import NextImage from 'next/image'
 import { useMDXComponent } from 'next-contentlayer2/hooks'
 
-import Alert from '~components/Alert'
-import AutoLinkHeader from '~components/AutoLinkHeader'
-import type { BlockquoteProps } from '~components/Blockquote'
-import Blockquote from '~components/Blockquote'
-import CodePen from '~components/CodePen'
-import CodeWrapper from '~components/CodeWrapper'
-import Prose from '~components/Prose'
-import type { TextLinkProps } from '~components/TextLink'
-import TextLink from '~components/TextLink'
-import { css } from '~css/css'
+import Alert from '@/components/Alert'
+import AutoLinkHeader from '@/components/AutoLinkHeader'
+import type { BlockquoteProps } from '@/components/Blockquote'
+import Blockquote from '@/components/Blockquote'
+import CodePen from '@/components/CodePen'
+import CodeWrapper from '@/components/CodeWrapper'
+import Prose from '@/components/Prose'
+import type { TextLinkProps } from '@/components/TextLink'
+import TextLink from '@/components/TextLink'
+import { css } from '@css/css'
 
 interface NextImageProps {
   alt?: ImageProps['alt']

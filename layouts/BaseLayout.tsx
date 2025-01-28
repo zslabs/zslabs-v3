@@ -12,14 +12,18 @@ import { motion, useAnimation } from 'framer-motion'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 
-import Icon from '~components/Icon'
-import Prose from '~components/Prose'
-import TextLink from '~components/TextLink'
-import Tooltip from '~components/Tooltip'
-import { css } from '~css/css'
-import useLayoutAnimationState from '~hooks/useLayoutAnimationState'
-import Year from '~layouts/components/Year'
-import type { ChildrenOnlyProps } from '~types/custom'
+import GitHub from '@/icons/github.svg'
+import Logo from '@//icons/logo.svg'
+import Peace from '@//icons/peace.svg'
+import Prose from '@/components/Prose'
+import TextLink from '@/components/TextLink'
+import Tooltip from '@/components/Tooltip'
+import { css } from '@css/css'
+import { inlineIcon } from '@css/patterns'
+import useLayoutAnimationState from '@/hooks/useLayoutAnimationState'
+import X from '@/icons/x.svg'
+import Year from '@/layouts/components/Year'
+import type { ChildrenOnlyProps } from '@/types/custom'
 
 interface HeaderItemWrapperProps {
   runAnimation: boolean
@@ -142,7 +146,7 @@ export default function BaseLayout({ children }: ChildrenOnlyProps) {
                 fontSize: '4.5xl',
               })}
             >
-              <Icon name="logo" />
+              <Logo />
             </TextLink>
           </HeaderItemWrapper>
 
@@ -164,7 +168,7 @@ export default function BaseLayout({ children }: ChildrenOnlyProps) {
                   href="https://github.com/zslabs"
                   className={headerIconStyles}
                 >
-                  <Icon name="github" />
+                  <GitHub />
                 </TextLink>
               </Tooltip>
             </HeaderItemWrapper>
@@ -178,7 +182,7 @@ export default function BaseLayout({ children }: ChildrenOnlyProps) {
                   href="https://twitter.com/zslabs"
                   className={headerIconStyles}
                 >
-                  <Icon name="x" />
+                  <X />
                 </TextLink>
               </Tooltip>
             </HeaderItemWrapper>
@@ -235,7 +239,7 @@ export default function BaseLayout({ children }: ChildrenOnlyProps) {
                 color: 'slate.12',
               })}
             >
-              <Icon name="peace" inline />
+              <Peace className={inlineIcon()} />
             </span>
           </p>
           <Prose>

@@ -4,10 +4,14 @@ import type { Metadata } from 'next'
 
 import LinkedIn from './components/LinkedIn'
 
-import { MotionHeader, MotionMain } from '~components/ContentWrappers'
-import { List, ListItem } from '~components/List'
-import SectionTitle from '~components/SectionTitle'
-import { css } from '~css/css'
+import { MotionHeader, MotionMain } from '@/components/ContentWrappers'
+import { List, ListItem } from '@/components/List'
+import SectionTitle from '@/components/SectionTitle'
+import DigitalOcean from '@/icons/digitalocean.svg'
+import Gremlin from '@/icons/gremlin.svg'
+import Rhinogram from '@/icons/rhinogram.svg'
+import Slack from '@/icons/slack.svg'
+import { css } from '@css/css'
 
 export const metadata: Metadata = {
   title: 'Experience',
@@ -24,7 +28,7 @@ export default function Experience() {
           <ListItem
             label="Slack"
             meta="Staff software engineer :: 05/2021 - current"
-            icon="slack"
+            icon={<Slack />}
           >
             I&apos;m part of the design infrastructure team, building tools to
             help designers and engineers collaborate more efficiently. My
@@ -34,7 +38,7 @@ export default function Experience() {
           <ListItem
             label="Gremlin"
             meta="Senior software engineer :: 09/2018 - 05/2021"
-            icon="gremlin"
+            icon={<Gremlin />}
           >
             Revamped their marketing platform, alongside creating a
             component-library used throughout their ecosystem. Lead technical
@@ -44,7 +48,7 @@ export default function Experience() {
           <ListItem
             label="Rhinogram"
             meta="Senior UI Engineer :: 01/2017 - 08/2018"
-            icon="rhinogram"
+            icon={<Rhinogram />}
           >
             Managed a React-powered styleguide that in-turn was integrated into
             the flagship application that helps both physicians and patients
@@ -53,7 +57,7 @@ export default function Experience() {
           <ListItem
             label="DigitalOcean"
             meta="UI Engineer :: 01/2016 - 01/2017"
-            icon="digitalocean"
+            icon={<DigitalOcean />}
           >
             Lead development efforts on creating an internal framework used to
             power the main website and ongoing brand initiatives. Implemented

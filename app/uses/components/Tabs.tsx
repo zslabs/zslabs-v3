@@ -5,8 +5,26 @@ import * as React from 'react'
 import { motion } from 'framer-motion'
 import { Tabs as TabsRoot, TabList, Tab, TabPanel } from 'react-aria-components'
 
-import { List, ListItem } from '~components/List'
-import { css } from '~css/css'
+import { List, ListItem } from '@/components/List'
+import OnePassword from '@/icons/1password.svg'
+import Arc from '@/icons/arc.svg'
+import Backback from '@/icons/backpack.svg'
+import Dock from '@/icons/dock.svg'
+import Figma from '@/icons/figma.svg'
+import GitHub from '@/icons/github.svg'
+import Iphone from '@/icons/iphone.svg'
+import Keyboard from '@/icons/keyboard.svg'
+import MBPro from '@/icons/mbpro.svg'
+import Mimestream from '@/icons/mimestream.svg'
+import Monitor from '@/icons/monitor.svg'
+import Mouse from '@/icons/mouse.svg'
+import Rectangle from '@/icons/rectangle.svg'
+import Reminders from '@/icons/reminders.svg'
+import Stand from '@/icons/stand.svg'
+import Terminal from '@/icons/terminal.svg'
+import VSCode from '@/icons/vs-code.svg'
+import Watch from '@/icons/watch.svg'
+import { css } from '@css/css'
 
 const tabs = [
   { id: 'software', title: 'Software' },
@@ -17,34 +35,34 @@ function Software() {
   return (
     <List>
       <ListItem
-        icon="vs-code"
+        icon={<VSCode />}
         label="VS Code"
         href="https://code.visualstudio.com/"
       >
         I&apos;ve tried them all; Dreamweaver, Sublime Text, BB Edit, Textmate,
         Atom, etc.
       </ListItem>
-      <ListItem icon="figma" label="Figma" href="https://www.figma.com">
+      <ListItem icon={<Figma />} label="Figma" href="https://www.figma.com">
         Previously Sketch, but Figma is just too good to ignore; with a plethora
         of community-driven plugins.
       </ListItem>
       <ListItem
-        icon="rectangle"
+        icon={<Rectangle />}
         label="Rectangle"
         href="https://rectangleapp.com/"
       >
         The easiest window-management tool I&apos;ve ever used.
       </ListItem>
-      <ListItem icon="arc" label="Arc" href="https://arc.net/gift/1bc5ff">
+      <ListItem icon={<Arc />} label="Arc" href="https://arc.net/gift/1bc5ff">
         Giving the new kid on the block a shot; so far, so good.
       </ListItem>
-      <ListItem icon="terminal" label="Warp" href="https://www.warp.dev/">
+      <ListItem icon={<Terminal />} label="Warp" href="https://www.warp.dev/">
         The built-in terminal in VS Code is fine; though I&apos;m fortunate
         enough to have the screen real-estate for a dedicated, always-open
         terminal.
       </ListItem>
       <ListItem
-        icon="github"
+        icon={<GitHub />}
         label="GitHub Desktop"
         href="https://desktop.github.com/"
       >
@@ -52,16 +70,20 @@ function Software() {
         and ease-of-use can&apos;t be understated for all my projects.
       </ListItem>
       <ListItem
-        icon="mimestream"
+        icon={<Mimestream />}
         label="Mimestream"
         href="https://mimestream.com/"
       >
         Handles multiple Google-based email accounts like a champ.
       </ListItem>
-      <ListItem icon="1password" label="1Password" href="https://1password.com">
+      <ListItem
+        icon={<OnePassword />}
+        label="1Password"
+        href="https://1password.com"
+      >
         Synced across all my devices; never had an issue.
       </ListItem>
-      <ListItem icon="reminders" label="Apple Reminders">
+      <ListItem icon={<Reminders />} label="Apple Reminders">
         I&apos;ve tried a few different apps, but the iCloud integration and
         feature-set has always been enough for me.
       </ListItem>
@@ -74,7 +96,7 @@ function Gear() {
     <List>
       <ListItem
         href="https://amzn.to/3AuEVVV"
-        icon="mbpro"
+        icon={<MBPro />}
         label="MacBook Pro (15-inch, 2019)"
       >
         Stuck with the &apos;ole touch-bar for now, but very much looking
@@ -82,14 +104,14 @@ function Gear() {
       </ListItem>
       <ListItem
         href="https://www.apple.com/iphone-15-pro/"
-        icon="iphone"
+        icon={<Iphone />}
         label="iPhone 15 Pro"
       >
         I swap for a new model every 2-3 years.
       </ListItem>
       <ListItem
         href="https://amzn.to/3ABcerh"
-        icon="watch"
+        icon={<Watch />}
         label="Apple Watch Series 7 45mm"
       >
         Longtime Fitbit user, but notifications work so much better now. I
@@ -97,21 +119,21 @@ function Gear() {
         days.
       </ListItem>
       <ListItem
-        icon="monitor"
+        icon={<Monitor />}
         label="Samsung M80C"
         href="https://amzn.to/47ZTBLK"
       >
         One front and center, with the other rotated 90º to my left.
       </ListItem>
       <ListItem
-        icon="mouse"
+        icon={<Mouse />}
         href="https://amzn.to/3ccyLS8"
         label="Logitech MX Masters"
       >
         An absolute powerhouse of a mouse; never looking back.
       </ListItem>
       <ListItem
-        icon="keyboard"
+        icon={<Keyboard />}
         href="https://www.keychron.com/products/keychron-q5-max-qmk-via-wireless-custom-mechanical-keyboard"
         label="Keychron Q5 Max Mechanical Keyboard"
       >
@@ -119,7 +141,7 @@ function Gear() {
       </ListItem>
       <ListItem
         href="https://www.aersf.com/travel-pack-3-black"
-        icon="backpack"
+        icon={<Backback />}
         label="Aer Travel Pack 3"
       >
         I spent way too much time researching backpacks, but this is a
@@ -127,7 +149,7 @@ function Gear() {
       </ListItem>
       <ListItem
         href="https://amzn.to/3TnaoSf"
-        icon="dock"
+        icon={<Dock />}
         label="CalDigit TS3 Plus Dock"
       >
         Having a single cord (with power) that connects all my devices to my
@@ -135,7 +157,7 @@ function Gear() {
       </ListItem>
       <ListItem
         href="https://amzn.to/3dGpYIp"
-        icon="stand"
+        icon={<Stand />}
         label="Rain Design mStand"
       >
         Had this since 2016 and still looks/works great.

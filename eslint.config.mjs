@@ -20,7 +20,6 @@ export default [
       'build',
       'node_modules',
       '.next',
-      'icons/build',
       'styled-system',
       '.contentlayer',
     ],
