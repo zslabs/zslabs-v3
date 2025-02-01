@@ -1,5 +1,4 @@
 import type { NextConfig } from 'next'
-import { withContentlayer } from 'next-contentlayer2'
 
 const nextConfig: NextConfig = {
   webpack(config) {
@@ -37,4 +36,4 @@ const nextConfig: NextConfig = {
   },
 }
 
-export default withContentlayer(nextConfig)
+export default nextConfig

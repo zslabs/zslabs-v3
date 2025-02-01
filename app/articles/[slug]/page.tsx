@@ -1,12 +1,15 @@
+import { promises as fs } from 'fs'
+import path from 'path'
+
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
+import bundle from '@/app/mdx-bundler'
 import { MotionHeader, MotionMain } from '@/components/ContentWrappers'
 import MDXContent from '@/components/MDXContent'
 import MoreArticlesLink from '@/components/MoreArticlesLink'
 import SectionTitle from '@/components/SectionTitle'
 import { css } from '@css/css'
-import { allPosts } from '@contentlayer/generated'
 
 type Params = {
   params: Promise<{ slug: string }>
@@ -15,34 +18,40 @@ type Params = {
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const { slug } = await params
 
-  const currentPost = allPosts.find((post) => {
-    return post.slug === slug
-  })
+  const currentPost = await fs.readFile(
+    path.resolve(process.cwd(), 'content', 'articles', `${slug}.mdx`),
+    'utf-8'
+  )
 
   if (!currentPost) {
     return {}
   }
 
+  const { frontmatter } = await bundle(currentPost)
+
   return {
-    title: currentPost.title,
-    description: currentPost.excerpt || null,
+    title: frontmatter.title,
+    description: frontmatter.excerpt,
   }
 }
 
 export default async function PostSingle({ params }: Params) {
   const { slug } = await params
 
-  const currentPost = allPosts.find((post) => {
-    return post.slug === slug
-  })
+  const currentPost = await fs.readFile(
+    path.resolve(process.cwd(), 'content', 'articles', `${slug}.mdx`),
+    'utf-8'
+  )
 
   if (!currentPost) {
     notFound()
   }
 
+  const { frontmatter, code } = await bundle(currentPost)
+
   const post = {
-    ...currentPost,
-    date: new Date(currentPost.date).toLocaleDateString('en-us', {
+    ...frontmatter,
+    date: new Date(frontmatter.date).toLocaleDateString('en-us', {
       year: 'numeric',
       month: 'short',
       day: 'numeric',
@@ -55,7 +64,7 @@ export default async function PostSingle({ params }: Params) {
         <SectionTitle>{post.title}</SectionTitle>
       </MotionHeader>
       <MotionMain>
-        <MDXContent content={post.body} />
+        <MDXContent code={code} />
         <div
           className={css({
             marginBlockStart: '12',
@@ -84,7 +93,11 @@ export default async function PostSingle({ params }: Params) {
 }
 
 export async function generateStaticParams() {
-  return allPosts.map((post) => ({
-    slug: post.slug,
+  const posts = (
+    await fs.readdir(path.resolve(process.cwd(), 'content', 'articles'))
+  ).map((post) => post.replace('.mdx', ''))
+
+  return posts.map((post) => ({
+    slug: post,
   }))
 }

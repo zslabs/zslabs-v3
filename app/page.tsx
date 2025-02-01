@@ -39,7 +39,6 @@ import useLayoutAnimationState from '@/hooks/useLayoutAnimationState'
 import Figma from '@/icons/figma.svg'
 import X from '@/icons/x.svg'
 import type { ReducedPosts } from '@/types/custom'
-import { allPosts } from '@contentlayer/generated'
 
 function Intro() {
   return (
@@ -296,7 +295,7 @@ function Projects() {
 }
 
 function Articles() {
-  const allPostsSorted = allPosts.sort(
+  const allPostsSorted = [].sort(
     (post1, post2) => +new Date(post2.date) - +new Date(post1.date)
   )
 

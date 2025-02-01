@@ -1,10 +1,9 @@
 import React from 'react'
 
-import type { MDX } from '@contentlayer2/core'
-import type { MDXComponents } from 'mdx/types'
+import type { MDXComponents, MDXContent } from 'mdx/types'
+import { getMDXComponent } from 'mdx-bundler/client'
 import type { ImageProps } from 'next/image'
 import NextImage from 'next/image'
-import { useMDXComponent } from 'next-contentlayer2/hooks'
 
 import Alert from '@/components/Alert'
 import AutoLinkHeader from '@/components/AutoLinkHeader'
@@ -123,8 +122,8 @@ const components: MDXComponents = {
   },
 }
 
-export default function MDXContent({ content }: { content: MDX }) {
-  const Component = useMDXComponent(content.code)
+export default function MDXContent({ code }: { code: string }) {
+  const Component = React.useMemo(() => getMDXComponent(code), [code])
 
   return (
     <Prose>

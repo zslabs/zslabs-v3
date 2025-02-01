@@ -39,10 +39,5 @@ yarn-error.log*
 # TS
 tsconfig.tsbuildinfo
 
-
-# Contentlayer
-.contentlayer
-
 # Panda CSS
-
 styled-system
