@@ -1,11 +1,17 @@
-'use client'
-
 import * as React from 'react'
 
-import { motion, useAnimation } from 'framer-motion'
-
+import ArticlesList from '@/components/ArticlesList'
+import { DivButton } from '@/components/Button'
+import HomepageWrapper from '@/components/HomepageWrapper'
+import { IconMetaWrapper, List, ListItem } from '@/components/List'
+import MoreArticlesLink from '@/components/MoreArticlesLink'
+import Prose from '@/components/Prose'
+import SectionTitle from '@/components/SectionTitle'
+import TextLink from '@/components/TextLink'
+import Tooltip from '@/components/Tooltip'
 import Brush from '@/icons/brush.svg'
 import Collecton from '@/icons/collection.svg'
+import Figma from '@/icons/figma.svg'
 import Icons from '@/icons/icons.svg'
 import ListProject from '@/icons/list.svg'
 import MountainSnow from '@/icons/mountain-snow.svg'
@@ -19,26 +25,9 @@ import Sold from '@/icons/sold.svg'
 import TailwindCSS from '@/icons/tailwindcss.svg'
 import Tokens from '@/icons/tokens.svg'
 import WesAnderSlack from '@/icons/wes-anderslack.svg'
-import { DivButton } from '@/components/Button'
-import {
-  BoxList,
-  BoxListItem,
-  IconMetaWrapper,
-  List,
-  ListItem,
-} from '@/components/List'
-import MoreArticlesLink from '@/components/MoreArticlesLink'
-import Prose from '@/components/Prose'
-import SectionTitle from '@/components/SectionTitle'
-import TextLink from '@/components/TextLink'
-import Tooltip from '@/components/Tooltip'
-import { css } from '@css/css'
-import { inlineIcon, stack } from '@css/patterns'
-import { fadeInUp } from '@/helpers/styles'
-import useLayoutAnimationState from '@/hooks/useLayoutAnimationState'
-import Figma from '@/icons/figma.svg'
 import X from '@/icons/x.svg'
-import type { ReducedPosts } from '@/types/custom'
+import { css } from '@css/css'
+import { inlineIcon } from '@css/patterns'
 
 function Intro() {
   return (
@@ -295,40 +284,10 @@ function Projects() {
 }
 
 function Articles() {
-  const allPostsSorted = [].sort(
-    (post1, post2) => +new Date(post2.date) - +new Date(post1.date)
-  )
-
-  const posts: ReducedPosts = allPostsSorted
-    .map((post) => {
-      return {
-        title: post.title,
-        date: new Date(post.date).toLocaleDateString('en-us', {
-          year: 'numeric',
-          month: 'short',
-          day: 'numeric',
-        }),
-        url: post.url,
-        excerpt: post.excerpt,
-      }
-    })
-    .slice(0, 6)
-
   return (
     <section id="articles">
       <SectionTitle>Articles</SectionTitle>
-      <BoxList>
-        {posts.map((post) => (
-          <BoxListItem
-            key={post.url}
-            label={post.title}
-            href={post.url}
-            meta={post.date}
-          >
-            {post.excerpt || null}
-          </BoxListItem>
-        ))}
-      </BoxList>
+      <ArticlesList limit={6} />
       <div
         className={css({
           marginBlockStart: '12',
@@ -343,31 +302,12 @@ function Articles() {
 }
 
 function Index() {
-  const done = useLayoutAnimationState((state) => state.done)
-  const indexControls = useAnimation()
-
-  React.useEffect(() => {
-    if (done) {
-      indexControls.start('onscreen')
-    }
-  }, [done, indexControls])
-
   return (
-    <motion.div
-      className={stack({
-        gap: '12',
-        md: {
-          gap: '16',
-        },
-      })}
-      initial="offscreen"
-      variants={fadeInUp}
-      animate={indexControls}
-    >
+    <HomepageWrapper>
       <Intro />
       <Projects />
       <Articles />
-    </motion.div>
+    </HomepageWrapper>
   )
 }
 
