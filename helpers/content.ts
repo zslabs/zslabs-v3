@@ -58,7 +58,7 @@ export async function getAllStatics(limit = null) {
         const { frontmatter, code } = await bundle(content)
 
         return {
-          url: filename.replace(/\.mdx?$/, ''),
+          url: `/${filename.replace(/\.mdx?$/, '')}`,
           title: frontmatter.title,
           code,
         }
