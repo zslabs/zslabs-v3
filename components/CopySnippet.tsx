@@ -5,8 +5,8 @@ import * as React from 'react'
 import { Button as ButtonPrimitive } from 'react-aria-components'
 
 import Check from '@/icons/check.svg'
-import { css } from '@css/css'
 import Clipboard from '@/icons/clipboard.svg'
+import { css } from '@css/css'
 
 async function copy(codeString: string) {
   try {

@@ -12,18 +12,18 @@ import { motion, useAnimation } from 'framer-motion'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 
-import GitHub from '@/icons/github.svg'
 import Logo from '@//icons/logo.svg'
 import Peace from '@//icons/peace.svg'
 import Prose from '@/components/Prose'
 import TextLink from '@/components/TextLink'
 import Tooltip from '@/components/Tooltip'
-import { css } from '@css/css'
-import { inlineIcon } from '@css/patterns'
 import useLayoutAnimationState from '@/hooks/useLayoutAnimationState'
+import GitHub from '@/icons/github.svg'
 import X from '@/icons/x.svg'
 import Year from '@/layouts/components/Year'
 import type { ChildrenOnlyProps } from '@/types/custom'
+import { css } from '@css/css'
+import { inlineIcon } from '@css/patterns'
 
 interface HeaderItemWrapperProps {
   runAnimation: boolean

@@ -7,8 +7,8 @@
  */
 import React from 'react'
 
-import { css } from '@css/css'
 import type { ChildrenOnlyProps } from '@/types/custom'
+import { css } from '@css/css'
 
 interface IGeneralObserverProps extends ChildrenOnlyProps {
   /** Fires when IntersectionObserver enters viewport */

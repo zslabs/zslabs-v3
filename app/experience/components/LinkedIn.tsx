@@ -1,8 +1,8 @@
 'use client'
 
-import More from '@/icons/more.svg'
 import TextLink from '@/components/TextLink'
 import Tooltip from '@/components/Tooltip'
+import More from '@/icons/more.svg'
 
 export default function LinkedIn() {
   return (
