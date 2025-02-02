@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title: 'Articles',
 }
 
-export default async function Articles() {
+export default function Articles() {
   return (
     <section id="articles">
       <MotionHeader>
