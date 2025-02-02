@@ -301,7 +301,7 @@ function Articles() {
   )
 }
 
-function Index() {
+export default function Homepage() {
   return (
     <HomepageWrapper>
       <Intro />
@@ -310,5 +310,3 @@ function Index() {
     </HomepageWrapper>
   )
 }
-
-export default Index
