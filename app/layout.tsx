@@ -11,11 +11,6 @@ import '@/styles/index.css'
 export const metadata: Metadata = {
   title: { default: 'Zach Schnackel', template: '%s | Zach Schnackel' },
   description: 'Full-stack/motion developer',
-  alternates: {
-    types: {
-      'application/rss+xml': '/rss.xml',
-    },
-  },
 }
 
 export default function RootLayout({

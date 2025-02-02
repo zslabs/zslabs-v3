@@ -10,7 +10,7 @@ import SectionTitle from '@/components/SectionTitle'
 import TextLink from '@/components/TextLink'
 import Tooltip from '@/components/Tooltip'
 import Brush from '@/icons/brush.svg'
-import Collecton from '@/icons/collection.svg'
+import Collection from '@/icons/collection.svg'
 import Figma from '@/icons/figma.svg'
 import Icons from '@/icons/icons.svg'
 import ListProject from '@/icons/list.svg'
@@ -208,7 +208,7 @@ function Projects() {
         <ListItem
           label="Collection"
           href="https://collection.zslabs.com"
-          icon={<Collecton />}
+          icon={<Collection />}
           meta={
             <IconMetaWrapper>
               <Tooltip content="Next.js">
