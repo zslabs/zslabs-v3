@@ -17,6 +17,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint . --fix",
+    "articles": "tsx ./scripts/articles.ts",
     "type:check": "tsc --project tsconfig.json --pretty --noEmit",
     "postinstall": "husky install"
   },

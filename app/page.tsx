@@ -1,9 +1,17 @@
+'use client'
+
 import * as React from 'react'
 
-import ArticlesList from '@/components/ArticlesList'
+import posts from '@/articles.json'
 import { DivButton } from '@/components/Button'
 import HomepageWrapper from '@/components/HomepageWrapper'
-import { IconMetaWrapper, List, ListItem } from '@/components/List'
+import {
+  BoxList,
+  BoxListItem,
+  IconMetaWrapper,
+  List,
+  ListItem,
+} from '@/components/List'
 import MoreArticlesLink from '@/components/MoreArticlesLink'
 import Prose from '@/components/Prose'
 import SectionTitle from '@/components/SectionTitle'
@@ -287,7 +295,18 @@ function Articles() {
   return (
     <section id="articles">
       <SectionTitle>Articles</SectionTitle>
-      <ArticlesList limit={6} />
+      <BoxList>
+        {posts.map((post) => (
+          <BoxListItem
+            key={post.url}
+            label={post.title}
+            href={post.url}
+            meta={post.date}
+          >
+            {post.excerpt || null}
+          </BoxListItem>
+        ))}
+      </BoxList>
       <div
         className={css({
           marginBlockStart: '12',

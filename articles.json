@@ -1,0 +1,121 @@
+[
+  {
+    "title": "Rebuilding List",
+    "url": "/articles/rebuilding-list",
+    "date": "Sep 13, 2021",
+    "excerpt": "Performant, sensible improvements for my side-project"
+  },
+  {
+    "title": "Responsive data visualization",
+    "url": "/articles/responsive-data-visualization",
+    "date": "Jan 25, 2021",
+    "excerpt": "Smart-graphs with Nivo"
+  },
+  {
+    "title": "Improving Next.js links",
+    "url": "/articles/improving-nextjs-links",
+    "date": "Jan 5, 2021",
+    "excerpt": "Better DX makes for better links"
+  },
+  {
+    "title": "Revamp v3",
+    "url": "/articles/revamp-v3",
+    "date": "Dec 29, 2020",
+    "excerpt": "Tailwind CSS, Next.js, and Zustand - oh my!"
+  },
+  {
+    "title": "MDX previews in Netlify CMS",
+    "url": "/articles/mdx-previews-in-netlify-cms",
+    "date": "Jul 23, 2020",
+    "excerpt": "Better authoring experiences for your backend CMS"
+  },
+  {
+    "title": "MDX link routing in Gatsby",
+    "url": "/articles/mdx-link-routing-in-gatsby",
+    "date": "Apr 3, 2020",
+    "excerpt": "Client-side routing; just when you need it"
+  },
+  {
+    "title": "MDX frontmatter in Gatsby",
+    "url": "/articles/mdx-frontmatter-in-gatsby",
+    "date": "Mar 28, 2020",
+    "excerpt": "The perfect add-on for data-driven websites"
+  },
+  {
+    "title": "List",
+    "url": "/articles/list-ebay-search-toolkit",
+    "date": "Sep 15, 2019",
+    "excerpt": "eBay search toolkit"
+  },
+  {
+    "title": "Netlify CMS and Cloudinary",
+    "url": "/articles/netlify-cms-and-cloudinary",
+    "date": "Jun 8, 2019",
+    "excerpt": "CDN-driven media for your static site"
+  },
+  {
+    "title": "Consolidating Netlify CMS",
+    "url": "/articles/consolidating-netlify-cms",
+    "date": "May 11, 2019"
+  },
+  {
+    "title": "Using CSS filters with SVGs",
+    "url": "/articles/using-css-filters-with-svgs",
+    "date": "Apr 21, 2019"
+  },
+  {
+    "title": "Local Gatsby production builds with Netlify Functions",
+    "url": "/articles/local-production-builds-with-netlify-functions",
+    "date": "Apr 4, 2019"
+  },
+  {
+    "title": "State dependent refs with hooks",
+    "url": "/articles/state-dependent-refs-with-hooks",
+    "date": "Mar 30, 2019"
+  },
+  {
+    "title": "Fluid sizes",
+    "url": "/articles/fluid-sizes",
+    "date": "Feb 22, 2019",
+    "excerpt": "Smooth scaling for all"
+  },
+  {
+    "title": "I love loaders",
+    "url": "/articles/i-love-loaders",
+    "date": "Mar 25, 2017",
+    "excerpt": "I'm waiting... and I like it"
+  },
+  {
+    "title": "Onward and upward",
+    "url": "/articles/onward-and-upward",
+    "date": "Jan 21, 2017"
+  },
+  {
+    "title": "Round 'n round",
+    "url": "/articles/round-n-round",
+    "date": "Jan 8, 2017"
+  },
+  {
+    "title": "PolyNo?",
+    "url": "/articles/polyno",
+    "date": "Nov 15, 2015",
+    "excerpt": "Using Polyfill.io for better DX"
+  },
+  {
+    "title": "BoomQueries",
+    "url": "/articles/boomqueries",
+    "date": "Apr 25, 2015",
+    "excerpt": "Element queries, today"
+  },
+  {
+    "title": "Modifying SVG background fills",
+    "url": "/articles/svg-background-fills",
+    "date": "Sep 29, 2014",
+    "excerpt": "LESS-driven improvements for once static assets."
+  },
+  {
+    "title": "Extendable switch statements",
+    "url": "/articles/extendable-switch-statements",
+    "date": "Feb 9, 2013"
+  }
+]
