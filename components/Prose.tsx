@@ -18,7 +18,7 @@ const Prose = ({ children, ...rest }: ProseProps) => {
           marginBlockStart: '10',
         },
 
-        '& * + :is(p, ul, ol, dl, blockquote:not([class]), address, fieldset, [data-rehype-pretty-code-figure])':
+        '& * + :is(p, ul, ol, dl, blockquote:not([class]), address, fieldset, [data-code])':
           {
             marginBlockStart: '6',
           },

@@ -50,7 +50,7 @@ export default async function PostSingle({ params }: Params) {
   const { frontmatter, code } = await bundle(currentPost)
 
   const post = {
-    ...frontmatter,
+    title: frontmatter.title,
     date: new Date(frontmatter.date).toLocaleDateString('en-us', {
       year: 'numeric',
       month: 'short',

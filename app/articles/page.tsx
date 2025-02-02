@@ -9,7 +9,7 @@ import SectionTitle from '@/components/SectionTitle'
 import { css } from '@css/css'
 
 export const metadata: Metadata = {
-  title: 'ListArticlesList',
+  title: 'Articles',
 }
 
 export default async function Articles() {
