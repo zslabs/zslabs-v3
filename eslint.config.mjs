@@ -15,15 +15,7 @@ const compat = new FlatCompat({
 /** @type { import("eslint").Linter.Config[] } */
 export default [
   {
-    ignores: [
-      'dist',
-      'build',
-      'node_modules',
-      '.next',
-      'icons/build',
-      'styled-system',
-      '.contentlayer',
-    ],
+    ignores: ['dist', 'build', 'node_modules', '.next', 'styled-system'],
   },
   ...compat.extends('next/core-web-vitals', 'next/typescript'),
   {

@@ -12,7 +12,7 @@ declare module 'react-aria-components' {
   }
 }
 
-import { spring } from '~helpers/styles'
+import { spring } from '@/helpers/styles'
 
 export default function Providers({ children }: { children: React.ReactNode }) {
   const router = useRouter()

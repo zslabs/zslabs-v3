@@ -9,7 +9,7 @@ import {
 } from 'react-aria-components'
 import type { TooltipProps as TooltipPropsPrimitive } from 'react-aria-components'
 
-import { css } from '~css/css'
+import { css } from '@css/css'
 
 interface TooltipProps extends Omit<TooltipPropsPrimitive, 'children'> {
   children: React.ReactNode

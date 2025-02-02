@@ -4,8 +4,9 @@ import * as React from 'react'
 
 import { Button as ButtonPrimitive } from 'react-aria-components'
 
-import Icon from '~components/Icon'
-import { css } from '~css/css'
+import Check from '@/icons/check.svg'
+import Clipboard from '@/icons/clipboard.svg'
+import { css } from '@css/css'
 
 async function copy(codeString: string) {
   try {
@@ -36,7 +37,7 @@ export default function CopySnippet({ codeString }: { codeString: string }) {
           },
         })}
       >
-        <Icon name="clipboard" />
+        <Clipboard />
       </span>
       <span
         className={css({
@@ -47,7 +48,7 @@ export default function CopySnippet({ codeString }: { codeString: string }) {
           },
         })}
       >
-        <Icon name="check" />
+        <Check />
       </span>
     </ButtonPrimitive>
   )

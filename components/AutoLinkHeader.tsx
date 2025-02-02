@@ -1,8 +1,18 @@
-import Icon from '~components/Icon'
-import { css } from '~css/css'
+import Hash from '@/icons/hash.svg'
+import { css } from '@css/css'
+import { inlineIcon } from '@css/patterns'
 
 interface AutoLinkHeaderProps {
   as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5'
+}
+
+function slugify(str: string): string {
+  str = str.toLowerCase().trim()
+  str = str
+    .replace(/[^a-z0-9 -]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/-+/g, '-')
+  return str
 }
 
 export default function AutoLinkHeader({
@@ -10,9 +20,11 @@ export default function AutoLinkHeader({
   children,
   ...rest
 }: AutoLinkHeaderProps & React.HTMLAttributes<HTMLHeadingElement>) {
+  const id = slugify(children as string)
+
   return (
     <Component {...rest}>
-      <a href={`#${rest.id}`} className="group">
+      <a href={`#${id}`} id={id} className="group">
         {children}{' '}
         <span
           className={css({
@@ -28,7 +40,7 @@ export default function AutoLinkHeader({
             },
           })}
         >
-          <Icon name="hash" inline />
+          <Hash className={inlineIcon()} />
         </span>
       </a>
     </Component>

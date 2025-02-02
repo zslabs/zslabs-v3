@@ -2,20 +2,10 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "~data/*": ["data/*"],
-      "~components/*": ["components/*"],
-      "~helpers/*": ["helpers/*"],
-      "~hooks/*": ["hooks/*"],
-      "~icons/*": ["icons/*"],
-      "~layouts/*": ["layouts/*"],
-      "~lib/*": ["lib/*"],
-      "~media/*": ["media/*"],
-      "~styles/*": ["styles/*"],
-      "~types/*": ["types/*"],
-      "~css/*": ["./styled-system/*"],
-      "contentlayer/generated": ["./.contentlayer/generated"]
+      "@/*": ["./*"],
+      "@css/*": ["./styled-system/*"]
     },
-    "target": "es5",
+    "target": "es2019",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -23,7 +13,6 @@
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
-    "downlevelIteration": true,
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
@@ -34,15 +23,9 @@
       {
         "name": "next"
       }
-    ]
+    ],
+    "strictNullChecks": true
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    ".contentlayer/generated",
-    ".next/types/**/*.ts"
-  ],
-  "types": ["types"],
+  "include": ["**/*.ts", "**/*.tsx", "next-env.d.ts", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
 }

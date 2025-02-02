@@ -2,36 +2,17 @@ import * as React from 'react'
 
 import type { Metadata } from 'next'
 
-import { allPosts } from 'contentlayer/generated'
-import { MotionHeader, MotionMain } from '~components/ContentWrappers'
-import { BoxList, BoxListItem } from '~components/List'
-import Prose from '~components/Prose'
-import SectionTitle from '~components/SectionTitle'
-import { css } from '~css/css'
-import type { ReducedPosts } from '~types/custom'
+import ArticlesList from '@/components/ArticlesList'
+import { MotionHeader, MotionMain } from '@/components/ContentWrappers'
+import Prose from '@/components/Prose'
+import SectionTitle from '@/components/SectionTitle'
+import { css } from '@css/css'
 
 export const metadata: Metadata = {
   title: 'Articles',
 }
 
-function Articles() {
-  const allPostsSorted = allPosts.sort(
-    (post1, post2) => +new Date(post2.date) - +new Date(post1.date)
-  )
-
-  const posts: ReducedPosts = allPostsSorted.map((post) => {
-    return {
-      title: post.title,
-      date: new Date(post.date).toLocaleDateString('en-us', {
-        year: 'numeric',
-        month: 'short',
-        day: 'numeric',
-      }),
-      url: post.url,
-      excerpt: post.excerpt,
-    }
-  })
-
+export default function Articles() {
   return (
     <section id="articles">
       <MotionHeader>
@@ -51,21 +32,8 @@ function Articles() {
             </p>
           </Prose>
         </div>
-        <BoxList>
-          {posts.map((post) => (
-            <BoxListItem
-              key={post.url}
-              label={post.title}
-              href={post.url}
-              meta={post.date}
-            >
-              {post.excerpt || null}
-            </BoxListItem>
-          ))}
-        </BoxList>
+        <ArticlesList />
       </MotionMain>
     </section>
   )
 }
-
-export default Articles

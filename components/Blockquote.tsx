@@ -1,8 +1,7 @@
 import * as React from 'react'
 
-import Icon from './Icon'
-
-import { css } from '~css/css'
+import Quote from '@/icons/quote.svg'
+import { css } from '@css/css'
 
 export type BlockquoteProps = React.HTMLAttributes<HTMLQuoteElement>
 
@@ -24,7 +23,7 @@ export default function Blockquote({ children, ...rest }: BlockquoteProps) {
           fontSize: 'lg',
         })}
       >
-        <Icon name="quote" />
+        <Quote />
       </div>
       <div
         className={css({

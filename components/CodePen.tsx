@@ -6,8 +6,8 @@
 
 import React from 'react'
 
-import GeneralObserver from '~components/GeneralObserver'
-import { css } from '~css/css'
+import GeneralObserver from '@/components/GeneralObserver'
+import { css } from '@css/css'
 
 export interface ICodePenProps {
   /** CodePen id */

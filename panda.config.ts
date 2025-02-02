@@ -319,5 +319,18 @@ export default defineConfig({
       },
     },
   },
+  patterns: {
+    extend: {
+      inlineIcon: {
+        description: 'An inline icon',
+        transform() {
+          return {
+            display: 'inline-block',
+            verticalAlign: '-0.125em',
+          }
+        },
+      },
+    },
+  },
   globalCss,
 })

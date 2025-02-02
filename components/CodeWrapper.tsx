@@ -1,5 +1,5 @@
-import CopySnippet from '~components/CopySnippet'
-import { css } from '~css/css'
+import CopySnippet from '@/components/CopySnippet'
+import { css } from '@css/css'
 
 interface CodeProps {
   codeString: string

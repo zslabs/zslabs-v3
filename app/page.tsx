@@ -2,28 +2,40 @@
 
 import * as React from 'react'
 
-import { motion, useAnimation } from 'framer-motion'
-
-import { allPosts } from 'contentlayer/generated'
-import { DivButton } from '~components/Button'
-import Icon from '~components/Icon'
+import posts from '@/articles.json'
+import { DivButton } from '@/components/Button'
+import HomepageWrapper from '@/components/HomepageWrapper'
 import {
   BoxList,
   BoxListItem,
   IconMetaWrapper,
   List,
   ListItem,
-} from '~components/List'
-import MoreArticlesLink from '~components/MoreArticlesLink'
-import Prose from '~components/Prose'
-import SectionTitle from '~components/SectionTitle'
-import TextLink from '~components/TextLink'
-import Tooltip from '~components/Tooltip'
-import { css } from '~css/css'
-import { stack } from '~css/patterns'
-import { fadeInUp } from '~helpers/styles'
-import useLayoutAnimationState from '~hooks/useLayoutAnimationState'
-import type { ReducedPosts } from '~types/custom'
+} from '@/components/List'
+import MoreArticlesLink from '@/components/MoreArticlesLink'
+import Prose from '@/components/Prose'
+import SectionTitle from '@/components/SectionTitle'
+import TextLink from '@/components/TextLink'
+import Tooltip from '@/components/Tooltip'
+import Brush from '@/icons/brush.svg'
+import Collection from '@/icons/collection.svg'
+import Figma from '@/icons/figma.svg'
+import Icons from '@/icons/icons.svg'
+import ListProject from '@/icons/list.svg'
+import MountainSnow from '@/icons/mountain-snow.svg'
+import NextJS from '@/icons/nextjs.svg'
+import Profile from '@/icons/profile.svg'
+import RadixUI from '@/icons/radix-ui.svg'
+import ReactAria from '@/icons/react-aria.svg'
+import SlackContrast from '@/icons/slack-contrast.svg'
+import Slack from '@/icons/slack.svg'
+import Sold from '@/icons/sold.svg'
+import TailwindCSS from '@/icons/tailwindcss.svg'
+import Tokens from '@/icons/tokens.svg'
+import WesAnderSlack from '@/icons/wes-anderslack.svg'
+import X from '@/icons/x.svg'
+import { css } from '@css/css'
+import { inlineIcon } from '@css/patterns'
 
 function Intro() {
   return (
@@ -38,7 +50,7 @@ function Intro() {
         <p>
           Happy to be part of the design infrastructure team at{' '}
           <TextLink href="https://slack.com">
-            <Icon inline name="slack" /> Slack
+            <Slack className={inlineIcon()} /> Slack
           </TextLink>
           ; building tools to help designers and engineers collaborate more
           efficiently.
@@ -55,7 +67,7 @@ function Intro() {
                 color: 'slate.12',
               })}
             >
-              <Icon inline name="mountain-snow" />
+              <MountainSnow className={inlineIcon()} />
             </span>
           </TextLink>
         </p>
@@ -91,19 +103,19 @@ function Projects() {
       <List>
         <ListItem
           label="Wes Anderslack"
-          icon="wes-anderslack"
+          icon={<WesAnderSlack />}
           href="https://wesanderslack.zslabs.com"
           meta={
             <IconMetaWrapper>
               <Tooltip content="Next.js">
-                <Icon name="nextjs" />
+                <NextJS />
               </Tooltip>
               <Tooltip content="React Aria Components">
-                <Icon name="react-aria" />
+                <ReactAria />
               </Tooltip>
               <Tooltip content="Tailwind CSS">
                 <span className={css({ fontSize: 'lg' })}>
-                  <Icon name="tailwindcss" />
+                  <TailwindCSS />
                 </span>
               </Tooltip>
             </IconMetaWrapper>
@@ -114,15 +126,15 @@ function Projects() {
         </ListItem>
         <ListItem
           label="Theming"
-          icon="brush"
+          icon={<Brush />}
           meta={
             <IconMetaWrapper>
               <Tooltip content="Slack">
-                <Icon name="slack-contrast" />
+                <SlackContrast />
               </Tooltip>
               <Tooltip content="Figma">
                 <span className={css({ fontSize: 'lg' })}>
-                  <Icon name="figma" />
+                  <Figma />
                 </span>
               </Tooltip>
             </IconMetaWrapper>
@@ -136,20 +148,20 @@ function Projects() {
             title="Release announcement"
             href="https://twitter.com/zslabs/status/1698304419979313651"
           >
-            <Icon inline name="x" />
+            <X className={inlineIcon()} />
           </TextLink>
         </ListItem>
         <ListItem
           label="Design tokens"
-          icon="tokens"
+          icon={<Tokens />}
           meta={
             <IconMetaWrapper>
               <Tooltip content="Slack">
-                <Icon name="slack-contrast" />
+                <SlackContrast />
               </Tooltip>
               <Tooltip content="Figma">
                 <span className={css({ fontSize: 'lg' })}>
-                  <Icon name="figma" />
+                  <Figma />
                 </span>
               </Tooltip>
             </IconMetaWrapper>
@@ -160,15 +172,15 @@ function Projects() {
         </ListItem>
         <ListItem
           label="Icon automation library"
-          icon="icons"
+          icon={<Icons />}
           meta={
             <IconMetaWrapper>
               <Tooltip content="Slack">
-                <Icon name="slack-contrast" />
+                <SlackContrast />
               </Tooltip>
               <Tooltip content="Figma">
                 <span className={css({ fontSize: 'lg' })}>
-                  <Icon name="figma" />
+                  <Figma />
                 </span>
               </Tooltip>
             </IconMetaWrapper>
@@ -180,20 +192,20 @@ function Projects() {
         <ListItem
           label="Profile"
           href="https://profile.zslabs.com"
-          icon="profile"
+          icon={<Profile />}
           meta={
             <IconMetaWrapper>
               <Tooltip content="Next.js">
                 <span className={css({ fontSize: 'lg' })}>
-                  <Icon name="nextjs" />
+                  <NextJS />
                 </span>
               </Tooltip>
               <Tooltip content="React Aria Components">
-                <Icon name="react-aria" />
+                <ReactAria />
               </Tooltip>
               <Tooltip content="Tailwind CSS">
                 <span className={css({ fontSize: 'lg' })}>
-                  <Icon name="tailwindcss" />
+                  <TailwindCSS />
                 </span>
               </Tooltip>
             </IconMetaWrapper>
@@ -204,20 +216,20 @@ function Projects() {
         <ListItem
           label="Collection"
           href="https://collection.zslabs.com"
-          icon="collection"
+          icon={<Collection />}
           meta={
             <IconMetaWrapper>
               <Tooltip content="Next.js">
                 <span className={css({ fontSize: 'lg' })}>
-                  <Icon name="nextjs" />
+                  <NextJS />
                 </span>
               </Tooltip>
               <Tooltip content="React Aria Components">
-                <Icon name="react-aria" />
+                <ReactAria />
               </Tooltip>
               <Tooltip content="Tailwind CSS">
                 <span className={css({ fontSize: 'lg' })}>
-                  <Icon name="tailwindcss" />
+                  <TailwindCSS />
                 </span>
               </Tooltip>
             </IconMetaWrapper>
@@ -228,20 +240,20 @@ function Projects() {
         <ListItem
           label="List"
           href="https://list.zslabs.com"
-          icon="list"
+          icon={<ListProject />}
           meta={
             <IconMetaWrapper>
               <Tooltip content="Next.js">
                 <span className={css({ fontSize: 'lg' })}>
-                  <Icon name="nextjs" />
+                  <NextJS />
                 </span>
               </Tooltip>
               <Tooltip content="Radix UI">
-                <Icon name="radix-ui" />
+                <RadixUI />
               </Tooltip>
               <Tooltip content="Tailwind CSS">
                 <span className={css({ fontSize: 'lg' })}>
-                  <Icon name="tailwindcss" />
+                  <TailwindCSS />
                 </span>
               </Tooltip>
             </IconMetaWrapper>
@@ -253,20 +265,20 @@ function Projects() {
         <ListItem
           label="Sold"
           href="https://sold.zslabs.com"
-          icon="sold"
+          icon={<Sold />}
           meta={
             <IconMetaWrapper>
               <Tooltip content="Next.js">
                 <span className={css({ fontSize: 'lg' })}>
-                  <Icon name="nextjs" />
+                  <NextJS />
                 </span>
               </Tooltip>
               <Tooltip content="React Aria Components">
-                <Icon name="react-aria" />
+                <ReactAria />
               </Tooltip>
               <Tooltip content="Tailwind CSS">
                 <span className={css({ fontSize: 'lg' })}>
-                  <Icon name="tailwindcss" />
+                  <TailwindCSS />
                 </span>
               </Tooltip>
             </IconMetaWrapper>
@@ -280,25 +292,6 @@ function Projects() {
 }
 
 function Articles() {
-  const allPostsSorted = allPosts.sort(
-    (post1, post2) => +new Date(post2.date) - +new Date(post1.date)
-  )
-
-  const posts: ReducedPosts = allPostsSorted
-    .map((post) => {
-      return {
-        title: post.title,
-        date: new Date(post.date).toLocaleDateString('en-us', {
-          year: 'numeric',
-          month: 'short',
-          day: 'numeric',
-        }),
-        url: post.url,
-        excerpt: post.excerpt,
-      }
-    })
-    .slice(0, 6)
-
   return (
     <section id="articles">
       <SectionTitle>Articles</SectionTitle>
@@ -327,33 +320,12 @@ function Articles() {
   )
 }
 
-function Index() {
-  const done = useLayoutAnimationState((state) => state.done)
-  const indexControls = useAnimation()
-
-  React.useEffect(() => {
-    if (done) {
-      indexControls.start('onscreen')
-    }
-  }, [done, indexControls])
-
+export default function Homepage() {
   return (
-    <motion.div
-      className={stack({
-        gap: '12',
-        md: {
-          gap: '16',
-        },
-      })}
-      initial="offscreen"
-      variants={fadeInUp}
-      animate={indexControls}
-    >
+    <HomepageWrapper>
       <Intro />
       <Projects />
       <Articles />
-    </motion.div>
+    </HomepageWrapper>
   )
 }
-
-export default Index

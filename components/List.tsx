@@ -4,13 +4,13 @@ import * as React from 'react'
 
 import { motion } from 'framer-motion'
 
-import Icon from './Icon'
 import Prose from './Prose'
 
-import TextLink from '~components/TextLink'
-import { css } from '~css/css'
-import { fadeInUp, viewportInViewOptions } from '~helpers/styles'
-import type { IconName } from '~icons/build/types'
+import TextLink from '@/components/TextLink'
+import { fadeInUp, viewportInViewOptions } from '@/helpers/styles'
+import ArrowDown from '@/icons/arrow-down.svg'
+import { css } from '@css/css'
+import { inlineIcon } from '@css/patterns'
 
 export function List({ children }: { children: React.ReactNode }) {
   return (
@@ -55,7 +55,7 @@ export function ListItem({
   meta?: React.ReactNode
   children?: React.ReactNode
   href?: string
-  icon?: IconName
+  icon?: React.ReactNode
 }) {
   return (
     <motion.li
@@ -79,7 +79,7 @@ export function ListItem({
             fontSize: 'xl',
           })}
         >
-          <Icon name={icon} />
+          {icon}
         </div>
       )}
       <div>
@@ -131,7 +131,7 @@ export function ListItem({
                     },
                   })}
                 >
-                  <Icon name="arrow-down" inline />
+                  <ArrowDown className={inlineIcon()} />
                 </div>
               )}
             </TextLink>
@@ -183,7 +183,7 @@ export function BoxListItem({
   meta?: string
   children?: React.ReactNode
   href: string
-  icon?: IconName
+  icon?: React.ReactNode
 }) {
   return (
     <TextLinkMotion

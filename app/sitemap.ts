@@ -1,13 +1,15 @@
 import type { MetadataRoute } from 'next'
 
-import { allPosts, allStatics } from 'contentlayer/generated'
+import { getAllPosts, getAllStatics } from '@/helpers/content'
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const posts = allPosts.map((post) => post.url)
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const posts = await getAllPosts()
+  const statics = await getAllStatics()
 
-  const statics = allStatics.map((staticPage) => `/${staticPage.slug}`)
-
-  const data = [...posts, ...statics]
+  const data = [
+    ...posts.map((post) => post.url),
+    ...statics.map((page) => page.url),
+  ]
 
   return data.map((url) => ({
     url: `https://zslabs.com${url}`,

@@ -1,7 +1,5 @@
 @layer reset, base, tokens, recipes, utilities;
 
-@import '../icons/build/styles.css';
-
 @layer base {
   @font-face {
     font-family: 'TT Commons Pro Variable';
@@ -85,5 +83,11 @@
   #root,
   #__next {
     isolation: isolate;
+  }
+
+  /* Shiki */
+  .shiki {
+    background-color: transparent !important;
+    color: inherit !important;
   }
 }
