@@ -296,7 +296,7 @@ function Articles() {
     <section id="articles">
       <SectionTitle>Articles</SectionTitle>
       <BoxList>
-        {posts.map((post) => (
+        {posts.slice(0, 6).map((post) => (
           <BoxListItem
             key={post.url}
             label={post.title}
