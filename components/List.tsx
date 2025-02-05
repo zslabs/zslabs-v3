@@ -148,13 +148,13 @@ export function ListItem({
           {meta && (
             <div
               className={css({
-                color: 'slate.12',
+                color: 'slate.11',
                 fontSize: 'sm',
                 borderRadius: 'md',
                 textStyle: 'mono',
                 textTransform: 'uppercase',
                 letterSpacing: 'normal',
-                backgroundColor: 'black.a.8',
+                backgroundColor: 'black.a.6',
                 width: 'fit',
                 paddingInline: '2',
                 paddingBlock: '1',
@@ -171,8 +171,6 @@ export function ListItem({
   )
 }
 
-const TextLinkMotion = motion.create(TextLink)
-
 export function BoxListItem({
   label,
   children,
@@ -186,90 +184,77 @@ export function BoxListItem({
   icon?: React.ReactNode
 }) {
   return (
-    <TextLinkMotion
-      href={href}
-      className={`group ${css({
-        borderWidth: '1',
-        borderColor: 'slate.a.5',
-        borderRadius: 'xl',
-        padding: '4',
-        outlineWidth: '4',
-        outlineStyle: 'solid',
-        outlineColor: 'slate.a.2',
-        backgroundGradient: 'to-b',
-        gradientFrom: 'slate.a.1',
-        gradientTo: 'slate.a.2',
-        boxShadow: 'sm',
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '3',
-      })}`}
+    <motion.li
       initial="offscreen"
       whileInView="onscreen"
       variants={fadeInUp}
       viewport={viewportInViewOptions}
     >
-      <div
-        className={css({
-          flex: '1',
+      <TextLink
+        href={href}
+        className={`group ${css({
+          borderWidth: '1',
+          borderColor: 'slate.a.5',
+          borderRadius: 'xl',
+          padding: '4',
+          outlineWidth: '4',
+          outlineStyle: 'solid',
+          outlineColor: 'slate.a.2',
+          backgroundGradient: 'to-b',
+          gradientFrom: 'slate.a.1',
+          gradientTo: 'slate.a.2',
+          boxShadow: 'sm',
           display: 'flex',
           flexDirection: 'column',
-          gap: '2',
-        })}
+          gap: '3',
+          height: 'full',
+        })}`}
       >
-        <span
+        <div
           className={css({
-            textDecorationLine: 'underline',
-            textDecorationStyle: 'dotted',
-            textUnderlineOffset: '4',
-            transitionProperty: 'all',
-            transitionDuration: 'fast',
-            transitionTimingFunction: 'default',
-            _groupHover: {
-              textUnderlineOffset: '6',
-            },
+            flex: '1',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '2',
           })}
         >
-          {label}
-        </span>
-        {children && (
-          <Prose>
-            <p>{children}</p>
-          </Prose>
-        )}
-      </div>
-      <div>
-        {meta && (
-          <div
-            suppressHydrationWarning
+          <span
             className={css({
-              fontSize: 'sm',
-              textStyle: 'mono',
-              textTransform: 'uppercase',
-              letterSpacing: 'normal',
+              textDecorationLine: 'underline',
+              textDecorationStyle: 'dotted',
+              textUnderlineOffset: '4',
+              transitionProperty: 'all',
+              transitionDuration: 'fast',
+              transitionTimingFunction: 'default',
+              _groupHover: {
+                textUnderlineOffset: '6',
+              },
             })}
-            data-code
           >
-            {meta}
-          </div>
-        )}
-      </div>
-    </TextLinkMotion>
-  )
-}
-
-export function IconMetaWrapper({ children }: { children: React.ReactNode }) {
-  return (
-    <span
-      className={css({
-        display: 'flex',
-        paddingBlock: '1',
-        gap: '4',
-        alignItems: 'center',
-        color: 'slate.11',
-      })}
-    >
-      {children}
-    </span>
+            {label}
+          </span>
+          {children && (
+            <Prose>
+              <p>{children}</p>
+            </Prose>
+          )}
+        </div>
+        <div>
+          {meta && (
+            <div
+              className={css({
+                fontSize: 'sm',
+                textStyle: 'mono',
+                textTransform: 'uppercase',
+                letterSpacing: 'normal',
+              })}
+              data-code
+            >
+              {meta}
+            </div>
+          )}
+        </div>
+      </TextLink>
+    </motion.li>
   )
 }

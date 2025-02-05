@@ -1,36 +1,21 @@
-'use client'
-
 import * as React from 'react'
 
 import posts from '@/articles.json'
 import { DivButton } from '@/components/Button'
 import HomepageWrapper from '@/components/HomepageWrapper'
-import {
-  BoxList,
-  BoxListItem,
-  IconMetaWrapper,
-  List,
-  ListItem,
-} from '@/components/List'
+import { BoxList, BoxListItem, List, ListItem } from '@/components/List'
 import MoreArticlesLink from '@/components/MoreArticlesLink'
 import Prose from '@/components/Prose'
 import SectionTitle from '@/components/SectionTitle'
 import TextLink from '@/components/TextLink'
-import Tooltip from '@/components/Tooltip'
 import Brush from '@/icons/brush.svg'
 import Collection from '@/icons/collection.svg'
-import Figma from '@/icons/figma.svg'
 import Icons from '@/icons/icons.svg'
 import ListProject from '@/icons/list.svg'
 import MountainSnow from '@/icons/mountain-snow.svg'
-import NextJS from '@/icons/nextjs.svg'
 import Profile from '@/icons/profile.svg'
-import RadixUI from '@/icons/radix-ui.svg'
-import ReactAria from '@/icons/react-aria.svg'
-import SlackContrast from '@/icons/slack-contrast.svg'
 import Slack from '@/icons/slack.svg'
 import Sold from '@/icons/sold.svg'
-import TailwindCSS from '@/icons/tailwindcss.svg'
 import Tokens from '@/icons/tokens.svg'
 import WesAnderSlack from '@/icons/wes-anderslack.svg'
 import X from '@/icons/x.svg'
@@ -105,41 +90,12 @@ function Projects() {
           label="Wes Anderslack"
           icon={<WesAnderSlack />}
           href="https://wesanderslack.zslabs.com"
-          meta={
-            <IconMetaWrapper>
-              <Tooltip content="Next.js">
-                <NextJS />
-              </Tooltip>
-              <Tooltip content="React Aria Components">
-                <ReactAria />
-              </Tooltip>
-              <Tooltip content="Tailwind CSS">
-                <span className={css({ fontSize: 'lg' })}>
-                  <TailwindCSS />
-                </span>
-              </Tooltip>
-            </IconMetaWrapper>
-          }
+          meta="Next.js :: React Aria Components :: Tailwind CSS"
         >
           While the original was lost to time, I decided to bring back a
           fan-favorite; honoring a great director of some of my favorite movies.
         </ListItem>
-        <ListItem
-          label="Theming"
-          icon={<Brush />}
-          meta={
-            <IconMetaWrapper>
-              <Tooltip content="Slack">
-                <SlackContrast />
-              </Tooltip>
-              <Tooltip content="Figma">
-                <span className={css({ fontSize: 'lg' })}>
-                  <Figma />
-                </span>
-              </Tooltip>
-            </IconMetaWrapper>
-          }
-        >
+        <ListItem label="Theming" icon={<Brush />} meta="Slack :: Figma">
           Technical and team lead for Slack&apos;s new theming infrastructure
           across desktop, iOS, and Android. Developed migration methods across
           thousands of assets, while simplifying both the storage, application,
@@ -151,40 +107,14 @@ function Projects() {
             <X className={inlineIcon()} />
           </TextLink>
         </ListItem>
-        <ListItem
-          label="Design tokens"
-          icon={<Tokens />}
-          meta={
-            <IconMetaWrapper>
-              <Tooltip content="Slack">
-                <SlackContrast />
-              </Tooltip>
-              <Tooltip content="Figma">
-                <span className={css({ fontSize: 'lg' })}>
-                  <Figma />
-                </span>
-              </Tooltip>
-            </IconMetaWrapper>
-          }
-        >
+        <ListItem label="Design tokens" icon={<Tokens />} meta="Slack :: Figma">
           Build tool that uses Figma design primitives to scale across desktop,
           iOS, and Android.
         </ListItem>
         <ListItem
           label="Icon automation library"
           icon={<Icons />}
-          meta={
-            <IconMetaWrapper>
-              <Tooltip content="Slack">
-                <SlackContrast />
-              </Tooltip>
-              <Tooltip content="Figma">
-                <span className={css({ fontSize: 'lg' })}>
-                  <Figma />
-                </span>
-              </Tooltip>
-            </IconMetaWrapper>
-          }
+          meta="Slack :: Figma"
         >
           Build tool that integrates with Figma API to extract and create SVG
           icons for use across desktop, iOS, and Android.
@@ -193,23 +123,7 @@ function Projects() {
           label="Profile"
           href="https://profile.zslabs.com"
           icon={<Profile />}
-          meta={
-            <IconMetaWrapper>
-              <Tooltip content="Next.js">
-                <span className={css({ fontSize: 'lg' })}>
-                  <NextJS />
-                </span>
-              </Tooltip>
-              <Tooltip content="React Aria Components">
-                <ReactAria />
-              </Tooltip>
-              <Tooltip content="Tailwind CSS">
-                <span className={css({ fontSize: 'lg' })}>
-                  <TailwindCSS />
-                </span>
-              </Tooltip>
-            </IconMetaWrapper>
-          }
+          meta="Next.js :: React Aria Components :: Tailwind CSS"
         >
           Personalized eBay seller profiles; the way they should be.
         </ListItem>
@@ -217,23 +131,7 @@ function Projects() {
           label="Collection"
           href="https://collection.zslabs.com"
           icon={<Collection />}
-          meta={
-            <IconMetaWrapper>
-              <Tooltip content="Next.js">
-                <span className={css({ fontSize: 'lg' })}>
-                  <NextJS />
-                </span>
-              </Tooltip>
-              <Tooltip content="React Aria Components">
-                <ReactAria />
-              </Tooltip>
-              <Tooltip content="Tailwind CSS">
-                <span className={css({ fontSize: 'lg' })}>
-                  <TailwindCSS />
-                </span>
-              </Tooltip>
-            </IconMetaWrapper>
-          }
+          meta="Next.js :: React Aria Components :: Tailwind CSS"
         >
           Curated lists of eBay items; no filters needed.
         </ListItem>
@@ -241,23 +139,7 @@ function Projects() {
           label="List"
           href="https://list.zslabs.com"
           icon={<ListProject />}
-          meta={
-            <IconMetaWrapper>
-              <Tooltip content="Next.js">
-                <span className={css({ fontSize: 'lg' })}>
-                  <NextJS />
-                </span>
-              </Tooltip>
-              <Tooltip content="Radix UI">
-                <RadixUI />
-              </Tooltip>
-              <Tooltip content="Tailwind CSS">
-                <span className={css({ fontSize: 'lg' })}>
-                  <TailwindCSS />
-                </span>
-              </Tooltip>
-            </IconMetaWrapper>
-          }
+          meta="Next.js :: Radix UI :: Tailwind CSS"
         >
           The best experience for monitoring activity on multiple eBay search
           terms.
@@ -266,23 +148,7 @@ function Projects() {
           label="Sold"
           href="https://sold.zslabs.com"
           icon={<Sold />}
-          meta={
-            <IconMetaWrapper>
-              <Tooltip content="Next.js">
-                <span className={css({ fontSize: 'lg' })}>
-                  <NextJS />
-                </span>
-              </Tooltip>
-              <Tooltip content="React Aria Components">
-                <ReactAria />
-              </Tooltip>
-              <Tooltip content="Tailwind CSS">
-                <span className={css({ fontSize: 'lg' })}>
-                  <TailwindCSS />
-                </span>
-              </Tooltip>
-            </IconMetaWrapper>
-          }
+          meta="Next.js :: React Aria Components :: Tailwind CSS"
         >
           Toolkit for gauging market-prices and trends on eBay.
         </ListItem>
