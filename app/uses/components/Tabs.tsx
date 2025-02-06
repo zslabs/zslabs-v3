@@ -100,7 +100,7 @@ function Gear() {
         label="MacBook Pro (15-inch, 2019)"
       >
         Stuck with the &apos;ole touch-bar for now, but very much looking
-        forward to giving the M2 models a shot.
+        forward to giving the M[WHATEVER IS THE LATEST] models a shot.
       </ListItem>
       <ListItem
         href="https://www.apple.com/iphone-15-pro/"
