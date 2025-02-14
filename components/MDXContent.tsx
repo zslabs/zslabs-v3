@@ -104,13 +104,13 @@ const components: MDXComponents = {
   CodePen,
   TextLink,
   pre: ({
-    __rawString__,
+    rawCode,
     ...rest
   }: React.HTMLAttributes<HTMLPreElement> & {
-    __rawString__: string
+    rawCode: string
   }) => {
     return (
-      <CodeWrapper codeString={__rawString__}>
+      <CodeWrapper codeString={rawCode}>
         <pre
           className={css({
             display: 'grid',
