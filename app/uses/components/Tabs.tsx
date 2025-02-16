@@ -7,9 +7,9 @@ import { Tabs as TabsRoot, TabList, Tab, TabPanel } from 'react-aria-components'
 
 import { List, ListItem } from '@/components/List'
 import OnePassword from '@/icons/1password.svg'
-import Arc from '@/icons/arc.svg'
 import Backback from '@/icons/backpack.svg'
 import Dock from '@/icons/dock.svg'
+import Edge from '@/icons/edge.svg'
 import Figma from '@/icons/figma.svg'
 import GitHub from '@/icons/github.svg'
 import Iphone from '@/icons/iphone.svg'
@@ -53,8 +53,8 @@ function Software() {
       >
         The easiest window-management tool I&apos;ve ever used.
       </ListItem>
-      <ListItem icon={<Arc />} label="Arc" href="https://arc.net/gift/1bc5ff">
-        Giving the new kid on the block a shot; so far, so good.
+      <ListItem icon={<Edge />} label="Edge" href="https://microsoft.com/edge">
+        Microsoft has really stepped-up their browser game.
       </ListItem>
       <ListItem icon={<Terminal />} label="Warp" href="https://www.warp.dev/">
         The built-in terminal in VS Code is fine; though I&apos;m fortunate
