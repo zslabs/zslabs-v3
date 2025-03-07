@@ -47,6 +47,10 @@ export default function Tooltip({
           color: 'slate.12',
           fontSize: 'sm',
           textAlign: 'center',
+          borderWidth: '2',
+          borderColor: 'black.a.11',
+          borderStyle: 'solid',
+          boxShadow: 'inset',
 
           '&[data-placement=top]': {
             animation: 'slide-up-fade',
