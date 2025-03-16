@@ -56,7 +56,7 @@ function Software() {
       <ListItem icon={<Edge />} label="Edge" href="https://microsoft.com/edge">
         Microsoft has really stepped-up their browser game.
       </ListItem>
-      <ListItem icon={<Terminal />} label="Warp" href="https://www.warp.dev/">
+      <ListItem icon={<Terminal />} label="iTerm2" href="https://iterm2.com/">
         The built-in terminal in VS Code is fine; though I&apos;m fortunate
         enough to have the screen real-estate for a dedicated, always-open
         terminal.
