@@ -64,7 +64,7 @@ export default function CodeWrapper({ codeString, children }: CodeProps) {
                 width: '3',
                 height: '3',
                 borderRadius: 'full',
-                backgroundColor: 'green.9',
+                backgroundColor: 'jade.9',
               })}
             />
           </div>

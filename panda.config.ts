@@ -2,17 +2,6 @@ import { defineKeyframes, defineTextStyles } from '@pandacss/dev'
 import { defineTokens } from '@pandacss/dev'
 import { defineConfig, defineGlobalStyles } from '@pandacss/dev'
 import pandaPreset from '@pandacss/preset-panda'
-import {
-  slateDarkP3,
-  blueDarkP3,
-  irisDarkP3,
-  yellowDarkP3,
-  tomatoDarkP3,
-  greenDarkP3,
-  whiteP3A,
-  blackP3A,
-  slateDarkP3A,
-} from '@radix-ui/colors'
 import { produce } from 'immer'
 
 const isProd = process.env.VERCEL_ENV === 'production'
@@ -23,35 +12,138 @@ const preset = produce(pandaPreset, (draft) => {
   delete draft.theme.tokens.colors
 })
 
-interface ColorSets {
-  [key: string]: { [key: string]: string }
-}
+const colors = {
+  slate: {
+    1: { value: 'oklch(17.853% 0.00407 285.9841)' },
+    2: { value: 'oklch(21.318% 0.00421 264.41128)' },
+    3: { value: 'oklch(25.214% 0.00582 271.18119)' },
+    4: { value: 'oklch(28.319% 0.00699 248.06152)' },
+    5: { value: 'oklch(31.177% 0.0083 255.56204)' },
+    6: { value: 'oklch(34.655% 0.01029 253.97812)' },
+    7: { value: 'oklch(39.928% 0.01206 252.9322)' },
+    8: { value: 'oklch(48.932% 0.01551 251.7052)' },
+    9: { value: 'oklch(53.7% 0.01532 262.34603)' },
+    10: { value: 'oklch(58.251% 0.01455 266.61041)' },
+    11: { value: 'oklch(76.856% 0.00964 258.3287)' },
+    12: { value: 'oklch(94.892% 0.00288 264.62562)' },
 
-// Create new color tokens using `@radix-ui/colors`
-const colorSets: ColorSets = {
-  slate: slateDarkP3,
-  'slate.a': slateDarkP3A,
-  blue: blueDarkP3,
-  iris: irisDarkP3,
-  yellow: yellowDarkP3,
-  tomato: tomatoDarkP3,
-  green: greenDarkP3,
-  'white.a': whiteP3A,
-  'black.a': blackP3A,
-}
-
-const colors: { [key: string]: { [key: string]: { value: string } } } = {}
-
-for (const colorSetName in colorSets) {
-  colors[colorSetName] = {}
-  const colorSet = colorSets[colorSetName]
-  let index = 1
-  for (const colorKey in colorSet) {
-    colors[colorSetName][index.toString()] = {
-      value: colorSet[colorKey],
-    }
-    index++
-  }
+    a: {
+      1: { value: 'oklch(0% 0 0 / 0%)' },
+      2: { value: 'oklch(94.75% 0.02936 201.89926 / 4%)' },
+      3: { value: 'oklch(93.148% 0.02357 250.08128 / 8%)' },
+      4: { value: 'oklch(93.047% 0.0312 225.10389 / 11%)' },
+      5: { value: 'oklch(93.649% 0.03139 243.71253 / 15%)' },
+      6: { value: 'oklch(93.007% 0.03315 243.96824 / 19%)' },
+      7: { value: 'oklch(93.681% 0.0324 245.30143 / 25%)' },
+      8: { value: 'oklch(93.681% 0.0324 245.30143 / 36%)' },
+      9: { value: 'oklch(93.647% 0.02761 258.36039 / 43%)' },
+      10: { value: 'oklch(94.481% 0.02325 264.44635 / 48%)' },
+      11: { value: 'oklch(97.363% 0.01134 252.07632 / 71%)' },
+      12: { value: 'oklch(99.385% 0.00285 264.56919 / 94%)' },
+    },
+  },
+  blue: {
+    1: { value: 'oklch(19.361% 0.0255 256.48154)' },
+    2: { value: 'oklch(21.293% 0.03033 261.25815)' },
+    3: { value: 'oklch(27.447% 0.06629 253.92995)' },
+    4: { value: 'oklch(32.014% 0.09678 252.34577)' },
+    5: { value: 'oklch(36.71% 0.10588 250.70255)' },
+    6: { value: 'oklch(41.603% 0.11326 252.00498)' },
+    7: { value: 'oklch(47.411% 0.12187 253.08911)' },
+    8: { value: 'oklch(54.057% 0.13953 253.17411)' },
+    9: { value: 'oklch(64.929% 0.19304 251.77905)' },
+    10: { value: 'oklch(68.838% 0.16932 251.4024)' },
+    11: { value: 'oklch(76.422% 0.12575 249.46529)' },
+    12: { value: 'oklch(90.712% 0.05104 238.44324)' },
+  },
+  iris: {
+    1: { value: 'oklch(19.236% 0.02213 284.12416)' },
+    2: { value: 'oklch(20.911% 0.02946 286.60796)' },
+    3: { value: 'oklch(27.219% 0.06935 278.45724)' },
+    4: { value: 'oklch(31.81% 0.10227 275.99434)' },
+    5: { value: 'oklch(35.683% 0.10955 277.30536)' },
+    6: { value: 'oklch(40.035% 0.11168 279.4522)' },
+    7: { value: 'oklch(44.848% 0.11985 280.42201)' },
+    8: { value: 'oklch(50.685% 0.13766 280.8063)' },
+    9: { value: 'oklch(54.031% 0.18412 278.28457)' },
+    10: { value: 'oklch(58.68% 0.17174 281.2589)' },
+    11: { value: 'oklch(77.429% 0.12152 287.46428)' },
+    12: { value: 'oklch(91.398% 0.04204 287.01255)' },
+  },
+  jade: {
+    1: { value: 'oklch(18.639% 0.01352 169.77851)' },
+    2: { value: 'oklch(21.515% 0.01651 168.18641)' },
+    3: { value: 'oklch(27.36% 0.04342 165.18928)' },
+    4: { value: 'oklch(31.624% 0.05718 167.619)' },
+    5: { value: 'oklch(36.117% 0.06388 168.16585)' },
+    6: { value: 'oklch(41.272% 0.06868 169.57354)' },
+    7: { value: 'oklch(46.84% 0.07584 170.26817)' },
+    8: { value: 'oklch(53.651% 0.08747 172.23395)' },
+    9: { value: 'oklch(64.215% 0.11502 170.7293)' },
+    10: { value: 'oklch(67.775% 0.12556 169.56536)' },
+    11: { value: 'oklch(78.524% 0.15591 167.11005)' },
+    12: { value: 'oklch(90.268% 0.07756 166.87581)' },
+  },
+  yellow: {
+    1: { value: 'oklch(18.208% 0.01392 94.03578)' },
+    2: { value: 'oklch(20.947% 0.01736 91.81568)' },
+    3: { value: 'oklch(26.094% 0.04715 90.25519)' },
+    4: { value: 'oklch(29.29% 0.06003 93.80138)' },
+    5: { value: 'oklch(33.464% 0.06848 92.46048)' },
+    6: { value: 'oklch(38.49% 0.07762 92.90959)' },
+    7: { value: 'oklch(45.205% 0.08089 91.96956)' },
+    8: { value: 'oklch(53.491% 0.09467 89.38264)' },
+    9: { value: 'oklch(91.758% 0.18377 100.9351)' },
+    10: { value: 'oklch(97.11% 0.18192 109.35723)' },
+    11: { value: 'oklch(90.011% 0.16638 101.71449)' },
+    12: { value: 'oklch(94.155% 0.07484 101.10875)' },
+  },
+  tomato: {
+    1: { value: 'oklch(18.662% 0.01175 18.24993)' },
+    2: { value: 'oklch(20.783% 0.01698 31.44396)' },
+    3: { value: 'oklch(25.474% 0.05477 26.76156)' },
+    4: { value: 'oklch(29.024% 0.08662 27.75731)' },
+    5: { value: 'oklch(33.11% 0.09753 28.62781)' },
+    6: { value: 'oklch(38.001% 0.10033 29.89717)' },
+    7: { value: 'oklch(44.636% 0.10625 31.60927)' },
+    8: { value: 'oklch(53.806% 0.12937 33.40633)' },
+    9: { value: 'oklch(62.708% 0.19359 33.33791)' },
+    10: { value: 'oklch(66.429% 0.17859 34.08603)' },
+    11: { value: 'oklch(77.935% 0.13103 34.90533)' },
+    12: { value: 'oklch(89.867% 0.0465 31.23213)' },
+  },
+  black: {
+    a: {
+      1: { value: 'oklch(0% 0 0 / 0.05)' },
+      2: { value: 'oklch(0% 0 0 / 0.1)' },
+      3: { value: 'oklch(0% 0 0 / 0.15)' },
+      4: { value: 'oklch(0% 0 0 / 0.2)' },
+      5: { value: 'oklch(0% 0 0 / 0.3)' },
+      6: { value: 'oklch(0% 0 0 / 0.4)' },
+      7: { value: 'oklch(0% 0 0 / 0.5)' },
+      8: { value: 'oklch(0% 0 0 / 0.6)' },
+      9: { value: 'oklch(0% 0 0 / 0.7)' },
+      10: { value: 'oklch(0% 0 0 / 0.8)' },
+      11: { value: 'oklch(0% 0 0 / 0.9)' },
+      12: { value: 'oklch(0% 0 0 / 0.95)' },
+    },
+  },
+  white: {
+    a: {
+      1: { value: 'oklch(100% 0 0 / 0.05)' },
+      2: { value: 'oklch(100% 0 0 / 0.1)' },
+      3: { value: 'oklch(100% 0 0 / 0.15)' },
+      4: { value: 'oklch(100% 0 0 / 0.2)' },
+      5: { value: 'oklch(100% 0 0 / 0.3)' },
+      6: { value: 'oklch(100% 0 0 / 0.4)' },
+      7: { value: 'oklch(100% 0 0 / 0.5)' },
+      8: { value: 'oklch(100% 0 0 / 0.6)' },
+      9: { value: 'oklch(100% 0 0 / 0.7)' },
+      10: { value: 'oklch(100% 0 0 / 0.8)' },
+      11: { value: 'oklch(100% 0 0 / 0.9)' },
+      12: { value: 'oklch(100% 0 0 / 0.95)' },
+    },
+  },
 }
 
 // @SOURCE https://github.com/cschroeter/park-ui/blob/main/plugins/panda/src/theme/tokens/easings.ts
@@ -212,7 +304,7 @@ export default defineConfig({
           },
           default: {
             value:
-              'inset 0 1px 0 0 {colors.white.a.2}, inset 0 -2px 0 0 {colors.black.a.4}, -15px 0 30px -5px {colors.iris.5}, 0 0 30px -5px {colors.blue.5}, 15px 0 30px -5px {colors.green.5}',
+              'inset 0 1px 0 0 {colors.white.a.2}, inset 0 -2px 0 0 {colors.black.a.4}, -15px 0 30px -5px {colors.iris.5}, 0 0 30px -5px {colors.blue.5}, 15px 0 30px -5px {colors.jade.5}',
           },
         },
       },
