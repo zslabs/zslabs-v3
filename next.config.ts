@@ -1,6 +1,21 @@
 import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
+  turbopack: {
+    rules: {
+      '*.svg': {
+        loaders: [
+          {
+            loader: '@svgr/webpack',
+            options: {
+              icon: true, // Convert SVGs to a 1:1 aspect ratio for icons
+            },
+          },
+        ],
+        as: '*.js',
+      },
+    },
+  },
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
@@ -18,21 +33,6 @@ const nextConfig: NextConfig = {
   },
   experimental: {
     reactCompiler: true,
-    turbo: {
-      rules: {
-        '*.svg': {
-          loaders: [
-            {
-              loader: '@svgr/webpack',
-              options: {
-                icon: true, // Convert SVGs to a 1:1 aspect ratio for icons
-              },
-            },
-          ],
-          as: '*.js',
-        },
-      },
-    },
   },
 }
 

@@ -120,10 +120,10 @@ function Gear() {
       </ListItem>
       <ListItem
         icon={<Monitor />}
-        label="Samsung M80C"
-        href="https://amzn.to/47ZTBLK"
+        label='Dell UltraSharp 40" monitor'
+        href="https://amzn.to/4iaUwh0"
       >
-        One front and center, with the other rotated 90º to my left.
+        5k, 120hz; what&apos;s not to love?!
       </ListItem>
       <ListItem
         icon={<Mouse />}
