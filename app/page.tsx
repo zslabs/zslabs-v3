@@ -1,5 +1,7 @@
 import * as React from 'react'
 
+import Link from 'next/link'
+
 import posts from '@/articles.json'
 import { DivButton } from '@/components/Button'
 import HomepageWrapper from '@/components/HomepageWrapper'
@@ -10,6 +12,7 @@ import SectionTitle from '@/components/SectionTitle'
 import TextLink from '@/components/TextLink'
 import Brush from '@/icons/brush.svg'
 import Collection from '@/icons/collection.svg'
+import CSS from '@/icons/css.svg'
 import Icons from '@/icons/icons.svg'
 import ListProject from '@/icons/list.svg'
 import MountainSnow from '@/icons/mountain-snow.svg'
@@ -86,14 +89,14 @@ function Projects() {
     <section id="projects">
       <SectionTitle>Projects</SectionTitle>
       <List>
-        <ListItem
-          label="Wes Anderslack"
-          icon={<WesAnderSlack />}
-          href="https://wesanderslack.zslabs.com"
-          meta="Next.js :: React Aria Components :: Tailwind CSS"
-        >
-          While the original was lost to time, I decided to bring back a
-          fan-favorite; honoring a great director of some of my favorite movies.
+        <ListItem label="CSS infrastructure" icon={<CSS />} meta="Slack">
+          As technical lead of CSS infrastructure at Slack, I&apos;ve
+          implemented technologies that help engineers write code safer and more
+          efficiently; while also developing a migration path for our legacy
+          build system to a unified architecture that provides the same benefits
+          to all parts of the product. I&apos;m an advocate for modern
+          practices, that help us rely less on client-side logic for more
+          performant experiences.
         </ListItem>
         <ListItem label="Theming" icon={<Brush />} meta="Slack :: Figma">
           Technical and team lead for Slack&apos;s new theming infrastructure
@@ -109,15 +112,31 @@ function Projects() {
         </ListItem>
         <ListItem label="Design tokens" icon={<Tokens />} meta="Slack :: Figma">
           Build tool that uses Figma design primitives to scale across desktop,
-          iOS, and Android.
+          iOS, and Android. This design system is the basis for all experiences
+          across Slack; which also includes custom{' '}
+          <Link href="https://lightningcss.dev/transforms.html" target="_blank">
+            Lightning CSS transforms
+          </Link>{' '}
+          to enable engineers to reference generated values quickly.
         </ListItem>
         <ListItem
           label="Icon automation library"
           icon={<Icons />}
           meta="Slack :: Figma"
         >
-          Build tool that integrates with Figma API to extract and create SVG
-          icons for use across desktop, iOS, and Android.
+          Build tool that integrates with the Figma API to extract and create
+          SVG icons for use across desktop, iOS, and Android. This library takes
+          the place of an antiquated process which normally took hours; can now
+          be built and released across all Slack platforms in minutes.
+        </ListItem>
+        <ListItem
+          label="Wes Anderslack"
+          icon={<WesAnderSlack />}
+          href="https://wesanderslack.zslabs.com"
+          meta="Next.js :: React Aria Components :: Tailwind CSS"
+        >
+          While the original was lost to time, I decided to bring back a
+          fan-favorite; honoring a great director of some of my favorite movies.
         </ListItem>
         <ListItem
           label="Profile"
