@@ -8,7 +8,6 @@ import { Tabs as TabsRoot, TabList, Tab, TabPanel } from 'react-aria-components'
 import { List, ListItem } from '@/components/List'
 import OnePassword from '@/icons/1password.svg'
 import Backback from '@/icons/backpack.svg'
-import Dock from '@/icons/dock.svg'
 import Edge from '@/icons/edge.svg'
 import Figma from '@/icons/figma.svg'
 import GitHub from '@/icons/github.svg'
@@ -146,14 +145,6 @@ function Gear() {
       >
         I spent way too much time researching backpacks, but this is a
         much-needed, dual-purpose upgrade that I&apos;m happy to add.
-      </ListItem>
-      <ListItem
-        href="https://amzn.to/3TnaoSf"
-        icon={<Dock />}
-        label="CalDigit TS3 Plus Dock"
-      >
-        Having a single cord (with power) that connects all my devices to my
-        laptop is great!
       </ListItem>
       <ListItem
         href="https://amzn.to/3dGpYIp"
