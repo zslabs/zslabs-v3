@@ -94,12 +94,12 @@ function Gear() {
   return (
     <List>
       <ListItem
-        href="https://amzn.to/3AuEVVV"
+        href="https://amzn.to/4dx5sog"
         icon={<MBPro />}
-        label="MacBook Pro (15-inch, 2019)"
+        label={`MacBook Pro 16" M3 Max`}
       >
-        Stuck with the &apos;ole touch-bar for now, but very much looking
-        forward to giving the M[WHATEVER IS THE LATEST] models a shot.
+        Recently upgraded from a 2019 i9; leaps and bounds better across the
+        board!
       </ListItem>
       <ListItem
         href="https://www.apple.com/iphone-15-pro/"
