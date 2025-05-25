@@ -10,6 +10,7 @@ import OnePassword from '@/icons/1password.svg'
 import Backback from '@/icons/backpack.svg'
 import Edge from '@/icons/edge.svg'
 import Figma from '@/icons/figma.svg'
+import Ghost from '@/icons/ghost.svg'
 import GitHub from '@/icons/github.svg'
 import Iphone from '@/icons/iphone.svg'
 import Keyboard from '@/icons/keyboard.svg'
@@ -20,7 +21,6 @@ import Mouse from '@/icons/mouse.svg'
 import Rectangle from '@/icons/rectangle.svg'
 import Reminders from '@/icons/reminders.svg'
 import Stand from '@/icons/stand.svg'
-import Terminal from '@/icons/terminal.svg'
 import VSCode from '@/icons/vs-code.svg'
 import Watch from '@/icons/watch.svg'
 import { css } from '@css/css'
@@ -55,7 +55,7 @@ function Software() {
       <ListItem icon={<Edge />} label="Edge" href="https://microsoft.com/edge">
         Microsoft has really stepped-up their browser game.
       </ListItem>
-      <ListItem icon={<Terminal />} label="iTerm2" href="https://iterm2.com/">
+      <ListItem icon={<Ghost />} label="Ghostty" href="https://ghostty.org">
         The built-in terminal in VS Code is fine; though I&apos;m fortunate
         enough to have the screen real-estate for a dedicated, always-open
         terminal.
