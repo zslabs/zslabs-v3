@@ -75,6 +75,15 @@ const footerVariants: Variants = {
 }
 
 const headerIconStyles = css({
+  display: 'block',
+  width: 'fit',
+  borderRadius: 'full',
+  backgroundColor: 'black.a.8',
+  boxShadow: 'slate',
+  padding: '2',
+  borderWidth: '1',
+  borderColor: 'slate.7',
+  borderStyle: 'solid',
   fontSize: 'xl',
   color: 'slate.11',
   transitionProperty: 'color',
@@ -125,7 +134,7 @@ export default function BaseLayout({ children }: ChildrenOnlyProps) {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
-            gap: '6',
+            gap: '4',
 
             md: {
               marginBlockEnd: '16',
@@ -152,7 +161,7 @@ export default function BaseLayout({ children }: ChildrenOnlyProps) {
 
           <div
             className={css({
-              gap: '6',
+              gap: '4',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'end',

@@ -11,12 +11,16 @@ export default function MoreArticlesLink() {
       <TextLink
         href="/articles"
         className={css({
-          borderRadius: 'full',
-          backgroundColor: 'black.a.8',
-          padding: '1',
-          fontSize: 'xl',
           display: 'block',
           width: 'fit',
+          borderRadius: 'full',
+          backgroundColor: 'black.a.8',
+          boxShadow: 'slate',
+          padding: '2',
+          borderWidth: '1',
+          borderColor: 'slate.7',
+          borderStyle: 'solid',
+          fontSize: 'xl',
         })}
       >
         <More />

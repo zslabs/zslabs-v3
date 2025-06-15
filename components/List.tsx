@@ -6,6 +6,7 @@ import { motion } from 'framer-motion'
 
 import Prose from './Prose'
 
+import { Tilt } from '@/components/motion-primitives/tilt'
 import TextLink from '@/components/TextLink'
 import { fadeInUp, viewportInViewOptions } from '@/helpers/styles'
 import ArrowDown from '@/icons/arrow-down.svg'
@@ -75,7 +76,11 @@ export function ListItem({
             alignSelf: 'start',
             borderRadius: 'full',
             backgroundColor: 'black.a.8',
-            padding: '1',
+            boxShadow: 'slate',
+            padding: '2',
+            borderWidth: '1',
+            borderColor: 'slate.7',
+            borderStyle: 'solid',
             fontSize: 'xl',
           })}
         >
@@ -190,71 +195,73 @@ export function BoxListItem({
       variants={fadeInUp}
       viewport={viewportInViewOptions}
     >
-      <TextLink
-        href={href}
-        className={`group ${css({
-          borderWidth: '1',
-          borderColor: 'slate.a.5',
-          borderRadius: 'xl',
-          padding: '4',
-          outlineWidth: '4',
-          outlineStyle: 'solid',
-          outlineColor: 'slate.a.2',
-          backgroundGradient: 'to-b',
-          gradientFrom: 'slate.a.1',
-          gradientTo: 'slate.a.2',
-          boxShadow: 'sm',
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '3',
-          height: 'full',
-        })}`}
-      >
-        <div
-          className={css({
-            flex: '1',
+      <Tilt>
+        <TextLink
+          href={href}
+          className={`group ${css({
+            borderWidth: '1',
+            borderColor: 'slate.a.5',
+            borderRadius: 'xl',
+            padding: '4',
+            outlineWidth: '4',
+            outlineStyle: 'solid',
+            outlineColor: 'slate.a.2',
+            backgroundGradient: 'to-b',
+            gradientFrom: 'slate.a.1',
+            gradientTo: 'slate.a.2',
+            boxShadow: 'sm',
             display: 'flex',
             flexDirection: 'column',
-            gap: '2',
-          })}
+            gap: '3',
+            height: 'full',
+          })}`}
         >
-          <span
+          <div
             className={css({
-              textDecorationLine: 'underline',
-              textDecorationStyle: 'dotted',
-              textUnderlineOffset: '4',
-              transitionProperty: 'all',
-              transitionDuration: 'fast',
-              transitionTimingFunction: 'default',
-              _groupHover: {
-                textUnderlineOffset: '6',
-              },
+              flex: '1',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '2',
             })}
           >
-            {label}
-          </span>
-          {children && (
-            <Prose>
-              <p>{children}</p>
-            </Prose>
-          )}
-        </div>
-        <div>
-          {meta && (
-            <div
+            <span
               className={css({
-                fontSize: 'sm',
-                textStyle: 'mono',
-                textTransform: 'uppercase',
-                letterSpacing: 'normal',
+                textDecorationLine: 'underline',
+                textDecorationStyle: 'dotted',
+                textUnderlineOffset: '4',
+                transitionProperty: 'all',
+                transitionDuration: 'fast',
+                transitionTimingFunction: 'default',
+                _groupHover: {
+                  textUnderlineOffset: '6',
+                },
               })}
-              data-code
             >
-              {meta}
-            </div>
-          )}
-        </div>
-      </TextLink>
+              {label}
+            </span>
+            {children && (
+              <Prose>
+                <p>{children}</p>
+              </Prose>
+            )}
+          </div>
+          <div>
+            {meta && (
+              <div
+                className={css({
+                  fontSize: 'sm',
+                  textStyle: 'mono',
+                  textTransform: 'uppercase',
+                  letterSpacing: 'normal',
+                })}
+                data-code
+              >
+                {meta}
+              </div>
+            )}
+          </div>
+        </TextLink>
+      </Tilt>
     </motion.li>
   )
 }
