@@ -39,7 +39,7 @@ const styles = cva({
       '--bg-size': 'calc(100% + (2px * var(--border)))',
       '--alpha': 0,
       '--gradient':
-        'linear-gradient(to bottom right, oklch(var(--stroke) / 0.125),oklch(var(--stroke) / 0.0625))',
+        'linear-gradient(to bottom right, oklch(var(--stroke) / 0.125), oklch(var(--stroke) / 0.0625))',
       content: '""',
       pointerEvents: 'none',
       position: 'absolute',
@@ -58,8 +58,12 @@ const styles = cva({
     },
 
     _hover: {
-      transform: 'scale(1.05)',
+      scale: '1.05',
       outlineColor: 'white.a.4',
+    },
+
+    _active: {
+      scale: '1',
     },
   },
   variants: {

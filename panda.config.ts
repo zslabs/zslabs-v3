@@ -406,6 +406,13 @@ export default defineConfig({
           ooorganize: 'url(/media/ooorganize-bg.svg)',
         },
       },
+      scale: {
+        values: {
+          '1.05': '1.05',
+          '1': '1',
+          '0.95': '0.95',
+        },
+      },
       willChange: {
         values: ['opacity', 'transform'],
       },
