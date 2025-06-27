@@ -195,7 +195,7 @@ export function BoxListItem({
       variants={fadeInUp}
       viewport={viewportInViewOptions}
     >
-      <Tilt>
+      <Tilt isRevese rotationFactor={6}>
         <TextLink
           href={href}
           className={`group ${css({
