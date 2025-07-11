@@ -42,6 +42,7 @@ export default function CopySnippet({ codeString }: { codeString: string }) {
       <span
         className={css({
           display: 'none',
+          color: 'jade.9',
 
           _groupActive: {
             display: 'block',
