@@ -197,7 +197,13 @@ export function BoxListItem({
       variants={fadeInUp}
       viewport={viewportInViewOptions}
     >
-      <Tilt isRevese rotationFactor={6}>
+      <Tilt
+        isRevese
+        rotationFactor={6}
+        className={css({
+          height: 'full',
+        })}
+      >
         <TextLink
           href={href}
           className={`group ${css({
