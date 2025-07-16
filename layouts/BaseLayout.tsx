@@ -3,8 +3,8 @@
 import * as React from 'react'
 
 import type {
-  AnimationControls,
-  AnimationProps,
+  LegacyAnimationControls as AnimationControls,
+  Transition,
   HTMLMotionProps,
   Variants,
 } from 'framer-motion'
@@ -48,7 +48,7 @@ function HeaderItemWrapper({
   custom,
   ...rest
 }: HeaderItemWrapperProps & HTMLMotionProps<'div'>) {
-  const transition: AnimationProps['transition'] = {
+  const transition: Transition = {
     delay: custom * 0.25,
   }
 

@@ -35,10 +35,6 @@
     { "source": "/articles/journey-to-sublime", "destination": "/" },
     { "source": "/articles/hello-kirby", "destination": "/" },
     {
-      "source": "/articles/i-❤%EF%B8%8F-loaders/",
-      "destination": "/articles/i-love-loaders/"
-    },
-    {
       "source": "/contact",
       "destination": "/"
     }

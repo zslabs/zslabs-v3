@@ -4,6 +4,9 @@ import { defineConfig, defineGlobalStyles } from '@pandacss/dev'
 import pandaPreset from '@pandacss/preset-panda'
 import { produce } from 'immer'
 
+import { removeUnusedKeyframes } from '@/postcss/remove-unused-keyframes'
+import { removeUnusedCssVars } from '@/postcss/remove-unused-vars'
+
 const isProd = process.env.VERCEL_ENV === 'production'
 
 // Cleanup old color tokens we're not using from the default preset
@@ -435,4 +438,11 @@ export default defineConfig({
     },
   },
   globalCss,
+  hooks: {
+    'cssgen:done': ({ artifact, content }) => {
+      if (artifact === 'styles.css') {
+        return removeUnusedCssVars(removeUnusedKeyframes(content))
+      }
+    },
+  },
 })
