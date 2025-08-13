@@ -14,7 +14,7 @@ export default function MoreArticlesLink() {
           display: 'block',
           width: 'fit',
           borderRadius: 'full',
-          backgroundGradient: 'to-b',
+          backgroundLinear: 'to-b',
           gradientFrom: 'slate.2',
           gradientTo: 'slate.1',
           boxShadow: 'slate',

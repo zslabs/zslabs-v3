@@ -69,13 +69,13 @@ const styles = cva({
   variants: {
     variation: {
       default: {
-        backgroundGradient: 'to-b',
+        backgroundLinear: 'to-b',
         gradientFrom: 'slate.2',
         gradientTo: 'slate.1',
         boxShadow: 'default',
       },
       contrast: {
-        backgroundGradient: 'to-b',
+        backgroundLinear: 'to-b',
         gradientFrom: 'slate.12',
         gradientTo: 'slate.11',
         color: 'slate.1',

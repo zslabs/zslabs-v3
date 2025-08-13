@@ -206,7 +206,7 @@ export default function Tabs() {
                       insetBlockEnd: '-1.5',
                       height: '0.5',
                       borderRadius: 'full',
-                      backgroundGradient: 'to-r',
+                      backgroundLinear: 'to-r',
                       gradientFrom: 'blue.9',
                       gradientTo: 'iris.9',
                     })}
