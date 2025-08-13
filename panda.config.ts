@@ -438,6 +438,7 @@ export default defineConfig({
     },
   },
   globalCss,
+  /*
   hooks: {
     'cssgen:done': ({ artifact, content }) => {
       if (artifact === 'styles.css') {
@@ -445,4 +446,5 @@ export default defineConfig({
       }
     },
   },
+  */
 })
