@@ -1,19 +1,9 @@
 import { defineKeyframes, defineTextStyles } from '@pandacss/dev'
 import { defineTokens } from '@pandacss/dev'
 import { defineConfig, defineGlobalStyles } from '@pandacss/dev'
-import pandaPreset from '@pandacss/preset-panda'
-import { produce } from 'immer'
-
-import { removeUnusedKeyframes } from '@/postcss/remove-unused-keyframes'
-import { removeUnusedCssVars } from '@/postcss/remove-unused-vars'
+import preset from '@pandacss/preset-panda'
 
 const isProd = process.env.VERCEL_ENV === 'production'
-
-// Cleanup old color tokens we're not using from the default preset
-const preset = produce(pandaPreset, (draft) => {
-  // @ts-expect-error Stingy types
-  delete draft.theme.tokens.colors
-})
 
 const colors = {
   slate: {
@@ -438,13 +428,15 @@ export default defineConfig({
     },
   },
   globalCss,
-  /*
   hooks: {
-    'cssgen:done': ({ artifact, content }) => {
-      if (artifact === 'styles.css') {
-        return removeUnusedCssVars(removeUnusedKeyframes(content))
+    'preset:resolved': ({ utils, preset, name }) => {
+      if (name === '@pandacss/preset-panda') {
+        return utils.omit(preset, [
+          'theme.tokens.colors',
+          'theme.semanticTokens.colors',
+        ])
       }
+      return preset
     },
   },
-  */
 })
