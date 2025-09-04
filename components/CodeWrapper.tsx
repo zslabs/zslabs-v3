@@ -14,6 +14,9 @@ export default function CodeWrapper({ codeString, children }: CodeProps) {
         textStyle: 'mono',
         fontWeight: 'normal',
         letterSpacing: 'normal',
+        borderWidth: '1',
+        borderStyle: 'solid',
+        borderColor: 'slate.a.3',
       })}
       data-code
     >
@@ -28,6 +31,9 @@ export default function CodeWrapper({ codeString, children }: CodeProps) {
           paddingBlock: '2',
           paddingInline: '4',
           backgroundColor: 'black.a.11',
+          borderBlockEndWidth: '1',
+          borderStyle: 'solid',
+          borderColor: 'slate.a.3',
         })}
       >
         <div

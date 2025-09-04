@@ -53,6 +53,9 @@ function Image({
             inset: '-2',
             zIndex: '-1',
             borderRadius: 'xl',
+            borderWidth: '1',
+            borderStyle: 'solid',
+            borderColor: 'slate.a.3',
             backgroundColor: 'black.a.8',
           })}
         />
@@ -62,7 +65,7 @@ function Image({
           height={height}
           width={width}
           className={css({
-            borderRadius: 'xl',
+            borderRadius: 'lg',
           })}
         />
       </div>
