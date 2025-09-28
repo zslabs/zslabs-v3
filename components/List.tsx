@@ -110,7 +110,7 @@ export function ListItem({
                   textDecorationLine: 'underline',
                   textDecorationStyle: 'dotted',
                   textUnderlineOffset: '4',
-                  transitionProperty: 'all',
+                  transitionProperty: 'textUnderlineOffset',
                   transitionDuration: 'fast',
                   transitionTimingFunction: 'default',
                   willChange: 'transform',
@@ -237,7 +237,7 @@ export function BoxListItem({
                 textDecorationLine: 'underline',
                 textDecorationStyle: 'dotted',
                 textUnderlineOffset: '4',
-                transitionProperty: 'all',
+                transitionProperty: 'textUnderlineOffset',
                 transitionDuration: 'fast',
                 transitionTimingFunction: 'default',
                 _groupHover: {

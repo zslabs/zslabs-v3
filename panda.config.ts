@@ -406,6 +406,15 @@ export default defineConfig({
           '0.95': '0.95',
         },
       },
+      transitionProperty: {
+        values: [
+          'opacity',
+          'transform',
+          'color',
+          'scale',
+          'textUnderlineOffset',
+        ],
+      },
       willChange: {
         values: ['opacity', 'transform'],
       },

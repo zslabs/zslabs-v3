@@ -36,7 +36,7 @@ const Prose = ({ children, ...rest }: ProseProps) => {
           textDecorationLine: 'underline',
           textUnderlineOffset: '4',
           textDecorationStyle: 'dotted',
-          transitionProperty: 'all',
+          transitionProperty: 'textUnderlineOffset',
           transitionDuration: 'fast',
           transitionTimingFunction: 'default',
 
