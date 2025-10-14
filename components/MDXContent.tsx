@@ -130,6 +130,7 @@ export default function MDXContent({ code }: { code: string }) {
 
   return (
     <Prose>
+      {/* eslint-disable-next-line react-hooks/static-components */}
       <Component components={components} />
     </Prose>
   )

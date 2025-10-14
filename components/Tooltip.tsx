@@ -23,6 +23,7 @@ function TriggerWrapper(props: any) {
 
   return React.cloneElement(
     props.children,
+    // eslint-disable-next-line react-hooks/refs
     mergeProps(buttonProps, props.children.props, { ref: triggerRef })
   )
 }

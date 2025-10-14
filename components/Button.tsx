@@ -45,7 +45,6 @@ const styles = cva({
       position: 'absolute',
       inset: '0',
       background:
-        // eslint-disable-next-line
         'var(--gradient) center center / var(--bg-size) var(--bg-size)',
       borderRadius: 'xl',
       borderWidth: '1px',

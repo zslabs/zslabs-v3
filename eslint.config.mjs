@@ -4,6 +4,7 @@ import { fileURLToPath } from 'url'
 import { FlatCompat } from '@eslint/eslintrc'
 import panda from '@pandacss/eslint-plugin'
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
+import reactHooks from 'eslint-plugin-react-hooks'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
@@ -18,6 +19,7 @@ export default [
     ignores: ['dist', 'build', 'node_modules', '.next', 'styled-system'],
   },
   ...compat.extends('next/core-web-vitals', 'next/typescript'),
+  reactHooks.configs.flat['recommended-latest'],
   {
     plugins: {
       '@pandacss': panda,
