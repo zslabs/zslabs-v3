@@ -1,30 +1,23 @@
-import { dirname } from 'path'
-import { fileURLToPath } from 'url'
-
-import { FlatCompat } from '@eslint/eslintrc'
 import panda from '@pandacss/eslint-plugin'
+import { defineConfig, globalIgnores } from 'eslint/config'
+import nextVitals from 'eslint-config-next/core-web-vitals'
+import nextTs from 'eslint-config-next/typescript'
+import importPlugin from 'eslint-plugin-import'
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
 import reactHooks from 'eslint-plugin-react-hooks'
 
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = dirname(__filename)
-
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-})
-
 /** @type { import("eslint").Linter.Config[] } */
-export default [
-  {
-    ignores: ['dist', 'build', 'node_modules', '.next', 'styled-system'],
-  },
-  ...compat.extends('next/core-web-vitals', 'next/typescript'),
-  reactHooks.configs.flat['recommended-latest'],
+const eslintConfig = defineConfig([
+  ...nextVitals,
+  ...nextTs,
   {
     plugins: {
+      'react-hooks': reactHooks,
       '@pandacss': panda,
+      import: importPlugin,
     },
     rules: {
+      ...reactHooks.configs.recommended.rules,
       '@typescript-eslint/no-var-requires': 'off',
       '@typescript-eslint/consistent-type-imports': 'error',
 
@@ -58,4 +51,18 @@ export default [
     },
   },
   eslintPluginPrettierRecommended,
-]
+  // Override default ignores of eslint-config-next
+  globalIgnores([
+    // Default ignores of eslint-config-next:
+    '.next/**',
+    'out/**',
+    'build/**',
+    'next-env.d.ts',
+    // Additional custom ignores:
+    'dist/**',
+    'node_modules/**',
+    'styled-system/**',
+  ]),
+])
+
+export default eslintConfig
