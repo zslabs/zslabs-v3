@@ -401,9 +401,9 @@ export default defineConfig({
       },
       scale: {
         values: {
-          '1.05': '1.05',
+          '1.025': '1.025',
           '1': '1',
-          '0.95': '0.95',
+          '0.975': '0.975',
         },
       },
       transitionProperty: {

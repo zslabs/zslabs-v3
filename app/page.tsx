@@ -2,14 +2,13 @@ import * as React from 'react'
 
 import Link from 'next/link'
 
-import posts from '@/articles.json'
 import { DivButton } from '@/components/Button'
 import HomepageWrapper from '@/components/HomepageWrapper'
-import { BoxList, BoxListItem, List, ListItem } from '@/components/List'
-import MoreArticlesLink from '@/components/MoreArticlesLink'
+import { List, ListItem } from '@/components/List'
 import Prose from '@/components/Prose'
 import SectionTitle from '@/components/SectionTitle'
 import TextLink from '@/components/TextLink'
+import Article from '@/icons/article.svg'
 import Brush from '@/icons/brush.svg'
 import Collection from '@/icons/collection.svg'
 import CSS from '@/icons/css.svg'
@@ -179,28 +178,14 @@ function Projects() {
 function Articles() {
   return (
     <section id="articles">
-      <SectionTitle>Articles</SectionTitle>
-      <BoxList>
-        {posts.slice(0, 6).map((post) => (
-          <BoxListItem
-            key={post.url}
-            label={post.title}
-            href={post.url}
-            meta={post.date}
-          >
-            {post.excerpt || null}
-          </BoxListItem>
-        ))}
-      </BoxList>
-      <div
-        className={css({
-          marginBlockStart: '12',
-          fontSize: 'xl',
-          width: 'fit',
-        })}
-      >
-        <MoreArticlesLink />
-      </div>
+      <TextLink href="/articles">
+        <DivButton variation="secondary">
+          <span className={css({ fontSize: 'lg' })}>
+            <Article />
+          </span>
+          Articles archive
+        </DivButton>
+      </TextLink>
     </section>
   )
 }

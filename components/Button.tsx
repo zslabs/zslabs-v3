@@ -19,7 +19,7 @@ const styles = cva({
     position: 'relative',
     height: '10',
     overflow: 'hidden',
-    borderRadius: 'xl',
+    borderRadius: 'full',
     fontSize: 'sm',
     fontWeight: 'medium',
     outlineStyle: 'dotted',
@@ -46,7 +46,7 @@ const styles = cva({
       inset: '0',
       background:
         'var(--gradient) center center / var(--bg-size) var(--bg-size)',
-      borderRadius: 'xl',
+      borderRadius: 'full',
       borderWidth: '1px',
       borderStyle: 'solid',
       borderColor: 'transparent',
@@ -54,15 +54,6 @@ const styles = cva({
         'linear-gradient(hsl(0 0% 100% / var(--alpha)), hsl(0 0% 100% / var(--alpha))), linear-gradient(hsl(0 0% 100%), hsl(0 0% 100%))',
       maskClip: 'padding-box, border-box',
       maskComposite: 'intersect',
-    },
-
-    _hover: {
-      scale: '1.05',
-      outlineColor: 'white.a.4',
-    },
-
-    _active: {
-      scale: '1',
     },
   },
   variants: {
@@ -72,6 +63,11 @@ const styles = cva({
         gradientFrom: 'slate.2',
         gradientTo: 'slate.1',
         boxShadow: 'default',
+      },
+      secondary: {
+        backgroundLinear: 'to-b',
+        gradientFrom: 'slate.2',
+        gradientTo: 'slate.1',
       },
       contrast: {
         backgroundLinear: 'to-b',
@@ -95,6 +91,21 @@ const styles = cva({
       },
     },
   },
+  compoundVariants: [
+    {
+      variation: ['default', 'contrast'],
+      css: {
+        _hover: {
+          scale: '1.025',
+          outlineColor: 'white.a.4',
+        },
+
+        _active: {
+          scale: '1',
+        },
+      },
+    },
+  ],
 })
 
 export function Button({
