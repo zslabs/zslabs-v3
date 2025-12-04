@@ -177,7 +177,12 @@ function Projects() {
 
 function Articles() {
   return (
-    <section id="articles">
+    <section
+      id="articles"
+      className={css({
+        textAlign: 'center',
+      })}
+    >
       <TextLink href="/articles">
         <DivButton variation="secondary">
           <span className={css({ fontSize: 'lg' })}>
