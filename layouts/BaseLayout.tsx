@@ -78,6 +78,7 @@ const headerIconStyles = css({
   display: 'block',
   width: 'fit',
   borderRadius: 'full',
+  cornerShape: 'squircle',
   backgroundLinear: 'to-b',
   gradientFrom: 'slate.2',
   gradientTo: 'slate.1',
@@ -209,6 +210,7 @@ export default function BaseLayout({ children }: ChildrenOnlyProps) {
                     className={css({
                       borderRadius: 'full',
                       flexShrink: '0',
+                      cornerShape: 'squircle',
                     })}
                     priority
                     src="/media/me.png"

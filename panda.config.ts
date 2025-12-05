@@ -392,6 +392,10 @@ export default defineConfig({
       },
     },
     extend: {
+      cornerShape: {
+        className: 'corner-shape',
+        values: ['squircle'],
+      },
       backgroundImage: {
         values: {
           gggyrate: 'url(/media/gggyrate.svg)',
