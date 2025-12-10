@@ -12,6 +12,7 @@ import Article from '@/icons/article.svg'
 import Brush from '@/icons/brush.svg'
 import Collection from '@/icons/collection.svg'
 import CSS from '@/icons/css.svg'
+import DesignTokens from '@/icons/design-tokens.svg'
 import Icons from '@/icons/icons.svg'
 import ListProject from '@/icons/list.svg'
 import MountainSnow from '@/icons/mountain-snow.svg'
@@ -88,6 +89,16 @@ function Projects() {
     <section id="projects">
       <SectionTitle>Projects</SectionTitle>
       <List>
+        <ListItem
+          label="token()"
+          href="https://token.zslabs.com"
+          icon={<DesignTokens />}
+          meta="Coming soon"
+        >
+          A thoughtfully curated and opinionated preset for design systems —
+          uniting linting, tooling, and perspective to align design and
+          engineering.
+        </ListItem>
         <ListItem label="CSS infrastructure" icon={<CSS />} meta="Slack">
           As technical lead of CSS infrastructure at Slack, I&apos;ve
           implemented technologies that help engineers write code safer and more
