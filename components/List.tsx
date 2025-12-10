@@ -75,7 +75,6 @@ export function ListItem({
             position: 'relative',
             alignSelf: 'start',
             borderRadius: 'full',
-            cornerShape: 'squircle',
             backgroundLinear: 'to-b',
             gradientFrom: 'slate.2',
             gradientTo: 'slate.1',

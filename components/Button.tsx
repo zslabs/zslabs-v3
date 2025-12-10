@@ -20,7 +20,6 @@ const styles = cva({
     height: '10',
     overflow: 'hidden',
     borderRadius: 'full',
-    cornerShape: 'squircle',
     fontSize: 'sm',
     fontWeight: 'medium',
     outlineStyle: 'dotted',
@@ -48,7 +47,6 @@ const styles = cva({
       background:
         'var(--gradient) center center / var(--bg-size) var(--bg-size)',
       borderRadius: 'full',
-      cornerShape: 'squircle',
       borderWidth: '1px',
       borderStyle: 'solid',
       borderColor: 'transparent',

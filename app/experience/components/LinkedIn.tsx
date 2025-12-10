@@ -13,7 +13,6 @@ export default function LinkedIn() {
           display: 'block',
           width: 'fit',
           borderRadius: 'full',
-          cornerShape: 'squircle',
           backgroundLinear: 'to-b',
           gradientFrom: 'slate.2',
           gradientTo: 'slate.1',
