@@ -12,13 +12,13 @@ import Article from '@/icons/article.svg'
 import Brush from '@/icons/brush.svg'
 import Collection from '@/icons/collection.svg'
 import CSS from '@/icons/css.svg'
-import DesignTokens from '@/icons/design-tokens.svg'
 import Icons from '@/icons/icons.svg'
 import ListProject from '@/icons/list.svg'
 import MountainSnow from '@/icons/mountain-snow.svg'
 import Profile from '@/icons/profile.svg'
 import Slack from '@/icons/slack.svg'
 import Sold from '@/icons/sold.svg'
+import Token from '@/icons/token.svg'
 import Tokens from '@/icons/tokens.svg'
 import WesAnderSlack from '@/icons/wes-anderslack.svg'
 import X from '@/icons/x.svg'
@@ -91,8 +91,9 @@ function Projects() {
       <List>
         <ListItem
           label="token()"
+          mono
           href="https://token.zslabs.com"
-          icon={<DesignTokens />}
+          icon={<Token />}
           meta="Coming soon"
         >
           A thoughtfully curated and opinionated preset for design systems —

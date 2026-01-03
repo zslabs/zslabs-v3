@@ -51,12 +51,14 @@ export function ListItem({
   href,
   meta,
   icon,
+  mono,
 }: {
   label: React.ReactNode
   meta?: React.ReactNode
   children?: React.ReactNode
   href?: string
   icon?: React.ReactNode
+  mono?: boolean
 }) {
   return (
     <motion.li
@@ -114,6 +116,11 @@ export function ListItem({
                   transitionDuration: 'fast',
                   transitionTimingFunction: 'default',
                   willChange: 'transform',
+                  ...(mono
+                    ? {
+                        fontFamily: 'mono',
+                      }
+                    : {}),
                   _groupHover: {
                     textUnderlineOffset: '6',
                   },
