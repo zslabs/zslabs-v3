@@ -21,36 +21,30 @@ export default function CopySnippet({ codeString }: { codeString: string }) {
     <ButtonPrimitive
       onPress={() => copy(codeString)}
       aria-label="Copy snippet"
-      className={`group ${css({
+      className={css({
         display: 'block',
         cursor: 'pointer',
 
         _focus: {
           outline: 'none',
         },
-      })}`}
+      })}
     >
-      <span
-        className={css({
-          _groupActive: {
-            display: 'none',
-          },
-        })}
-      >
-        <Clipboard />
-      </span>
-      <span
-        className={css({
-          display: 'none',
-          color: 'jade.9',
-
-          _groupActive: {
-            display: 'block',
-          },
-        })}
-      >
-        <Check />
-      </span>
+      {({ isPressed }) =>
+        isPressed ? (
+          <span
+            className={css({
+              color: 'jade.9',
+            })}
+          >
+            <Check />
+          </span>
+        ) : (
+          <span>
+            <Clipboard />
+          </span>
+        )
+      }
     </ButtonPrimitive>
   )
 }
