@@ -1,7 +1,5 @@
-import React from 'react'
-
 import { css } from '@css/css'
-import { run } from '@mdx-js/mdx'
+import { runSync } from '@mdx-js/mdx'
 import type { MDXComponents } from 'mdx/types'
 import * as jsxRuntime from 'react/jsx-runtime'
 
@@ -125,17 +123,10 @@ const components: MDXComponents = {
 }
 
 export default function MDXContent({ code }: { code: string }) {
-  const [Content, setContent] = React.useState<React.ComponentType<{
-    components: MDXComponents
-  }> | null>(null)
-
-  React.useEffect(() => {
-    run(code, { ...jsxRuntime, baseUrl: import.meta.url }).then((mod) => {
-      setContent(() => mod.default)
-    })
-  }, [code])
-
-  if (!Content) return null
+  const { default: Content } = runSync(code, {
+    ...jsxRuntime,
+    baseUrl: import.meta.url,
+  })
 
   return (
     <Prose>

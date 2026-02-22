@@ -1,5 +1,3 @@
-import * as React from 'react'
-
 import { css } from '@css/css'
 import { createFileRoute } from '@tanstack/react-router'
 

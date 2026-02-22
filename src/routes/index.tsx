@@ -1,5 +1,3 @@
-import * as React from 'react'
-
 import { css } from '@css/css'
 import { inlineIcon } from '@css/patterns'
 import { createFileRoute } from '@tanstack/react-router'

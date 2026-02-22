@@ -1,5 +1,3 @@
-import * as React from 'react'
-
 import { css } from '@css/css'
 import { motion } from 'framer-motion'
 import { Tabs as TabsRoot, TabList, Tab, TabPanel } from 'react-aria-components'

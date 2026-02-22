@@ -1,5 +1,3 @@
-import * as React from 'react'
-
 import { css } from '@css/css'
 import { Button as ButtonPrimitive } from 'react-aria-components'
 
