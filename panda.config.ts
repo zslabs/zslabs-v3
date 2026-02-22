@@ -224,7 +224,11 @@ const globalCss = defineGlobalStyles({
 export default defineConfig({
   preflight: true,
   presets: [preset],
-  include: ['./components/**/*.tsx', './layouts/**/*.tsx', './app/**/*.tsx'],
+  include: [
+    './src/components/**/*.tsx',
+    './src/layouts/**/*.tsx',
+    './src/routes/**/*.tsx',
+  ],
   exclude: [],
   jsxFramework: 'react',
   outdir: 'styled-system',

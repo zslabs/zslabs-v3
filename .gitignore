@@ -12,6 +12,13 @@
 /.next/
 /out/
 
+# TanStack Start / Nitro
+/.output/
+/dist/
+
+# TanStack Router generated
+app/routeTree.gen.ts
+
 # production
 /build
 /out_functions
