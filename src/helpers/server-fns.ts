@@ -17,29 +17,16 @@ export const fetchAllStatics = createServerFn({ method: 'GET' }).handler(
 export const fetchArticleBySlug = createServerFn({ method: 'GET' })
   .inputValidator((slug: string) => slug)
   .handler(async ({ data: slug }) => {
-    const { promises: fs } = await import('fs')
-    const path = await import('path')
+    const { getArticleSource } = await import('./content')
     const { default: bundle } = await import('@/lib/mdx-bundler')
 
-    const filePath = path.resolve(
-      process.cwd(),
-      'content',
-      'articles',
-      `${slug}.mdx`
-    )
+    const source = getArticleSource(slug)
 
-    let currentPost: string
-    try {
-      currentPost = await fs.readFile(filePath, 'utf-8')
-    } catch {
+    if (!source) {
       return null
     }
 
-    if (!currentPost) {
-      return null
-    }
-
-    const { frontmatter, code } = await bundle(currentPost)
+    const { frontmatter, code } = await bundle(source)
 
     return {
       title: frontmatter.title as string,
@@ -56,24 +43,16 @@ export const fetchArticleBySlug = createServerFn({ method: 'GET' })
 export const fetchMDXPage = createServerFn({ method: 'GET' })
   .inputValidator((relativePath: string) => relativePath)
   .handler(async ({ data: relativePath }) => {
-    const { promises: fs } = await import('fs')
-    const path = await import('path')
+    const { getDataSource } = await import('./content')
     const { default: bundle } = await import('@/lib/mdx-bundler')
 
-    const filePath = path.resolve(process.cwd(), relativePath)
+    const source = getDataSource(relativePath)
 
-    let page: string
-    try {
-      page = await fs.readFile(filePath, 'utf-8')
-    } catch {
+    if (!source) {
       return null
     }
 
-    if (!page) {
-      return null
-    }
-
-    const { frontmatter, code } = await bundle(page)
+    const { frontmatter, code } = await bundle(source)
 
     return { title: frontmatter.title as string, code }
   })

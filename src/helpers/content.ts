@@ -1,74 +1,66 @@
-import { promises as fs } from 'fs'
-import path from 'path'
+import matter from 'gray-matter'
 
-import bundle from '@/lib/mdx-bundler'
+const articleFiles = import.meta.glob<string>('/content/articles/*.mdx', {
+  query: '?raw',
+  import: 'default',
+  eager: true,
+})
+
+const dataFiles = import.meta.glob<string>('/content/data/*.mdx', {
+  query: '?raw',
+  import: 'default',
+  eager: true,
+})
 
 export async function getAllPosts(limit?: number) {
-  const directoryPath = path.join(process.cwd(), 'content', 'articles')
+  const entries = Object.entries(articleFiles)
 
-  try {
-    const filenames = await fs.readdir(directoryPath)
+  const fileContents = entries.map(([filePath, content]) => {
+    const filename = filePath.split('/').pop()!
+    const { data: frontmatter } = matter(content)
 
-    const fileContents = await Promise.all(
-      filenames.map(async (filename) => {
-        const filePath = path.join(directoryPath, filename)
-        const content = await fs.readFile(filePath, 'utf8')
+    return {
+      dateRAW: frontmatter.date,
+      date: new Date(frontmatter.date).toLocaleDateString('en-us', {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+      }),
+      url: `/articles/${filename.replace(/\.mdx?$/, '')}`,
+      excerpt: frontmatter.excerpt,
+      title: frontmatter.title,
+    }
+  })
 
-        const { frontmatter, code } = await bundle(content)
+  // Sort files by date (assuming ISO 8601 format, e.g., "2024-01-01")
+  fileContents.sort(
+    (a, b) => new Date(b.dateRAW).getTime() - new Date(a.dateRAW).getTime()
+  )
 
-        return {
-          dateRAW: frontmatter.date,
-          date: new Date(frontmatter.date).toLocaleDateString('en-us', {
-            year: 'numeric',
-            month: 'short',
-            day: 'numeric',
-          }),
-          url: `/articles/${filename.replace(/\.mdx?$/, '')}`,
-          excerpt: frontmatter.excerpt,
-          title: frontmatter.title,
-          code,
-        }
-      })
-    )
-
-    // Sort files by date (assuming ISO 8601 format, e.g., "2024-01-01")
-    fileContents.sort(
-      (a, b) => new Date(b.dateRAW).getTime() - new Date(a.dateRAW).getTime()
-    )
-
-    return limit && limit > 0 ? fileContents.slice(0, limit) : fileContents
-  } catch (err) {
-    console.error('Error reading files:', err)
-
-    throw err
-  }
+  return limit && limit > 0 ? fileContents.slice(0, limit) : fileContents
 }
 
-export async function getAllStatics(limit = null) {
-  const directoryPath = path.join(process.cwd(), 'content', 'data')
+export function getAllStatics(limit?: number) {
+  const entries = Object.entries(dataFiles)
 
-  try {
-    const filenames = await fs.readdir(directoryPath)
+  const fileContents = entries.map(([filePath]) => {
+    const filename = filePath.split('/').pop()!
 
-    const fileContents = await Promise.all(
-      filenames.map(async (filename) => {
-        const filePath = path.join(directoryPath, filename)
-        const content = await fs.readFile(filePath, 'utf8')
+    return {
+      url: `/${filename.replace(/\.mdx?$/, '')}`,
+    }
+  })
 
-        const { frontmatter, code } = await bundle(content)
+  return limit && limit > 0 ? fileContents.slice(0, limit) : fileContents
+}
 
-        return {
-          url: `/${filename.replace(/\.mdx?$/, '')}`,
-          title: frontmatter.title,
-          code,
-        }
-      })
-    )
+export function getArticleSource(slug: string): string | null {
+  const filePath = `/content/articles/${slug}.mdx`
+  return articleFiles[filePath] ?? null
+}
 
-    return limit && limit > 0 ? fileContents.slice(0, limit) : fileContents
-  } catch (err) {
-    console.error('Error reading files:', err)
-
-    throw err
-  }
+export function getDataSource(relativePath: string): string | null {
+  // Normalize: accept both "content/data/foo.mdx" and "/content/data/foo.mdx"
+  const key = relativePath.startsWith('/') ? relativePath : `/${relativePath}`
+  return dataFiles[key] ?? null
 }

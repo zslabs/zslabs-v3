@@ -1,20 +1,34 @@
 import { promises as fs } from 'fs'
+import path from 'path'
 
-import { getAllPosts } from '@/helpers/content'
+import matter from 'gray-matter'
 
 async function main() {
-  const posts = await getAllPosts()
+  const directoryPath = path.join(process.cwd(), 'content', 'articles')
+  const filenames = await fs.readdir(directoryPath)
 
-  const postsResolved = posts.map((post) => {
-    return {
-      title: post.title,
-      url: post.url,
-      date: post.date,
-      excerpt: post.excerpt,
-    }
-  })
+  const posts = await Promise.all(
+    filenames.map(async (filename) => {
+      const filePath = path.join(directoryPath, filename)
+      const content = await fs.readFile(filePath, 'utf8')
+      const { data: frontmatter } = matter(content)
 
-  fs.writeFile('./app/articles.json', JSON.stringify(postsResolved, null, 2))
+      return {
+        title: frontmatter.title,
+        url: `/articles/${filename.replace(/\.mdx?$/, '')}`,
+        date: new Date(frontmatter.date).toLocaleDateString('en-us', {
+          year: 'numeric',
+          month: 'short',
+          day: 'numeric',
+        }),
+        excerpt: frontmatter.excerpt,
+      }
+    })
+  )
+
+  posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+
+  await fs.writeFile('./articles.json', JSON.stringify(posts, null, 2))
 }
 
 main()
