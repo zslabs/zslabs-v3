@@ -1,20 +1,13 @@
-import * as React from 'react'
-
 import { css } from '@css/css'
 import { inlineIcon } from '@css/patterns'
 import { useLocation } from '@tanstack/react-router'
-import type {
-  LegacyAnimationControls as AnimationControls,
-  Transition,
-  HTMLMotionProps,
-  Variants,
-} from 'framer-motion'
-import { motion, useAnimation } from 'framer-motion'
+import type { Transition, HTMLMotionProps, Variants } from 'framer-motion'
+import { motion } from 'framer-motion'
 
 import Prose from '@/components/prose'
 import TextLink from '@/components/text-link'
 import Tooltip from '@/components/tooltip'
-import useLayoutAnimationState from '@/hooks/use-layout-animation-state'
+import { useLayoutAnimationSetDone } from '@/hooks/use-layout-animation-state'
 import GitHub from '@/icons/github.svg?react'
 import Logo from '@/icons/logo.svg?react'
 import Peace from '@/icons/peace.svg?react'
@@ -24,7 +17,6 @@ import type { ChildrenOnlyProps } from '@/types/custom'
 
 interface HeaderItemWrapperProps {
   runAnimation: boolean
-  controls: AnimationControls
   custom: number
 }
 
@@ -41,7 +33,6 @@ const headerItemVariants: Variants = {
 
 function HeaderItemWrapper({
   runAnimation,
-  controls,
   custom,
   ...rest
 }: HeaderItemWrapperProps & HTMLMotionProps<'div'>) {
@@ -51,9 +42,9 @@ function HeaderItemWrapper({
 
   return (
     <motion.div
-      animate={controls}
       variants={headerItemVariants}
       initial={runAnimation ? 'hidden' : false}
+      animate={runAnimation ? 'visible' : undefined}
       transition={transition}
       {...rest}
     />
@@ -96,22 +87,9 @@ const headerIconStyles = css({
 
 export default function BaseLayout({ children }: ChildrenOnlyProps) {
   const location = useLocation()
-  const controls = useAnimation()
-  const setDone = useLayoutAnimationState((state) => state.setDone)
+  const setDone = useLayoutAnimationSetDone()
 
   const runAnimation = location.pathname === '/'
-
-  React.useEffect(() => {
-    async function runAnimationFunc(): Promise<void> {
-      await controls.start('visible')
-
-      setDone()
-    }
-
-    if (runAnimation) {
-      runAnimationFunc()
-    }
-  }, [controls, setDone, runAnimation])
 
   return (
     <>
@@ -142,7 +120,6 @@ export default function BaseLayout({ children }: ChildrenOnlyProps) {
         >
           <HeaderItemWrapper
             runAnimation={runAnimation}
-            controls={controls}
             custom={1}
           >
             <TextLink
@@ -168,7 +145,6 @@ export default function BaseLayout({ children }: ChildrenOnlyProps) {
           >
             <HeaderItemWrapper
               runAnimation={runAnimation}
-              controls={controls}
               custom={2}
             >
               <Tooltip content="GitHub">
@@ -182,7 +158,6 @@ export default function BaseLayout({ children }: ChildrenOnlyProps) {
             </HeaderItemWrapper>
             <HeaderItemWrapper
               runAnimation={runAnimation}
-              controls={controls}
               custom={3}
             >
               <Tooltip content="Twitter">
@@ -196,8 +171,8 @@ export default function BaseLayout({ children }: ChildrenOnlyProps) {
             </HeaderItemWrapper>
             <HeaderItemWrapper
               runAnimation={runAnimation}
-              controls={controls}
               custom={4}
+              onAnimationComplete={runAnimation ? setDone : undefined}
             >
               <Tooltip content="About me">
                 <TextLink href="/#about">
@@ -220,9 +195,9 @@ export default function BaseLayout({ children }: ChildrenOnlyProps) {
         {children}
 
         <motion.footer
-          animate={controls}
           variants={footerVariants}
           initial={runAnimation ? 'hidden' : false}
+          animate={runAnimation ? 'visible' : undefined}
           className={css({
             marginBlockStart: '12',
             color: 'slate.11',

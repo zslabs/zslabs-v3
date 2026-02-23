@@ -1,5 +1,7 @@
+import { use, useMemo } from 'react'
+
 import { css } from '@css/css'
-import { runSync } from '@mdx-js/mdx'
+import { run } from '@mdx-js/mdx'
 import type { MDXComponents } from 'mdx/types'
 import * as jsxRuntime from 'react/jsx-runtime'
 
@@ -123,10 +125,12 @@ const components: MDXComponents = {
 }
 
 export default function MDXContent({ code }: { code: string }) {
-  const { default: Content } = runSync(code, {
-    ...jsxRuntime,
-    baseUrl: import.meta.url,
-  })
+  const mdxPromise = useMemo(
+    () => run(code, { ...jsxRuntime, baseUrl: import.meta.url }),
+    [code]
+  )
+
+  const { default: Content } = use(mdxPromise)
 
   return (
     <Prose>
