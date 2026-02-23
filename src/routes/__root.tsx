@@ -32,6 +32,12 @@ export const Route = createRootRoute({
         rel: 'stylesheet',
         href: appCss,
       },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '144x144',
+        href: '/icon.png',
+      },
     ],
   }),
   component: RootLayout,
