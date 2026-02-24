@@ -16,6 +16,18 @@ export default defineConfig({
   server: {
     port: 3000,
   },
+  build: {
+    rollupOptions: {
+      onwarn(warning, warn) {
+        // Ignore specific warning code
+        if (warning.code === 'MODULE_LEVEL_DIRECTIVE') {
+          return
+        }
+        // For all other warnings, call the default handler
+        warn(warning)
+      },
+    },
+  },
   plugins: [
     mdx({
       remarkPlugins: [remarkFrontmatter, remarkMdxFrontmatter, remarkGfm],
@@ -78,7 +90,14 @@ export default defineConfig({
       },
     }),
     tanstackStart(),
-    nitro(),
+    nitro({
+      rollupConfig: {
+        onwarn(warning, warn) {
+          if (warning.code === 'MODULE_LEVEL_DIRECTIVE') return
+          warn(warning)
+        },
+      },
+    }),
     viteReact({
       babel: {
         plugins: ['babel-plugin-react-compiler'],

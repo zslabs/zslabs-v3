@@ -32,8 +32,9 @@ function Image({
     <figure
       className={css({
         marginBlock: '8',
-        textAlign: 'center',
+        marginInline: 'auto',
       })}
+      style={{ maxWidth: `${width}px` }}
     >
       <div
         className={css({
