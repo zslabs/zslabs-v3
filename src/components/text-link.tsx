@@ -26,7 +26,7 @@ export default function TextLink({
     href = href.replace(domainRegex, '/')
   }
 
-  // If our link is relative, we can assume it's an internal link and use `next/link`
+  // If our link is relative, we can assume it's an internal link and use our router
   if (href.startsWith('/')) {
     return (
       <Link to={href} ref={ref} data-link-internal {...rest}>

@@ -1,6 +1,6 @@
 ## Introduction
 
-Portfolio site for myself. Built with [Next.js](https://nextjs.org) and [Panda CSS](https://panda-css.com).
+Portfolio site for myself. Built with [TanStack Start](https://tanstack.com/start) and [Panda CSS](https://panda-css.com).
 
 ## Color scale
 
