@@ -1,15 +1,15 @@
+import js from '@eslint/js'
 import panda from '@pandacss/eslint-plugin'
 import { defineConfig, globalIgnores } from 'eslint/config'
-import nextVitals from 'eslint-config-next/core-web-vitals'
-import nextTs from 'eslint-config-next/typescript'
 import importPlugin from 'eslint-plugin-import'
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
 import reactHooks from 'eslint-plugin-react-hooks'
+import tseslint from 'typescript-eslint'
 
 /** @type { import("eslint").Linter.Config[] } */
 const eslintConfig = defineConfig([
-  ...nextVitals,
-  ...nextTs,
+  js.configs.recommended,
+  ...tseslint.configs.recommended,
   {
     plugins: {
       'react-hooks': reactHooks,
@@ -51,14 +51,19 @@ const eslintConfig = defineConfig([
     },
   },
   eslintPluginPrettierRecommended,
-  // Override default ignores of eslint-config-next
+  {
+    files: ['**/*.cjs'],
+    languageOptions: {
+      sourceType: 'commonjs',
+      globals: {
+        module: 'readonly',
+        require: 'readonly',
+        __dirname: 'readonly',
+      },
+    },
+  },
   globalIgnores([
-    // Default ignores of eslint-config-next:
-    '.next/**',
-    'out/**',
-    'build/**',
-    'next-env.d.ts',
-    // Additional custom ignores:
+    '.output/**',
     'dist/**',
     'node_modules/**',
     'styled-system/**',
