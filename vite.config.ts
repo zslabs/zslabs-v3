@@ -50,9 +50,7 @@ export default defineConfig({
                         return child.value
                       }
                       if ('children' in child) {
-                        return extractText(
-                          child.children as (Element | Text)[]
-                        )
+                        return extractText(child.children as (Element | Text)[])
                       }
                       return ''
                     })
