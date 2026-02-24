@@ -17,42 +17,37 @@ export const fetchAllStatics = createServerFn({ method: 'GET' }).handler(
 export const fetchArticleBySlug = createServerFn({ method: 'GET' })
   .inputValidator((slug: string) => slug)
   .handler(async ({ data: slug }) => {
-    const { getArticleSource } = await import('./content')
-    const { default: bundle } = await import('@/lib/mdx-bundler')
+    const { getArticle } = await import('./content')
 
-    const source = getArticleSource(slug)
+    const article = getArticle(slug)
 
-    if (!source) {
+    if (!article) {
       return null
     }
 
-    const { frontmatter, code } = await bundle(source)
+    const { frontmatter } = article
 
     return {
-      title: frontmatter.title as string,
-      date: new Date(frontmatter.date as string).toLocaleDateString('en-us', {
+      title: frontmatter.title,
+      date: new Date(frontmatter.date).toLocaleDateString('en-us', {
         year: 'numeric',
         month: 'short',
         day: 'numeric',
       }),
-      excerpt: frontmatter.excerpt as string,
-      code,
+      excerpt: frontmatter.excerpt,
     }
   })
 
 export const fetchMDXPage = createServerFn({ method: 'GET' })
   .inputValidator((relativePath: string) => relativePath)
   .handler(async ({ data: relativePath }) => {
-    const { getDataSource } = await import('./content')
-    const { default: bundle } = await import('@/lib/mdx-bundler')
+    const { getDataPage } = await import('./content')
 
-    const source = getDataSource(relativePath)
+    const page = getDataPage(relativePath)
 
-    if (!source) {
+    if (!page) {
       return null
     }
 
-    const { frontmatter, code } = await bundle(source)
-
-    return { title: frontmatter.title as string, code }
+    return { title: page.frontmatter.title }
   })

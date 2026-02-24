@@ -3,6 +3,7 @@ import { createFileRoute, notFound } from '@tanstack/react-router'
 import { MotionHeader, MotionMain } from '@/components/content-wrappers'
 import MDXContent from '@/components/mdx-content'
 import SectionTitle from '@/components/section-title'
+import { getDataPage } from '@/helpers/content'
 import { fetchMDXPage } from '@/helpers/server-fns'
 
 export const Route = createFileRoute('/terms')({
@@ -10,7 +11,7 @@ export const Route = createFileRoute('/terms')({
     meta: [{ title: 'Terms & conditions | Zach Schnackel' }],
   }),
   loader: async () => {
-    const result = await fetchMDXPage({ data: 'content/data/terms.mdx' })
+    const result = await fetchMDXPage({ data: '/src/content/data/terms.mdx' })
 
     if (!result) {
       throw notFound()
@@ -22,7 +23,8 @@ export const Route = createFileRoute('/terms')({
 })
 
 function Terms() {
-  const { title, code } = Route.useLoaderData()
+  const { title } = Route.useLoaderData()
+  const page = getDataPage('/src/content/data/terms.mdx')
 
   return (
     <>
@@ -30,7 +32,7 @@ function Terms() {
         <SectionTitle>{title}</SectionTitle>
       </MotionHeader>
       <MotionMain>
-        <MDXContent code={code} />
+        {page && <MDXContent Component={page.component} />}
       </MotionMain>
     </>
   )

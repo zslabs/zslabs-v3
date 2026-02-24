@@ -1,9 +1,7 @@
-import { use, useMemo } from 'react'
+import type { JSX } from 'react'
 
 import { css } from '@css/css'
-import { run } from '@mdx-js/mdx'
 import type { MDXComponents } from 'mdx/types'
-import * as jsxRuntime from 'react/jsx-runtime'
 
 import Alert from '@/components/alert'
 import AutoLinkHeader from '@/components/auto-link-header'
@@ -124,17 +122,14 @@ const components: MDXComponents = {
   },
 }
 
-export default function MDXContent({ code }: { code: string }) {
-  const mdxPromise = useMemo(
-    () => run(code, { ...jsxRuntime, baseUrl: import.meta.url }),
-    [code]
-  )
-
-  const { default: Content } = use(mdxPromise)
-
+export default function MDXContent({
+  Component,
+}: {
+  Component: (props: Record<string, unknown>) => JSX.Element
+}) {
   return (
     <Prose>
-      <Content components={components} />
+      <Component components={components} />
     </Prose>
   )
 }

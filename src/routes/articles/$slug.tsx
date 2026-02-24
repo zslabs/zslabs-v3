@@ -5,6 +5,7 @@ import { MotionHeader, MotionMain } from '@/components/content-wrappers'
 import MDXContent from '@/components/mdx-content'
 import MoreArticlesLink from '@/components/more-articles-link'
 import SectionTitle from '@/components/section-title'
+import { getArticle } from '@/helpers/content'
 import { fetchArticleBySlug } from '@/helpers/server-fns'
 
 export const Route = createFileRoute('/articles/$slug')({
@@ -29,7 +30,9 @@ export const Route = createFileRoute('/articles/$slug')({
 })
 
 function PostSingle() {
-  const { title, date, code } = Route.useLoaderData()
+  const { title, date } = Route.useLoaderData()
+  const params = Route.useParams()
+  const article = getArticle(params.slug)
 
   return (
     <article>
@@ -37,7 +40,7 @@ function PostSingle() {
         <SectionTitle>{title}</SectionTitle>
       </MotionHeader>
       <MotionMain>
-        <MDXContent code={code} />
+        {article && <MDXContent Component={article.component} />}
         <div
           className={css({
             marginBlockStart: '12',

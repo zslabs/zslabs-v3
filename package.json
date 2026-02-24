@@ -27,7 +27,6 @@
   "dependencies": {
     "@emotion/is-prop-valid": "1.4.0",
     "@eslint/eslintrc": "3.3.3",
-    "@mdx-js/mdx": "3.1.1",
     "@pandacss/eslint-plugin": "0.3.1",
     "@shikijs/rehype": "3.22.0",
     "@tanstack/react-router": "1.162.2",
@@ -59,6 +58,7 @@
     "@pandacss/dev": "1.8.2",
     "@pandacss/preset-panda": "1.8.2",
     "@types/hast": "3.0.4",
+    "@types/mdx": "2.0.13",
     "@vitejs/plugin-react": "5.1.4",
     "eslint-plugin-import": "2.32.0",
     "nano-staged": "0.9.0",

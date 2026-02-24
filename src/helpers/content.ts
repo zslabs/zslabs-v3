@@ -1,23 +1,40 @@
-import matter from 'gray-matter'
+import type { JSX } from 'react'
 
-const articleFiles = import.meta.glob<string>('/content/articles/*.mdx', {
-  query: '?raw',
-  import: 'default',
-  eager: true,
-})
+interface ArticleFrontmatter {
+  title: string
+  date: string
+  excerpt?: string
+}
 
-const dataFiles = import.meta.glob<string>('/content/data/*.mdx', {
-  query: '?raw',
-  import: 'default',
-  eager: true,
-})
+interface DataFrontmatter {
+  title: string
+}
 
-export async function getAllPosts(limit?: number) {
+type MDXModule<T> = {
+  default: (props: Record<string, unknown>) => JSX.Element
+  frontmatter: T
+}
+
+const articleFiles = import.meta.glob<MDXModule<ArticleFrontmatter>>(
+  '/src/content/articles/*.mdx',
+  {
+    eager: true,
+  }
+)
+
+const dataFiles = import.meta.glob<MDXModule<DataFrontmatter>>(
+  '/src/content/data/*.mdx',
+  {
+    eager: true,
+  }
+)
+
+export function getAllPosts(limit?: number) {
   const entries = Object.entries(articleFiles)
 
-  const fileContents = entries.map(([filePath, content]) => {
+  const fileContents = entries.map(([filePath, module]) => {
     const filename = filePath.split('/').pop()!
-    const { data: frontmatter } = matter(content)
+    const { frontmatter } = module
 
     return {
       dateRAW: frontmatter.date,
@@ -54,13 +71,30 @@ export function getAllStatics(limit?: number) {
   return limit && limit > 0 ? fileContents.slice(0, limit) : fileContents
 }
 
-export function getArticleSource(slug: string): string | null {
-  const filePath = `/content/articles/${slug}.mdx`
-  return articleFiles[filePath] ?? null
+export function getArticle(slug: string) {
+  const filePath = `/src/content/articles/${slug}.mdx`
+  const post = articleFiles[filePath]
+
+  if (!post) {
+    return null
+  }
+
+  return {
+    component: post.default,
+    frontmatter: post.frontmatter,
+  }
 }
 
-export function getDataSource(relativePath: string): string | null {
-  // Normalize: accept both "content/data/foo.mdx" and "/content/data/foo.mdx"
+export function getDataPage(relativePath: string) {
   const key = relativePath.startsWith('/') ? relativePath : `/${relativePath}`
-  return dataFiles[key] ?? null
+  const page = dataFiles[key]
+
+  if (!page) {
+    return null
+  }
+
+  return {
+    component: page.default,
+    frontmatter: page.frontmatter,
+  }
 }
