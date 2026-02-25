@@ -19,7 +19,6 @@ import Rectangle from '@/icons/rectangle.svg?react'
 import Reminders from '@/icons/reminders.svg?react'
 import Stand from '@/icons/stand.svg?react'
 import VSCode from '@/icons/vs-code.svg?react'
-import Watch from '@/icons/watch.svg?react'
 
 const tabs = [
   { id: 'software', title: 'Software' },
@@ -103,15 +102,6 @@ function Gear() {
         label="iPhone 15 Pro"
       >
         I swap for a new model every 2-3 years.
-      </ListItem>
-      <ListItem
-        href="https://amzn.to/3ABcerh"
-        icon={<Watch />}
-        label="Apple Watch Series 7 45mm"
-      >
-        Longtime Fitbit user, but notifications work so much better now. I
-        thought I&apos;d miss the 4-5 days of battery life, but I get a solid 2
-        days.
       </ListItem>
       <ListItem
         icon={<Monitor />}

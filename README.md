@@ -23,7 +23,7 @@ Portfolio site for myself. Built with [TanStack Start](https://tanstack.com/star
 
 Patterns from [fffuel](https://fffuel.co)
 
-Icons are a mix of self-made, [Iconoir](https://iconoir.com/), and [Lucide](https://lucide.dev)
+Icons are a mix of self-made and [Nucleo](https://nucleoapp.com/).
 
 ## Browser support
 

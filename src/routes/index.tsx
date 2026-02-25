@@ -9,15 +9,15 @@ import Prose from '@/components/prose'
 import SectionTitle from '@/components/section-title'
 import TextLink from '@/components/text-link'
 import Article from '@/icons/article.svg?react'
-import Brush from '@/icons/brush.svg?react'
 import Collection from '@/icons/collection.svg?react'
 import CSS from '@/icons/css.svg?react'
 import Icons from '@/icons/icons.svg?react'
 import ListProject from '@/icons/list.svg?react'
-import MountainSnow from '@/icons/mountain-snow.svg?react'
+import Mountain from '@/icons/mountain.svg?react'
 import Profile from '@/icons/profile.svg?react'
 import Slack from '@/icons/slack.svg?react'
 import Sold from '@/icons/sold.svg?react'
+import Theming from '@/icons/theming.svg?react'
 import Token from '@/icons/token.svg?react'
 import Tokens from '@/icons/tokens.svg?react'
 import WesAnderSlack from '@/icons/wes-anderslack.svg?react'
@@ -57,7 +57,7 @@ function Intro() {
                 color: 'slate.12',
               })}
             >
-              <MountainSnow className={inlineIcon()} />
+              <Mountain className={inlineIcon()} />
             </span>
           </TextLink>
         </p>
@@ -111,7 +111,7 @@ function Projects() {
           practices, that help us rely less on client-side logic for more
           performant experiences.
         </ListItem>
-        <ListItem label="Theming" icon={<Brush />} meta="Slack :: Figma">
+        <ListItem label="Theming" icon={<Theming />} meta="Slack :: Figma">
           Technical and team lead for Slack&apos;s new theming infrastructure
           across desktop, iOS, and Android. Developed migration methods across
           thousands of assets, while simplifying both the storage, application,
