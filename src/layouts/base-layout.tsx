@@ -2,7 +2,7 @@ import { css } from '@css/css'
 import { inlineIcon } from '@css/patterns'
 import { useLocation } from '@tanstack/react-router'
 import type { Transition, HTMLMotionProps, Variants } from 'framer-motion'
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 
 import Prose from '@/components/prose'
 import TextLink from '@/components/text-link'
@@ -41,7 +41,7 @@ function HeaderItemWrapper({
   }
 
   return (
-    <motion.div
+    <m.div
       variants={headerItemVariants}
       initial={runAnimation ? 'hidden' : false}
       animate={runAnimation ? 'visible' : undefined}
@@ -194,7 +194,7 @@ export default function BaseLayout({ children }: ChildrenOnlyProps) {
 
         {children}
 
-        <motion.footer
+        <m.footer
           variants={footerVariants}
           initial={runAnimation ? 'hidden' : false}
           animate={runAnimation ? 'visible' : undefined}
@@ -236,7 +236,7 @@ export default function BaseLayout({ children }: ChildrenOnlyProps) {
               <TextLink href="/terms">Terms</TextLink>
             </div>
           </Prose>
-        </motion.footer>
+        </m.footer>
       </div>
       <div
         className={css({

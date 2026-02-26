@@ -1,5 +1,5 @@
 import { stack } from '@css/patterns'
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 
 import { fadeInUp } from '@/helpers/styles'
 import { useLayoutAnimationDone } from '@/hooks/use-layout-animation-state'
@@ -12,7 +12,7 @@ export default function HomepageWrapper({
   const done = useLayoutAnimationDone()
 
   return (
-    <motion.div
+    <m.div
       className={stack({
         gap: '12',
         md: {
@@ -24,6 +24,6 @@ export default function HomepageWrapper({
       animate={done ? 'onscreen' : 'offscreen'}
     >
       {children}
-    </motion.div>
+    </m.div>
   )
 }

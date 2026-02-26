@@ -2,11 +2,10 @@ import * as React from 'react'
 
 import { css } from '@css/css'
 import { inlineIcon } from '@css/patterns'
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 
 import Prose from './prose'
 
-import { Tilt } from '@/components/motion-primitives/tilt'
 import TextLink from '@/components/text-link'
 import { fadeInUp, viewportInViewOptions } from '@/helpers/styles'
 import ArrowDown from '@/icons/arrow-down.svg?react'
@@ -59,7 +58,7 @@ export function ListItem({
   mono?: boolean
 }) {
   return (
-    <motion.li
+    <m.li
       className={css({
         display: 'flex',
         gap: '4',
@@ -179,7 +178,7 @@ export function ListItem({
           )}
         </div>
       </div>
-    </motion.li>
+    </m.li>
   )
 }
 
@@ -196,15 +195,13 @@ export function BoxListItem({
   icon?: React.ReactNode
 }) {
   return (
-    <motion.li
+    <m.li
       initial="offscreen"
       whileInView="onscreen"
       variants={fadeInUp}
       viewport={viewportInViewOptions}
     >
-      <Tilt
-        isRevese
-        rotationFactor={6}
+      <div
         className={css({
           height: 'full',
         })}
@@ -274,7 +271,7 @@ export function BoxListItem({
             )}
           </div>
         </TextLink>
-      </Tilt>
-    </motion.li>
+      </div>
+    </m.li>
   )
 }

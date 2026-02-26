@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 
 import {
   fadeInAnimate,
@@ -10,16 +10,16 @@ import {
 
 export function MotionHeader({ children }: { children: React.ReactNode }) {
   return (
-    <motion.header initial={fadeInDownInitial} animate={fadeInAnimate}>
+    <m.header initial={fadeInDownInitial} animate={fadeInAnimate}>
       {children}
-    </motion.header>
+    </m.header>
   )
 }
 
 export function MotionMain({ children }: { children: React.ReactNode }) {
   return (
-    <motion.main initial={fadeInUpInitial} animate={fadeInAnimate}>
+    <m.main initial={fadeInUpInitial} animate={fadeInAnimate}>
       {children}
-    </motion.main>
+    </m.main>
   )
 }

@@ -1,5 +1,5 @@
 import { css } from '@css/css'
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import { Tabs as TabsRoot, TabList, Tab, TabPanel } from 'react-aria-components'
 
 import { List, ListItem } from '@/components/list'
@@ -185,7 +185,7 @@ export default function Tabs() {
               <>
                 {item.title}
                 {isSelected && (
-                  <motion.span
+                  <m.span
                     className={css({
                       position: 'absolute',
                       insetInline: '0',

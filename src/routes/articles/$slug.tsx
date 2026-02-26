@@ -6,17 +6,26 @@ import MDXContent from '@/components/mdx-content'
 import MoreArticlesLink from '@/components/more-articles-link'
 import SectionTitle from '@/components/section-title'
 import { getArticle } from '@/helpers/content'
-import { fetchArticleBySlug } from '@/helpers/server-fns'
 
 export const Route = createFileRoute('/articles/$slug')({
   loader: async ({ params }) => {
-    const result = await fetchArticleBySlug({ data: params.slug })
+    const article = getArticle(params.slug)
 
-    if (!result) {
+    if (!article) {
       throw notFound()
     }
 
-    return result
+    const { frontmatter } = article
+
+    return {
+      title: frontmatter.title,
+      date: new Date(frontmatter.date).toLocaleDateString('en-us', {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+      }),
+      excerpt: frontmatter.excerpt,
+    }
   },
   head: ({ loaderData }) => ({
     meta: [
