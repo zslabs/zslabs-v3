@@ -28,7 +28,6 @@ const styles = cva({
     transitionTimingFunction: 'default',
     display: 'inline-grid',
     paddingInline: '4',
-    willChange: 'transform',
 
     _after: {
       '--stroke': '94.892% .00288 264.626',

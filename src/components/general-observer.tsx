@@ -19,19 +19,24 @@ interface IGeneralObserverProps extends ChildrenOnlyProps {
 export default function GeneralObserver({
   children,
 
-  onEnter = () => {},
+  onEnter,
   height = 0,
 }: IGeneralObserverProps) {
-  const ref = React.useRef<HTMLElement>(null)
+  const ref = React.useRef<HTMLDivElement>(null)
+  const onEnterRef = React.useRef(onEnter)
+  onEnterRef.current = onEnter
   const [isChildVisible, setIsChildVisible] = React.useState(false)
 
   React.useEffect(() => {
+    const el = ref.current
+    if (!el) return
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.intersectionRatio > 0) {
           setIsChildVisible(true)
-
-          onEnter()
+          onEnterRef.current?.()
+          observer.disconnect()
         }
       },
       {
@@ -41,16 +46,16 @@ export default function GeneralObserver({
       }
     )
 
-    if (ref && ref.current) {
-      observer.observe(ref.current)
-    }
-  }, [ref, onEnter])
+    observer.observe(el)
+
+    return () => observer.disconnect()
+  }, [])
 
   const style: React.CSSProperties = { height, width: '100%' }
 
   return (
     <div
-      ref={ref as React.RefObject<HTMLDivElement>}
+      ref={ref}
       data-testid="general-observer"
       className={css({
         marginBlock: '8',

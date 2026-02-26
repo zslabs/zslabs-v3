@@ -62,6 +62,8 @@ function Image({
           src={typeof src === 'string' ? src : ''}
           height={typeof height === 'number' ? height : undefined}
           width={typeof width === 'number' ? width : undefined}
+          loading="lazy"
+          decoding="async"
           className={css({
             borderRadius: 'lg',
           })}

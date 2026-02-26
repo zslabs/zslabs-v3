@@ -29,6 +29,20 @@ export const Route = createRootRoute({
     ],
     links: [
       {
+        rel: 'preload',
+        href: '/fonts/TT_Commons_Pro_Variable.woff2',
+        as: 'font',
+        type: 'font/woff2',
+        crossOrigin: 'anonymous',
+      },
+      {
+        rel: 'preload',
+        href: '/fonts/TT_Commons_Pro_Mono_Variable.woff2',
+        as: 'font',
+        type: 'font/woff2',
+        crossOrigin: 'anonymous',
+      },
+      {
         rel: 'stylesheet',
         href: appCss,
       },

@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { css } from '@css/css'
+import { css, cx } from '@css/css'
 import { inlineIcon } from '@css/patterns'
 import { m } from 'framer-motion'
 
@@ -96,12 +96,12 @@ export function ListItem({
         >
           {href ? (
             <TextLink
-              className={`group ${css({
+              className={cx('group', css({
                 display: 'flex',
                 gap: '1',
                 alignItems: 'baseline',
                 width: 'fit',
-              })}`}
+              }))}
               href={href}
             >
               <span
@@ -112,7 +112,6 @@ export function ListItem({
                   transitionProperty: 'textUnderlineOffset',
                   transitionDuration: 'fast',
                   transitionTimingFunction: 'default',
-                  willChange: 'transform',
                   ...(mono
                     ? {
                         fontFamily: 'mono',
@@ -134,7 +133,6 @@ export function ListItem({
                     transitionProperty: 'transform',
                     transitionDuration: 'fast',
                     transitionTimingFunction: 'default',
-                    willChange: 'transform',
                     transform: 'rotate(-135deg)',
 
                     _groupHover: {
@@ -208,7 +206,7 @@ export function BoxListItem({
       >
         <TextLink
           href={href}
-          className={`group ${css({
+          className={cx('group', css({
             borderWidth: '1',
             borderColor: 'slate.a.5',
             borderRadius: 'xl',
@@ -224,7 +222,7 @@ export function BoxListItem({
             flexDirection: 'column',
             gap: '3',
             height: 'full',
-          })}`}
+          }))}
         >
           <div
             className={css({
