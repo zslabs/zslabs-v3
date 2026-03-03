@@ -2,6 +2,8 @@ import { defineKeyframes, defineTextStyles } from '@pandacss/dev'
 import { defineTokens } from '@pandacss/dev'
 import { defineConfig, defineGlobalStyles } from '@pandacss/dev'
 import preset from '@pandacss/preset-panda'
+import { removeUnusedKeyframes } from 'postcss/remove-unused-keyframes'
+import { removeUnusedCssVars } from 'postcss/remove-unused-vars'
 
 const isProd = process.env.VERCEL_ENV === 'production'
 
@@ -450,6 +452,11 @@ export default defineConfig({
         ])
       }
       return preset
+    },
+    'cssgen:done': ({ artifact, content }) => {
+      if (artifact === 'styles.css') {
+        return removeUnusedCssVars(removeUnusedKeyframes(content))
+      }
     },
   },
 })

@@ -9,6 +9,18 @@ interface UseRecord {
 
 const varRegex = /var\(\s*(?<name>--[^ ,);]+)/g
 
+const getVarsFromValue = (value: string) => {
+  const variables = new Set<string>()
+
+  for (const match of value.matchAll(varRegex)) {
+    const variable = match.groups?.name.trim()
+    if (!variable) continue
+    variables.add(variable)
+  }
+
+  return variables
+}
+
 /**
  * Adapted from https://github.com/tomasklaen/postcss-prune-var/blob/57ad5041806b73479d0c558e0b1a918803cb7cbc/index.js
  */
@@ -42,16 +54,6 @@ export const removeUnusedCssVars = (css: string) => {
 
   // Detect variable uses
   root.walkDecls((decl) => {
-    const parent = decl.parent
-    if (!parent) return
-
-    if (
-      parent.type === 'rule' &&
-      (parent as postcss.Rule).selector === ':root'
-    ) {
-      return
-    }
-
     const isVar = decl.prop.startsWith('--')
 
     // Initiate record
@@ -59,10 +61,7 @@ export const removeUnusedCssVars = (css: string) => {
 
     if (!decl.value.includes('var(')) return
 
-    for (const match of decl.value.matchAll(varRegex)) {
-      const variable = match.groups?.name.trim()
-      if (!variable) continue
-
+    for (const variable of getVarsFromValue(decl.value)) {
       if (isVar) {
         registerDependency(decl.prop, variable)
       } else {

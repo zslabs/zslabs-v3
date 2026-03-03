@@ -1,5 +1,5 @@
 module.exports = {
   '**/*.ts?(x)': () => 'npm run type:check',
-  // Run ESLint on changes to JavaScript/TypeScript files
+  '**/*.test.ts': () => 'npm run test',
   '**/*.(ts|js)?(x)': (api) => `npm run lint ${api.filenames.join(' ')}`,
 }
