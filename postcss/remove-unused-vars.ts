@@ -7,10 +7,12 @@ interface UseRecord {
   declarations: Set<postcss.Declaration>
 }
 
-const varRegex = /var\(\s*(?<name>--[^ ,);]+)/g
+const varRegexSource = /var\(\s*(?<name>--[^ ,);]+)/
 
 const getVarsFromValue = (value: string) => {
   const variables = new Set<string>()
+
+  const varRegex = new RegExp(varRegexSource.source, 'g')
 
   for (const match of value.matchAll(varRegex)) {
     const variable = match.groups?.name.trim()
@@ -28,6 +30,7 @@ export const removeUnusedCssVars = (css: string) => {
   const root = postcss.parse(css)
 
   const records = new Map<string, UseRecord>()
+  const directUses: string[] = []
 
   const getRecord = (variable: string): UseRecord => {
     let record = records.get(variable)
@@ -52,7 +55,7 @@ export const removeUnusedCssVars = (css: string) => {
     record.dependencies.add(dependency)
   }
 
-  // Detect variable uses
+  // Detect variable declarations and dependencies first
   root.walkDecls((decl) => {
     const isVar = decl.prop.startsWith('--')
 
@@ -65,10 +68,15 @@ export const removeUnusedCssVars = (css: string) => {
       if (isVar) {
         registerDependency(decl.prop, variable)
       } else {
-        registerUse(variable)
+        directUses.push(variable)
       }
     }
   })
+
+  // Register direct uses after all dependencies are known
+  for (const variable of directUses) {
+    registerUse(variable)
+  }
 
   //   console.log(records)
   // Remove unused variables

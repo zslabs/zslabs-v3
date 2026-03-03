@@ -59,4 +59,40 @@ describe('removeUnusedCssVars', () => {
     expect(output).not.toContain(':root {}')
     expect(output).toContain('.card')
   })
+
+  it('keeps gradient utility vars used through a custom-property dependency chain', () => {
+    const input = `
+      * {
+        --gradient-from-position: ;
+        --gradient-to-position: ;
+      }
+
+      .bg-linear_to-r {
+        --gradient-stops: var(--gradient-via-stops, var(--gradient-position), var(--gradient-from) var(--gradient-from-position), var(--gradient-to) var(--gradient-to-position));
+        --gradient-position: to right;
+        background-image: linear-gradient(var(--gradient-stops));
+      }
+
+      .grad-from_blue\.9 {
+        --gradient-from: var(--colors-blue-9);
+      }
+
+      .grad-to_iris\.9 {
+        --gradient-to: var(--colors-iris-9);
+      }
+
+      :root {
+        --colors-blue-9: #0073ff;
+        --colors-iris-9: #6f56f4;
+      }
+    `
+
+    const output = removeUnusedCssVars(input)
+
+    expect(output).toContain('.grad-to_iris.9')
+    expect(output).toContain('--gradient-to: var(--colors-iris-9)')
+    expect(output).toContain('--colors-iris-9: #6f56f4')
+    expect(output).toContain('--gradient-to-position:')
+    expect(output).toContain('--gradient-from-position:')
+  })
 })
