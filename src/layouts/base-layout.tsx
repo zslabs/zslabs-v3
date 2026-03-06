@@ -118,10 +118,7 @@ export default function BaseLayout({ children }: ChildrenOnlyProps) {
             },
           })}
         >
-          <HeaderItemWrapper
-            runAnimation={runAnimation}
-            custom={1}
-          >
+          <HeaderItemWrapper runAnimation={runAnimation} custom={1}>
             <TextLink
               href="/"
               aria-label="Home"
@@ -143,10 +140,7 @@ export default function BaseLayout({ children }: ChildrenOnlyProps) {
               justifyContent: 'end',
             })}
           >
-            <HeaderItemWrapper
-              runAnimation={runAnimation}
-              custom={2}
-            >
+            <HeaderItemWrapper runAnimation={runAnimation} custom={2}>
               <Tooltip content="GitHub">
                 <TextLink
                   href="https://github.com/zslabs"
@@ -156,10 +150,7 @@ export default function BaseLayout({ children }: ChildrenOnlyProps) {
                 </TextLink>
               </Tooltip>
             </HeaderItemWrapper>
-            <HeaderItemWrapper
-              runAnimation={runAnimation}
-              custom={3}
-            >
+            <HeaderItemWrapper runAnimation={runAnimation} custom={3}>
               <Tooltip content="Twitter">
                 <TextLink
                   href="https://twitter.com/zslabs"

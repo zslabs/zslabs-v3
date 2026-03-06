@@ -96,12 +96,15 @@ export function ListItem({
         >
           {href ? (
             <TextLink
-              className={cx('group', css({
-                display: 'flex',
-                gap: '1',
-                alignItems: 'baseline',
-                width: 'fit',
-              }))}
+              className={cx(
+                'group',
+                css({
+                  display: 'flex',
+                  gap: '1',
+                  alignItems: 'baseline',
+                  width: 'fit',
+                })
+              )}
               href={href}
             >
               <span
@@ -206,23 +209,26 @@ export function BoxListItem({
       >
         <TextLink
           href={href}
-          className={cx('group', css({
-            borderWidth: '1',
-            borderColor: 'slate.a.5',
-            borderRadius: 'xl',
-            padding: '4',
-            outlineWidth: '4',
-            outlineStyle: 'solid',
-            outlineColor: 'slate.a.2',
-            backgroundLinear: 'to-b',
-            gradientFrom: 'slate.a.1',
-            gradientTo: 'slate.a.2',
-            boxShadow: 'sm',
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '3',
-            height: 'full',
-          }))}
+          className={cx(
+            'group',
+            css({
+              borderWidth: '1',
+              borderColor: 'slate.a.5',
+              borderRadius: 'xl',
+              padding: '4',
+              outlineWidth: '4',
+              outlineStyle: 'solid',
+              outlineColor: 'slate.a.2',
+              backgroundLinear: 'to-b',
+              gradientFrom: 'slate.a.1',
+              gradientTo: 'slate.a.2',
+              boxShadow: 'sm',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '3',
+              height: 'full',
+            })
+          )}
         >
           <div
             className={css({

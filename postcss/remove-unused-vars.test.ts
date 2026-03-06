@@ -73,11 +73,11 @@ describe('removeUnusedCssVars', () => {
         background-image: linear-gradient(var(--gradient-stops));
       }
 
-      .grad-from_blue\.9 {
+      .grad-from_blue.9 {
         --gradient-from: var(--colors-blue-9);
       }
 
-      .grad-to_iris\.9 {
+      .grad-to_iris.9 {
         --gradient-to: var(--colors-iris-9);
       }
 

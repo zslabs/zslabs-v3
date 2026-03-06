@@ -25,14 +25,14 @@
     "pre-commit": "./node_modules/.bin/nano-staged"
   },
   "dependencies": {
-    "@eslint/eslintrc": "3.3.3",
+    "@eslint/eslintrc": "3.3.4",
     "@mdx-js/rollup": "3.1.1",
     "@pandacss/eslint-plugin": "0.3.1",
-    "@shikijs/rehype": "4.0.0",
-    "@tanstack/react-router": "1.163.3",
-    "@tanstack/react-start": "1.163.4",
+    "@shikijs/rehype": "4.0.1",
+    "@tanstack/react-router": "1.166.2",
+    "@tanstack/react-start": "1.166.2",
     "@types/eslint": "9.6.1",
-    "@types/node": "25.3.3",
+    "@types/node": "25.3.5",
     "@types/react": "19.2.14",
     "@vercel/analytics": "1.6.1",
     "babel-plugin-react-compiler": "1.0.0",
@@ -40,17 +40,17 @@
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-prettier": "5.5.5",
     "eslint-plugin-react-hooks": "7.0.1",
-    "framer-motion": "12.34.3",
+    "framer-motion": "12.35.0",
     "nitro": "3.0.1-alpha.2",
     "prettier": "3.8.1",
     "react": "19.2.4",
-    "react-aria": "3.46.0",
-    "react-aria-components": "1.15.1",
+    "react-aria": "3.47.0",
+    "react-aria-components": "1.16.0",
     "react-dom": "19.2.4",
     "remark-frontmatter": "5.0.0",
     "remark-gfm": "4.0.1",
     "remark-mdx-frontmatter": "5.2.0",
-    "shiki": "4.0.0",
+    "shiki": "4.0.1",
     "simple-git-hooks": "2.13.1",
     "typescript": "5.9.3"
   },
@@ -67,6 +67,6 @@
     "vite": "7.3.1",
     "vite-plugin-svgr": "4.5.0",
     "vite-tsconfig-paths": "6.1.1",
-    "vitest": "3.2.4"
+    "vitest": "4.0.18"
   }
 }

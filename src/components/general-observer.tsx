@@ -24,8 +24,11 @@ export default function GeneralObserver({
 }: IGeneralObserverProps) {
   const ref = React.useRef<HTMLDivElement>(null)
   const onEnterRef = React.useRef(onEnter)
-  onEnterRef.current = onEnter
   const [isChildVisible, setIsChildVisible] = React.useState(false)
+
+  React.useEffect(() => {
+    onEnterRef.current = onEnter
+  }, [onEnter])
 
   React.useEffect(() => {
     const el = ref.current
