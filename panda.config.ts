@@ -221,22 +221,6 @@ const globalCss = defineGlobalStyles({
   '[data-line]': {
     paddingInlineEnd: '4',
   },
-  'body::after': {
-    content: '""',
-    position: 'absolute',
-    insetBlockStart: '0',
-    zIndex: '-1',
-    width: '3xl',
-    height: '3xl',
-    insetInlineStart: '1/2',
-    translate: 'auto',
-    translateX: '-1/2',
-    translateY: '-3/4',
-    backgroundPosition: 'center center',
-    backgroundRepeat: 'no-repeat',
-    backgroundImage: 'gggyrate',
-    pointerEvents: 'none',
-  },
 })
 
 export default defineConfig({
@@ -422,7 +406,6 @@ export default defineConfig({
     extend: {
       backgroundImage: {
         values: {
-          gggyrate: 'url(/media/gggyrate.svg)',
           noise: 'url(/media/noise-bg.png)',
           ooorganize: 'url(/media/ooorganize-bg.svg)',
         },
