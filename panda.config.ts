@@ -1,3 +1,4 @@
+import { pluginRemoveFeatures } from '@pandabox/panda-plugins'
 import { defineKeyframes, defineTextStyles } from '@pandacss/dev'
 import { defineTokens } from '@pandacss/dev'
 import { defineConfig, defineGlobalStyles } from '@pandacss/dev'
@@ -239,6 +240,7 @@ export default defineConfig({
     cssVar: isProd ? true : false,
     className: isProd ? true : false,
   },
+  plugins: [pluginRemoveFeatures({ features: ['no-styled', 'no-jsx'] })],
   strictTokens: true,
   minify: true,
   lightningcss: true,
@@ -449,6 +451,7 @@ export default defineConfig({
   },
   globalCss,
   hooks: {
+    // Strip default Panda color tokens so only this project's palette is used.
     'preset:resolved': ({ utils, preset, name }) => {
       if (name === '@pandacss/preset-panda') {
         return utils.omit(preset, [
@@ -458,6 +461,8 @@ export default defineConfig({
       }
       return preset
     },
+
+    // Post-process final CSS to drop unused vars and keyframes.
     'cssgen:done': ({ artifact, content }) => {
       if (artifact === 'styles.css') {
         return removeUnusedCssVars(removeUnusedKeyframes(content))

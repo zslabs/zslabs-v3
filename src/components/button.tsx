@@ -29,6 +29,14 @@ const styles = cva({
     display: 'inline-grid',
     paddingInline: '4',
 
+    _hover: {
+      scale: '1.025',
+    },
+
+    _active: {
+      scale: '1',
+    },
+
     _after: {
       '--stroke': '94.892% .00288 264.626',
       '--border': 1,
@@ -92,12 +100,7 @@ const styles = cva({
       variation: ['default', 'contrast'],
       css: {
         _hover: {
-          scale: '1.025',
           outlineColor: 'white.a.4',
-        },
-
-        _active: {
-          scale: '1',
         },
       },
     },

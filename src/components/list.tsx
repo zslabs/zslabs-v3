@@ -62,6 +62,11 @@ export function ListItem({
       className={css({
         display: 'flex',
         gap: '4',
+        flexDirection: 'column',
+
+        sm: {
+          flexDirection: 'row',
+        },
       })}
       initial="offscreen"
       whileInView="onscreen"
@@ -92,6 +97,8 @@ export function ListItem({
         <div
           className={css({
             marginBlockEnd: '1',
+            fontWeight: 'medium',
+            fontSize: 'lg',
           })}
         >
           {href ? (
@@ -130,7 +137,6 @@ export function ListItem({
               {!href?.startsWith('/') && (
                 <div
                   className={css({
-                    fontSize: 'lg',
                     lineHeight: 'none',
                     color: 'slate.11',
                     transitionProperty: 'transform',
@@ -162,6 +168,8 @@ export function ListItem({
               className={css({
                 color: 'slate.11',
                 fontSize: 'sm',
+                borderWidth: '1',
+                borderColor: 'slate.a.5',
                 borderRadius: 'md',
                 textStyle: 'mono',
                 textTransform: 'uppercase',
@@ -246,6 +254,9 @@ export function BoxListItem({
                 transitionProperty: 'textUnderlineOffset',
                 transitionDuration: 'fast',
                 transitionTimingFunction: 'default',
+                fontSize: 'lg',
+                fontWeight: 'medium',
+
                 _groupHover: {
                   textUnderlineOffset: '6',
                 },
@@ -255,7 +266,13 @@ export function BoxListItem({
             </span>
             {children && (
               <Prose>
-                <p>{children}</p>
+                <p
+                  className={css({
+                    color: 'slate.11',
+                  })}
+                >
+                  {children}
+                </p>
               </Prose>
             )}
           </div>

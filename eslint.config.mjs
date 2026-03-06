@@ -48,6 +48,10 @@ const eslintConfig = defineConfig([
       '@pandacss/prefer-longhand-properties': 'error',
       '@pandacss/prefer-unified-property-style': 'error',
       '@pandacss/no-physical-properties': 'error',
+      '@pandacss/no-hardcoded-color': [
+        'error',
+        { noOpacity: true, whitelist: ['inherit'] },
+      ],
     },
   },
   eslintPluginPrettierRecommended,
