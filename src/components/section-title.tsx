@@ -12,8 +12,7 @@ function SectionTitle({ children }: SectionTitleProps) {
       className={css({
         marginBlockEnd: '8',
         fontSize: '2xl',
-        fontWeight: 'normal',
-        fontVariationSettings: 'wide',
+        fontWeight: 'medium',
       })}
     >
       {children}

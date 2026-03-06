@@ -99,12 +99,29 @@ export default function BaseLayout({ children }: ChildrenOnlyProps) {
           maxWidth: '2xl',
           paddingBlock: '8',
           paddingInline: '4',
+          position: 'relative',
 
           md: {
             paddingBlock: '12',
           },
         })}
       >
+        <div
+          className={css({
+            position: 'absolute',
+            insetBlockStart: '0',
+            width: '3xl',
+            height: '3xl',
+            insetInlineStart: '1/2',
+            translate: 'auto',
+            translateX: '-1/2',
+            translateY: '-3/4',
+            backgroundPosition: 'center center',
+            backgroundRepeat: 'no-repeat',
+            backgroundImage: 'gggyrate',
+            pointerEvents: 'none',
+          })}
+        />
         <header
           className={css({
             marginBlockEnd: '12',
@@ -244,17 +261,6 @@ export default function BaseLayout({ children }: ChildrenOnlyProps) {
             opacity: '0.35',
             mixBlendMode: 'color-dodge',
             backgroundImage: 'ooorganize',
-          })}
-        />
-        <div
-          className={css({
-            position: 'fixed',
-            inset: '0',
-            opacity: '0.3',
-            transform: 'translate(25%, 50%)',
-            backgroundPosition: '75%',
-            backgroundRepeat: 'no-repeat',
-            backgroundImage: 'gggyrate',
           })}
         />
       </div>
