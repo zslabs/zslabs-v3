@@ -294,7 +294,7 @@ export default defineConfig({
         },
         shadows: {
           slate: {
-            value: '0 0 0 0.125rem {colors.slate.4}',
+            value: '0 0 0 0.125rem {colors.slate.3}',
           },
           contrast: {
             value:

@@ -83,11 +83,15 @@ export function ListItem({
             gradientFrom: 'slate.2',
             gradientTo: 'slate.1',
             boxShadow: 'slate',
-            padding: '2',
             borderWidth: '1',
             borderColor: 'slate.7',
             borderStyle: 'solid',
             fontSize: 'xl',
+            width: '10',
+            height: '10',
+            display: 'grid',
+            placeContent: 'center',
+            flexShrink: '0',
           })}
         >
           {icon}

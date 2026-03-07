@@ -4,6 +4,7 @@ import { useLocation } from '@tanstack/react-router'
 import type { Transition, HTMLMotionProps, Variants } from 'framer-motion'
 import { m } from 'framer-motion'
 
+import { Button } from '@/components/button'
 import Prose from '@/components/prose'
 import TextLink from '@/components/text-link'
 import Tooltip from '@/components/tooltip'
@@ -62,29 +63,6 @@ const footerVariants: Variants = {
   },
 }
 
-const headerIconStyles = css({
-  display: 'block',
-  width: 'fit',
-  borderRadius: 'full',
-  backgroundLinear: 'to-b',
-  gradientFrom: 'slate.2',
-  gradientTo: 'slate.1',
-  boxShadow: 'slate',
-  padding: '2',
-  borderWidth: '1',
-  borderColor: 'slate.7',
-  borderStyle: 'solid',
-  fontSize: 'xl',
-  color: 'slate.11',
-  transitionProperty: 'color',
-  transitionDuration: 'fast',
-  transitionTimingFunction: 'default',
-
-  _hover: {
-    color: 'slate.12',
-  },
-})
-
 export default function BaseLayout({ children }: ChildrenOnlyProps) {
   const location = useLocation()
   const setDone = useLayoutAnimationSetDone()
@@ -142,24 +120,18 @@ export default function BaseLayout({ children }: ChildrenOnlyProps) {
             })}
           >
             <HeaderItemWrapper runAnimation={runAnimation} custom={2}>
-              <Tooltip content="GitHub">
-                <TextLink
-                  href="https://github.com/zslabs"
-                  className={headerIconStyles}
-                >
+              <TextLink href="https://github.com/zslabs" title="GitHub">
+                <Button iconOnly render={(props) => <span {...props} />}>
                   <GitHub />
-                </TextLink>
-              </Tooltip>
+                </Button>
+              </TextLink>
             </HeaderItemWrapper>
             <HeaderItemWrapper runAnimation={runAnimation} custom={3}>
-              <Tooltip content="Twitter">
-                <TextLink
-                  href="https://twitter.com/zslabs"
-                  className={headerIconStyles}
-                >
+              <TextLink href="https://twitter.com/zslabs" title="Twitter">
+                <Button iconOnly render={(props) => <span {...props} />}>
                   <X />
-                </TextLink>
-              </Tooltip>
+                </Button>
+              </TextLink>
             </HeaderItemWrapper>
             <HeaderItemWrapper
               runAnimation={runAnimation}
@@ -167,15 +139,32 @@ export default function BaseLayout({ children }: ChildrenOnlyProps) {
               onAnimationComplete={runAnimation ? setDone : undefined}
             >
               <Tooltip content="About me">
-                <TextLink href="/#about">
+                <TextLink
+                  href="/#about"
+                  className={css({
+                    display: 'block',
+                    width: 'fit',
+                    transitionProperty: 'scale',
+                    transitionDuration: 'fast',
+                    transitionTimingFunction: 'default',
+
+                    _hover: {
+                      scale: '1.025',
+                    },
+
+                    _active: {
+                      scale: '1',
+                    },
+                  })}
+                >
                   <img
                     className={css({
                       borderRadius: 'full',
                       flexShrink: '0',
                     })}
                     src="/media/me.png"
-                    width="36"
-                    height="36"
+                    width="40"
+                    height="40"
                     alt="Zach Schnackel"
                   />
                 </TextLink>

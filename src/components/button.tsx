@@ -24,13 +24,8 @@ const styles = cva({
     position: 'relative',
     height: '10',
     overflow: 'hidden',
-    borderRadius: 'xl',
     fontSize: 'md',
     fontWeight: 'medium',
-    outlineStyle: 'dotted',
-    outlineColor: 'transparent',
-    outlineOffset: '0.5',
-    outlineWidth: '1',
     transitionProperty: 'scale',
     transitionDuration: 'fast',
     transitionTimingFunction: 'default',
@@ -44,29 +39,6 @@ const styles = cva({
     _active: {
       scale: '1',
     },
-
-    _after: {
-      '--stroke': '94.892% .00288 264.626',
-      '--border': 1,
-      '--bg-size': 'calc(100% + (2px * var(--border)))',
-      '--alpha': 0,
-      '--gradient':
-        'linear-gradient(to bottom right, oklch(var(--stroke) / 0.125), oklch(var(--stroke) / 0.0625))',
-      content: '""',
-      pointerEvents: 'none',
-      position: 'absolute',
-      inset: '0',
-      background:
-        'var(--gradient) center center / var(--bg-size) var(--bg-size)',
-      borderRadius: 'xl',
-      borderWidth: '1px',
-      borderStyle: 'solid',
-      borderColor: 'transparent',
-      maskImage:
-        'linear-gradient(hsl(0 0% 100% / var(--alpha)), hsl(0 0% 100% / var(--alpha))), linear-gradient(hsl(0 0% 100%), hsl(0 0% 100%))',
-      maskClip: 'padding-box, border-box',
-      maskComposite: 'intersect',
-    },
   },
   variants: {
     variation: {
@@ -74,19 +46,21 @@ const styles = cva({
         backgroundLinear: 'to-b',
         gradientFrom: 'slate.2',
         gradientTo: 'slate.1',
-        boxShadow: 'default',
-      },
-      secondary: {
-        backgroundLinear: 'to-b',
-        gradientFrom: 'slate.2',
-        gradientTo: 'slate.1',
+        borderWidth: '1',
+        borderColor: 'slate.7',
+        borderStyle: 'solid',
+        boxShadow: 'slate',
+        color: 'slate.11',
+
+        _hover: {
+          color: 'slate.12',
+        },
       },
       contrast: {
         backgroundLinear: 'to-b',
         gradientFrom: 'slate.12',
         gradientTo: 'slate.11',
         color: 'slate.1',
-        boxShadow: 'contrast',
       },
     },
     loading: {
@@ -100,32 +74,48 @@ const styles = cva({
       true: {
         width: '10',
         paddingInline: '0',
+        borderRadius: 'full',
+
+        '& svg': {
+          fontSize: 'xl',
+        },
       },
-    },
-  },
-  compoundVariants: [
-    {
-      variation: ['default', 'contrast'],
-      css: {
-        _hover: {
-          outlineColor: 'white.a.4',
+      false: {
+        borderRadius: 'xl',
+
+        '& svg': {
+          fontSize: 'lg',
         },
       },
     },
-  ],
+    glow: {
+      default: {
+        boxShadow: 'default',
+      },
+      contrast: {
+        boxShadow: 'contrast',
+      },
+    },
+  },
+  defaultVariants: {
+    variation: 'default',
+    iconOnly: false,
+    loading: false,
+  },
 })
 
 export function Button({
   children,
   variation,
   iconOnly,
+  glow,
   loading,
   ...buttonProps
 }: ButtonProps) {
   return (
     <ButtonPrimitive
       {...buttonProps}
-      className={styles({ variation, iconOnly, loading })}
+      className={styles({ variation, iconOnly, loading, glow })}
     >
       {(renderProps) => (
         <span className={buttonContentClass}>

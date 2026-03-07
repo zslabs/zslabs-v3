@@ -71,7 +71,11 @@ function Intro() {
         })}
       >
         <TextLink href="/experience">
-          <Button variation="contrast" render={(props) => <span {...props} />}>
+          <Button
+            variation="contrast"
+            glow="contrast"
+            render={(props) => <span {...props} />}
+          >
             Experience
           </Button>
         </TextLink>
@@ -81,7 +85,11 @@ function Intro() {
             cursor: 'help',
           })}
         >
-          <Button variation="default" render={(props) => <span {...props} />}>
+          <Button
+            variation="default"
+            glow="default"
+            render={(props) => <span {...props} />}
+          >
             What I use
           </Button>
         </TextLink>
@@ -202,10 +210,8 @@ function Articles() {
       })}
     >
       <TextLink href="/articles">
-        <Button variation="secondary" render={(props) => <span {...props} />}>
-          <span className={css({ fontSize: 'lg' })}>
-            <Article />
-          </span>
+        <Button variation="default" render={(props) => <span {...props} />}>
+          <Article />
           Articles archive
         </Button>
       </TextLink>

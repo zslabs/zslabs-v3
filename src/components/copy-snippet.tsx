@@ -1,6 +1,6 @@
 import { css } from '@css/css'
-import { Button as ButtonPrimitive } from 'react-aria-components'
 
+import { Button } from '@/components/button'
 import Check from '@/icons/check.svg?react'
 import Copy from '@/icons/copy.svg?react'
 
@@ -14,32 +14,7 @@ async function copy(codeString: string) {
 
 export default function CopySnippet({ codeString }: { codeString: string }) {
   return (
-    <ButtonPrimitive
-      onPress={() => copy(codeString)}
-      aria-label="Copy snippet"
-      className={css({
-        display: 'block',
-        width: 'fit',
-        borderRadius: 'full',
-        backgroundLinear: 'to-b',
-        gradientFrom: 'slate.2',
-        gradientTo: 'slate.1',
-        boxShadow: 'slate',
-        padding: '2',
-        borderWidth: '1',
-        borderColor: 'slate.7',
-        borderStyle: 'solid',
-        fontSize: 'xl',
-        color: 'slate.11',
-        transitionProperty: 'color',
-        transitionDuration: 'fast',
-        transitionTimingFunction: 'default',
-
-        _hover: {
-          color: 'slate.12',
-        },
-      })}
-    >
+    <Button onPress={() => copy(codeString)} aria-label="Copy snippet" iconOnly>
       {({ isPressed }) =>
         isPressed ? (
           <span
@@ -53,6 +28,6 @@ export default function CopySnippet({ codeString }: { codeString: string }) {
           <Copy />
         )
       }
-    </ButtonPrimitive>
+    </Button>
   )
 }
