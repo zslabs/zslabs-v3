@@ -38,9 +38,15 @@ export default defineConfig({
             theme: 'one-dark-pro',
             transformers: [
               {
-                // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                pre(node: any) {
-                  delete node.properties.style
+                pre(node: Element) {
+                  if (node.properties) {
+                    delete node.properties.style
+                  }
+                },
+                code(node: Element) {
+                  if (node.properties) {
+                    node.properties['data-snippet'] = true
+                  }
                 },
               },
             ],

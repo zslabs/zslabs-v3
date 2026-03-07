@@ -63,7 +63,7 @@ function PostSingle() {
             className={css({
               fontSize: 'sm',
               textTransform: 'uppercase',
-              color: 'slate.12',
+              color: 'slate.11',
               textStyle: 'mono',
             })}
             data-code

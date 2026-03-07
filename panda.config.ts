@@ -201,7 +201,7 @@ const globalCss = defineGlobalStyles({
     fontWeight: 'medium',
     color: 'slate.12',
   },
-  'code:not([data-language])': {
+  'code:not([data-snippet])': {
     color: 'slate.12',
     backgroundColor: 'black.a.8',
     paddingInline: '1',

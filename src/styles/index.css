@@ -17,6 +17,11 @@
     src: url('/fonts/TT_Commons_Pro_Mono_Variable.woff2') format('woff2');
   }
 
+  button:not(:disabled),
+  [role='button']:not(:disabled) {
+    cursor: pointer;
+  }
+
   html,
   body {
     min-height: 100%;

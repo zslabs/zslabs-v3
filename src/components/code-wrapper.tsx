@@ -13,82 +13,39 @@ export default function CodeWrapper({ codeString, children }: CodeProps) {
       className={css({
         borderRadius: 'xl',
         textStyle: 'mono',
+        backgroundColor: 'slate.2',
         fontWeight: 'normal',
         letterSpacing: 'normal',
         borderWidth: '1',
+        padding: '1',
         borderStyle: 'solid',
-        borderColor: 'slate.a.3',
+        borderColor: 'slate.5',
+        position: 'relative',
       })}
       data-code
     >
-      <header
+      <div
         className={css({
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          gap: '4',
-          borderStartStartRadius: 'xl',
-          borderStartEndRadius: 'xl',
-          paddingBlock: '2',
-          paddingInline: '4',
-          backgroundColor: 'black.a.11',
-          borderBlockEndWidth: '1',
-          borderStyle: 'solid',
-          borderColor: 'slate.a.3',
+          position: 'absolute',
+          insetBlockEnd: '0',
+          insetInlineEnd: '0',
+          translate: 'auto',
+          translateX: '1/4',
+          translateY: '1/4',
+          borderRadius: 'full',
+          padding: '1',
         })}
       >
-        <div
-          className={css({
-            display: 'flex',
-            alignItems: 'center',
-            gap: '4',
-          })}
-        >
-          <div
-            className={css({
-              display: 'flex',
-              gap: '2',
-            })}
-          >
-            <span
-              className={css({
-                width: '3',
-                height: '3',
-                borderRadius: 'full',
-                backgroundColor: 'tomato.9',
-              })}
-            />
-            <span
-              className={css({
-                width: '3',
-                height: '3',
-                borderRadius: 'full',
-                backgroundColor: 'yellow.9',
-              })}
-            />
-            <span
-              className={css({
-                width: '3',
-                height: '3',
-                borderRadius: 'full',
-                backgroundColor: 'jade.9',
-              })}
-            />
-          </div>
-        </div>
-        <div>
-          <CopySnippet codeString={codeString} />
-        </div>
-      </header>
+        <CopySnippet codeString={codeString} />
+      </div>
       <aside
         className={css({
           maxHeight: '120',
           overflow: 'auto',
           overscrollBehavior: 'contain',
-          borderEndStartRadius: 'xl',
-          borderEndEndRadius: 'xl',
-          padding: '4',
-          backgroundColor: 'black.a.8',
+          borderRadius: 'lg',
+          padding: '2',
+          backgroundColor: 'slate.3',
         })}
       >
         {children}

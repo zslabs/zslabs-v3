@@ -3,13 +3,21 @@ import * as React from 'react'
 import type { RecipeVariantProps } from '@css/css'
 import { css, cva } from '@css/css'
 import { Button as ButtonPrimitive } from 'react-aria-components'
-import type { ButtonProps as ButtonPropsPrimitive } from 'react-aria-components'
 
-type ButtonVariants = RecipeVariantProps<typeof styles> & {
-  children: React.ReactNode
-}
+type ButtonVariants = RecipeVariantProps<typeof styles>
+type ButtonProps = React.ComponentPropsWithRef<typeof ButtonPrimitive> &
+  ButtonVariants
 
-type ButtonProps = ButtonPropsPrimitive & ButtonVariants
+const buttonContentClass = css({
+  position: 'relative',
+  zIndex: '10',
+  display: 'flex',
+  height: 'full',
+  placeContent: 'center',
+  placeItems: 'center',
+  gap: '2',
+  whiteSpace: 'nowrap',
+})
 
 const styles = cva({
   base: {
@@ -112,61 +120,18 @@ export function Button({
   variation,
   iconOnly,
   loading,
-  ref,
-  ...rest
-}: ButtonProps & { ref?: React.Ref<HTMLButtonElement> }) {
+  ...buttonProps
+}: ButtonProps) {
   return (
     <ButtonPrimitive
-      {...rest}
+      {...buttonProps}
       className={styles({ variation, iconOnly, loading })}
-      ref={ref}
     >
-      <span
-        className={css({
-          position: 'relative',
-          zIndex: '10',
-          display: 'flex',
-          height: 'full',
-          placeContent: 'center',
-          placeItems: 'center',
-          gap: '2',
-          whiteSpace: 'nowrap',
-        })}
-      >
-        {children}
-      </span>
+      {(renderProps) => (
+        <span className={buttonContentClass}>
+          {typeof children === 'function' ? children(renderProps) : children}
+        </span>
+      )}
     </ButtonPrimitive>
-  )
-}
-
-export function DivButton({
-  children,
-  variation,
-  iconOnly,
-  loading,
-  ref,
-  ...rest
-}: ButtonVariants & {
-  ref?: React.Ref<HTMLDivElement>
-}) {
-  return (
-    <div
-      {...rest}
-      className={styles({ variation, iconOnly, loading })}
-      ref={ref}
-    >
-      <span
-        className={css({
-          display: 'flex',
-          height: 'full',
-          placeContent: 'center',
-          placeItems: 'center',
-          gap: '2',
-          whiteSpace: 'nowrap',
-        })}
-      >
-        {children}
-      </span>
-    </div>
   )
 }

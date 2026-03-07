@@ -2,7 +2,7 @@ import { css } from '@css/css'
 import { inlineIcon } from '@css/patterns'
 import { createFileRoute } from '@tanstack/react-router'
 
-import { DivButton } from '@/components/button'
+import { Button } from '@/components/button'
 import HomepageWrapper from '@/components/homepage-wrapper'
 import { List, ListItem } from '@/components/list'
 import Prose from '@/components/prose'
@@ -71,7 +71,9 @@ function Intro() {
         })}
       >
         <TextLink href="/experience">
-          <DivButton variation="contrast">Experience</DivButton>
+          <Button variation="contrast" render={(props) => <span {...props} />}>
+            Experience
+          </Button>
         </TextLink>
         <TextLink
           href="/uses"
@@ -79,7 +81,9 @@ function Intro() {
             cursor: 'help',
           })}
         >
-          <DivButton variation="default">What I use</DivButton>
+          <Button variation="default" render={(props) => <span {...props} />}>
+            What I use
+          </Button>
         </TextLink>
       </div>
     </section>
@@ -198,12 +202,12 @@ function Articles() {
       })}
     >
       <TextLink href="/articles">
-        <DivButton variation="secondary">
+        <Button variation="secondary" render={(props) => <span {...props} />}>
           <span className={css({ fontSize: 'lg' })}>
             <Article />
           </span>
           Articles archive
-        </DivButton>
+        </Button>
       </TextLink>
     </section>
   )
