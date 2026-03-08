@@ -68,7 +68,7 @@ function PostSingle() {
             })}
             data-code
           >
-            :: Published {date} ::
+            / Published {date} /
           </div>
           <MoreArticlesLink />
         </div>

@@ -108,13 +108,13 @@ function Projects() {
           mono
           href="https://token.zslabs.com"
           icon={<Token />}
-          meta="Coming soon"
+          meta={['Coming soon']}
         >
           A thoughtfully curated and opinionated preset for design systems —
           uniting linting, tooling, and perspective to align design and
           engineering.
         </ListItem>
-        <ListItem label="CSS infrastructure" icon={<CSS />} meta="Slack">
+        <ListItem label="CSS infrastructure" icon={<CSS />} meta={['Slack']}>
           As technical lead of CSS infrastructure at Slack, I&apos;ve
           implemented technologies that help engineers write code safer and more
           efficiently; while also developing a migration path for our legacy
@@ -123,7 +123,7 @@ function Projects() {
           practices, that help us rely less on client-side logic for more
           performant experiences.
         </ListItem>
-        <ListItem label="Theming" icon={<Theming />} meta="Slack :: Figma">
+        <ListItem label="Theming" icon={<Theming />} meta={['Slack', 'Figma']}>
           Technical and team lead for Slack&apos;s new theming infrastructure
           across desktop, iOS, and Android. Developed migration methods across
           thousands of assets, while simplifying both the storage, application,
@@ -135,7 +135,11 @@ function Projects() {
             <X className={inlineIcon()} />
           </TextLink>
         </ListItem>
-        <ListItem label="Design tokens" icon={<Tokens />} meta="Slack :: Figma">
+        <ListItem
+          label="Design tokens"
+          icon={<Tokens />}
+          meta={['Slack', 'Figma']}
+        >
           Build tool that uses Figma design primitives to scale across desktop,
           iOS, and Android. This design system is the basis for all experiences
           across Slack; which also includes custom{' '}
@@ -147,7 +151,7 @@ function Projects() {
         <ListItem
           label="Icon automation library"
           icon={<Icons />}
-          meta="Slack :: Figma"
+          meta={['Slack', 'Figma']}
         >
           Build tool that integrates with the Figma API to extract and create
           SVG icons for use across desktop, iOS, and Android. This library takes
@@ -158,7 +162,7 @@ function Projects() {
           label="Wes Anderslack"
           icon={<WesAnderSlack />}
           href="https://wesanderslack.zslabs.com"
-          meta="Next.js :: React Aria Components :: Tailwind CSS"
+          meta={['Next.js', 'React Aria', 'Tailwind CSS']}
         >
           While the original was lost to time, I decided to bring back a
           fan-favorite; honoring a great director of some of my favorite movies.
@@ -167,7 +171,7 @@ function Projects() {
           label="Profile"
           href="https://profile.zslabs.com"
           icon={<Profile />}
-          meta="Next.js :: React Aria Components :: Tailwind CSS"
+          meta={['Next.js', 'React Aria', 'Tailwind CSS']}
         >
           Personalized eBay seller profiles; the way they should be.
         </ListItem>
@@ -175,7 +179,7 @@ function Projects() {
           label="Collection"
           href="https://collection.zslabs.com"
           icon={<Collection />}
-          meta="Next.js :: React Aria Components :: Tailwind CSS"
+          meta={['Next.js', 'React Aria', 'Tailwind CSS']}
         >
           Curated lists of eBay items; no filters needed.
         </ListItem>
@@ -183,7 +187,7 @@ function Projects() {
           label="List"
           href="https://list.zslabs.com"
           icon={<ListProject />}
-          meta="Next.js :: Radix UI :: Tailwind CSS"
+          meta={['Next.js', 'Radix UI', 'Tailwind CSS']}
         >
           The best experience for monitoring activity on multiple eBay search
           terms.
@@ -192,7 +196,7 @@ function Projects() {
           label="Sold"
           href="https://sold.zslabs.com"
           icon={<Sold />}
-          meta="Next.js :: React Aria Components :: Tailwind CSS"
+          meta={['Next.js', 'React Aria', 'Tailwind CSS']}
         >
           Toolkit for gauging market-prices and trends on eBay.
         </ListItem>

@@ -120,18 +120,22 @@ export default function BaseLayout({ children }: ChildrenOnlyProps) {
             })}
           >
             <HeaderItemWrapper runAnimation={runAnimation} custom={2}>
-              <TextLink href="https://github.com/zslabs" title="GitHub">
-                <Button iconOnly render={(props) => <span {...props} />}>
-                  <GitHub />
-                </Button>
-              </TextLink>
+              <Tooltip content="GitHub">
+                <TextLink href="https://github.com/zslabs" title="GitHub">
+                  <Button iconOnly render={(props) => <span {...props} />}>
+                    <GitHub />
+                  </Button>
+                </TextLink>
+              </Tooltip>
             </HeaderItemWrapper>
             <HeaderItemWrapper runAnimation={runAnimation} custom={3}>
-              <TextLink href="https://twitter.com/zslabs" title="Twitter">
-                <Button iconOnly render={(props) => <span {...props} />}>
-                  <X />
-                </Button>
-              </TextLink>
+              <Tooltip content="Twitter">
+                <TextLink href="https://twitter.com/zslabs" title="Twitter">
+                  <Button iconOnly render={(props) => <span {...props} />}>
+                    <X />
+                  </Button>
+                </TextLink>
+              </Tooltip>
             </HeaderItemWrapper>
             <HeaderItemWrapper
               runAnimation={runAnimation}

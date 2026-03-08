@@ -47,7 +47,7 @@ const styles = cva({
         gradientFrom: 'slate.2',
         gradientTo: 'slate.1',
         borderWidth: '1',
-        borderColor: 'slate.7',
+        borderColor: 'slate.5',
         borderStyle: 'solid',
         boxShadow: 'slate',
         color: 'slate.11',

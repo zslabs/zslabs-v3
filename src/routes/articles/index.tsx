@@ -46,7 +46,7 @@ function Articles() {
               key={post.url}
               label={post.title}
               href={post.url}
-              meta={post.date}
+              meta={[post.date]}
             >
               {post.excerpt || null}
             </BoxListItem>

@@ -51,7 +51,7 @@ export function ListItem({
   mono,
 }: {
   label: React.ReactNode
-  meta?: React.ReactNode
+  meta?: string[]
   children?: React.ReactNode
   href?: string
   icon?: React.ReactNode
@@ -173,20 +173,29 @@ export function ListItem({
                 color: 'slate.11',
                 fontSize: 'sm',
                 borderWidth: '1',
-                borderColor: 'slate.a.5',
-                borderRadius: 'md',
+                borderColor: 'slate.3',
+                borderRadius: 'full',
                 textStyle: 'mono',
                 textTransform: 'uppercase',
                 letterSpacing: 'normal',
                 backgroundColor: 'black.a.6',
                 width: 'fit',
-                paddingInline: '2',
-                paddingBlock: '1',
+                paddingInline: '3',
+                paddingBlock: '0.5',
                 marginBlockStart: '2',
+                display: 'flex',
+                gap: '2',
               })}
               data-code
             >
-              {meta}
+              {meta.map((item, index) => (
+                <React.Fragment key={index}>
+                  {item}
+                  {index !== meta.length - 1 && (
+                    <span className={css({ color: 'slate.8' })}>/</span>
+                  )}
+                </React.Fragment>
+              ))}
             </div>
           )}
         </div>
@@ -202,7 +211,7 @@ export function BoxListItem({
   meta,
 }: {
   label: React.ReactNode
-  meta?: string
+  meta?: string[]
   children?: React.ReactNode
   href: string
   icon?: React.ReactNode
@@ -288,10 +297,19 @@ export function BoxListItem({
                   textStyle: 'mono',
                   textTransform: 'uppercase',
                   letterSpacing: 'normal',
+                  display: 'flex',
+                  gap: '2',
                 })}
                 data-code
               >
-                {meta}
+                {meta.map((item, index) => (
+                  <React.Fragment key={index}>
+                    {item}
+                    {index !== meta.length - 1 && (
+                      <span className={css({ color: 'slate.8' })}>/</span>
+                    )}
+                  </React.Fragment>
+                ))}
               </div>
             )}
           </div>

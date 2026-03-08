@@ -27,7 +27,7 @@ function Experience() {
         <List>
           <ListItem
             label="Slack"
-            meta="Staff software engineer :: 05/2021 - current"
+            meta={['Staff software engineer', '05/21 - current']}
             icon={<Slack />}
           >
             I&apos;m part of the design infrastructure team, building tools to
@@ -37,7 +37,7 @@ function Experience() {
           </ListItem>
           <ListItem
             label="Gremlin"
-            meta="Senior software engineer :: 09/2018 - 05/2021"
+            meta={['Senior software engineer', '09/18 - 05/21']}
             icon={<Gremlin />}
           >
             Revamped their marketing platform, alongside creating a
@@ -47,7 +47,7 @@ function Experience() {
           </ListItem>
           <ListItem
             label="Rhinogram"
-            meta="Senior UI Engineer :: 01/2017 - 08/2018"
+            meta={['Senior UI Engineer', '01/17 - 08/18']}
             icon={<Rhinogram />}
           >
             Managed a React-powered styleguide that in-turn was integrated into
@@ -56,7 +56,7 @@ function Experience() {
           </ListItem>
           <ListItem
             label="DigitalOcean"
-            meta="UI Engineer :: 01/2016 - 01/2017"
+            meta={['UI Engineer', '01/16 - 01/17']}
             icon={<DigitalOcean />}
           >
             Lead development efforts on creating an internal framework used to
