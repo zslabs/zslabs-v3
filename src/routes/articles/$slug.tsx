@@ -65,10 +65,13 @@ function PostSingle() {
               textTransform: 'uppercase',
               color: 'slate.11',
               textStyle: 'mono',
+              display: 'flex',
+              gap: '2',
             })}
             data-code
           >
-            / Published {date} /
+            <span className={css({ color: 'slate.8' })}>/</span> Published{' '}
+            {date} <span className={css({ color: 'slate.8' })}>/</span>
           </div>
           <MoreArticlesLink />
         </div>
