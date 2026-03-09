@@ -31,26 +31,26 @@ function Software() {
       <ListItem
         icon={<VSCode />}
         label="VS Code"
-        href="https://code.visualstudio.com/"
+        to="https://code.visualstudio.com/"
       >
         I&apos;ve tried them all; Dreamweaver, Sublime Text, BB Edit, Textmate,
         Atom, etc.
       </ListItem>
-      <ListItem icon={<Figma />} label="Figma" href="https://www.figma.com">
+      <ListItem icon={<Figma />} label="Figma" to="https://www.figma.com">
         Previously Sketch, but Figma is just too good to ignore; with a plethora
         of community-driven plugins.
       </ListItem>
       <ListItem
         icon={<Rectangle />}
         label="Rectangle"
-        href="https://rectangleapp.com/"
+        to="https://rectangleapp.com/"
       >
         The easiest window-management tool I&apos;ve ever used.
       </ListItem>
-      <ListItem icon={<Edge />} label="Edge" href="https://microsoft.com/edge">
+      <ListItem icon={<Edge />} label="Edge" to="https://microsoft.com/edge">
         Microsoft has really stepped-up their browser game.
       </ListItem>
-      <ListItem icon={<Ghost />} label="Ghostty" href="https://ghostty.org">
+      <ListItem icon={<Ghost />} label="Ghostty" to="https://ghostty.org">
         The built-in terminal in VS Code is fine; though I&apos;m fortunate
         enough to have the screen real-estate for a dedicated, always-open
         terminal.
@@ -58,7 +58,7 @@ function Software() {
       <ListItem
         icon={<GitHub />}
         label="GitHub Desktop"
-        href="https://desktop.github.com/"
+        to="https://desktop.github.com/"
       >
         I do feel more accomplished in the terminal at-times, but the interface
         and ease-of-use can&apos;t be understated for all my projects.
@@ -66,14 +66,14 @@ function Software() {
       <ListItem
         icon={<Mimestream />}
         label="Mimestream"
-        href="https://mimestream.com/"
+        to="https://mimestream.com/"
       >
         Handles multiple Google-based email accounts like a champ.
       </ListItem>
       <ListItem
         icon={<OnePassword />}
         label="1Password"
-        href="https://1password.com"
+        to="https://1password.com"
       >
         Synced across all my devices; never had an issue.
       </ListItem>
@@ -89,7 +89,7 @@ function Gear() {
   return (
     <List>
       <ListItem
-        href="https://amzn.to/4dx5sog"
+        to="https://amzn.to/4dx5sog"
         icon={<MBPro />}
         label={`MacBook Pro 16" M3 Max`}
       >
@@ -97,7 +97,7 @@ function Gear() {
         board!
       </ListItem>
       <ListItem
-        href="https://www.apple.com/iphone-15-pro/"
+        to="https://www.apple.com/iphone-15-pro/"
         icon={<Iphone />}
         label="iPhone 15 Pro"
       >
@@ -106,26 +106,26 @@ function Gear() {
       <ListItem
         icon={<Monitor />}
         label='Dell UltraSharp 40" monitor'
-        href="https://amzn.to/4iaUwh0"
+        to="https://amzn.to/4iaUwh0"
       >
         5k, 120hz; what&apos;s not to love?!
       </ListItem>
       <ListItem
         icon={<Mouse />}
-        href="https://amzn.to/3ccyLS8"
+        to="https://amzn.to/3ccyLS8"
         label="Logitech MX Masters"
       >
         An absolute powerhouse of a mouse; never looking back.
       </ListItem>
       <ListItem
         icon={<Keyboard />}
-        href="https://www.keychron.com/products/keychron-q5-max-qmk-via-wireless-custom-mechanical-keyboard"
+        to="https://www.keychron.com/products/keychron-q5-max-qmk-via-wireless-custom-mechanical-keyboard"
         label="Keychron Q5 Max Mechanical Keyboard"
       >
         My first mechanical keyboard, and I&apos;m loving it so far.
       </ListItem>
       <ListItem
-        href="https://www.aersf.com/travel-pack-3-black"
+        to="https://www.aersf.com/travel-pack-3-black"
         icon={<Backback />}
         label="Aer Travel Pack 3"
       >
@@ -133,7 +133,7 @@ function Gear() {
         much-needed, dual-purpose upgrade that I&apos;m happy to add.
       </ListItem>
       <ListItem
-        href="https://amzn.to/3dGpYIp"
+        to="https://amzn.to/3dGpYIp"
         icon={<Stand />}
         label="Rain Design mStand"
       >

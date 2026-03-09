@@ -22,7 +22,7 @@ export default function LinkedIn() {
           borderStyle: 'solid',
           fontSize: 'xl',
         })}
-        href="https://www.linkedin.com/in/zachschnackel/"
+        to="https://www.linkedin.com/in/zachschnackel/"
       >
         <More />
       </TextLink>

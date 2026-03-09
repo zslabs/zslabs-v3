@@ -39,7 +39,7 @@ function Intro() {
         </p>
         <p>
           Happy to be part of the design infrastructure team at{' '}
-          <TextLink href="https://slack.com">
+          <TextLink to="https://slack.com">
             <Slack className={inlineIcon()} /> Slack
           </TextLink>
           ; building tools to help designers and engineers collaborate more
@@ -50,7 +50,7 @@ function Intro() {
           in the NC mountains{' '}
           <TextLink
             title="Elk Knob State Park"
-            href="https://www.ncparks.gov/state-parks/elk-knob-state-park"
+            to="https://www.ncparks.gov/state-parks/elk-knob-state-park"
           >
             <span
               className={css({
@@ -70,7 +70,7 @@ function Intro() {
           marginBlockStart: '8',
         })}
       >
-        <TextLink href="/experience">
+        <TextLink to="/experience">
           <Button
             variation="contrast"
             glow="contrast"
@@ -80,7 +80,7 @@ function Intro() {
           </Button>
         </TextLink>
         <TextLink
-          href="/uses"
+          to="/uses"
           className={css({
             cursor: 'help',
           })}
@@ -106,7 +106,7 @@ function Projects() {
         <ListItem
           label="token()"
           mono
-          href="https://token.zslabs.com"
+          to="https://token.zslabs.com"
           icon={<Token />}
           meta={['Coming soon']}
         >
@@ -130,7 +130,7 @@ function Projects() {
           and manipulation of color preferences throughout each platform.{' '}
           <TextLink
             title="Release announcement"
-            href="https://twitter.com/zslabs/status/1698304419979313651"
+            to="https://twitter.com/zslabs/status/1698304419979313651"
           >
             <X className={inlineIcon()} />
           </TextLink>
@@ -143,7 +143,7 @@ function Projects() {
           Build tool that uses Figma design primitives to scale across desktop,
           iOS, and Android. This design system is the basis for all experiences
           across Slack; which also includes custom{' '}
-          <TextLink href="https://lightningcss.dev/transforms.html">
+          <TextLink to="https://lightningcss.dev/transforms.html">
             Lightning CSS transforms
           </TextLink>{' '}
           to enable engineers to reference generated values quickly.
@@ -161,7 +161,7 @@ function Projects() {
         <ListItem
           label="Wes Anderslack"
           icon={<WesAnderSlack />}
-          href="https://wesanderslack.zslabs.com"
+          to="https://wesanderslack.zslabs.com"
           meta={['Next.js', 'React Aria', 'Tailwind CSS']}
         >
           While the original was lost to time, I decided to bring back a
@@ -169,7 +169,7 @@ function Projects() {
         </ListItem>
         <ListItem
           label="Profile"
-          href="https://profile.zslabs.com"
+          to="https://profile.zslabs.com"
           icon={<Profile />}
           meta={['Next.js', 'React Aria', 'Tailwind CSS']}
         >
@@ -177,7 +177,7 @@ function Projects() {
         </ListItem>
         <ListItem
           label="Collection"
-          href="https://collection.zslabs.com"
+          to="https://collection.zslabs.com"
           icon={<Collection />}
           meta={['Next.js', 'React Aria', 'Tailwind CSS']}
         >
@@ -185,7 +185,7 @@ function Projects() {
         </ListItem>
         <ListItem
           label="List"
-          href="https://list.zslabs.com"
+          to="https://list.zslabs.com"
           icon={<ListProject />}
           meta={['Next.js', 'Radix UI', 'Tailwind CSS']}
         >
@@ -194,7 +194,7 @@ function Projects() {
         </ListItem>
         <ListItem
           label="Sold"
-          href="https://sold.zslabs.com"
+          to="https://sold.zslabs.com"
           icon={<Sold />}
           meta={['Next.js', 'React Aria', 'Tailwind CSS']}
         >
@@ -213,7 +213,7 @@ function Articles() {
         textAlign: 'center',
       })}
     >
-      <TextLink href="/articles">
+      <TextLink to="/articles">
         <Button variation="default" render={(props) => <span {...props} />}>
           <Article />
           Articles archive

@@ -10,6 +10,13 @@ interface DataFrontmatter {
   title: string
 }
 
+interface ArticleRouteTarget {
+  to: '/articles/$slug'
+  params: {
+    slug: string
+  }
+}
+
 type MDXModule<T> = {
   default: (props: Record<string, unknown>) => JSX.Element
   frontmatter: T
@@ -43,9 +50,17 @@ export function getAllPosts(limit?: number) {
         month: 'short',
         day: 'numeric',
       }),
-      url: `/articles/${filename.replace(/\.mdx?$/, '')}`,
+      to: '/articles/$slug' as const,
+      params: {
+        slug: filename.replace(/\.mdx?$/, ''),
+      },
       excerpt: frontmatter.excerpt,
       title: frontmatter.title,
+    } satisfies ArticleRouteTarget & {
+      dateRAW: string
+      date: string
+      excerpt?: string
+      title: string
     }
   })
 

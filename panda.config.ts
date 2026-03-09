@@ -227,6 +227,13 @@ const globalCss = defineGlobalStyles({
 export default defineConfig({
   preflight: true,
   presets: [preset],
+  conditions: {
+    extend: {
+      notClass: '&:not([class])',
+      notFirstChild: '&:not(:first-child)',
+      notLastChild: '&:not(:last-child)',
+    },
+  },
   include: [
     './src/components/**/*.tsx',
     './src/layouts/**/*.tsx',

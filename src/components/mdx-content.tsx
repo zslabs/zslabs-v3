@@ -85,7 +85,9 @@ function Image({
 }
 
 const components: MDXComponents = {
-  a: (props: TextLinkProps) => <TextLink {...props} />,
+  a: ({ href, ...rest }: React.AnchorHTMLAttributes<HTMLAnchorElement>) => (
+    <TextLink to={href as TextLinkProps['to']} {...rest} />
+  ),
   blockquote: (props: BlockquoteProps) => <Blockquote {...props} />,
   h1: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
     <AutoLinkHeader as="h1" {...props} />

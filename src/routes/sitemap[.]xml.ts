@@ -24,7 +24,7 @@ export const Route = createFileRoute('/sitemap.xml')({
             lastmod: new Date().toISOString(),
           },
           ...posts.map((post) => ({
-            url: `https://zslabs.com${post.url}`,
+            url: `https://zslabs.com/articles/${post.params.slug}`,
             lastmod: new Date().toISOString(),
           })),
           ...statics.map((page) => ({

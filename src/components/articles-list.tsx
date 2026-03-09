@@ -8,9 +8,10 @@ export default async function ArticlesList({ limit }: { limit?: number }) {
     <BoxList>
       {posts.map((post) => (
         <BoxListItem
-          key={post.url}
+          key={post.params.slug}
           label={post.title}
-          href={post.url}
+          to={post.to}
+          params={post.params}
           meta={[post.date]}
         >
           {post.excerpt || null}

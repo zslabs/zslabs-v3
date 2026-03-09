@@ -1,60 +1,40 @@
-import * as React from 'react'
+import type { HTMLAttributes, ReactNode } from 'react'
 
-import { Link } from '@tanstack/react-router'
+import {
+  Link as TSLink,
+  type LinkProps as TSLinkProps,
+} from '@tanstack/react-router'
 
-// Checks against absolute URLs that share 👇 so we can still pass it along to our internal link component
-const domainRegex = /http[s]*:\/\/[www.]*zslabs\.com[/]?/
-
-export interface TextLinkProps extends React.PropsWithoutRef<
-  React.HTMLAttributes<HTMLAnchorElement>
-> {
-  href?: string
+export interface TextLinkProps
+  extends
+    Omit<TSLinkProps, 'to'>,
+    Omit<HTMLAttributes<HTMLAnchorElement>, 'href'> {
+  to?:
+    | TSLinkProps['to']
+    | `http://${string}`
+    | `https://${string}`
+    | `mailto:${string}`
+  children?: ReactNode
 }
 
-export default function TextLink({
-  href,
-  children,
-  ref,
-  ...rest
-}: TextLinkProps & { ref?: React.Ref<HTMLAnchorElement> }) {
-  if (!href) return null
+export default function TextLink({ to, children, ...rest }: TextLinkProps) {
+  const isExternalUrl =
+    typeof to === 'string' &&
+    (to.startsWith('http://') ||
+      to.startsWith('https://') ||
+      to.startsWith('mailto:'))
 
-  const sameDomain = domainRegex.test(href)
-
-  // If our link matches the `domainRegex` above, update to become relative
-  if (sameDomain) {
-    href = href.replace(domainRegex, '/')
-  }
-
-  // If our link is relative, we can assume it's an internal link and use our router
-  if (href.startsWith('/')) {
+  if (isExternalUrl) {
     return (
-      <Link to={href} ref={ref} data-link-internal {...rest}>
-        {children}
-      </Link>
-    )
-  }
-
-  // Treat urls that aren't http protocols as "normal" links
-  if (!href.startsWith('http')) {
-    return (
-      <a href={href} ref={ref} {...rest}>
+      <a href={to} {...rest} rel="noopener noreferrer" target="_blank">
         {children}
       </a>
     )
   }
 
-  // Otherwise, this is an external link that we can add on good security defaults for
   return (
-    <a
-      ref={ref}
-      data-link-external
-      href={href}
-      target="_blank"
-      rel="nofollow noreferrer"
-      {...rest}
-    >
+    <TSLink to={to as TSLinkProps['to']} {...rest}>
       {children}
-    </a>
+    </TSLink>
   )
 }

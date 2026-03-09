@@ -99,7 +99,7 @@ export default function BaseLayout({ children }: ChildrenOnlyProps) {
         >
           <HeaderItemWrapper runAnimation={runAnimation} custom={1}>
             <TextLink
-              href="/"
+              to="/"
               aria-label="Home"
               className={css({
                 position: 'relative',
@@ -121,7 +121,7 @@ export default function BaseLayout({ children }: ChildrenOnlyProps) {
           >
             <HeaderItemWrapper runAnimation={runAnimation} custom={2}>
               <Tooltip content="GitHub">
-                <TextLink href="https://github.com/zslabs" title="GitHub">
+                <TextLink to="https://github.com/zslabs" title="GitHub">
                   <Button iconOnly render={(props) => <span {...props} />}>
                     <GitHub />
                   </Button>
@@ -130,7 +130,7 @@ export default function BaseLayout({ children }: ChildrenOnlyProps) {
             </HeaderItemWrapper>
             <HeaderItemWrapper runAnimation={runAnimation} custom={3}>
               <Tooltip content="Twitter">
-                <TextLink href="https://twitter.com/zslabs" title="Twitter">
+                <TextLink to="https://twitter.com/zslabs" title="Twitter">
                   <Button iconOnly render={(props) => <span {...props} />}>
                     <X />
                   </Button>
@@ -143,7 +143,7 @@ export default function BaseLayout({ children }: ChildrenOnlyProps) {
               onAnimationComplete={runAnimation ? setDone : undefined}
             >
               <Tooltip content="About me">
-                <TextLink
+                <a
                   href="/#about"
                   className={css({
                     display: 'block',
@@ -171,7 +171,7 @@ export default function BaseLayout({ children }: ChildrenOnlyProps) {
                     height="40"
                     alt="Zach Schnackel"
                   />
-                </TextLink>
+                </a>
               </Tooltip>
             </HeaderItemWrapper>
           </div>
@@ -216,9 +216,9 @@ export default function BaseLayout({ children }: ChildrenOnlyProps) {
                 display: 'flex',
               })}
             >
-              <TextLink href="mailto:info@zslabs.com">Contact</TextLink> ::{' '}
-              <TextLink href="/privacy">Privacy</TextLink> ::{' '}
-              <TextLink href="/terms">Terms</TextLink>
+              <TextLink to="mailto:info@zslabs.com">Contact</TextLink> ::{' '}
+              <TextLink to="/privacy">Privacy</TextLink> ::{' '}
+              <TextLink to="/terms">Terms</TextLink>
             </div>
           </Prose>
         </m.footer>

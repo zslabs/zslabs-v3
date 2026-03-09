@@ -6,6 +6,7 @@ import { m } from 'framer-motion'
 
 import Prose from './prose'
 
+import type { TextLinkProps } from '@/components/text-link'
 import TextLink from '@/components/text-link'
 import { fadeInUp, viewportInViewOptions } from '@/helpers/styles'
 import ArrowDown from '@/icons/arrow-down.svg?react'
@@ -45,7 +46,8 @@ export function BoxList({ children }: { children: React.ReactNode }) {
 export function ListItem({
   label,
   children,
-  href,
+  to,
+  params,
   meta,
   icon,
   mono,
@@ -53,7 +55,8 @@ export function ListItem({
   label: React.ReactNode
   meta?: string[]
   children?: React.ReactNode
-  href?: string
+  to?: TextLinkProps['to']
+  params?: TextLinkProps['params']
   icon?: React.ReactNode
   mono?: boolean
 }) {
@@ -105,7 +108,7 @@ export function ListItem({
             fontSize: 'lg',
           })}
         >
-          {href ? (
+          {to ? (
             <TextLink
               className={cx(
                 'group',
@@ -116,7 +119,8 @@ export function ListItem({
                   width: 'fit',
                 })
               )}
-              href={href}
+              to={to}
+              params={params}
             >
               <span
                 className={css({
@@ -138,7 +142,7 @@ export function ListItem({
               >
                 {label}
               </span>
-              {!href?.startsWith('/') && (
+              {!to?.startsWith('/') && (
                 <div
                   className={css({
                     lineHeight: 'none',
@@ -207,13 +211,15 @@ export function ListItem({
 export function BoxListItem({
   label,
   children,
-  href,
+  to,
+  params,
   meta,
 }: {
   label: React.ReactNode
   meta?: string[]
   children?: React.ReactNode
-  href: string
+  to: TextLinkProps['to']
+  params?: TextLinkProps['params']
   icon?: React.ReactNode
 }) {
   return (
@@ -229,7 +235,8 @@ export function BoxListItem({
         })}
       >
         <TextLink
-          href={href}
+          to={to}
+          params={params}
           className={cx(
             'group',
             css({
