@@ -13,3 +13,10 @@ export const fetchAllStatics = createServerFn({ method: 'GET' }).handler(
     return getAllStatics()
   }
 )
+
+export const fetchAllTokens = createServerFn({ method: 'GET' }).handler(
+  async () => {
+    const { getTokens } = await import('./content')
+    return getTokens()
+  }
+)

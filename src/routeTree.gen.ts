@@ -15,7 +15,9 @@ import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as ExperienceRouteImport } from './routes/experience'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as TokenIndexRouteImport } from './routes/token/index'
 import { Route as ArticlesIndexRouteImport } from './routes/articles/index'
+import { Route as TokenSlugRouteImport } from './routes/token/$slug'
 import { Route as ArticlesSlugRouteImport } from './routes/articles/$slug'
 
 const UsesRoute = UsesRouteImport.update({
@@ -48,9 +50,19 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TokenIndexRoute = TokenIndexRouteImport.update({
+  id: '/token/',
+  path: '/token/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ArticlesIndexRoute = ArticlesIndexRouteImport.update({
   id: '/articles/',
   path: '/articles/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TokenSlugRoute = TokenSlugRouteImport.update({
+  id: '/token/$slug',
+  path: '/token/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ArticlesSlugRoute = ArticlesSlugRouteImport.update({
@@ -67,7 +79,9 @@ export interface FileRoutesByFullPath {
   '/terms': typeof TermsRoute
   '/uses': typeof UsesRoute
   '/articles/$slug': typeof ArticlesSlugRoute
+  '/token/$slug': typeof TokenSlugRoute
   '/articles/': typeof ArticlesIndexRoute
+  '/token/': typeof TokenIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -77,7 +91,9 @@ export interface FileRoutesByTo {
   '/terms': typeof TermsRoute
   '/uses': typeof UsesRoute
   '/articles/$slug': typeof ArticlesSlugRoute
+  '/token/$slug': typeof TokenSlugRoute
   '/articles': typeof ArticlesIndexRoute
+  '/token': typeof TokenIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -88,7 +104,9 @@ export interface FileRoutesById {
   '/terms': typeof TermsRoute
   '/uses': typeof UsesRoute
   '/articles/$slug': typeof ArticlesSlugRoute
+  '/token/$slug': typeof TokenSlugRoute
   '/articles/': typeof ArticlesIndexRoute
+  '/token/': typeof TokenIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -100,7 +118,9 @@ export interface FileRouteTypes {
     | '/terms'
     | '/uses'
     | '/articles/$slug'
+    | '/token/$slug'
     | '/articles/'
+    | '/token/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -110,7 +130,9 @@ export interface FileRouteTypes {
     | '/terms'
     | '/uses'
     | '/articles/$slug'
+    | '/token/$slug'
     | '/articles'
+    | '/token'
   id:
     | '__root__'
     | '/'
@@ -120,7 +142,9 @@ export interface FileRouteTypes {
     | '/terms'
     | '/uses'
     | '/articles/$slug'
+    | '/token/$slug'
     | '/articles/'
+    | '/token/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -131,7 +155,9 @@ export interface RootRouteChildren {
   TermsRoute: typeof TermsRoute
   UsesRoute: typeof UsesRoute
   ArticlesSlugRoute: typeof ArticlesSlugRoute
+  TokenSlugRoute: typeof TokenSlugRoute
   ArticlesIndexRoute: typeof ArticlesIndexRoute
+  TokenIndexRoute: typeof TokenIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -178,11 +204,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/token/': {
+      id: '/token/'
+      path: '/token'
+      fullPath: '/token/'
+      preLoaderRoute: typeof TokenIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/articles/': {
       id: '/articles/'
       path: '/articles'
       fullPath: '/articles/'
       preLoaderRoute: typeof ArticlesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/token/$slug': {
+      id: '/token/$slug'
+      path: '/token/$slug'
+      fullPath: '/token/$slug'
+      preLoaderRoute: typeof TokenSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/articles/$slug': {
@@ -203,7 +243,9 @@ const rootRouteChildren: RootRouteChildren = {
   TermsRoute: TermsRoute,
   UsesRoute: UsesRoute,
   ArticlesSlugRoute: ArticlesSlugRoute,
+  TokenSlugRoute: TokenSlugRoute,
   ArticlesIndexRoute: ArticlesIndexRoute,
+  TokenIndexRoute: TokenIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

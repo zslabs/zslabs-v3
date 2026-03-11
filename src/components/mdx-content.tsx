@@ -9,6 +9,7 @@ import type { BlockquoteProps } from '@/components/blockquote'
 import Blockquote from '@/components/blockquote'
 import CodePen from '@/components/code-pen'
 import CodeWrapper from '@/components/code-wrapper'
+import { Columns, Column } from '@/components/columns'
 import Prose from '@/components/prose'
 import type { TextLinkProps } from '@/components/text-link'
 import TextLink from '@/components/text-link'
@@ -104,18 +105,19 @@ const components: MDXComponents = {
   h5: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
     <AutoLinkHeader as="h5" {...props} />
   ),
-  Alert,
-  Image,
-  CodePen,
-  TextLink,
   pre: ({
     rawCode,
     ...rest
   }: React.HTMLAttributes<HTMLPreElement> & {
     rawCode: string
   }) => {
+    const codeTitle = (rest as Record<string, unknown>)['data-title']
+
     return (
-      <CodeWrapper codeString={rawCode}>
+      <CodeWrapper
+        codeString={rawCode}
+        title={typeof codeTitle === 'string' ? codeTitle : undefined}
+      >
         <pre
           className={css({
             display: 'grid',
@@ -125,6 +127,12 @@ const components: MDXComponents = {
       </CodeWrapper>
     )
   },
+  Alert,
+  Image,
+  CodePen,
+  TextLink,
+  Columns,
+  Column,
 }
 
 export default function MDXContent({

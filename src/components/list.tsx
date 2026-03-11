@@ -6,6 +6,7 @@ import { m } from 'framer-motion'
 
 import Prose from './prose'
 
+import { Badge } from '@/components/badge'
 import type { TextLinkProps } from '@/components/text-link'
 import TextLink from '@/components/text-link'
 import { fadeInUp, viewportInViewOptions } from '@/helpers/styles'
@@ -100,6 +101,7 @@ export function ListItem({
           {icon}
         </div>
       )}
+
       <div>
         <div
           className={css({
@@ -174,32 +176,19 @@ export function ListItem({
           {meta && (
             <div
               className={css({
-                color: 'slate.11',
-                fontSize: 'sm',
-                borderWidth: '1',
-                borderColor: 'slate.3',
-                borderRadius: 'full',
-                textStyle: 'mono',
-                textTransform: 'uppercase',
-                letterSpacing: 'normal',
-                backgroundColor: 'black.a.6',
-                width: 'fit',
-                paddingInline: '3',
-                paddingBlock: '0.5',
                 marginBlockStart: '2',
-                display: 'flex',
-                gap: '2',
               })}
-              data-code
             >
-              {meta.map((item, index) => (
-                <React.Fragment key={index}>
-                  {item}
-                  {index !== meta.length - 1 && (
-                    <span className={css({ color: 'slate.8' })}>/</span>
-                  )}
-                </React.Fragment>
-              ))}
+              <Badge>
+                {meta.map((item, index) => (
+                  <React.Fragment key={index}>
+                    {item}
+                    {index !== meta.length - 1 && (
+                      <span className={css({ color: 'slate.8' })}>/</span>
+                    )}
+                  </React.Fragment>
+                ))}
+              </Badge>
             </div>
           )}
         </div>
@@ -214,6 +203,8 @@ export function BoxListItem({
   to,
   params,
   meta,
+  poster,
+  comingSoon,
 }: {
   label: React.ReactNode
   meta?: string[]
@@ -221,7 +212,17 @@ export function BoxListItem({
   to: TextLinkProps['to']
   params?: TextLinkProps['params']
   icon?: React.ReactNode
+  poster?: string
+  comingSoon?: boolean
 }) {
+  const Component = React.useMemo(() => {
+    if (comingSoon) {
+      return 'div'
+    }
+
+    return TextLink
+  }, [comingSoon])
+
   return (
     <m.li
       initial="offscreen"
@@ -234,9 +235,9 @@ export function BoxListItem({
           height: 'full',
         })}
       >
-        <TextLink
-          to={to}
-          params={params}
+        <Component
+          to={comingSoon ? undefined : to}
+          params={comingSoon ? undefined : params}
           className={cx(
             'group',
             css({
@@ -266,9 +267,42 @@ export function BoxListItem({
               gap: '2',
             })}
           >
+            {poster && (
+              <div
+                className={css({
+                  position: 'relative',
+                  margin: '-2',
+                })}
+              >
+                <img
+                  src={poster}
+                  alt=""
+                  className={css({
+                    borderRadius: 'lg',
+                    display: 'block',
+                    aspectRatio: 'wide',
+                    objectFit: 'cover',
+                    overflow: 'hidden',
+                    marginBottom: '2',
+                    filter: comingSoon ? 'grayscale' : undefined,
+                  })}
+                />
+                {comingSoon && (
+                  <div
+                    className={css({
+                      position: 'absolute',
+                      insetBlockEnd: '4',
+                      insetInlineEnd: '2',
+                    })}
+                  >
+                    <Badge variation="contrast">Coming soon</Badge>
+                  </div>
+                )}
+              </div>
+            )}
             <span
               className={css({
-                textDecorationLine: 'underline',
+                textDecorationLine: comingSoon ? undefined : 'underline',
                 textDecorationStyle: 'dotted',
                 textUnderlineOffset: '4',
                 transitionProperty: 'textUnderlineOffset',
@@ -276,6 +310,7 @@ export function BoxListItem({
                 transitionTimingFunction: 'default',
                 fontSize: 'lg',
                 fontWeight: 'medium',
+                textWrap: 'balance',
 
                 _groupHover: {
                   textUnderlineOffset: '6',
@@ -296,8 +331,9 @@ export function BoxListItem({
               </Prose>
             )}
           </div>
-          <div>
-            {meta && (
+
+          {meta && (
+            <div>
               <div
                 className={css({
                   fontSize: 'sm',
@@ -318,9 +354,9 @@ export function BoxListItem({
                   </React.Fragment>
                 ))}
               </div>
-            )}
-          </div>
-        </TextLink>
+            </div>
+          )}
+        </Component>
       </div>
     </m.li>
   )

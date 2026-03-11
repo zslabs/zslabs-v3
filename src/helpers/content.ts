@@ -1,5 +1,7 @@
 import type { JSX } from 'react'
 
+import { notFound } from '@tanstack/react-router'
+
 interface ArticleFrontmatter {
   title: string
   date: string
@@ -10,8 +12,22 @@ interface DataFrontmatter {
   title: string
 }
 
+interface TokenFrontmatter {
+  title: string
+  published: boolean
+  poster: string
+  order: number
+}
+
 interface ArticleRouteTarget {
   to: '/articles/$slug'
+  params: {
+    slug: string
+  }
+}
+
+interface TokenRouteTarget {
+  to: '/token/$slug'
   params: {
     slug: string
   }
@@ -31,6 +47,13 @@ const articleFiles = import.meta.glob<MDXModule<ArticleFrontmatter>>(
 
 const dataFiles = import.meta.glob<MDXModule<DataFrontmatter>>(
   '/src/content/data/*.mdx',
+  {
+    eager: true,
+  }
+)
+
+const tokenFiles = import.meta.glob<MDXModule<TokenFrontmatter>>(
+  '/src/content/token/*.mdx',
   {
     eager: true,
   }
@@ -91,7 +114,7 @@ export function getArticle(slug: string) {
   const post = articleFiles[filePath]
 
   if (!post) {
-    return null
+    throw notFound()
   }
 
   return {
@@ -112,4 +135,50 @@ export function getDataPage(relativePath: string) {
     component: page.default,
     frontmatter: page.frontmatter,
   }
+}
+
+export function getToken(slug: string) {
+  const filePath = `/src/content/token/${slug}.mdx`
+  const token = tokenFiles[filePath]
+
+  if (!token) {
+    throw notFound()
+  }
+
+  if (!token.frontmatter.published && !import.meta.env.DEV) {
+    throw notFound()
+  }
+
+  return {
+    component: token.default,
+    frontmatter: token.frontmatter,
+  }
+}
+
+export function getTokens() {
+  return Object.entries(tokenFiles)
+    .map(([filePath, module]) => {
+      const filename = filePath.split('/').pop()!
+      const slug = filename.replace(/\.mdx?$/, '')
+      const { frontmatter } = module
+
+      return {
+        to: '/token/$slug' as const,
+        params: {
+          slug,
+        },
+        frontmatter,
+        title: frontmatter.title,
+        poster: frontmatter.poster,
+        order: frontmatter.order,
+        published: frontmatter.published,
+      } satisfies TokenRouteTarget & {
+        frontmatter: TokenFrontmatter
+        title: string
+        poster: string
+        order: number
+        published: boolean
+      }
+    })
+    .sort((a, b) => a.order - b.order)
 }

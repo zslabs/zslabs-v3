@@ -435,6 +435,11 @@ export default defineConfig({
           'textUnderlineOffset',
         ],
       },
+      filter: {
+        values: {
+          grayscale: 'grayscale(1)',
+        },
+      },
       willChange: {
         values: ['opacity', 'transform'],
       },

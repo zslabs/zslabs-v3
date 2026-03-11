@@ -106,9 +106,9 @@ function Projects() {
         <ListItem
           label="token()"
           mono
-          to="https://token.zslabs.com"
+          to="/token"
           icon={<Token />}
-          meta={['Coming soon']}
+          meta={['Design systems']}
         >
           A thoughtfully curated and opinionated preset for design systems —
           uniting linting, tooling, and perspective to align design and

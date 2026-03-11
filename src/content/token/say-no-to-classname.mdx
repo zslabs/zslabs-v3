@@ -1,0 +1,142 @@
+---
+title: Say no to className
+poster: /posters/1.png
+published: true
+order: 10
+---
+
+Take the following component and note the difference in prop composition before/after.
+
+<Columns>
+  <Column>
+```tsx title="Before"
+function Card({ className, ...props }) {
+  return <div className={styles.base + ' ' + className} {...props} />
+}
+```
+  </Column>
+  <Column>
+```tsx title="After"
+function Card(props) {
+  return <div {...props} className={styles.base} />
+}
+```
+  </Column>
+</Columns>
+
+What seems like a simple-change can have far-reaching implications for the maintainability and consistency of a codebase.
+
+### The best of intentions, gone awry
+
+The `className` prop is often exposed in components; whether intentionally or part of normal spread operator, with the intention of providing flexibility. However, this assumption can lead to a host of unintended consequences. When teams start depending on `className` to interact with a component, it can result in a fragmented design system where components no longer adhere to the established guidelines, but rather are treated as ad-hoc implementations.
+
+**What's the harm?** This divergence makes it harder to maintain and update components, as each override may introduce unique styles that conflict with the overall design language. I know this story all too well:
+
+- `className` introduced during the creation of a component with the intention to allow for minor, consolidated tweaks.
+- Over time, teams begin to rely on `className` for more significant styling changes, leading to a proliferation of overrides.
+- **500+** overrides later (this is not exaggerated), the component is now a patchwork of styles that are difficult to manage and understand.
+- A simple core-styling update requires feature-flagged rollouts and extensive visual-regression testing over the course of several weeks.
+
+### A source of truth
+
+Where do these overrides come from? Often, they stem from the need to address specific use-cases that were not anticipated during the initial design of the component. **And that's okay!** Design systems and their components should be challenged and evolve over time. However, moving the needle in isolation leads to fragmentation; rather than improving the component for everyone. Shifting the mindest from feature-specific overrides to how components can evolve holistically is key.
+
+And I believe it all starts with design. **Detaching components in Figma is the designer's `className`.** Not only does it break the link to the design system, but also removes all the benefits of tools like [Figma Code Connect](https://help.figma.com/hc/en-us/articles/23920389749655-Code-Connect), a toolkit purpose-built to bridge the gap between design and engineering.
+
+<Image
+  src="/media/classname/detach.png"
+  alt="Detaching component in Figma"
+  width={1920}
+  height={1920}
+/>
+
+Figma has the unique ability to [create branches](https://help.figma.com/hc/en-us/articles/360063144053-Guide-to-branching), allowing designers to experiment with variations of components without affecting the main design system. Branching should be treated just as a normal pull-request, where changes can be reviewed, discussed, and merged back into the main component when appropriate.
+
+The same principle applies to visual testing; whether it be design or engineering. By consolidating decisions within the component itself, we create variants and states that can be visually tested in isolation.
+
+### Don't pass the buck
+
+`className` is not the only pitfall we can fall into. A sea of custom, single-use props that directly influence styling can lead to similar issues. These props can create a situation where the component's internal logic becomes entangled with external styling concerns, making it harder to reason about and maintain. Instead, consider the following strategies:
+
+My favorite strategy for complex variants is [Tailwind Variants](https://tailwind-variants.org/); a library that allows you to define component styles based on variants and states in a structured manner that's typesafe. Even though the name implies Tailwind CSS, it can be used with any styling methodology, including CSS Modules, as shown below:
+
+```typescript
+import type { VariantProps } from 'tailwind-variants'
+import { tv } from 'tailwind-variants'
+
+import css from './styles.module.css'
+
+export const styles = tv({
+  slots: {
+    base: css.base,
+    overlay: css.overlay,
+    content: css.content,
+  },
+  variants: {
+    variant: {
+      default: css.default,
+      contrast: css.contrast,
+    },
+    size: {
+      small: css.small,
+      medium: css.medium,
+      large: css.large,
+    },
+    status: {
+      disabled: {
+        base: css.disabled,
+      },
+      loading: {
+        base: css.loading,
+        content: css.contentLoading,
+        overlay: css.overlayVisible,
+      },
+    },
+  },
+  defaultVariants: {
+    variant: 'default',
+    size: 'medium',
+  },
+})
+
+export type StylesProps = VariantProps<typeof styles>
+```
+
+Additionally, I encourage composition over configuration. Build smaller, focused components that can be combined to achieve the desired look and feel, rather than relying on a single component with numerous styling props. Avoiding locking yourself into a rigid API surface and DOM structure allows for greater flexibility and adaptability as design requirements evolve.
+
+<Columns>
+  <Column>
+```tsx title="Instead of this"
+<Card variant="contrast" size="large" status="loading">
+    Content goes here
+</Card>
+```
+  </Column>
+  <Column>
+```tsx title="Try this!"
+<Card>
+    <Card.Header>Title</Card.Header>
+    <Card.Body>Content goes here</Card.Body>
+    <Card.Footer>Footer content</Card.Footer>
+</Card>
+```
+
+  </Column>
+</Columns>
+
+There's an excellent video by Fernano Rojo on this very topic that I encourage you to check out.
+
+<TextLink to="https://youtu.be/4KvbVq3Eg5w">
+  <Image
+    src="/media/classname/composition.jpg"
+    alt="Composition is all you need"
+    width={1280}
+    height={720}
+  />
+</TextLink>
+
+### Stronger together
+
+By consolidating decisions within the component itself, we can foster a culture of collaboration and shared ownership that far surpass just styling. This approach encourages teams to contribute to the evolution of components, ensuring that changes benefit everyone rather than just addressing isolated use-cases.
+
+Ultimately, saying no to `className` and embracing a more structured approach to component design leads to a more maintainable, consistent, and collaborative codebase.
