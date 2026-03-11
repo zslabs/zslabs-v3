@@ -10,6 +10,7 @@ import Mimestream from '@/icons/envelope.svg?react'
 import Figma from '@/icons/figma.svg?react'
 import Ghost from '@/icons/ghost.svg?react'
 import GitHub from '@/icons/github.svg?react'
+import Headphones from '@/icons/headphones.svg?react'
 import Iphone from '@/icons/iphone.svg?react'
 import Keyboard from '@/icons/keyboard.svg?react'
 import MBPro from '@/icons/mbpro.svg?react'
@@ -123,6 +124,14 @@ function Gear() {
         label="Keychron Q5 Max Mechanical Keyboard"
       >
         My first mechanical keyboard, and I&apos;m loving it so far.
+      </ListItem>
+      <ListItem
+        icon={<Headphones />}
+        to="https://amzn.to/4sJMRfr"
+        label="Sony WH-1000XM6 Headphones"
+      >
+        While I'm no audiophile, having a comfortable pair of noise-cancelling
+        headphones is a must for me; these are the best I&apos;ve ever tried.
       </ListItem>
       <ListItem
         to="https://www.aersf.com/travel-pack-3-black"
