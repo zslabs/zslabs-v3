@@ -44,45 +44,22 @@ const Prose = ({ children, ...rest }: ProseProps) => {
         },
 
         '& ol': {
-          paddingInlineStart: '4',
-          counterReset: 'list-counter',
+          paddingInlineStart: '8',
+          listStyle: 'outside',
+          listStyleType: 'decimal',
+        },
 
-          '& li': {
-            position: 'relative',
-            counterIncrement: 'list-counter',
-            paddingInlineStart: '7',
-
-            _before: {
-              content: 'counter(list-counter) "."',
-              position: 'absolute',
-              insetInlineStart: '1',
-              fontWeight: 'medium',
-            },
-          },
+        '& ul': {
+          paddingInlineStart: '8',
+          listStyle: 'outside',
+          listStyleType: 'disc',
         },
 
         '& li': {
           marginBlock: '2',
-        },
 
-        '& ul': {
-          paddingInlineStart: '4',
-
-          '& > li': {
-            position: 'relative',
-            paddingInlineStart: '7',
-
-            _before: {
-              content: '""',
-              position: 'absolute',
-              insetInlineStart: '1',
-              insetBlockStart: '2',
-              width: '2',
-              height: '2',
-              borderRadius: 'full',
-              backgroundColor: 'slate.9',
-              boxShadow: 'slate',
-            },
+          _marker: {
+            color: 'slate.11',
           },
         },
       })}
