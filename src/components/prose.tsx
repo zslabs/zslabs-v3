@@ -60,6 +60,7 @@ const Prose = ({ children, ...rest }: ProseProps) => {
 
           _marker: {
             color: 'slate.11',
+            fontWeight: 'medium',
           },
         },
       })}
