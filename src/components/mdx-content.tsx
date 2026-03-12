@@ -24,64 +24,30 @@ interface ImageComponentProps {
 
 function Image({
   alt = '',
-  caption,
   src,
   height,
   width,
 }: ImageComponentProps & React.HTMLAttributes<HTMLDivElement>) {
   return (
-    <figure
+    <img
+      alt={alt}
+      src={src}
+      height={height}
+      width={width}
+      loading="lazy"
+      decoding="async"
       className={css({
+        borderRadius: 'xl',
         marginBlock: '8',
+        maxInlineSize: 'full',
         marginInline: 'auto',
+        padding: '1',
+        backgroundColor: 'slate.2',
+        borderWidth: '1',
+        borderColor: 'slate.5',
+        borderStyle: 'solid',
       })}
-      style={{ maxWidth: `${width}px` }}
-    >
-      <div
-        className={css({
-          position: 'relative',
-          marginInline: 'auto',
-          borderRadius: 'xl',
-          width: 'fit',
-          display: 'grid',
-        })}
-      >
-        <div
-          className={css({
-            position: 'absolute',
-            inset: '-2',
-            zIndex: '-1',
-            borderRadius: 'xl',
-            borderWidth: '1',
-            borderStyle: 'solid',
-            borderColor: 'slate.a.3',
-            backgroundColor: 'black.a.8',
-          })}
-        />
-        <img
-          alt={alt}
-          src={typeof src === 'string' ? src : ''}
-          height={typeof height === 'number' ? height : undefined}
-          width={typeof width === 'number' ? width : undefined}
-          loading="lazy"
-          decoding="async"
-          className={css({
-            borderRadius: 'lg',
-          })}
-        />
-      </div>
-      {caption && (
-        <figcaption
-          className={css({
-            marginBlockStart: '4',
-            color: 'slate.11',
-            fontSize: 'sm',
-          })}
-        >
-          {caption}
-        </figcaption>
-      )}
-    </figure>
+    />
   )
 }
 
