@@ -1,4 +1,5 @@
 import { css } from '@css/css'
+import pandaCss from '@css/styles.css?url'
 import {
   Outlet,
   createRootRoute,
@@ -41,6 +42,10 @@ export const Route = createRootRoute({
         as: 'font',
         type: 'font/woff2',
         crossOrigin: 'anonymous',
+      },
+      {
+        rel: 'stylesheet',
+        href: pandaCss,
       },
       {
         rel: 'stylesheet',

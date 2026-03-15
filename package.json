@@ -14,8 +14,8 @@
   ],
   "scripts": {
     "prepare": "panda codegen",
-    "dev": "vite dev",
-    "build": "vite build",
+    "dev": "concurrently \"panda --watch\" \"vite dev\"",
+    "build": "panda && vite build",
     "start": "node .output/server/index.mjs",
     "lint": "eslint . --fix",
     "type:check": "tsc --project tsconfig.json --pretty --noEmit",
@@ -56,6 +56,7 @@
     "typescript": "5.9.3"
   },
   "devDependencies": {
+    "concurrently": "9.2.1",
     "@eslint/js": "9.39.3",
     "@pandabox/panda-plugins": "0.0.8",
     "@pandacss/dev": "1.9.0",
