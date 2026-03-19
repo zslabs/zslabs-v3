@@ -27,7 +27,7 @@ function Experience() {
         <List>
           <ListItem
             label="Slack"
-            meta={['Staff software engineer', '05/21 - current']}
+            meta={['Staff engineer', '05/21 - current']}
             icon={<Slack />}
           >
             I&apos;m part of the design infrastructure team, building tools to
@@ -37,7 +37,7 @@ function Experience() {
           </ListItem>
           <ListItem
             label="Gremlin"
-            meta={['Senior software engineer', '09/18 - 05/21']}
+            meta={['Senior engineer', '09/18 - 05/21']}
             icon={<Gremlin />}
           >
             Revamped their marketing platform, alongside creating a
