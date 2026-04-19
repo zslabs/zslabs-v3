@@ -4,9 +4,12 @@ import type { RecipeVariantProps } from '@css/css'
 import { css, cva } from '@css/css'
 import { Button as ButtonPrimitive } from 'react-aria-components'
 
+import TextLink, { type TextLinkProps } from '@/components/text-link'
+
 type ButtonVariants = RecipeVariantProps<typeof styles>
 type ButtonProps = React.ComponentPropsWithRef<typeof ButtonPrimitive> &
   ButtonVariants
+type ButtonLinkProps = TextLinkProps & ButtonVariants
 
 const buttonContentClass = css({
   position: 'relative',
@@ -123,5 +126,23 @@ export function Button({
         </span>
       )}
     </ButtonPrimitive>
+  )
+}
+
+export function ButtonLink({
+  children,
+  variation,
+  iconOnly,
+  glow,
+  loading,
+  ...linkProps
+}: ButtonLinkProps) {
+  return (
+    <TextLink
+      {...linkProps}
+      className={styles({ variation, iconOnly, loading, glow })}
+    >
+      <span className={buttonContentClass}>{children}</span>
+    </TextLink>
   )
 }

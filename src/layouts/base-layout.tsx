@@ -4,7 +4,7 @@ import { useLocation } from '@tanstack/react-router'
 import type { Transition, HTMLMotionProps, Variants } from 'framer-motion'
 import { m } from 'framer-motion'
 
-import { Button } from '@/components/button'
+import { ButtonLink } from '@/components/button'
 import Prose from '@/components/prose'
 import TextLink from '@/components/text-link'
 import Tooltip from '@/components/tooltip'
@@ -121,20 +121,24 @@ export default function BaseLayout({ children }: ChildrenOnlyProps) {
           >
             <HeaderItemWrapper runAnimation={runAnimation} custom={2}>
               <Tooltip content="GitHub">
-                <TextLink to="https://github.com/zslabs" title="GitHub">
-                  <Button iconOnly render={(props) => <span {...props} />}>
-                    <GitHub />
-                  </Button>
-                </TextLink>
+                <ButtonLink
+                  iconOnly
+                  to="https://github.com/zslabs"
+                  title="GitHub"
+                >
+                  <GitHub />
+                </ButtonLink>
               </Tooltip>
             </HeaderItemWrapper>
             <HeaderItemWrapper runAnimation={runAnimation} custom={3}>
               <Tooltip content="Twitter">
-                <TextLink to="https://twitter.com/zslabs" title="Twitter">
-                  <Button iconOnly render={(props) => <span {...props} />}>
-                    <X />
-                  </Button>
-                </TextLink>
+                <ButtonLink
+                  iconOnly
+                  to="https://twitter.com/zslabs"
+                  title="Twitter"
+                >
+                  <X />
+                </ButtonLink>
               </Tooltip>
             </HeaderItemWrapper>
             <HeaderItemWrapper

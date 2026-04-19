@@ -2,7 +2,7 @@ import { css } from '@css/css'
 import { inlineIcon } from '@css/patterns'
 import { createFileRoute } from '@tanstack/react-router'
 
-import { Button } from '@/components/button'
+import { ButtonLink } from '@/components/button'
 import HomepageWrapper from '@/components/homepage-wrapper'
 import { List, ListItem } from '@/components/list'
 import Prose from '@/components/prose'
@@ -70,29 +70,12 @@ function Intro() {
           marginBlockStart: '8',
         })}
       >
-        <TextLink to="/experience">
-          <Button
-            variation="contrast"
-            glow="contrast"
-            render={(props) => <span {...props} />}
-          >
-            Experience
-          </Button>
-        </TextLink>
-        <TextLink
-          to="/uses"
-          className={css({
-            cursor: 'help',
-          })}
-        >
-          <Button
-            variation="default"
-            glow="default"
-            render={(props) => <span {...props} />}
-          >
-            What I use
-          </Button>
-        </TextLink>
+        <ButtonLink to="/experience" variation="contrast" glow="contrast">
+          Experience
+        </ButtonLink>
+        <ButtonLink to="/uses" variation="default" glow="default">
+          What I use
+        </ButtonLink>
       </div>
     </section>
   )
@@ -213,12 +196,10 @@ function Articles() {
         textAlign: 'center',
       })}
     >
-      <TextLink to="/articles">
-        <Button variation="default" render={(props) => <span {...props} />}>
-          <Article />
-          Articles archive
-        </Button>
-      </TextLink>
+      <ButtonLink variation="default" to="/articles">
+        <Article />
+        Articles archive
+      </ButtonLink>
     </section>
   )
 }
