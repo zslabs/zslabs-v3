@@ -50,7 +50,7 @@ export const textStyles = defineTextStyles({
     description: 'The body text style - used in paragraphs',
     value: {
       fontFamily: 'sans',
-      fontFeatureSettings: '"ss03", "ss05", "ss18", "liga"',
+      fontFeatureSettings: '"tnum" 1, "liga" 1',
       fontVariationSettings: '"slnt" 0',
     },
   },
