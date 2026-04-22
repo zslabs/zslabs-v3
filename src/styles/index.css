@@ -38,7 +38,7 @@
   *::before,
   *::after {
     font-size-adjust: 0.5275;
-    letter-spacing: -0.0125ch;
+    letter-spacing: -0.025ch;
   }
 
   html {
