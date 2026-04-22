@@ -1,8 +1,148 @@
 ---
 title: Context-driven styles
 poster: /posters/2.png
-published: false
+published: true
 order: 20
 ---
 
-Coming soon...
+There's a scenario every component author eventually faces: a parent needs to influence how a child renders. The `ButtonGroup` + `Button` relationship is a textbook example. When buttons sit side-by-side in a group, their inner border radius should flatten to form a seamless unit. Simple enough in concept - but the how of communicating that information is where things get interesting.
+
+### The usual suspects
+
+A few approaches tend to surface naturally.
+
+**The explicit prop** feels like the path of least resistance:
+
+```tsx title="Explicit prop"
+<Button inGroup>Cancel</Button>
+<Button inGroup variant="primary">Confirm</Button>
+```
+
+Now every consumer is responsible for remembering to pass `inGroup`. Forget it once and you get a button that looks wrong. Worse, the prop is now part of the public API even though it has nothing to do with the button itself - it's about its context.
+
+**`className` overrides** are even more tempting, and even more fragile:
+
+```tsx title="className override"
+<Button className="rounded-r-none">Cancel</Button>
+<Button className="rounded-l-none" variant="primary">Confirm</Button>
+```
+
+I covered the compounding problems of `className` in [Say no to className](/token/say-no-to-classname) - but this form is worse: positionally-dependent styles with no safety net, scattered across every callsite.
+
+**Data attributes** are a step up, but still manual:
+
+```tsx title="data-slot approach"
+// Library adds [data-slot="button"] to every button
+// Parent attempts to target children
+[data-button-group] [data-slot="button"]:first-of-type { ... }
+[data-button-group] [data-slot="button"]:last-of-type { ... }
+```
+
+This couples styling to DOM structure with no type safety. It also lives entirely in CSS-land, detached from the component's own variant system - which means the logic is split across two different places.
+
+### Context as the contract
+
+What if the button didn't need to be told anything? What if it simply knew where it was?
+
+That's the idea behind using React Context to drive styles. Here's the full setup:
+
+```tsx title="button-group.tsx"
+import { createContext, type ComponentProps, use } from 'react'
+
+const ButtonGroupContext = createContext(false)
+
+function useButtonGroup() {
+  return use(ButtonGroupContext)
+}
+
+function ButtonGroup(props: ComponentProps<'div'>) {
+  return (
+    <ButtonGroupContext value={true}>
+      <div {...props} className="flex items-center" />
+    </ButtonGroupContext>
+  )
+}
+
+export { ButtonGroup, useButtonGroup }
+```
+
+`createContext(false)` is doing important work here. The default value of `false` means a `Button` rendered in isolation will always behave like a standalone button - no wrapper required, no prop needed to opt out. The context only becomes `true` when explicitly set by a `ButtonGroup`.
+
+Inside the `Button`, the context is consumed and passed directly into a variant API as the `inGroup` variant:
+
+```tsx title="button.tsx"
+function Button({ size, variant, ...props }: ButtonProps) {
+  const inGroup = useButtonGroup()
+
+  return (
+    <BaseButton
+      {...props}
+      className={buttonVariants({
+        size,
+        variant,
+        disabled: props.disabled,
+        inGroup,
+      })}
+    />
+  )
+}
+```
+
+```tsx title="inGroup variant"
+inGroup: {
+  true: `
+    not-last-of-type:not-first-of-type:rounded-none
+    first-of-type:rounded-r-none
+    last-of-type:rounded-l-none
+  `,
+  false: '',
+},
+```
+
+No string parsing. No conditional logic. No fragile comparison. The variant is exhaustive - TypeScript knows `inGroup` is a `boolean` with a safe default, and there is no invalid state.
+
+### The author experience
+
+Here's what this looks like from the outside:
+
+<Columns>
+  <Column>
+    ```tsx title="Before"
+    <Button inGroup>Cancel</Button>
+    <Button inGroup variant="primary">
+      Confirm
+    </Button>
+    ```
+  </Column>
+  <Column>
+    ```tsx title="After"
+    <ButtonGroup>
+      <Button>Cancel</Button>
+      <Button variant="primary">Confirm</Button>
+    </ButtonGroup>
+    ```
+  </Column>
+</Columns>
+
+No props to remember. No classes to apply. No documentation to consult about which attribute to set where. Wrapping buttons in `<ButtonGroup>` is the entire API. The visual behavior follows automatically.
+
+This is the author experience worth designing toward - not one that requires knowledge of implementation details, but one where the correct behavior is the path of least resistance.
+
+### A tighter contract
+
+TypeScript's biggest contribution isn't catching typos - it's making the relationships between pieces of code explicit and machine-verifiable. The same thinking applies here. Rather than relying on convention or documentation to communicate how a component should behave in a given context, we encode that relationship directly into the type system.
+
+What makes this pattern genuinely powerful isn't the convenience alone - it's what it removes:
+
+- **No public API leakage.** `inGroup` never appears in `ButtonProps`. It's an internal concern, resolved entirely through context.
+- **No invalid states.** The variant is a boolean backed by a typed context with a safe default. It can't be `"true"` as a string, it can't be `undefined`, it can't be accidentally omitted.
+- **No positional fragility.** The CSS handles first/last child logic — the component doesn't care how many siblings there are or how the parent is structured.
+- **Single source of truth.** `ButtonGroup` is the only thing that can change this behavior. There's no side-channel, no override escape hatch.
+
+### Beyond buttons
+
+The pattern scales to any parent/child styling relationship. A `Fieldset` that signals its `disabled` state to nested `Field` components. A `List` that tells `ListItem` children to render in compact mode. A `Toolbar` that flattens the radius of any focusable element inside it.
+
+The shape is always the same: a context with a safe default, a hook to read it, a wrapper that sets it, and a variant that consumes it.
+
+Where `className` asks consumers to know how to override a component, context-driven styles ask them to trust the component. And trust is a much better foundation for a design system.
