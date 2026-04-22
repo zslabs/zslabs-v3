@@ -12,6 +12,7 @@ const styles = cva({
     marginBlockEnd: '8',
     fontSize: '2xl',
     fontWeight: 'medium',
+    color: 'slate.12',
   },
   variants: {
     variation: {

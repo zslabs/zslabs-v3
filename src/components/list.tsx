@@ -126,6 +126,7 @@ export function ListItem({
             >
               <span
                 className={css({
+                  color: 'slate.12',
                   textDecorationLine: 'underline',
                   textDecorationStyle: 'dotted',
                   textUnderlineOffset: '4',
@@ -148,7 +149,6 @@ export function ListItem({
                 <div
                   className={css({
                     lineHeight: 'none',
-                    color: 'slate.11',
                     transitionProperty: 'transform',
                     transitionDuration: 'fast',
                     transitionTimingFunction: 'default',
@@ -164,7 +164,13 @@ export function ListItem({
               )}
             </TextLink>
           ) : (
-            <span>{label}</span>
+            <span
+              className={css({
+                color: 'slate.12',
+              })}
+            >
+              {label}
+            </span>
           )}
         </div>
         <div>
@@ -302,6 +308,7 @@ export function BoxListItem({
             )}
             <span
               className={css({
+                color: 'slate.12',
                 textDecorationLine: comingSoon ? undefined : 'underline',
                 textDecorationStyle: 'dotted',
                 textUnderlineOffset: '4',
@@ -321,13 +328,7 @@ export function BoxListItem({
             </span>
             {children && (
               <Prose>
-                <p
-                  className={css({
-                    color: 'slate.11',
-                  })}
-                >
-                  {children}
-                </p>
+                <p>{children}</p>
               </Prose>
             )}
           </div>

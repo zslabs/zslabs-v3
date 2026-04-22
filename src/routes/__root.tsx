@@ -67,7 +67,7 @@ function RootLayout() {
         backgroundColor: 'slate.1',
         fontWeight: 'normal',
         textStyle: 'body',
-        color: 'slate.12',
+        color: 'slate.11',
         fontSize: 'md',
         lineHeight: 'normal',
         fontSmoothing: 'antialiased',
