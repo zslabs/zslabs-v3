@@ -5,12 +5,12 @@ import { Tabs as TabsRoot, TabList, Tab, TabPanel } from 'react-aria-components'
 import { List, ListItem } from '@/components/list'
 import Backback from '@/icons/backpack.svg?react'
 import OnePassword from '@/icons/circle-lock.svg?react'
+import Earbuds from '@/icons/earphones.svg?react'
 import Edge from '@/icons/edge.svg?react'
 import Mimestream from '@/icons/envelope.svg?react'
 import Figma from '@/icons/figma.svg?react'
 import Ghost from '@/icons/ghost.svg?react'
 import GitHub from '@/icons/github.svg?react'
-import Headphones from '@/icons/headphones.svg?react'
 import Iphone from '@/icons/iphone.svg?react'
 import Keyboard from '@/icons/keyboard.svg?react'
 import MBPro from '@/icons/mbpro.svg?react'
@@ -126,12 +126,12 @@ function Gear() {
         My first mechanical keyboard, and I&apos;m loving it so far.
       </ListItem>
       <ListItem
-        icon={<Headphones />}
-        to="https://amzn.to/4sJMRfr"
-        label="Sony WH-1000XM6 Headphones"
+        icon={<Earbuds />}
+        to="https://amzn.to/4t859H2"
+        label="Bose QuietComfort Ultra Earbuds"
       >
         While I'm no audiophile, having a comfortable pair of noise-cancelling
-        headphones is a must for me; these are the best I&apos;ve ever tried.
+        earbuds is a must for me; these are the best I&apos;ve ever tried.
       </ListItem>
       <ListItem
         to="https://www.aersf.com/travel-pack-3-black"
