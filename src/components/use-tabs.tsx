@@ -16,6 +16,7 @@ import Keyboard from '@/icons/keyboard.svg?react'
 import MBPro from '@/icons/mbpro.svg?react'
 import Monitor from '@/icons/monitor.svg?react'
 import Mouse from '@/icons/mouse.svg?react'
+import OpenCode from '@/icons/opencode.svg?react'
 import Rectangle from '@/icons/rectangle.svg?react'
 import Reminders from '@/icons/reminders.svg?react'
 import Stand from '@/icons/stand.svg?react'
@@ -36,6 +37,10 @@ function Software() {
       >
         I&apos;ve tried them all; Dreamweaver, Sublime Text, BB Edit, Textmate,
         Atom, etc.
+      </ListItem>
+      <ListItem icon={<OpenCode />} label="OpenCode" to="https://opencode.ai/">
+        For my personal projects, OpenCode alongside GitHub Copilot fits the
+        bill.
       </ListItem>
       <ListItem icon={<Figma />} label="Figma" to="https://www.figma.com">
         Previously Sketch, but Figma is just too good to ignore; with a plethora
@@ -127,8 +132,8 @@ function Gear() {
       </ListItem>
       <ListItem
         icon={<Earbuds />}
-        to="https://amzn.to/4t859H2"
-        label="Bose QuietComfort Ultra Earbuds"
+        to="https://amzn.to/4usr1xY"
+        label="AirPods Pro 3"
       >
         While I'm no audiophile, having a comfortable pair of noise-cancelling
         earbuds is a must for me; these are the best I&apos;ve ever tried.
