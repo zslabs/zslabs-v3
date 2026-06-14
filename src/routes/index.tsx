@@ -170,7 +170,7 @@ function Projects() {
           label="List"
           to="https://list.zslabs.com"
           icon={<ListProject />}
-          meta={['TanStack Start', 'Radix UI', 'Tailwind CSS']}
+          meta={['TanStack Start', 'React Aria', 'Tailwind CSS']}
         >
           The best experience for monitoring activity on multiple eBay search
           terms.
