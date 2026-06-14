@@ -162,7 +162,7 @@ function Projects() {
           label="Collection"
           to="https://collection.zslabs.com"
           icon={<Collection />}
-          meta={['Next.js', 'React Aria', 'Tailwind CSS']}
+          meta={['TanStack Start', 'React Aria', 'Tailwind CSS']}
         >
           Curated lists of eBay items; no filters needed.
         </ListItem>
@@ -170,7 +170,7 @@ function Projects() {
           label="List"
           to="https://list.zslabs.com"
           icon={<ListProject />}
-          meta={['Next.js', 'Radix UI', 'Tailwind CSS']}
+          meta={['TanStack Start', 'Radix UI', 'Tailwind CSS']}
         >
           The best experience for monitoring activity on multiple eBay search
           terms.
