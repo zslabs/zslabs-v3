@@ -154,7 +154,7 @@ function Projects() {
           label="Profile"
           to="https://profile.zslabs.com"
           icon={<Profile />}
-          meta={['Next.js', 'React Aria', 'Tailwind CSS']}
+          meta={['TanStack Start', 'React Aria', 'Tailwind CSS']}
         >
           Personalized eBay seller profiles; the way they should be.
         </ListItem>
