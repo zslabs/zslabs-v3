@@ -16,7 +16,6 @@ import ListProject from '@/icons/list.svg?react'
 import Mountain from '@/icons/mountain.svg?react'
 import Profile from '@/icons/profile.svg?react'
 import Slack from '@/icons/slack.svg?react'
-import Sold from '@/icons/sold.svg?react'
 import Theming from '@/icons/theming.svg?react'
 import Token from '@/icons/token.svg?react'
 import Tokens from '@/icons/tokens.svg?react'
@@ -174,14 +173,6 @@ function Projects() {
         >
           The best experience for monitoring activity on multiple eBay search
           terms.
-        </ListItem>
-        <ListItem
-          label="Sold"
-          to="https://sold.zslabs.com"
-          icon={<Sold />}
-          meta={['Next.js', 'React Aria', 'Tailwind CSS']}
-        >
-          Toolkit for gauging market-prices and trends on eBay.
         </ListItem>
       </List>
     </section>
