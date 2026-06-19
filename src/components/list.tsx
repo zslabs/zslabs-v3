@@ -183,18 +183,16 @@ export function ListItem({
             <div
               className={css({
                 marginBlockStart: '2',
+                display: 'flex',
+                flexWrap: 'wrap',
+                gap: '1',
               })}
             >
-              <Badge>
-                {meta.map((item, index) => (
-                  <React.Fragment key={index}>
-                    {item}
-                    {index !== meta.length - 1 && (
-                      <span className={css({ color: 'slate.8' })}>/</span>
-                    )}
-                  </React.Fragment>
-                ))}
-              </Badge>
+              {meta.map((item, index) => (
+                <React.Fragment key={index}>
+                  <Badge>{item}</Badge>
+                </React.Fragment>
+              ))}
             </div>
           )}
         </div>
