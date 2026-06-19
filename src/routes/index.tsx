@@ -101,7 +101,7 @@ const PROJECTS = [
     label: 'Wes Anderslack',
     icon: <WesAnderSlack />,
     to: 'https://wesanderslack.zslabs.com',
-    meta: ['Next.js', 'React Aria', 'Tailwind CSS'],
+    meta: ['TanStack Start', 'React Aria', 'Tailwind CSS'],
     description:
       'While the original was lost to time, I decided to bring back a fan-favorite; honoring a great director of some of my favorite movies.',
   },
