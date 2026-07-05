@@ -28,7 +28,7 @@ function Experience() {
           <ListItem
             label="Slack"
             meta={['Staff engineer', '05/21 - current']}
-            icon={<Slack />}
+            icon={<Slack className={css({ filter: 'blurScale' })} />}
           >
             I&apos;m part of the design infrastructure team, building tools to
             help designers and engineers collaborate more efficiently. My

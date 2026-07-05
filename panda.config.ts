@@ -344,6 +344,7 @@ export default defineConfig({
       filter: {
         values: {
           grayscale: 'grayscale(1)',
+          blurScale: 'url(#blur-scale)',
         },
       },
       willChange: {
