@@ -103,9 +103,9 @@ function Gear() {
         board!
       </ListItem>
       <ListItem
-        to="https://www.apple.com/iphone-15-pro/"
+        to="https://www.amazon.com/dp/B0FQFQG2VL/ref=cm_sw_r_as_gl_api_gl_i_1B2Z3KKYNEWK83GVEDBB?linkCode=ml1&tag=zslabs-20&linkId=20dd538e1b0470641ca5e1006832e5c9"
         icon={<Iphone />}
-        label="iPhone 15 Pro"
+        label="iPhone 17 Pro Max"
       >
         I swap for a new model every 2-3 years.
       </ListItem>
