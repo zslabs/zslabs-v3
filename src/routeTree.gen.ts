@@ -9,35 +9,20 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as UsesRouteImport } from './routes/uses'
-import { Route as TermsRouteImport } from './routes/terms'
-import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
-import { Route as PrivacyRouteImport } from './routes/privacy'
-import { Route as ExperienceRouteImport } from './routes/experience'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as TokenIndexRouteImport } from './routes/token/index'
+import { Route as ExperienceRouteImport } from './routes/experience'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as TermsRouteImport } from './routes/terms'
+import { Route as UsesRouteImport } from './routes/uses'
 import { Route as ArticlesIndexRouteImport } from './routes/articles/index'
-import { Route as TokenSlugRouteImport } from './routes/token/$slug'
 import { Route as ArticlesSlugRouteImport } from './routes/articles/$slug'
+import { Route as TokenIndexRouteImport } from './routes/token/index'
+import { Route as TokenSlugRouteImport } from './routes/token/$slug'
 
-const UsesRoute = UsesRouteImport.update({
-  id: '/uses',
-  path: '/uses',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const TermsRoute = TermsRouteImport.update({
-  id: '/terms',
-  path: '/terms',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
-  id: '/sitemap.xml',
-  path: '/sitemap.xml',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PrivacyRoute = PrivacyRouteImport.update({
-  id: '/privacy',
-  path: '/privacy',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ExperienceRoute = ExperienceRouteImport.update({
@@ -45,14 +30,24 @@ const ExperienceRoute = ExperienceRouteImport.update({
   path: '/experience',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
   getParentRoute: () => rootRouteImport,
 } as any)
-const TokenIndexRoute = TokenIndexRouteImport.update({
-  id: '/token/',
-  path: '/token/',
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const UsesRoute = UsesRouteImport.update({
+  id: '/uses',
+  path: '/uses',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ArticlesIndexRoute = ArticlesIndexRouteImport.update({
@@ -60,14 +55,19 @@ const ArticlesIndexRoute = ArticlesIndexRouteImport.update({
   path: '/articles/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const TokenSlugRoute = TokenSlugRouteImport.update({
-  id: '/token/$slug',
-  path: '/token/$slug',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const ArticlesSlugRoute = ArticlesSlugRouteImport.update({
   id: '/articles/$slug',
   path: '/articles/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TokenIndexRoute = TokenIndexRouteImport.update({
+  id: '/token/',
+  path: '/token/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TokenSlugRoute = TokenSlugRouteImport.update({
+  id: '/token/$slug',
+  path: '/token/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -162,32 +162,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/uses': {
-      id: '/uses'
-      path: '/uses'
-      fullPath: '/uses'
-      preLoaderRoute: typeof UsesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/terms': {
-      id: '/terms'
-      path: '/terms'
-      fullPath: '/terms'
-      preLoaderRoute: typeof TermsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/sitemap.xml': {
-      id: '/sitemap.xml'
-      path: '/sitemap.xml'
-      fullPath: '/sitemap.xml'
-      preLoaderRoute: typeof SitemapDotxmlRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/privacy': {
-      id: '/privacy'
-      path: '/privacy'
-      fullPath: '/privacy'
-      preLoaderRoute: typeof PrivacyRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/experience': {
@@ -197,18 +176,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ExperienceRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/token/': {
-      id: '/token/'
-      path: '/token'
-      fullPath: '/token/'
-      preLoaderRoute: typeof TokenIndexRouteImport
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/uses': {
+      id: '/uses'
+      path: '/uses'
+      fullPath: '/uses'
+      preLoaderRoute: typeof UsesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/articles/': {
@@ -218,18 +211,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ArticlesIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/token/$slug': {
-      id: '/token/$slug'
-      path: '/token/$slug'
-      fullPath: '/token/$slug'
-      preLoaderRoute: typeof TokenSlugRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/articles/$slug': {
       id: '/articles/$slug'
       path: '/articles/$slug'
       fullPath: '/articles/$slug'
       preLoaderRoute: typeof ArticlesSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/token/': {
+      id: '/token/'
+      path: '/token'
+      fullPath: '/token/'
+      preLoaderRoute: typeof TokenIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/token/$slug': {
+      id: '/token/$slug'
+      path: '/token/$slug'
+      fullPath: '/token/$slug'
+      preLoaderRoute: typeof TokenSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
