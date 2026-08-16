@@ -12,7 +12,7 @@ const styles = cva({
     textStyle: 'heading',
     marginBlockEnd: '8',
     fontSize: '2xl',
-    fontWeight: 'semibold',
+    fontWeight: 'medium',
     color: 'slate.12',
   },
   variants: {
