@@ -1,8 +1,8 @@
 import { css } from '@css/css'
 import {
-  Outlet,
   createRootRoute,
   HeadContent,
+  Outlet,
   Scripts,
 } from '@tanstack/react-router'
 import { Analytics } from '@vercel/analytics/react'
@@ -70,7 +70,6 @@ function RootLayout() {
         color: 'slate.11',
         fontSize: 'md',
         lineHeight: 'normal',
-        fontSmoothing: 'antialiased',
       })}
     >
       <head>

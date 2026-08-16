@@ -239,8 +239,8 @@ export default defineConfig({
     fontWeight: {
       className: 'fw',
       values: {
-        normal: '500',
-        medium: '600',
+        normal: '425',
+        medium: '525',
       },
     },
     fontVariationSettings: {

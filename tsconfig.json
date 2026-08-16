@@ -1,9 +1,8 @@
 {
   "compilerOptions": {
-    "ignoreDeprecations": "6.0",
-    "baseUrl": ".",
     "types": ["vite/client"],
     "paths": {
+      "*": ["./*"],
       "@/*": ["./src/*"],
       "@css/*": ["./styled-system/*"]
     },
