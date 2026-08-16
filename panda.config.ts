@@ -58,6 +58,13 @@ export const textStyles = defineTextStyles({
       fontVariationSettings: '"slnt" 0, "wdth" 97.5',
     },
   },
+  heading: {
+    description: 'The heading text style - used in section titles',
+    value: {
+      fontFamily: '"Bricolage Grotesque Variable", sans-serif',
+      fontVariationSettings: '"opsz" 60',
+    },
+  },
   mono: {
     description: 'The monospace text style - used in code blocks',
     value: {
@@ -241,6 +248,7 @@ export default defineConfig({
       values: {
         normal: '425',
         medium: '525',
+        semibold: '625',
       },
     },
     fontVariationSettings: {

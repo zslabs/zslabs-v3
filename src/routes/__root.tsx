@@ -1,4 +1,5 @@
 import { css } from '@css/css'
+import '@fontsource-variable/bricolage-grotesque/opsz.css'
 import {
   createRootRoute,
   HeadContent,

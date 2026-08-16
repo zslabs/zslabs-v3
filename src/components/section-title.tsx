@@ -9,9 +9,10 @@ interface SectionTitleProps extends HTMLAttributes<HTMLHeadingElement> {
 
 const styles = cva({
   base: {
+    textStyle: 'heading',
     marginBlockEnd: '8',
     fontSize: '2xl',
-    fontWeight: 'medium',
+    fontWeight: 'semibold',
     color: 'slate.12',
   },
   variants: {
