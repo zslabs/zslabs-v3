@@ -1,14 +1,18 @@
 import { pluginRemoveFeatures } from '@pandabox/panda-plugins'
-import { defineKeyframes, defineTextStyles } from '@pandacss/dev'
-import { defineTokens } from '@pandacss/dev'
-import { defineConfig, defineGlobalStyles } from '@pandacss/dev'
+import {
+  defineConfig,
+  defineGlobalStyles,
+  defineKeyframes,
+  defineTextStyles,
+  defineTokens,
+} from '@pandacss/dev'
 import {
   blackP3A,
   blueDarkP3,
   irisDarkP3,
   jadeDarkP3,
-  slateDarkP3A,
   slateDarkP3,
+  slateDarkP3A,
   tomatoDarkP3,
   whiteP3A,
   yellowDarkP3,
@@ -51,7 +55,7 @@ export const textStyles = defineTextStyles({
     value: {
       fontFamily: 'sans',
       fontFeatureSettings: '"tnum" 1, "liga" 1',
-      fontVariationSettings: '"slnt" 0',
+      fontVariationSettings: '"slnt" 0, "wdth" 97.5',
     },
   },
   mono: {
@@ -148,6 +152,7 @@ export default defineConfig({
   exclude: [],
   jsxFramework: 'react',
   outdir: 'styled-system',
+  importMap: '@css',
   shorthands: false,
   hash: {
     cssVar: isProd ? true : false,

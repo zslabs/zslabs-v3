@@ -45,13 +45,13 @@ const Prose = ({ children, ...rest }: ProseProps) => {
 
         '& ol': {
           paddingInlineStart: '8',
-          listStyle: 'outside',
+          listStylePosition: 'outside',
           listStyleType: 'decimal',
         },
 
         '& ul': {
           paddingInlineStart: '8',
-          listStyle: 'outside',
+          listStylePosition: 'outside',
           listStyleType: 'disc',
         },
 

@@ -1,0 +1,28 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["eslint", "typescript", "react", "react-perf", "import", "oxc"],
+  "jsPlugins": ["@pandacss/eslint-plugin"],
+  "ignorePatterns": [
+    "dist",
+    "node_modules",
+    ".output",
+    ".tanstack",
+    "styled-system"
+  ],
+  "env": {
+    "browser": true,
+    "node": true,
+    "es2026": true
+  },
+  "rules": {
+    "@pandacss/no-escape-hatch": "error",
+    "@pandacss/no-important": "error",
+    "@pandacss/prefer-longhand-properties": "error",
+    "@pandacss/prefer-unified-property-style": "error",
+    "@pandacss/no-physical-properties": "error",
+    "@pandacss/no-hardcoded-color": [
+      "error",
+      { "noOpacity": true, "whitelist": ["inherit"] }
+    ]
+  }
+}

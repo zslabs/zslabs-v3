@@ -68,13 +68,15 @@ The above snippet had me thinking about how I could apply this to any property t
   $upper-range: 960px
 ) {
   #{$property}: calc(
-    #{$min-size} + #{(
+    #{$min-size} +
+      #{(
         ($max-size / ($max-size * 0 + 1)) - ($min-size / ($min-size * 0 + 1))
       )} *
       (
-        (100vw - #{$lower-range}) / #{(
-            ($upper-range / ($upper-range * 0 + 1)) - ($lower-range /
-                  ($lower-range * 0 + 1))
+        (100vw - #{$lower-range}) /
+          #{(
+            ($upper-range / ($upper-range * 0 + 1)) -
+              ($lower-range / ($lower-range * 0 + 1))
           )}
       )
   );

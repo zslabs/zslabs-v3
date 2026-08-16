@@ -4,7 +4,7 @@
     "panda": {
       "type": "local",
       "command": ["npx", "panda", "mcp"],
-      "enabled": true
-    }
-  }
+      "enabled": true,
+    },
+  },
 }

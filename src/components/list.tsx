@@ -287,7 +287,7 @@ export function BoxListItem({
                     aspectRatio: 'wide',
                     objectFit: 'cover',
                     overflow: 'hidden',
-                    marginBottom: '2',
+                    marginBlockEnd: '2',
                     filter: comingSoon ? 'grayscale' : undefined,
                   })}
                 />
