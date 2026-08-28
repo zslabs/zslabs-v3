@@ -1,8 +1,64 @@
 ---
 title: Making impactful architectural decisions
 poster: /posters/3.png
-published: false
+published: true
 order: 30
 ---
 
-Coming soon...
+No matter the size, architecture decisions carry weight. Committing weeks, sometimes months, of a team's bandwidth based on a hunch, a benchmark, or a strong opinion from whoever spoke first in the meeting - is a risk. The engineers who get a reputation for making good calls aren't the ones who happen to guess right more often. They've built a process that narrows the odds before they present it.
+
+### Let data set the baseline
+
+Start with what you can measure: error rates, latency, bundle size, incidents, how often a pattern actually gets used versus how often it just gets copy-pasted out of habit. Starting here helps rule out the worst options before anyone spends time arguing about them.
+
+I've watched teams debate a migration for weeks on vibes, only to pull the actual numbers and realize the thing they were arguing about affected far less than what they thought. Data doesn't end the conversation, but it keeps the conversation honest.
+
+### Read the room
+
+What you can't always measure is developer sentiment. Data can't tell you how tired your team is of a pattern, or that they'll stomach a rewrite and/or migration. Nothing formal - whether this be an informal poll, a quick async thread, or a show of hands in standup.
+
+What you're listening for isn't consensus - it's friction. If half the team quietly dreads working in a certain part of the codebase, that's a signal worth putting up against your metrics; even if nobody wrote it down anywhere official.
+
+### Argue against yourself
+
+Once you have a direction, build the strongest case against it: the actual best argument someone with more context than you might raise, not an objection you can dismiss in a review or be unprepared to defend. If you can't construct one, you probably haven't looked hard enough.
+
+I write this down, a few lines: the context, the options considered, the path chosen, and what would change my mind. Not because anyone asks for it, but because putting it in writing exposes the gaps I'd otherwise talk around. A decision that survives being written down playing devil's advocate is worth continuing to explore.
+
+### Find the pragmatic middle
+
+The strongest counter-argument rarely kills the idea outright; it just might reshape it. Instead of picking between the full rewrite and leaving things as they are, look for the version that solves the sharpest pain points without betting the whole quarter on it: a phased migration, a new pattern applied only to new code, or a spike that proves the concept in one area before touching the rest.
+
+This isn't a compromise for the sake of comfort. Purely idealistic solutions tend to ignore what the data and sentiment already told you, and purely defensive ones ignore the reason you wanted to make the call in the first place. The pragmatic version keeps both in view, and it's usually the version that actually ships. And at the very least, can be used a stepping-stone while you gather additional data to prove the benefits of going all the way.
+
+### Weigh how reversible it is
+
+**Not every decision deserves the same scrutiny.** Some are two-way doors: you can walk back through them if you're wrong, at the cost of some rework. Others are one-way: once you're on the other side, undoing it means a second migration that slows things down.
+
+Two-way doors don't need a complete picture, but give some assurance to executives you've thought of the possible worse-case scenarios. **Be careful not to treat this as a hedge against your idea.** Your confidence in this area is about assessing the possibilities (good and bad) and how quickly you can adapt.
+
+### Set milestones, even rough ones
+
+Once the direction is set - write down milestones, even if you're not confident in the dates. This feels backwards; how do you commit to a timeline for something you've never done before? But, the act of writing milestones down; even wrong ones, is what buys you room to work.
+
+A team that trusts you have a plan gives you more flexibility than a team waiting on "trust me, it's coming." Rough milestones replace that vague promise with something checkable, and checkable plans are what let people stop asking for updates and let you actually get the work done. Dates realistically change, but as long as you're providing constant updates, they won't come as a suprise or a detrement to your original goals.
+
+### Let AI take the first pass
+
+For migrations and new tooling especially, there's now a cheap way to test a hunch before committing to it: have an AI assistant spike the change first. Point it at a small portion of the codebase, ask it to attempt the migration, and see what breaks.
+
+It's key to doublecheck this part. What it gives you is a way to turn "I think this will take three weeks" into "I watched it fail on these five files, and here's why." That's a stronger basis for a milestone than a guess, and the upfront cost is much less. Use the deficiencies you find to develop skills, rules, or other automated tooling to help get a clearer picture of what AI can do for you.
+
+### Close the loop
+
+After the first milestone lands, go back and check your own work. Did the data you gathered actually predict where the friction showed up? Did the sentiment you picked up on match what the team says now that they've lived with the change?
+
+Most of the time you'll be partly right and partly off - which is still useful! It's what makes the next decision better.
+
+None of this guarantees the decision was right. It guarantees that when it wasn't, you'll know why, and you'll have a team that trusted the process enough to follow you into it.
+
+### Know when you're done
+
+Decide what success looks like before you start: the metric that ties back to the baseline from step one, and the threshold that means things paid off. Without that line drawn ahead of time, a project never really finishes, there's always one more edge case worth chasing.
+
+When you hit that line, say so and close it out. Write down what shipped, what the numbers looked like against the baseline, and what got left out on purpose. If more work remains, treat it as its own decision with its own milestones, rather than letting it linger as a vague continuation of the last one.
