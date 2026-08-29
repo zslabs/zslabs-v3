@@ -314,6 +314,7 @@ export function BoxListItem({
                 transitionDuration: 'fast',
                 transitionTimingFunction: 'default',
                 fontSize: 'lg',
+                lineHeight: 'snug',
                 fontWeight: 'medium',
                 textWrap: 'balance',
 
