@@ -307,9 +307,6 @@ export function BoxListItem({
             <span
               className={css({
                 color: 'slate.12',
-                textDecorationLine: comingSoon ? undefined : 'underline',
-                textDecorationStyle: 'dotted',
-                textUnderlineOffset: '4',
                 transitionProperty: 'textUnderlineOffset',
                 transitionDuration: 'fast',
                 transitionTimingFunction: 'default',
