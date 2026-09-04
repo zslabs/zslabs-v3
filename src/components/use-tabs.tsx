@@ -1,10 +1,11 @@
 import { css } from '@css/css'
 import { m } from 'framer-motion'
-import { Tabs as TabsRoot, TabList, Tab, TabPanel } from 'react-aria-components'
+import { Tab, TabList, TabPanel, Tabs as TabsRoot } from 'react-aria-components'
 
 import { List, ListItem } from '@/components/list'
 import Backback from '@/icons/backpack.svg?react'
 import OnePassword from '@/icons/circle-lock.svg?react'
+import Cursor from '@/icons/cursor.svg?react'
 import Earbuds from '@/icons/earphones.svg?react'
 import Edge from '@/icons/edge.svg?react'
 import Mimestream from '@/icons/envelope.svg?react'
@@ -16,11 +17,9 @@ import Keyboard from '@/icons/keyboard.svg?react'
 import MBPro from '@/icons/mbpro.svg?react'
 import Monitor from '@/icons/monitor.svg?react'
 import Mouse from '@/icons/mouse.svg?react'
-import OpenCode from '@/icons/opencode.svg?react'
 import Rectangle from '@/icons/rectangle.svg?react'
 import Reminders from '@/icons/reminders.svg?react'
 import Stand from '@/icons/stand.svg?react'
-import VSCode from '@/icons/vs-code.svg?react'
 
 const tabs = [
   { id: 'software', title: 'Software' },
@@ -30,17 +29,9 @@ const tabs = [
 function Software() {
   return (
     <List>
-      <ListItem
-        icon={<VSCode />}
-        label="VS Code"
-        to="https://code.visualstudio.com/"
-      >
+      <ListItem icon={<Cursor />} label="Cursor" to="https://cursor.com/">
         I&apos;ve tried them all; Dreamweaver, Sublime Text, BB Edit, Textmate,
-        Atom, etc.
-      </ListItem>
-      <ListItem icon={<OpenCode />} label="OpenCode" to="https://opencode.ai/">
-        For my personal projects, OpenCode alongside GitHub Copilot fits the
-        bill.
+        Atom, VS Code, etc.
       </ListItem>
       <ListItem icon={<Figma />} label="Figma" to="https://www.figma.com">
         Previously Sketch, but Figma is just too good to ignore; with a plethora
@@ -57,9 +48,8 @@ function Software() {
         Microsoft has really stepped-up their browser game.
       </ListItem>
       <ListItem icon={<Ghost />} label="Ghostty" to="https://ghostty.org">
-        The built-in terminal in VS Code is fine; though I&apos;m fortunate
-        enough to have the screen real-estate for a dedicated, always-open
-        terminal.
+        While I find myself using the built-in terminal for most things; this
+        fits the bill when I need a dedicated workspace.
       </ListItem>
       <ListItem
         icon={<GitHub />}
