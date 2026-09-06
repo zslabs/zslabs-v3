@@ -32,12 +32,12 @@
     "@vercel/analytics": "2.0.1",
     "babel-plugin-react-compiler": "1.0.0",
     "framer-motion": "13.2.0",
-    "nitro": "3.0.260610-beta",
+    "nitro": "3.0.260903-beta",
     "oxfmt": "0.66.0",
     "oxlint": "1.81.0",
     "react": "19.2.8",
-    "react-aria": "3.52.0",
-    "react-aria-components": "1.21.0",
+    "react-aria": "3.52.1",
+    "react-aria-components": "1.21.1",
     "react-dom": "19.2.8",
     "remark-frontmatter": "5.0.0",
     "remark-gfm": "4.0.1",
@@ -48,8 +48,8 @@
   },
   "devDependencies": {
     "@pandabox/panda-plugins": "0.0.8",
-    "@pandacss/dev": "1.12.0",
-    "@pandacss/preset-panda": "1.12.0",
+    "@pandacss/dev": "1.12.1",
+    "@pandacss/preset-panda": "1.12.1",
     "@radix-ui/colors": "3.0.0",
     "@types/babel__core": "7.20.5",
     "@types/hast": "3.0.5",
@@ -58,7 +58,7 @@
     "nano-staged": "1.0.2",
     "vite": "8.2.2",
     "vite-plugin-svgr": "5.2.0",
-    "vitest": "4.1.11"
+    "vitest": "5.0.0"
   },
   "simple-git-hooks": {
     "pre-commit": "./node_modules/.bin/nano-staged"
