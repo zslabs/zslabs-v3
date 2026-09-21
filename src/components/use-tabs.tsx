@@ -115,10 +115,10 @@ function Gear() {
       </ListItem>
       <ListItem
         icon={<Keyboard />}
-        to="https://www.keychron.com/products/keychron-q5-max-qmk-via-wireless-custom-mechanical-keyboard"
-        label="Keychron Q5 Max Mechanical Keyboard"
+        to="https://link.amazon/B0fpbfB75"
+        label="IQUINIX MQ80"
       >
-        My first mechanical keyboard, and I&apos;m loving it so far.
+        My second mechanical keyboard; opting for a smaller form-factor.
       </ListItem>
       <ListItem
         icon={<Earbuds />}
