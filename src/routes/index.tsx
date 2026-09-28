@@ -12,6 +12,7 @@ import SectionTitle from '@/components/section-title'
 import type { TextLinkProps } from '@/components/text-link'
 import TextLink from '@/components/text-link'
 import Article from '@/icons/article.svg?react'
+import Atom from '@/icons/atom.svg?react'
 import Collection from '@/icons/collection.svg?react'
 import CSS from '@/icons/css.svg?react'
 import Icons from '@/icons/icons.svg?react'
@@ -39,6 +40,14 @@ type ProjectItem = {
 }
 
 const PROJECTS = [
+  {
+    label: 'Atomic CSS Modules',
+    to: 'https://atomic.zslabs.com',
+    description:
+      'Vite plugin that generates atomic utility classes from CSS Modules.',
+    icon: <Atom />,
+    meta: ['Vite'],
+  },
   {
     label: 'token()',
     mono: true,
