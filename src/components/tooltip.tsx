@@ -51,16 +51,28 @@ export default function Tooltip({
           boxShadow: 'inset',
 
           '&[data-placement=top]': {
-            animation: 'slide-up-fade',
+            animationName: 'slide-up-fade',
+            animationDuration: 'fast',
+            animationTimingFunction: 'default',
+            animationFillMode: 'forwards',
           },
           '&[data-placement=bottom]': {
-            animation: 'slide-down-fade',
+            animationName: 'slide-down-fade',
+            animationDuration: 'fast',
+            animationTimingFunction: 'default',
+            animationFillMode: 'forwards',
           },
           '&[data-placement=right]': {
-            animation: 'slide-right-fade',
+            animationName: 'slide-right-fade',
+            animationDuration: 'fast',
+            animationTimingFunction: 'default',
+            animationFillMode: 'forwards',
           },
           '&[data-placement=left]': {
-            animation: 'slide-left-fade',
+            animationName: 'slide-left-fade',
+            animationDuration: 'fast',
+            animationTimingFunction: 'default',
+            animationFillMode: 'forwards',
           },
         })}
       >

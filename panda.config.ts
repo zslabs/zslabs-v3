@@ -188,23 +188,6 @@ export default defineConfig({
     extend: {
       keyframes,
       tokens: {
-        animations: {
-          'slide-up-fade': {
-            value: 'slide-up-fade {durations.fast} {easings.default} forwards',
-          },
-          'slide-down-fade': {
-            value:
-              'slide-down-fade {durations.fast} {easings.default} forwards',
-          },
-          'slide-right-fade': {
-            value:
-              'slide-right-fade {durations.fast} {easings.default} forwards',
-          },
-          'slide-left-fade': {
-            value:
-              'slide-left-fade {durations.fast} {easings.default} forwards',
-          },
-        },
         easings,
         colors: {
           currentColor: { value: 'currentColor' },
