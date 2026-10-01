@@ -1,4 +1,3 @@
-import { pluginRemoveFeatures } from '@pandabox/panda-plugins'
 import {
   defineConfig,
   defineGlobalStyles,
@@ -17,8 +16,6 @@ import {
   whiteP3A,
   yellowDarkP3,
 } from '@radix-ui/colors'
-import { removeUnusedKeyframes } from 'postcss/remove-unused-keyframes'
-import { removeUnusedCssVars } from 'postcss/remove-unused-vars'
 
 const isProd = process.env.VERCEL_ENV === 'production'
 
@@ -143,7 +140,7 @@ const globalCss = defineGlobalStyles({
 
 export default defineConfig({
   preflight: true,
-  presets: ['@pandacss/preset-panda'],
+  presets: ['@pandacss/preset-base', '@pandacss/preset-panda'],
   conditions: {
     extend: {
       notClass: '&:not([class])',
@@ -157,7 +154,6 @@ export default defineConfig({
     './src/routes/**/*.tsx',
   ],
   exclude: [],
-  jsxFramework: 'react',
   outdir: 'styled-system',
   importMap: '@css',
   shorthands: false,
@@ -165,11 +161,28 @@ export default defineConfig({
     cssVar: isProd ? true : false,
     className: isProd ? true : false,
   },
-  plugins: [pluginRemoveFeatures({ features: ['no-styled', 'no-jsx'] })],
+  plugins: [
+    {
+      name: 'omit-preset-colors',
+      hooks: {
+        'preset:resolved': ({ utils, preset, name }) => {
+          if (name === '@pandacss/preset-panda') {
+            return utils.omit(preset, [
+              'theme.tokens.colors',
+              'theme.semanticTokens.colors',
+            ])
+          }
+          return preset
+        },
+      },
+    },
+  ],
   strictTokens: true,
   minify: true,
-  lightningcss: true,
-  browserslist: ['last 2 versions', 'not dead', 'not < 2%'],
+  optimize: {
+    removeUnusedTokens: true,
+    removeUnusedKeyframes: true,
+  },
   theme: {
     textStyles,
     extend: {
@@ -382,23 +395,4 @@ export default defineConfig({
     },
   },
   globalCss,
-  hooks: {
-    // Strip default Panda color tokens so only this project's palette is used.
-    'preset:resolved': ({ utils, preset, name }) => {
-      if (name === '@pandacss/preset-panda') {
-        return utils.omit(preset, [
-          'theme.tokens.colors',
-          'theme.semanticTokens.colors',
-        ])
-      }
-      return preset
-    },
-
-    // Post-process final CSS to drop unused vars and keyframes.
-    'cssgen:done': ({ artifact, content }) => {
-      if (artifact === 'styles.css') {
-        return removeUnusedCssVars(removeUnusedKeyframes(content))
-      }
-    },
-  },
 })
