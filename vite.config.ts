@@ -75,7 +75,25 @@ export default defineConfig({
       },
     }),
     tanstackStart(),
-    nitro(),
+    nitro({
+      hooks: {
+        'rollup:before'(_nitro, config) {
+          const previousOnWarn = config.onwarn
+
+          config.onwarn = (warning, warn) => {
+            if (
+              warning.code === 'MODULE_LEVEL_DIRECTIVE' &&
+              (warning.message.includes('"use client"') ||
+                warning.message.includes('"use server"'))
+            ) {
+              return
+            }
+
+            previousOnWarn?.(warning, warn)
+          }
+        },
+      },
+    }),
     react(),
     babel({
       presets: [reactCompilerPreset()],

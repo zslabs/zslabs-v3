@@ -1,6 +1,7 @@
+import { useState } from 'react'
+
 export default function Year() {
-  const date = new Date()
-  const year = date.getFullYear()
+  const [year] = useState(() => new Date().getFullYear())
 
   return <span suppressHydrationWarning>{year}</span>
 }
