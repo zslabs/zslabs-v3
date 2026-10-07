@@ -15,6 +15,7 @@ import Article from '@/icons/article.svg?react'
 import Atom from '@/icons/atom.svg?react'
 import Collection from '@/icons/collection.svg?react'
 import CSS from '@/icons/css.svg?react'
+import Droplet from '@/icons/droplet.svg?react'
 import Icons from '@/icons/icons.svg?react'
 import ListProject from '@/icons/list.svg?react'
 import Mountain from '@/icons/mountain.svg?react'
@@ -40,6 +41,13 @@ type ProjectItem = {
 }
 
 const PROJECTS = [
+  {
+    label: 'ChromaSlack',
+    to: 'https://chromaslack.zslabs.com',
+    description: 'Upload any image and generate a Slack theme.',
+    icon: <Droplet />,
+    meta: ['TanStack Start', 'React Aria', 'Tailwind CSS'],
+  },
   {
     label: 'Atomic CSS Modules',
     to: 'https://atomic.zslabs.com',
