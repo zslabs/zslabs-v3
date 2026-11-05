@@ -52,9 +52,9 @@ const PROJECTS = [
     label: 'Atomic CSS Modules',
     to: 'https://atomic.zslabs.com',
     description:
-      'Vite plugin that generates atomic utility classes from CSS Modules.',
+      'Build plugin that generates atomic utility classes from CSS Modules.',
     icon: <Atom />,
-    meta: ['Vite'],
+    meta: ['Vite', 'Rspack', 'PostCSS'],
   },
   {
     label: 'token()',
