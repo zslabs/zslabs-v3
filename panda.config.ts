@@ -58,8 +58,9 @@ export const textStyles = defineTextStyles({
   heading: {
     description: 'The heading text style - used in section titles',
     value: {
-      fontFamily: '"Bricolage Grotesque Variable", sans-serif',
-      fontVariationSettings: '"opsz" 60',
+      fontFamily: 'serif',
+      fontWeight: '400',
+      fontSynthesis: 'none',
     },
   },
   mono: {
@@ -200,6 +201,9 @@ export default defineConfig({
           },
           sans: {
             value: '"TT Commons Pro Variable", sans-serif',
+          },
+          serif: {
+            value: '"Geist Serif", serif',
           },
         },
         fontSizes: {

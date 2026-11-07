@@ -1,5 +1,4 @@
 import { css } from '@css/css'
-import '@fontsource-variable/bricolage-grotesque/opsz.css'
 import {
   createRootRoute,
   HeadContent,
@@ -39,6 +38,13 @@ export const Route = createRootRoute({
       {
         rel: 'preload',
         href: '/fonts/TT_Commons_Pro_Mono_Variable.woff2',
+        as: 'font',
+        type: 'font/woff2',
+        crossOrigin: 'anonymous',
+      },
+      {
+        rel: 'preload',
+        href: '/fonts/GeistSerifVF.woff2',
         as: 'font',
         type: 'font/woff2',
         crossOrigin: 'anonymous',

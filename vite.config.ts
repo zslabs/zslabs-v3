@@ -77,10 +77,16 @@ export default defineConfig({
     tanstackStart(),
     nitro({
       hooks: {
-        'rollup:before'(_nitro, config) {
-          const previousOnWarn = config.onwarn
+        'build:config'(_nitro, { rollup, rolldown }) {
+          const bundler = rolldown ?? rollup
 
-          config.onwarn = (warning, warn) => {
+          if (!bundler) {
+            return
+          }
+
+          const previousOnWarn = bundler.onwarn
+
+          bundler.onwarn = (warning, warn) => {
             if (
               warning.code === 'MODULE_LEVEL_DIRECTIVE' &&
               (warning.message.includes('"use client"') ||
