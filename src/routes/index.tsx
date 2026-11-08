@@ -24,6 +24,7 @@ import Slack from '@/icons/slack.svg?react'
 import Theming from '@/icons/theming.svg?react'
 import Token from '@/icons/token.svg?react'
 import Tokens from '@/icons/tokens.svg?react'
+import Versus from '@/icons/versus.svg?react'
 import WesAnderSlack from '@/icons/wes-anderslack.svg?react'
 import X from '@/icons/x.svg?react'
 
@@ -41,6 +42,13 @@ type ProjectItem = {
 }
 
 const PROJECTS = [
+  {
+    label: 'Versus',
+    to: 'https://vs.zslabs.com',
+    description: 'Compare athlete statistics across different eras.',
+    icon: <Versus />,
+    meta: ['TanStack Start', 'React Aria', 'Tailwind CSS'],
+  },
   {
     label: 'ChromaSlack',
     to: 'https://chromaslack.zslabs.com',
