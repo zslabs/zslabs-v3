@@ -21,6 +21,7 @@ import ListProject from '@/icons/list.svg?react'
 import Mountain from '@/icons/mountain.svg?react'
 import Profile from '@/icons/profile.svg?react'
 import Slack from '@/icons/slack.svg?react'
+import Stonks from '@/icons/stonks.svg?react'
 import Theming from '@/icons/theming.svg?react'
 import Token from '@/icons/token.svg?react'
 import Tokens from '@/icons/tokens.svg?react'
@@ -47,6 +48,13 @@ const PROJECTS = [
     to: 'https://vs.zslabs.com',
     description: 'Compare athlete statistics across different eras.',
     icon: <Versus />,
+    meta: ['TanStack Start', 'React Aria', 'Tailwind CSS'],
+  },
+  {
+    label: 'Stonks',
+    to: 'https://stonks.zslabs.com',
+    description: 'Because the world needs another stock ticker.',
+    icon: <Stonks />,
     meta: ['TanStack Start', 'React Aria', 'Tailwind CSS'],
   },
   {
