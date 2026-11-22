@@ -49,30 +49,21 @@ export default function Tooltip({
           borderColor: 'black.a.11',
           borderStyle: 'solid',
           boxShadow: 'inset',
+          animationDuration: 'fast',
+          animationTimingFunction: 'default',
+          animationFillMode: 'forwards',
 
-          '&[data-placement=top]': {
+          _placementTop: {
             animationName: 'slide-up-fade',
-            animationDuration: 'fast',
-            animationTimingFunction: 'default',
-            animationFillMode: 'forwards',
           },
-          '&[data-placement=bottom]': {
+          _placementBottom: {
             animationName: 'slide-down-fade',
-            animationDuration: 'fast',
-            animationTimingFunction: 'default',
-            animationFillMode: 'forwards',
           },
-          '&[data-placement=right]': {
+          _placementRight: {
             animationName: 'slide-right-fade',
-            animationDuration: 'fast',
-            animationTimingFunction: 'default',
-            animationFillMode: 'forwards',
           },
-          '&[data-placement=left]': {
+          _placementLeft: {
             animationName: 'slide-left-fade',
-            animationDuration: 'fast',
-            animationTimingFunction: 'default',
-            animationFillMode: 'forwards',
           },
         })}
       >

@@ -5,6 +5,7 @@ import {
   defineTextStyles,
   defineTokens,
 } from '@pandacss/dev'
+
 import {
   blackP3A,
   blueDarkP3,
@@ -16,6 +17,7 @@ import {
   whiteP3A,
   yellowDarkP3,
 } from '@radix-ui/colors'
+import { reactAriaConditions } from './react-aria-conditions'
 
 const isProd = process.env.VERCEL_ENV === 'production'
 
@@ -58,9 +60,7 @@ export const textStyles = defineTextStyles({
   heading: {
     description: 'The heading text style - used in section titles',
     value: {
-      fontFamily: 'serif',
-      fontWeight: '400',
-      fontSynthesis: 'none',
+      fontFamily: 'sans',
     },
   },
   mono: {
@@ -147,6 +147,7 @@ export default defineConfig({
       notClass: '&:not([class])',
       notFirstChild: '&:not(:first-child)',
       notLastChild: '&:not(:last-child)',
+      ...reactAriaConditions,
     },
   },
   include: [
@@ -201,9 +202,6 @@ export default defineConfig({
           },
           sans: {
             value: '"TT Commons Pro Variable", sans-serif',
-          },
-          serif: {
-            value: '"Geist Serif", serif',
           },
         },
         fontSizes: {

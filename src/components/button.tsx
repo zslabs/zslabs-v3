@@ -37,10 +37,9 @@ const styles = cva({
 
     _hover: {
       scale: '1.025',
-    },
-
-    _active: {
-      scale: '1',
+      _active: {
+        scale: '1',
+      },
     },
   },
   variants: {

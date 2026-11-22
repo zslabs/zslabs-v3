@@ -43,13 +43,6 @@ export const Route = createRootRoute({
         crossOrigin: 'anonymous',
       },
       {
-        rel: 'preload',
-        href: '/fonts/GeistSerifVF.woff2',
-        as: 'font',
-        type: 'font/woff2',
-        crossOrigin: 'anonymous',
-      },
-      {
         rel: 'stylesheet',
         href: appCss,
       },

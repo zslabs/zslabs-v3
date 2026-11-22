@@ -11,8 +11,8 @@ const styles = cva({
   base: {
     textStyle: 'heading',
     marginBlockEnd: '8',
-    fontSize: '3xl',
-    lineHeight: 'tight',
+    fontSize: '2xl',
+    fontWeight: 'medium',
     color: 'slate.12',
   },
   variants: {

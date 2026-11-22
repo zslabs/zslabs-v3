@@ -11,7 +11,8 @@ const Prose = ({ children, ...rest }: ProseProps) => {
       className={css({
         '& :is(h2, h3, h4, h5, h6)': {
           textStyle: 'heading',
-          fontSize: '2xl',
+          fontWeight: 'medium',
+          fontSize: 'xl',
           color: 'slate.12',
           marginBlockStart: '10',
         },
