@@ -246,12 +246,14 @@ export default function BaseLayout({ children }: ChildrenOnlyProps) {
         })}
       >
         <div
+          aria-hidden
           className={css({
             position: 'fixed',
             inset: '0',
-            opacity: '0.35',
-            mixBlendMode: 'color-dodge',
             backgroundImage: 'ooorganize',
+            backgroundPosition: 'center',
+            backgroundSize: '200px',
+            maskImage: 'linear-gradient(to right, transparent, black)',
           })}
         />
       </div>
