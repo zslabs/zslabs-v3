@@ -135,7 +135,7 @@ export function ListItem({
                   transitionTimingFunction: 'default',
                   ...(mono
                     ? {
-                        fontFamily: 'mono',
+                        textStyle: 'mono',
                       }
                     : {}),
                   _groupHover: {
@@ -336,7 +336,6 @@ export function BoxListItem({
                   fontSize: 'sm',
                   textStyle: 'mono',
                   textTransform: 'uppercase',
-                  letterSpacing: 'normal',
                   display: 'flex',
                   gap: '2',
                 })}

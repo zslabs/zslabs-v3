@@ -6,6 +6,8 @@ import {
   Scripts,
 } from '@tanstack/react-router'
 import { Analytics } from '@vercel/analytics/react'
+import jetbrainsMono from '@fontsource-variable/jetbrains-mono/files/jetbrains-mono-latin-wght-normal.woff2?url'
+import alloFont from 'allo-font/fonts/webfonts/AlloVariable.woff2?url'
 
 import { MotionHeader, MotionMain } from '@/components/content-wrappers'
 import SectionTitle from '@/components/section-title'
@@ -30,14 +32,14 @@ export const Route = createRootRoute({
     links: [
       {
         rel: 'preload',
-        href: '/fonts/TT_Commons_Pro_Variable.woff2',
+        href: alloFont,
         as: 'font',
         type: 'font/woff2',
         crossOrigin: 'anonymous',
       },
       {
         rel: 'preload',
-        href: '/fonts/TT_Commons_Pro_Mono_Variable.woff2',
+        href: jetbrainsMono,
         as: 'font',
         type: 'font/woff2',
         crossOrigin: 'anonymous',

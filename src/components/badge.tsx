@@ -7,7 +7,6 @@ const styles = cva({
     borderRadius: 'full',
     textStyle: 'mono',
     textTransform: 'uppercase',
-    letterSpacing: 'normal',
     width: 'fit',
     paddingInline: '3',
     paddingBlock: '0.5',

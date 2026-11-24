@@ -53,8 +53,9 @@ export const textStyles = defineTextStyles({
     description: 'The body text style - used in paragraphs',
     value: {
       fontFamily: 'sans',
-      fontFeatureSettings: '"tnum" 1, "liga" 1',
-      fontVariationSettings: '"slnt" 0, "wdth" 97.5',
+      // disambiguation (ss02), open 4/6/9 (ss03), roundness 30.
+      fontFeatureSettings: '"tnum" 1, "liga" 1, "ss02" 1, "ss03" 1',
+      fontVariationSettings: '"ROND" 30',
     },
   },
   heading: {
@@ -67,8 +68,9 @@ export const textStyles = defineTextStyles({
     description: 'The monospace text style - used in code blocks',
     value: {
       fontFamily: 'mono',
-      fontFeatureSettings: '"salt"',
-      fontVariationSettings: '"slnt" 0',
+      // calt keeps the coding ligatures. zero slashes 0, matching Allo ss02.
+      fontFeatureSettings: '"calt" 1, "zero" 1',
+      fontVariationSettings: 'normal',
     },
   },
 })
@@ -198,10 +200,10 @@ export default defineConfig({
         },
         fonts: {
           mono: {
-            value: '"TT Commons Pro Mono Variable", monospace',
+            value: '"JetBrains Mono Variable", ui-monospace, monospace',
           },
           sans: {
-            value: '"TT Commons Pro Variable", sans-serif',
+            value: '"Allo", ui-sans-serif, system-ui, sans-serif',
           },
         },
         fontSizes: {
@@ -247,12 +249,6 @@ export default defineConfig({
         normal: '425',
         medium: '525',
         semibold: '625',
-      },
-    },
-    fontVariationSettings: {
-      className: 'fvs',
-      values: {
-        wide: "'wdth' 125, 'slnt' 0;",
       },
     },
     gridTemplateColumns: {

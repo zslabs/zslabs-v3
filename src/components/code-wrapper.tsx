@@ -24,7 +24,6 @@ export default function CodeWrapper({
           textStyle: 'mono',
           backgroundColor: 'slate.2',
           fontWeight: 'normal',
-          letterSpacing: 'normal',
           borderWidth: '1',
           padding: '1',
           borderStyle: 'solid',
