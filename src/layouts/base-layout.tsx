@@ -253,7 +253,7 @@ export default function BaseLayout({ children }: ChildrenOnlyProps) {
             backgroundImage: 'ooorganize',
             backgroundPosition: 'center',
             backgroundSize: '200px',
-            maskImage: 'linear-gradient(to right, transparent, black)',
+            maskImage: 'linear-gradient(to bottom right, transparent, black)',
           })}
         />
       </div>
