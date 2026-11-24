@@ -20,7 +20,7 @@
     "test": "vitest run"
   },
   "dependencies": {
-    "@fontsource-variable/jetbrains-mono": "5.3.0",
+    "@fontsource-variable/geist-mono": "5.3.0",
     "@mdx-js/rollup": "3.1.1",
     "@pandacss/eslint-plugin": "2.6.0",
     "@rolldown/plugin-babel": "0.3.1",
