@@ -68,8 +68,8 @@ export const textStyles = defineTextStyles({
     description: 'The monospace text style - used in code blocks',
     value: {
       fontFamily: 'mono',
-      // calt keeps the coding ligatures. zero slashes 0, matching Allo ss02.
-      fontFeatureSettings: '"calt" 1, "zero" 1',
+      // Default 0 is slashed. ss09 is the open zero, and this face has no calt or liga.
+      fontFeatureSettings: 'normal',
       fontVariationSettings: 'normal',
     },
   },
@@ -200,7 +200,7 @@ export default defineConfig({
         },
         fonts: {
           mono: {
-            value: '"JetBrains Mono Variable", ui-monospace, monospace',
+            value: '"Geist Mono Variable", ui-monospace, monospace',
           },
           sans: {
             value: '"Allo", ui-sans-serif, system-ui, sans-serif',
