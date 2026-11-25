@@ -6,7 +6,7 @@ import {
   Scripts,
 } from '@tanstack/react-router'
 import { Analytics } from '@vercel/analytics/react'
-import jetbrainsMono from '@fontsource-variable/jetbrains-mono/files/jetbrains-mono-latin-wght-normal.woff2?url'
+import geistMono from '@fontsource-variable/geist-mono/files/geist-mono-latin-wght-normal.woff2?url'
 import alloFont from 'allo-font/fonts/webfonts/AlloVariable.woff2?url'
 
 import { MotionHeader, MotionMain } from '@/components/content-wrappers'
@@ -39,7 +39,7 @@ export const Route = createRootRoute({
       },
       {
         rel: 'preload',
-        href: jetbrainsMono,
+        href: geistMono,
         as: 'font',
         type: 'font/woff2',
         crossOrigin: 'anonymous',

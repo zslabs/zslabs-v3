@@ -1,6 +1,5 @@
 @import 'allo-font/allo.css';
-@import '@fontsource-variable/jetbrains-mono';
-@import '@fontsource-variable/jetbrains-mono/wght-italic.css';
+@import '@fontsource-variable/geist-mono';
 
 @layer reset, base, tokens, recipes, utilities;
 
