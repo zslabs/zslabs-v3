@@ -55,7 +55,7 @@ export const textStyles = defineTextStyles({
       fontFamily: 'sans',
       // disambiguation (ss02), open 4/6/9 (ss03), roundness 30.
       fontFeatureSettings: '"tnum" 1, "liga" 1, "ss02" 1, "ss03" 1',
-      fontVariationSettings: '"ROND" 30',
+      fontVariationSettings: '"ROND" 50',
     },
   },
   heading: {
