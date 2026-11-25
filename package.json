@@ -30,7 +30,7 @@
     "@types/node": "26.6.6",
     "@types/react": "19.3.0",
     "@vercel/analytics": "2.0.1",
-    "allo-font": "1.0.3",
+    "allo-font": "1.1.0",
     "babel-plugin-react-compiler": "1.0.0",
     "framer-motion": "14.14.0",
     "nitro": "3.0.261103-rc",
