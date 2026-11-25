@@ -135,7 +135,7 @@ const retarget = (selector: string, parent: string, combinator: string) =>
 const add = (
   conditions: Record<string, string>,
   name: string,
-  selector: string,
+  selector: string
 ) => {
   const suffix = upperFirst(name)
   conditions[name] = selector
@@ -148,40 +148,40 @@ export const reactAriaConditions: Record<string, string> = {}
 add(
   reactAriaConditions,
   'hover',
-  nativeOrRac('hovered', ':is(:hover, [data-hover])'),
+  nativeOrRac('hovered', ':is(:hover, [data-hover])')
 )
 add(
   reactAriaConditions,
   'focus',
-  nativeOrRac('focused', ':is(:focus, [data-focus])'),
+  nativeOrRac('focused', ':is(:focus, [data-focus])')
 )
 add(
   reactAriaConditions,
   'focusWithin',
-  nativeOrRac('focus-within', ':focus-within'),
+  nativeOrRac('focus-within', ':focus-within')
 )
 add(
   reactAriaConditions,
   'focusVisible',
-  nativeOrRac('focus-visible', ':is(:focus-visible, [data-focus-visible])'),
+  nativeOrRac('focus-visible', ':is(:focus-visible, [data-focus-visible])')
 )
 add(
   reactAriaConditions,
   'readOnly',
   nativeOrRac(
     'readonly',
-    ':is(:read-only, [data-read-only], [aria-readonly=true])',
-  ),
+    ':is(:read-only, [data-read-only], [aria-readonly=true])'
+  )
 )
 add(
   reactAriaConditions,
   'active',
-  '&:where([data-rac]):is([data-pressed], [data-active]), &:where(:not([data-rac])):is(:active, [data-active])',
+  '&:where([data-rac]):is([data-pressed], [data-active]), &:where(:not([data-rac])):is(:active, [data-active])'
 )
 add(
   reactAriaConditions,
   'placeholderShown',
-  '&:is(:placeholder-shown, [data-placeholder], [data-placeholder-shown])',
+  '&:is(:placeholder-shown, [data-placeholder], [data-placeholder-shown])'
 )
 
 for (const [name, attr] of Object.entries(flags)) {
@@ -193,7 +193,7 @@ for (const { prefix, attribute: attributeName, values } of enums) {
     add(
       reactAriaConditions,
       `${prefix}${upperFirst(value)}`,
-      attribute(attributeName, value),
+      attribute(attributeName, value)
     )
   }
 }
