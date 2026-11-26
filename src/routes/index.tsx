@@ -168,17 +168,17 @@ function Intro() {
       <SectionTitle>Zach Schnackel</SectionTitle>
       <Prose>
         <p>
-          I&apos;m a Software Engineer based in Charlotte, NC. My background
-          involves pushing the limits of what we can build on the backend and
-          how we can experience it on the frontend.
-        </p>
-        <p>
-          Happy to be part of the design infrastructure team at{' '}
+          I&apos;m a Software Engineer based in Charlotte, NC. Happy to be part
+          of the design infrastructure team at{' '}
           <TextLink to="https://slack.com">
             <Slack className={inlineIcon()} /> Slack
           </TextLink>
           ; building tools to help designers and engineers collaborate more
           efficiently.
+        </p>
+        <p>
+          My focuses include design systems, build tooling, and AI enablement to
+          fuel large-scale projects.
         </p>
         <p>
           Outside of technology, I love spending time with my family and hiking
@@ -208,9 +208,7 @@ function Intro() {
         <ButtonLink to="/experience" variation="contrast">
           Experience
         </ButtonLink>
-        <ButtonLink to="/uses">
-          What I use
-        </ButtonLink>
+        <ButtonLink to="/uses">What I use</ButtonLink>
       </div>
     </section>
   )
