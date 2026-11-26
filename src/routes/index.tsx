@@ -205,10 +205,10 @@ function Intro() {
           marginBlockStart: '8',
         })}
       >
-        <ButtonLink to="/experience" variation="contrast" glow="contrast">
+        <ButtonLink to="/experience" variation="contrast">
           Experience
         </ButtonLink>
-        <ButtonLink to="/uses" variation="default" glow="default">
+        <ButtonLink to="/uses">
           What I use
         </ButtonLink>
       </div>

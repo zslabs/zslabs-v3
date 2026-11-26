@@ -26,7 +26,6 @@ const styles = cva({
   base: {
     position: 'relative',
     height: '10',
-    overflow: 'hidden',
     fontSize: 'md',
     fontWeight: 'medium',
     transitionProperty: 'scale',
@@ -59,9 +58,10 @@ const styles = cva({
         },
       },
       contrast: {
-        backgroundLinear: 'to-b',
-        gradientFrom: 'slate.12',
-        gradientTo: 'slate.11',
+        backgroundColor: 'slate.12',
+        borderWidth: '1',
+        borderColor: 'black.a.3',
+        borderStyle: 'solid',
         color: 'slate.1',
       },
     },
@@ -90,14 +90,6 @@ const styles = cva({
         },
       },
     },
-    glow: {
-      default: {
-        boxShadow: 'default',
-      },
-      contrast: {
-        boxShadow: 'contrast',
-      },
-    },
   },
   defaultVariants: {
     variation: 'default',
@@ -110,14 +102,13 @@ export function Button({
   children,
   variation,
   iconOnly,
-  glow,
   loading,
   ...buttonProps
 }: ButtonProps) {
   return (
     <ButtonPrimitive
       {...buttonProps}
-      className={styles({ variation, iconOnly, loading, glow })}
+      className={styles({ variation, iconOnly, loading })}
     >
       {(renderProps) => (
         <span className={buttonContentClass}>
@@ -132,14 +123,13 @@ export function ButtonLink({
   children,
   variation,
   iconOnly,
-  glow,
   loading,
   ...linkProps
 }: ButtonLinkProps) {
   return (
     <TextLink
       {...linkProps}
-      className={styles({ variation, iconOnly, loading, glow })}
+      className={styles({ variation, iconOnly, loading })}
     >
       <span className={buttonContentClass}>{children}</span>
     </TextLink>

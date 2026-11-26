@@ -221,16 +221,8 @@ export default defineConfig({
           slate: {
             value: '0 0 0 0.125rem {colors.slate.3}',
           },
-          contrast: {
-            value:
-              'inset 0 1px 0 0 {colors.black.a.2}, inset 0 -2px 0 0 {colors.black.a.1},-15px 0 30px -5px {colors.tomato.5}, 0 0 30px -5px {colors.blue.5}, 15px 0 30px -5px {colors.iris.5}',
-          },
           inset: {
             value: 'inset 0 0 0 1px {colors.slate.4}',
-          },
-          default: {
-            value:
-              'inset 0 1px 0 0 {colors.white.a.2}, inset 0 -2px 0 0 {colors.black.a.4}, -15px 0 30px -5px {colors.iris.5}, 0 0 30px -5px {colors.blue.5}, 15px 0 30px -5px {colors.jade.5}',
           },
         },
         spacing: {
